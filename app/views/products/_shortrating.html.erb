@@ -1,0 +1,8 @@
+<% stars = product.get_stars %>
+<span style="float:left;">
+  <%= image_tag("/images/stars_#{stars[0]}.gif", :width => 59, :height => 11, :border => 0, :alt => "#{pluralize(stars[0], 'star')} out of 5") %>
+</span>
+<span style="float:right;">
+  <%= pluralize(stars[1], 'review') %>
+</span>
+<br>

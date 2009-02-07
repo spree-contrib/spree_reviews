@@ -1,0 +1,9 @@
+<% stars = product.get_stars %>
+<div class="header">
+  Average customer rating:
+  <%= image_tag("/images/stars_#{stars[0]}.gif", :width => 59, :height => 11, :border => 0, :alt => "#{pluralize(stars[0], 'star')} out of 5") %>
+  (based upon <%= pluralize(stars[1], 'review') %>)
+  <br/>
+  <br/>
+</div>
+

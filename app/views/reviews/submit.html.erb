@@ -1,0 +1,73 @@
+<h1>Product review submission</h1>
+
+<h2>Please leave us a review and a rating for our "<%= @product.name %>"</h2>
+
+<% form_for 'review', :url => {:action => 'create'} do |f| %>
+  <%= error_messages_for :review %>
+  <%= f.hidden_field :product_id, :value => @product.id %>     
+
+    <table cellspacing="0" cellpadding="2">
+	<tbody><tr valign="top">
+	    <td class="fieldtitle right nowrap">
+		<%= f.label :name, "<strong>Your name</strong>" %>
+	    </td>
+	    <td width="100%">
+		<%= f.text_field :name, :size => 50, :maxlength => 100, :value => '' %>
+	    </td>
+	</tr>
+	<tr valign="top">
+	    <td class="fieldtitle right nowrap">
+		<%= f.label :location, "<strong>Your location</strong>" %>
+	    </td>
+	    <td>
+		<%= f.text_field :location, :size => 50, :maxlength => 100, :value => '' %>
+	    </td>
+	</tr>
+	<tr valign="top">
+	    <td style="padding-top: 5px; padding-bottom: 5px;" class="fieldtitle right nowrap">
+		<strong>Rating</strong>
+	    </td>
+	    <td style="padding-top: 5px; padding-bottom: 5px;">
+              <% [1,2,3,4,5].each do |n| %>
+
+		<%= f.radio_button :rating, n %>
+		<%= f.label "rating_#{n}", image_tag("/images/stars_#{n}.gif", :width => 59, :height => 11, :border => 0, :alt => "#{pluralize(n, 'star')} out of 5") %>
+                <br/>
+
+	      <% end %> 
+	    </td>
+	</tr>
+	<tr valign="top">
+	    <td class="fieldtitle right nowrap">
+		<%= f.label :title, "<strong>Review title</strong>" %>
+	    </td>
+	    <td>
+		<%= f.text_field :title, :maxlength => "255", :size => "50", :value => '' %>
+	    </td>
+	</tr>
+	<tr valign="top">
+	    <td class="fieldtitle right nowrap">
+		<%= f.label :review, "<strong>Review text</strong>" %>
+	    </td>
+	    <td>
+		<%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
+	    </td>
+	</tr>
+	<tr>
+	    <td> </td>
+	    <td style="padding-top: 5px;">
+		<%= f.submit "Submit your review", :class => "button" %>
+	    </td>
+	</tr>
+    </tbody></table>
+<% end %>
+
+<br/>
+<h2>The fine print</h2>
+<ul>
+    <li>All submitted reviews are subject to the licence terms set out in our 
+        <%= link_to "terms and conditions", url_for(:controller => 'info', :action => 'terms') %>.
+    </li><li>Your reviews will be posted within one to two business days.
+    </li><li>Submissions that do not follow our 
+	<%= link_to "review guidelines", url_for(:controller => 'info', :action => 'review_guidelines') %> will not be published.
+</li></ul>
