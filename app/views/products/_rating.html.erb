@@ -1,7 +1,10 @@
+<%= stylesheet_link_tag 'reviews.css' %>
 <% stars = product.get_stars %>
 <div class="header">
   Average customer rating:
-  <%= image_tag("/images/stars_#{stars[0]}.gif", :width => 59, :height => 11, :border => 0, :alt => "#{pluralize(stars[0], 'star')} out of 5") %>
+  <span title="<%=pluralize(stars[0], 'star')%> out of 5">
+    <%= render :partial => "reviews/stars#{stars[0]}" %>
+  </span>
   (based upon <%= pluralize(stars[1], 'review') %>)
   <br/>
   <br/>

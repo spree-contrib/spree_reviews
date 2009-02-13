@@ -2,6 +2,7 @@
 
 <h2>Please leave us a review and a rating for our "<%= @product.name %>"</h2>
 
+<%= stylesheet_link_tag 'reviews.css' %>
 <% form_for 'review', :url => {:action => 'create'} do |f| %>
   <%= error_messages_for :review %>
   <%= f.hidden_field :product_id, :value => @product.id %>     
@@ -28,10 +29,14 @@
 		<strong>Rating</strong>
 	    </td>
 	    <td style="padding-top: 5px; padding-bottom: 5px;">
-              <% [1,2,3,4,5].each do |n| %>
+              <% (1..5).each do |n| %>
 
 		<%= f.radio_button :rating, n %>
-		<%= f.label "rating_#{n}", image_tag("/images/stars_#{n}.gif", :width => 59, :height => 11, :border => 0, :alt => "#{pluralize(n, 'star')} out of 5") %>
+		<label for="review_rating_<%= n %>">
+                  <span title="<%=pluralize(n, 'star')%> out of 5">
+                    <%= render :partial => "reviews/stars#{n}" %>
+                  </span>
+                </label>
                 <br/>
 
 	      <% end %> 

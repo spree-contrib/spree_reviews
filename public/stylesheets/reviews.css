@@ -1,0 +1,31 @@
+#reviews div.header {
+    font-size: 12pt;
+    font-weight: bold;
+    border-bottom: 1px #2222aa dashed;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#reviews div.review {
+    border-bottom: 1px #2222aa dashed;
+    margin-bottom: 10px;
+}
+#reviews div.review span.title {
+    font-size: 11pt;
+    font-weight: bold;
+}
+#reviews div.review span.attribution {
+    font-size: 8pt;
+}
+
+.lit {
+  background-color: #aaaaaa;
+  color: #0000bb;
+  margin-right: 1px;
+  padding-left: 1px;
+}
+.unlit {
+  background-color: #aaaaaa;
+  color: #000000;
+  margin-right: 1px;
+  padding-left: 1px;
+}
