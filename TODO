@@ -1,8 +1,8 @@
 
-0. admin interface!
+0. partial(s) for selecting _approved_ reviews to read
 
-1. generic stars images 
+1. REST routes needed in some places?
 
-2. partial(s) for selecting _approved_ reviews to read
+2. only accept ratings for approved reviews?
 
-3. REST routes needed
+3. allow stand alone rating values?
