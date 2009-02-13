@@ -1,0 +1,17 @@
+<%= error_messages_for :review %>
+<br />
+
+<p>
+  <%= form.text_field :name, :size => 30 %>
+</p>
+<p>
+  <%= form.text_field :location, :size => 50 %>
+</p>
+<p>
+  <%= form.text_area :review, :cols => 60, :rows => 10 %>
+</p>
+<br/>
+<p>
+  <%= form.submit button_name %>
+</p>
+

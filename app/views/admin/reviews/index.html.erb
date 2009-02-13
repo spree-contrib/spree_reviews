@@ -1,0 +1,39 @@
+<h1>Manage the unapproved reviews</h1>
+
+<table cellspacing=6>
+  <tr>
+    <th>Date</th>
+    <th>User/Loc</th>
+    <th>Title / Product</th>
+    <th>Body</th>
+  </tr>
+
+<% for review in @reviews %>
+  <tr>
+    <td> 
+      <%= review.created_at.strftime("%d-%m-%y (%H:%M)") %>
+    </td>
+    <td> 
+      <%= h review.name %> from <%= h review.location %>
+    </td>
+    <td>
+      <%= h review.title %>
+      <br/>
+      for <%= link_to review.product.name, product_path(review.product) %>
+    </td>
+    <td style="border: 1px dashed green" width="60%">
+      <br/>
+      <%= h review.review %>
+    </td>
+    <td>
+        <%= link_to t('approve'), {:action => 'approve', :id => review} %> |
+        <%= link_to t('edit'), [:edit, :admin, review] %> |
+        <%= link_to t('destroy'), [:admin, review], :method => :delete, :confirm => t('are_you_sure_review') %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to t('back_reviews'), admin_blog_entries_path %>
+

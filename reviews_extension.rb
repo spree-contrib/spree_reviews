@@ -3,17 +3,25 @@
 
 class ReviewsExtension < Spree::Extension
   version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/reviews"
+  description "Support for reviews and ratings within Spree"
+  url "git://github.com/paulcc/spree-reviews.git"
 
-  # define_routes do |map|
-  #   map.namespace :admin do |admin|
-  #     admin.resources :whatever
-  #   end  
-  # end
+  define_routes do |map|
+    map.namespace :admin do |admin|
+      admin.resources :reviews
+    end  
+  end
   
   def activate
     # admin.tabs.add "Reviews", "/admin/reviews", :after => "Layouts", :visibility => [:all]
+
+    Admin::ConfigurationsController.class_eval do
+      before_filter :add_review_links, :only => :index
+
+      def add_review_links
+        @extension_links << {:link => admin_reviews_path, :link_text => t('review_management'), :description => t('review_management_description')}
+      end
+    end
 
     # Add access to reviews/ratings to the product model
     Product.class_eval do
