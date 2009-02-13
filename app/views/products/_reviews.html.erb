@@ -1,0 +1,9 @@
+<div id="reviews">
+  <%= render :partial => 'rating', :locals => {:product => product} %>
+  <% for review in Review.find_all_by_product_id(product.id) %>
+    <%= render :partial => 'review', :locals => {:review => review} %>
+  <% end %>
+
+  <%= button_to t('write_your_own_review'), {:controller => 'reviews', :action => 'submit', :id => product.id}, :class => 'button' %>
+</div>
+

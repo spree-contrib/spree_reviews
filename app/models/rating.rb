@@ -1,4 +1,5 @@
 class Rating < ActiveRecord::Base
+  belongs_to :product
   def add_rating(n)
     self.value = value * count + n
     self.count = count + 1
