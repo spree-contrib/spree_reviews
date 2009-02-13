@@ -1,0 +1,16 @@
+t1:
+  product: ror_jr_spaghetti
+  value: 3.56
+  count: 20
+t2:
+  product: ror_bag
+  value: 2.56
+  count: 30
+t3:
+  product: ror_tote
+  value: 3.94
+  count: 10
+t4:
+  product: apache_baseball_jersey
+  value: 1.49
+  count: 6

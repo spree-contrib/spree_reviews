@@ -1,0 +1,33 @@
+r1: 
+  product: ror_tote
+  name: paul
+  location: here
+  rating: 4
+  title: "more uses for this item"
+  review: "you can put four books in this bag"
+  approved: true
+r2: 
+  product: ror_tote
+  name: paul
+  location: here
+  rating: 3
+  title: "further comments"
+  review: "some more observations about this thing"
+  approved: false
+r3: 
+  product: ror_ringer
+  name: jack
+  location: here
+  rating: 4
+  title: "essential wear"
+  review: "just the thing for the well-dressed programmer!"
+  approved: false
+r4: 
+  product: apache_baseball_jersey
+  name: bill
+  location: here
+  rating: 2
+  title: "not impressed"
+  review: "I was expecting this jersey to be faster"
+  approved: true
+
