@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
 
   private
   def require_user_account
-    return if logged_in?
+    return if current_user
     store_location
     redirect_to signup_path
   end
