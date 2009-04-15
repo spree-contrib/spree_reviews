@@ -1,6 +1,6 @@
 <h1>Product review submission</h1>
 
-<h2>Please leave us a review and a rating for our "<%= @product.name %>"</h2>
+<h2> <%= t('please_leave_review_for') + ' ' + @product.name %>"</h2>
 
 <%= stylesheet_link_tag 'reviews.css' %>
 <% form_for 'review', :url => {:action => 'create'} do |f| %>
