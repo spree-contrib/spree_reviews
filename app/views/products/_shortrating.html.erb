@@ -1,4 +1,6 @@
-<%= stylesheet_link_tag 'reviews.css' %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'reviews.css' %>
+<% end %>
 <% stars = product.get_stars %>
 <span style="float:left;" title="<%=pluralize(stars[0], 'star')%> out of 5">
   <%= render :partial => "reviews/stars#{stars[0]}" %>

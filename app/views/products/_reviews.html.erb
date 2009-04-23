@@ -1,4 +1,6 @@
-<%= stylesheet_link_tag 'reviews.css' %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'reviews.css' %>
+<% end %>
 <div id="reviews">
   <%= render :partial => 'rating', :locals => {:product => product} %>
   <% for review in Review.approved.find_all_by_product_id(product.id) %>

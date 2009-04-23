@@ -1,4 +1,6 @@
-<%= stylesheet_link_tag 'reviews.css' %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'reviews.css' %>
+<% end %>
 <% stars = product.get_stars %>
 <div class="header">
   Average customer rating:
