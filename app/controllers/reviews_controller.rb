@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   helper Spree::BaseHelper
-  before_filter :require_user_account	# no reviews without login first
+  before_filter :require_user	# no reviews without login first
 
   def submit
     @review = Review.new :product_id => params[:id]
@@ -23,12 +23,4 @@ class ReviewsController < ApplicationController
       render :action => "submit" 
     end
   end
-
-  private
-  def require_user_account
-    return if current_user
-    store_location
-    redirect_to signup_path
-  end
-
 end
