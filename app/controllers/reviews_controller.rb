@@ -1,5 +1,5 @@
-class ReviewsController < ApplicationController
-  helper Spree::BaseHelper
+class ReviewsController < Spree::BaseController
+  # helper Spree::BaseHelper
   before_filter :require_user	# no reviews without login first
 
   def submit
