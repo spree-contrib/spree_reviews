@@ -8,9 +8,8 @@
     name  = "review[rating]" 
   else  
     state = 'disabled="disabled"' 
-    name  = defined? review ? "review_#{review}" : "the_review" 
+    name  = defined?(review).nil? ? Time.now.tv_usec.to_s : "review_#{review}" 
   end %>
-
 <% for i in 1..Rating.get_nb_stars %>
   <input name="<%= name %>" 
          type="radio" class="star" 
