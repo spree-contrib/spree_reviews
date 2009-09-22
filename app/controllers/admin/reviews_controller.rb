@@ -18,8 +18,18 @@ class Admin::ReviewsController < Admin::BaseController
 
   def approve
     r = Review.find(params[:id])
+
     r.approved = true
-    r.save
+    if r.product.rating.nil? 
+      r.product.rating = Rating.create :value => 0, :count => 0
+    end
+    r.product.rating.add_rating(r.rating)
+
+    if r.save
+       flash[:notice] = t("info_approve_review")
+    else
+       flash[:error] = t("error_approve_review")
+    end
     redirect_to admin_reviews_path
   end
 

@@ -1,0 +1,22 @@
+<% content_for :head do %>
+  <%= javascript_include_tag("jquery.rating.js") %>
+  <%= javascript_tag("$(document).ready(function(){$('.stars').rating({required:true});});") %>
+<% end %>
+
+<% if defined? edit_enabled 
+    state = "" 
+    name  = "review[rating]" 
+  else  
+    state = 'disabled="disabled"' 
+    name  = defined? review ? "review_#{review}" : "the_review" 
+  end %>
+
+<% for i in 1..Rating.get_nb_stars %>
+  <input name="<%= name %>" 
+         type="radio" class="star" 
+         value="<%= pluralize(i, 'star') %>" <%= state %> 
+         <%= "checked=\"checked\"" if i==stars  %> />
+<% end %>
+
+
+

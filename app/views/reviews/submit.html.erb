@@ -3,9 +3,9 @@
 <% end %>
 <h1>Product review submission</h1>
 
-<h2> <%= t('please_leave_review_for') + ' "' + @product.name + '"' %> </h2>
+<h2> <%= t('leave_us_a_review') + ' "' + @product.name + '"' %> </h2>
 
-<% form_for 'review', :url => {:action => 'create'} do |f| %>
+<% form_for @review, :url => {:action => 'create'} do |f| %>
   <%= error_messages_for :review %>
   <%= f.hidden_field :product_id, :value => @product.id %>     
 
@@ -15,7 +15,7 @@
 		<%= f.label :name, "<strong>Your name</strong>" %>
 	    </td>
 	    <td width="100%">
-		<%= f.text_field :name, :size => 50, :maxlength => 100, :value => '' %>
+              <%= f.text_field :name, :size => 50, :maxlength => 100 %>
 	    </td>
 	</tr>
 	<tr valign="top">
@@ -23,7 +23,7 @@
 		<%= f.label :location, "<strong>Your location</strong>" %>
 	    </td>
 	    <td>
-		<%= f.text_field :location, :size => 50, :maxlength => 100, :value => '' %>
+              <%= f.text_field :location, :size => 50, :maxlength => 100 %>
 	    </td>
 	</tr>
 	<tr valign="top">
@@ -31,17 +31,7 @@
 		<strong>Rating</strong>
 	    </td>
 	    <td style="padding-top: 5px; padding-bottom: 5px;">
-              <% (1..5).each do |n| %>
-
-		<%= f.radio_button :rating, n %>
-		<label for="review_rating_<%= n %>">
-                  <span title="<%=pluralize(n, 'star')%> out of 5">
-                    <%= render :partial => "reviews/stars#{n}" %>
-                  </span>
-                </label>
-                <br/>
-
-	      <% end %> 
+              <%= render :partial => "reviews/stars", :locals => {:stars => @review.rating, :edit_enabled => true} %>
 	    </td>
 	</tr>
 	<tr valign="top">
@@ -49,7 +39,7 @@
 		<%= f.label :title, "<strong>Review title</strong>" %>
 	    </td>
 	    <td>
-		<%= f.text_field :title, :maxlength => "255", :size => "50", :value => '' %>
+            <%= f.text_field :title, :maxlength => "255", :size => "50" %>
 	    </td>
 	</tr>
 	<tr valign="top">

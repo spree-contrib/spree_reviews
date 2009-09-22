@@ -1,7 +1,17 @@
 class ReviewsController < Spree::BaseController
-  # helper Spree::BaseHelper
-  before_filter :require_user	# no reviews without login first
+  helper Spree::BaseHelper
+  require_role [:user,:admin], :only => [:submit,:create]
 
+  def index
+    if params[:product_id]
+      @product = Product.find_by_id params[:product_id]
+    else
+      @product = Product.find_by_id params[:id]
+    end
+     @reviews=@product.reviews
+  end
+
+  # 
   def submit
     @review = Review.new :product_id => params[:id]
     @product = Product.find_by_id params[:id]
@@ -13,13 +23,10 @@ class ReviewsController < Spree::BaseController
     @product = Product.find_by_id params[:review][:product_id]
 
     if @review.update_attributes(params[:review]) 
-      if @product.rating.nil? 
-        @product.rating = Rating.create :value => 0, :count => 0
-      end
-      @product.rating.add_rating(params[:review][:rating].to_i)
       flash[:notice] = 'Review was successfully submitted.'
       redirect_to (product_path(@product))
     else
+      flash[:notice] = 'There was a problem in the submitted review'
       render :action => "submit" 
     end
   end

@@ -3,7 +3,7 @@
 <% end %>
 <% stars = product.get_stars %>
 <span style="float:left;" title="<%=pluralize(stars[0], 'star')%> out of 5">
-  <%= render :partial => "reviews/stars#{stars[0]}" %>
+  <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
 </span>
 <span style="float:right;">
   <%= pluralize(stars[1], 'review') %>

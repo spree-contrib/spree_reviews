@@ -2,12 +2,12 @@
   <%= stylesheet_link_tag 'reviews.css' %>
 <% end %>
 <% stars = product.get_stars %>
-<div class="header">
-  Average customer rating:
-  <span title="<%=pluralize(stars[0], 'star')%> out of 5">
-    <%= render :partial => "reviews/stars#{stars[0]}" %>
-  </span> &nbsp;
+<div class="header clear">
+  Average customer rating: 
   (based upon <%= pluralize(stars[1], 'review') %>)
+  <span title="<%=pluralize(stars[0], 'star')%> out of 5">
+    <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
+  </span> &nbsp;
   <br/>
   <br/>
 </div>

@@ -1,14 +1,14 @@
-<h1>Manage the unapproved reviews</h1>
+<h1><%= t('review_management_description') %></h1>
 
 <table cellspacing=6>
   <tr>
     <th>Date</th>
-    <th>User/Loc</th>
-    <th>Title / Product</th>
-    <th>Body</th>
+    <th><%= t('user') %></th>
+    <th><%= t('review_title') %> / <%= t('product') %></th>
+    <th><%= t('review_content') %></th>
   </tr>
 
-<% for review in @reviews %>
+  <% for review in @reviews.sort_by {|r| [r.approved.to_s, r.created_at]} %>
   <tr>
     <td> 
       <%= review.created_at.strftime("%d-%m-%y (%H:%M)") %>
@@ -26,7 +26,9 @@
       <%= h review.review %>
     </td>
     <td>
+      <% unless review.approved %>
         <%= link_to t('approve'), {:action => 'approve', :id => review} %> |
+      <% end %>
         <%= link_to t('edit'), [:edit, :admin, review] %> |
         <%= link_to t('destroy'), [:admin, review], :method => :delete, :confirm => t('are_you_sure_review') %>
     </td>

@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag 'reviews.css' %>
 <% end %>
 <div id="reviews">
-  <%= render :partial => 'rating', :locals => {:product => product} %>
+  <%= render :partial => 'rating', :locals => {:product => product, :review => 0} %>
   <% for review in Review.approved.find_all_by_product_id(product.id) %>
     <%= render :partial => 'review', :locals => {:review => review} %>
   <% end %>

@@ -6,5 +6,6 @@ class Review < ActiveRecord::Base
 
   named_scope :approved,     lambda {|*args| {:conditions => "approved"}}   
   named_scope :not_approved, lambda {|*args| {:conditions => "not approved"}} 
+  named_scope :preview,      :limit=>3, :order=>"created_at desc"
 
 end
