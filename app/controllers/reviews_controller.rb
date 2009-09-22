@@ -21,12 +21,13 @@ class ReviewsController < Spree::BaseController
   def create
     @review = Review.new :product_id => params[:id]
     @product = Product.find_by_id params[:review][:product_id]
+    params[:review][:rating].sub!(/\s*stars/,'')
 
     if @review.update_attributes(params[:review]) 
       flash[:notice] = 'Review was successfully submitted.'
       redirect_to (product_path(@product))
     else
-      flash[:notice] = 'There was a problem in the submitted review'
+      # flash[:notice] = 'There was a problem in the submitted review'
       render :action => "submit" 
     end
   end
