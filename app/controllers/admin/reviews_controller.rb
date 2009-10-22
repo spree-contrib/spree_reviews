@@ -5,7 +5,8 @@ class Admin::ReviewsController < Admin::BaseController
   resource_controller
 
   index.before do 
-    @reviews = Review.not_approved.find(:all, :order => "created_at DESC")
+    @unapproved_reviews = Review.not_approved.find(:all, :order => "created_at DESC")
+    @approved_reviews   = Review.approved.find(:all, :order => "created_at DESC")
   end
 
   create.response do |wants|
