@@ -1,34 +1,29 @@
 class ReviewsController < Spree::BaseController
   helper Spree::BaseHelper
-  require_role [:user,:admin], :only => [:submit,:create]
+  require_role [:user,:admin], :only => [:new,:create]
 
   def index
-    if params[:product_id]
-      @product = Product.find_by_id params[:product_id]
-    else
-      @product = Product.find_by_id params[:id]
-    end
-     @reviews=@product.reviews
+    @product = Product.find_by_permalink params[:product_id]
+    @approved_reviews = Review.approved.find_all_by_product_id(@product.id) 
   end
 
-  # 
-  def submit
-    @review = Review.new :product_id => params[:id]
-    @product = Product.find_by_id params[:id]
+  def new
+    @product = Product.find_by_permalink params[:product_id] 
+    @review = Review.new :product => @product
   end
 
   # save if all ok
   def create
-    @review = Review.new :product_id => params[:id]
-    @product = Product.find_by_id params[:review][:product_id]
-    params[:review][:rating].sub!(/\s*stars/,'')
+    @product = Product.find_by_permalink params[:product_id]
+    params[:review][:rating].sub!(/\s*stars/,'') unless params[:review][:rating].blank?
 
+    @review = Review.new :product => @product
     if @review.update_attributes(params[:review]) 
       flash[:notice] = 'Review was successfully submitted.'
       redirect_to (product_path(@product))
     else
       # flash[:notice] = 'There was a problem in the submitted review'
-      render :action => "submit" 
+      render :action => "new" 
     end
   end
 end

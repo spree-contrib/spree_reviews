@@ -6,12 +6,6 @@ class ReviewsExtension < Spree::Extension
   description "Support for reviews and ratings within Spree"
   url "git://github.com/paulcc/spree-reviews.git"
 
-  define_routes do |map|
-    map.namespace :admin do |admin|
-      admin.resources :reviews
-    end  
-  end
-  
   def activate
     # admin.tabs.add "Reviews", "/admin/reviews", :after => "Layouts", :visibility => [:all]
 
