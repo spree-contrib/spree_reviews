@@ -1,9 +1,10 @@
+<%# provisional snapshot of review info %>
 <% content_for :head do %>
   <%= stylesheet_link_tag 'reviews.css' %>
 <% end %>
 <div id="reviews">
   <%= render :partial => 'shared/rating', :locals => {:product => @product, :review => 0} %>
-  <% for review in @product.reviews.approved %>
+  <% for review in @product.reviews.approved.preview %>
     <%= render :partial => 'shared/review', :locals => {:review => review} %>
   <% end %>
 
