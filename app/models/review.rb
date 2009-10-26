@@ -6,7 +6,10 @@ class Review < ActiveRecord::Base
 
   named_scope :approved,     lambda {|*args| {:conditions => "approved = 't'"}}   
   named_scope :not_approved, lambda {|*args| {:conditions => "approved = 'f'"}} 
-  named_scope :oldest_first, :order=>"created_at desc"
-  named_scope :preview,      :limit=>3, :order=>"created_at desc"
+
+  named_scope :approval_filter, lambda {|*args| {:conditions => ["(? = 't') || (approved = 't')", Spree::Reviews::Config[:include_unapproved_reviews]]}} 
+
+  named_scope :oldest_first, :order => "created_at asc"
+  named_scope :preview,      :limit => Spree::Reviews::Config[:preview_size], :order=>"created_at desc"
 
 end

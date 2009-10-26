@@ -4,7 +4,7 @@
 <% end %>
 <div id="reviews">
   <%= render :partial => 'shared/rating', :locals => {:product => @product, :review => 0} %>
-  <% for review in @product.reviews.approved.preview %>
+  <% for review in @product.reviews.approval_filter.preview %>
     <%= render :partial => 'shared/review', :locals => {:review => review} %>
   <% end %>
 
