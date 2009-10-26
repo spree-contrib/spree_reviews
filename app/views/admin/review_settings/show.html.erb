@@ -1,0 +1,18 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("reviews.review_settings") %></h1>
+
+<table>
+  <tr>
+    <th scope="row"><%= t("reviews.include_unapproved") %>:</th>
+    <td><%= Spree::Reviews::Config[:include_unapproved_reviews] %></td>
+  </tr>
+  <tr>
+    <th scope="row"><%= t("reviews.preview_size") %>:</th>
+    <td><%=  Spree::Reviews::Config[:preview_size] %></td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to_with_icon('edit', t("edit"), edit_admin_review_settings_path) %>
+</p>

@@ -13,3 +13,9 @@ en-GB:
   submit_your_review: Submit your review
   review_content: Content
   review_title: Title
+  reviews:
+    review_settings: Review Settings
+    manage_review_settings: Control the display of reviews
+    preview_size: Size of the review snippets
+    include_unapproved: Include unapproved reviews in listings
+

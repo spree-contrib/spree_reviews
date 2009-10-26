@@ -14,6 +14,7 @@ class ReviewsExtension < Spree::Extension
 
       def add_review_links
         @extension_links << {:link => admin_reviews_path, :link_text => t('review_management'), :description => t('review_management_description')}
+        @extension_links << {:link => admin_review_settings_path, :link_text => t('reviews.review_settings'), :description => t('reviews.manage_review_settings') }
       end
     end
 
