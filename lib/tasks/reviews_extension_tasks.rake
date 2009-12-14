@@ -1,4 +1,4 @@
-require 'activerecord' 
+require 'active_record' 
 
 namespace :db do
   desc "Bootstrap your database for Spree."
