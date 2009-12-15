@@ -1,80 +1,59 @@
-<% def pick(*a)
-     a[rand(a.count)]
-   end
-%> 
+<% 
+require 'faker'
+%>
 r1: 
   product: ror_tote
-  name: paul
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: here
   rating: 4
   title: "more uses for this item"
-  review: "Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros."
+  review: <%= Faker::Lorem.paragraph %>
   approved: true
 r2: 
   product: ror_tote
-  name: paul
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: here
   rating: 3
   title: "further comments"
-  review: "Nullam volutpat magna vel ligula. Suspendisse sit amet metus."
+  review: <%= Faker::Lorem.paragraph %>
   approved: false
 r3: 
   product: ror_ringer
-  name: jack
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: here
   rating: 4
   title: "essential wear"
-  review: "just the thing for the well-dressed programmer!"
+  review: <%= Faker::Lorem.paragraph %>
   approved: false
 r4: 
   product: apache_baseball_jersey
-  name: bill
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: here
   rating: 2
   title: "not impressed"
-  review: "Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam."
+  review: <%= Faker::Lorem.paragraph %>
   approved: true
 r5: 
   product: ror_ringer
-  name: chris
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: an office
   rating: 5
   title: "I have one for every day of the week"
-  review: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas"
+  review: <%= Faker::Lorem.paragraph %>
   approved: true
 r6: 
   product: ror_ringer
-  name: jack
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: here
   rating: 4
   title: "cooler than my toga"
-  review: "Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros."
+  review: <%= Faker::Lorem.paragraph %>
   approved: true
 r7: 
   product: ror_ringer
-  name: sarah
+  name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
   location: emerald city
   rating: 2
   title: "my other half didn't like it"
-  review: "Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam."
+  review: <%= Faker::Lorem.paragraph %>
   approved: false
-
-<% %w[ ror_tote ror_bag ror_baseball_jersey ror_jr_spaghetti ror_mug ror_ringer ror_stein ruby_baseball_jersey apache_baseball_jersey ].each do |item| %>
-r_<%=item%>_A:
-  product: <%= item %>
-  name: <%= pick *%w[andy bob charlie] %>
-  location: <%= pick *%w[london paris tokyo washington] %>
-  rating: <%= pick *%w[1 2 3 4 5] %>
-  title: <%= pick "I like", "I dislike" %> the product
-  review: "Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio."
-  approved: <%= pick true, false %>
-r_<%=item%>_B:
-  product: <%= item %>
-  name: <%= pick *%w[zoe yvonne wendy] %>
-  location: <%= pick *%w[denver ontario berlin] %>
-  rating: <%= pick *%w[1 2 3 4 5] %>
-  title: <%= pick "I would buy", "I would not buy" %> this again
-  review: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat."
-  approved: <%= pick true, false %>
-<% end %>
-
