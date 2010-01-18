@@ -1,0 +1,23 @@
+ru-RU:
+  write_your_own_review: Оставьте свой отзыв
+  review_management: Управление отзывами
+  review_management_description: Управляйте отзывами покупателей
+  back_reviews: Назад к отзывам
+  are_you_sure_review: Вы уверены, что хотите удалить отзыв?
+  info_approve_review: Отзыв одобрен
+  error_approve_review: Ошибка при одобрении отзыва
+  approve: Одобрить
+  leave_us_a_review_for: Пожалуйста, оставьте отзыв и оценку для
+  review_successfully_submitted: Ваш отзыв был успешно отправлен
+  rating: Оценка
+  submit_your_review: Оставить отзыв
+  review_content: Содержание
+  review_title: Заголовок
+  reviews:
+    review_settings: Настройки отзывов покупателей
+    manage_review_settings: Control the display of reviews
+    preview_size: Size of the review snippets
+    include_unapproved: Включать неодобренные пока отзывы в список
+    your_name: Ваше имя
+    your_location: Город
+
