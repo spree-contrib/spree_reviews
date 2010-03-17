@@ -13,7 +13,7 @@
 <% for i in 1..Rating.get_nb_stars %>
   <input name="<%= name %>" 
          type="radio" class="star" 
-         value="<%= pluralize(i, 'star') %>" <%= state %> 
+         value="<%= pluralize(i, 'stars') %>" <%= state %> 
          <%= "checked=\"checked\"" if i==stars  %> />
 <% end %>
 
