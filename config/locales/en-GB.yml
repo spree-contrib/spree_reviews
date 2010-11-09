@@ -8,7 +8,7 @@ en-GB:
   error_approve_review: Error approving review
   approve: Approve
   leave_us_a_review: Please leave us a review and a rating for our
-  review_successfully_sumbitted: Review was successfully submitted
+  review_successfully_submitted: Review was successfully submitted
   rating: rating
   submit_your_review: Submit your review
   review_content: Content
@@ -18,4 +18,6 @@ en-GB:
     manage_review_settings: Control the display of reviews
     preview_size: Size of the review snippets
     include_unapproved: Include unapproved reviews in listings
+    your_name: Your name
+    your_location: Your location
 
