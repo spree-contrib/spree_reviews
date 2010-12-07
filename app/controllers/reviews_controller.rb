@@ -1,6 +1,5 @@
 class ReviewsController < Spree::BaseController
   helper Spree::BaseHelper
-  require_role [:user,:admin], :only => [:new,:create]
 
   def index
     @product = Product.find_by_permalink params[:product_id]
@@ -25,5 +24,7 @@ class ReviewsController < Spree::BaseController
       # flash[:notice] = 'There was a problem in the submitted review'
       render :action => "new" 
     end
+  end
+  def terms
   end
 end

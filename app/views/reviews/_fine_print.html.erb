@@ -1,10 +1,7 @@
-
 <br/>
-<h2>The fine print</h2>
+<h2><%= t('the_fine_print') %></h2>
 <ul>
-    <li>All submitted reviews are subject to the licence terms set out in our 
-        <%= link_to "terms and conditions", url_for(:action => 'terms') %>.
-    </li><li>Approved reviews will be posted within one to two business days.
-    </li><li>Submissions that do not follow our 
-	<%= link_to "review guidelines", url_for(:action => 'submission-guidelines') %> will not be published.
-</li></ul>
+    <li><%= t('terms_text') %>: <%= link_to t("terms and conditions"), url_for(:action => 'terms') %></li>
+    <li><%= t('approved_text') %></li>
+    <li><%= t('guideline_text') %>: <%= link_to t("review guidelines"), url_for(:action => 'submissionguidelines') %></li>
+</ul>

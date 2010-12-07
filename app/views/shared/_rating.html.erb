@@ -3,7 +3,7 @@
 <% end %>
 <% stars = product.get_stars %>
 <div class="header clear">
-  Average customer rating: 
+  <%=t 'average_customer_rating' %>: 
   (based upon <%= pluralize(stars[1], 'review') %>)
   <span title="<%=pluralize(stars[0], 'star')%> out of 5">
     <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>

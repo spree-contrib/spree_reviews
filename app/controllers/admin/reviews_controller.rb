@@ -33,5 +33,4 @@ class Admin::ReviewsController < Admin::BaseController
     end
     redirect_to admin_reviews_path
   end
-
 end

@@ -1,11 +1,15 @@
+Rails.application.routes.draw do
+  namespace :admin do
+    resources :reviews
+    resource :review_settings
+  end
 
-
-map.namespace :admin do |admin|
-  admin.resources :reviews
-  admin.resource :review_settings
+  resources :products do
+    resources :reviews do
+      collection do
+        get :terms
+        get "submissionguidelines"
+      end
+    end
+  end
 end
-
-map.resources :products do |product|
-  product.resources :reviews # , :member => {:submit => :post}
-end
-
