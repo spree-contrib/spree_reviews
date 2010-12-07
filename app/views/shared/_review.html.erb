@@ -4,7 +4,7 @@
   </span>
   &nbsp; <span class="title"><%=h review.title%> </span>
   <br/>
-  <span class="attribution">By <strong><%=h review.name%></strong> from <strong><%=h review.location%></strong> on <strong><%=review.created_at.strftime("%d/%m/%Y") %></strong></span>
+  <span class="attribution"><%= t('by') %> <strong><%=h review.name%></strong> <%= t('from')%> <strong><%=h review.location%></strong> <%= t 'on' %> <strong><%= l review.created_at.to_date%></strong></span>
   <p>
   <%=h review.review%>
   </p>

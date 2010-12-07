@@ -27,3 +27,14 @@ de:
   guideline_text: Meinungen die unseren den verlinkten Richtlinen nicht genügen werden nicht veröffentlicht
   "terms and conditions": Bedingungen
   "review guidelines": Richtlinien
+  date_: Datum
+  for: über
+  Unapproved_reviews: Nicht freigeschaltete Meinungen
+  Approved_reviews: Freigeschaltete Meinungen
+  from: aus
+  by: Von
+  on: am
+  based_upon: basiert auf
+  review:
+    one: einer Bewertung
+    other: %{count} Bewertungen
