@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root :to => ""
   namespace :admin do
     resources :reviews do
       member do
