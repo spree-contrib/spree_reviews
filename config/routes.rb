@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root :to => ""
   namespace :admin do
     resources :reviews do
-       member do
-         get :approve
+      member do
+        get :approve
       end
     end
     resource :review_settings
