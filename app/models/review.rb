@@ -3,7 +3,7 @@ class Review < ActiveRecord::Base
 
   validates_presence_of :title, :review
   validates_numericality_of :rating, :only_integer => true
-
+  default_scope order("reviews.created_at DESC")
   scope :approved,  where("approved = ?", true)
   scope :not_approved, where("approved = ?", false)
 
