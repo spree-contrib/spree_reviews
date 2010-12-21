@@ -6,8 +6,8 @@
 <h2> <%= t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
 
 <% form_for @review, :url => {:action => 'create'} do |f| %>
-<%= error_messages_for :review %>
-<%= f.hidden_field :product_id, :value => @product.id %>     
+<%= render "shared/error_messages", :target => @review %>
+<%= f.hidden_field :product_id, :value => @product.id %>
 
 <table cellspacing="0" cellpadding="2">
   <tbody>
