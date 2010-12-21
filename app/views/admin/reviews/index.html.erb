@@ -5,19 +5,19 @@
 
   <table cellspacing=6>
     <tr>
-      <th><%= t('date_') %></th>
+      <th><%= t('date_review') %></th>
       <th><%= t('user') %></th>
       <th><%= t('review_title') %> / <%= t('product') %></th>
       <th><%= t('review_content') %></th>
     </tr>
-  
+
     <% for review in reviews[1] %>
     <tr>
-      <td> 
+      <td>
         <%= l review.created_at %>
       </td>
-      <td> 
-        <%= h review.name %> <%= t('from') %> <%= h review.location %>
+      <td>
+        <%= review.name %><%= t('from') %> <%= review.location %>
       </td>
       <td>
         <%= h review.title %>
@@ -38,5 +38,5 @@
     </tr>
   <% end %>
   </table>
-  <br/> 
-<% end %> 
+  <br/>
+<% end %>

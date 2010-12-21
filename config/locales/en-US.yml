@@ -13,6 +13,9 @@ en:
   submit_your_review: Submit your review
   review_content: Content
   review_title: Title
+  Unapproved_reviews: Unapproved
+  Approved_reviews: Approved
+  date_review: Date
   reviews:
     review_settings: Review Settings
     manage_review_settings: Control the display of reviews
