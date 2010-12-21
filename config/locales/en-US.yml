@@ -7,15 +7,12 @@ en:
   info_approve_review: Review approved
   error_approve_review: Error approving review
   approve: Approve
-  leave_us_a_review: Please leave us a review and a rating for our
+  leave_us_a_review_for: Please leave us a review and a rating for our
   review_successfully_submitted: Review was successfully submitted
   rating: rating
   submit_your_review: Submit your review
   review_content: Content
   review_title: Title
-  Unapproved_reviews: Unapproved
-  Approved_reviews: Approved
-  date_review: Date
   reviews:
     review_settings: Review Settings
     manage_review_settings: Control the display of reviews
@@ -23,4 +20,22 @@ en:
     include_unapproved: Include unapproved reviews in listings
     your_name: Your name
     your_location: Your location
+  average_customer_rating: Average rating
+  the_fine_print: The fine print
+  terms_text: All opinions must comply with our terms and conditions
+  approved_text: Unlocked comments will be published within 1-2 business days.
+  guideline_text: We reserve the right not to post opinions unrelated to your product
+  "terms and conditions": Terms & Conditions
+  "review guidelines": Review Guidelines
+  date_: Date
+  for: for
+  Unapproved_reviews: Unapproved
+  Approved_reviews: Approved
+  from: from
+  by: by
+  submitted_on: Submitted on
+  based_upon: based upon
+  review:
+    one: one review
+    other: %{count} reviews
 

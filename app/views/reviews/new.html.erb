@@ -3,7 +3,7 @@
 <% end %>
 <!-- <h1>Product review submission</h1> -->
 
-<h2> <%= t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
+<h2> <%= I18n.t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
 
 <% form_for @review, :url => {:action => 'create'} do |f| %>
 <%= render "shared/error_messages", :target => @review %>
@@ -21,7 +21,7 @@
     </tr>
     <tr valign="top">
       <td class="fieldtitle right nowrap">
-    	<%= f.label :title, "<strong>#{ I18n.t('review_title')}</strong>".html_safe %>
+    	<%= f.label :title, raw("<strong>#{ I18n.t('review_title')}</strong>") %>
       </td>
       <td>
         <%= f.text_field :title, :maxlength => "255", :size => "50" %>
@@ -29,7 +29,7 @@
     </tr>
     <tr valign="top">
       <td class="fieldtitle right nowrap">
-    	<%= f.label :review, "<strong>#{ I18n.t('review_content')}</strong>".html_safe %>
+    	<%= f.label :review, raw("<strong>#{ I18n.t('review_content')}</strong>") %>
       </td>
       <td>
     	<%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
