@@ -5,7 +5,7 @@
 
 <h2> <%= I18n.t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
 
-<% form_for @review, :url => {:action => 'create'} do |f| %>
+<%= form_for @review, :url => {:action => 'create'} do |f| %>
 <%= render "shared/error_messages", :target => @review %>
 <%= f.hidden_field :product_id, :value => @product.id %>
 

@@ -1,0 +1,7 @@
+<% if @feedback_review.valid? %>
+$("div#feedback_review_<%= @review.id %>").html("<%= escape_javascript(render(:partial => "feedback_reviews/summary", :locals => {:review => @review})) %>");
+<% else %>
+$("div#feedback_review_<%= @review.id %>").html("<%= escape_javascript(render(:partial => "feedback_reviews/form", :locals => {:review => @review})) %>");
+
+<% end %>
+$(document).ready(function(){$("div#feedback_review_<%= @review.id %>").find(".star").rating({required:true});});

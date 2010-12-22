@@ -1,5 +1,6 @@
 class Review < ActiveRecord::Base
   belongs_to :product
+  has_many   :feedback_reviews
 
   validates_presence_of :title, :review
   validates_numericality_of :rating, :only_integer => true
@@ -12,4 +13,8 @@ class Review < ActiveRecord::Base
   scope :oldest_first, :order => "created_at asc"
   scope :preview,      :limit => Spree::Reviews::Config[:preview_size], :order=>"created_at desc"
 
+  def feedback_stars
+    return 0 if feedback_reviews.count <= 0
+    ((feedback_reviews.sum(:rating)/feedback_reviews.count) + 0.5).floor
+  end
 end

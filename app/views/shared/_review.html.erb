@@ -8,4 +8,7 @@
   <p>
   <%=h review.review%>
   </p>
+  <div id="feedback_review_<%= review.id %>">
+    <%= render :partial => "feedback_reviews/form", :locals => {:review => review} %>
+  </div>
 </div>
