@@ -39,3 +39,6 @@ en:
     one: one review
     other: %{count} reviews
 
+  feedback: Feedback
+  stars: Stars
+  feedback_review_for: "Review: '%{review}'"

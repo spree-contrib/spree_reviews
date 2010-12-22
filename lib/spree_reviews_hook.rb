@@ -5,9 +5,11 @@ class SpreeReviewsHooks < Spree::ThemeSupport::HookListener
   end
 
   insert_after :admin_product_sub_tabs do
-    %(<%= tab(:reviews, :label => 'review_management') %>)
+    %(
+       <%= tab(:reviews, :label => 'review_management') %>
+     )
   end
-  
+
   insert_after :admin_configurations_menu do
     %(<%= configurations_menu_item(t('reviews.review_settings'), admin_review_settings_path, t('reviews.manage_review_settings')) %>)
   end
