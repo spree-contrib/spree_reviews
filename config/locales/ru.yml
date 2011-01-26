@@ -1,4 +1,4 @@
-ru-RU:
+ru:
   write_your_own_review: Оставьте свой отзыв
   review_management: Управление отзывами
   review_management_description: Управляйте отзывами покупателей
@@ -20,4 +20,28 @@ ru-RU:
     include_unapproved: Включать неодобренные пока отзывы в список
     your_name: Ваше имя
     your_location: Город
+  average_customer_rating: Average rating
+  the_fine_print: The fine print
+  terms_text: All opinions must comply with our terms and conditions
+  approved_text: Unlocked comments will be published within 1-2 business days.
+  guideline_text: We reserve the right not to post opinions unrelated to your product
+  "terms and conditions": Terms & Conditions
+  "review guidelines": Review Guidelines
+  date_: Date
+  for: for
+  Unapproved_reviews: Unapproved
+  Approved_reviews: Approved
+  from: from
+  by: by
+  submitted_on: Submitted on
+  based_upon: "на основе"
+  review:
+    zero: "0 озывов"
+    one: "1 отзыв"
+    few: "%{count} отзыва"
+    other: "%{count} отзывов"
+
+  feedback: Feedback
+  stars: Stars
+  feedback_review_for: "Review: '%{review}'"
 

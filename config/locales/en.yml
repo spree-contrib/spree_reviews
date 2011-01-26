@@ -38,7 +38,16 @@ en:
   review:
     one: one review
     other: %{count} reviews
+  star:
+    one: "1"
+    other: "%{count}"
+  voice:
+    one: "1 voice"
+    other: "%{count} voices"
 
   feedback: Feedback
   stars: Stars
   feedback_review_for: "Review: '%{review}'"
+  out_of_5: "out of 5"
+  was_this_review_helpful: "Was this review helpful to you?"
+  you_must_enter_value_for_rating: "You must enter a value for rating."

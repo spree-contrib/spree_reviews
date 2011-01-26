@@ -3,9 +3,9 @@
 <% end %>
 <% stars = product.get_stars %>
 <div class="header clear">
-  <%=t 'average_customer_rating' %>: 
+  <%= t 'average_customer_rating' %>: 
   <br/>
-  <span title="<%=pluralize(stars[0], 'star')%> out of 5">
+  <span title="<%= txt_stars(stars[0]) %>">
     <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
   </span> &nbsp;
   <br/>

@@ -5,7 +5,7 @@
  <br />
 <% end %>
 
-Was this review helpful to you?
+<%= t(:was_this_review_helpful) %>
 <% for i in 1..Rating.get_nb_stars %>
 <%= radio_button_tag "feedback_review[rating]", pluralize(i, 'stars'), false, :class => "star" %>
 <% end %>
