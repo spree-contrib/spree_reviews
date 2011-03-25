@@ -5,11 +5,11 @@
 <table>
   <tr>
     <th scope="row"><%= t("reviews.include_unapproved") %>:</th>
-    <td><%= Spree::Reviews::Config[:include_unapproved_reviews] %></td>
+    <td><%= Spree::Reviews::Config[:include_unapproved_reviews] ? t('yes') : t('no') %></td>
   </tr>
   <tr>
     <th scope="row"><%= t("reviews.preview_size") %>:</th>
-    <td><%=  Spree::Reviews::Config[:preview_size] %></td>
+    <td><%= Spree::Reviews::Config[:preview_size] %></td>
   </tr>
 </table>
 

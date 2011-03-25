@@ -1,17 +1,34 @@
 en:
-  write_your_own_review: Write your own review
+  approve: Approve
+  Approved_reviews: Approved
+  approved_text: Unlocked comments will be published within 1-2 business days.
+  are_you_sure_review: Are you sure to delete review ?
+  average_customer_rating: Average rating
+  back_reviews: Back to the reviews
+  based_upon: based upon
+  by: by
+  date_: Date
+  edited_version: 'Edited version'
+  editing_review_for: 'Editing review for'
+  error_approve_review: Error approving review
+  feedback: Feedback
+  feedback_review_for: "Review: '%{review}'"
+  for: for
+  from: from
+  guideline_text: We reserve the right not to post opinions unrelated to your product
+  info_approve_review: Review approved
+  leave_us_a_review_for: Please leave us a review and a rating for our
+  original_version: 'Original version'
+  out_of_5: "out of 5"
+  rating: rating
+  review:
+    one: one review
+    other: %{count} reviews
+  review_content: Content
+  review_guidelines: Review Guidelines
   review_management: Review Management
   review_management_description: Manage the user-submitted reviews
-  back_reviews: Back to the reviews
-  are_you_sure_review: Are you sure to delete review ?
-  info_approve_review: Review approved
-  error_approve_review: Error approving review
-  approve: Approve
-  leave_us_a_review_for: Please leave us a review and a rating for our
   review_successfully_submitted: Review was successfully submitted
-  rating: rating
-  submit_your_review: Submit your review
-  review_content: Content
   review_title: Title
   reviews:
     review_settings: Review Settings
@@ -20,34 +37,19 @@ en:
     include_unapproved: Include unapproved reviews in listings
     your_name: Your name
     your_location: Your location
-  average_customer_rating: Average rating
-  the_fine_print: The fine print
-  terms_text: All opinions must comply with our terms and conditions
-  approved_text: Unlocked comments will be published within 1-2 business days.
-  guideline_text: We reserve the right not to post opinions unrelated to your product
-  "terms and conditions": Terms & Conditions
-  "review guidelines": Review Guidelines
-  date_: Date
-  for: for
-  Unapproved_reviews: Unapproved
-  Approved_reviews: Approved
-  from: from
-  by: by
-  submitted_on: Submitted on
-  based_upon: based upon
-  review:
-    one: one review
-    other: %{count} reviews
   star:
     one: "1"
     other: "%{count}"
+  stars: Stars
+  submit_your_review: Submit your review
+  submitted_on: Submitted on
+  terms_text: All opinions must comply with our terms and conditions
+  terms_and_conditions: Terms & Conditions
+  the_fine_print: The fine print
+  Unapproved_reviews: Unapproved
   voice:
     one: "1 voice"
     other: "%{count} voices"
-
-  feedback: Feedback
-  stars: Stars
-  feedback_review_for: "Review: '%{review}'"
-  out_of_5: "out of 5"
+  write_your_own_review: Write your own review
   was_this_review_helpful: "Was this review helpful to you?"
   you_must_enter_value_for_rating: "You must enter a value for rating."

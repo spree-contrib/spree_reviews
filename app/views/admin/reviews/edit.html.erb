@@ -1,13 +1,13 @@
-<h1>Editing review for <%= link_to @review.product.name, product_path(@review.product) %></h1>
+<h1><%= t(:editing_review_for) %> <%= link_to @review.product.name, product_path(@review.product) %></h1>
 
-<h2>Original version</h2>
+<h2><%= t(:original_version) %></h2>
 
 <p>
 <%= @review.review %>
 </p>
 <br/>
 
-<h2>Edited version</h2>
+<h2><%= t(:edited_version) %></h2>
 
 <% form_for([:admin, @review]) do |f| %>
   <%= render :partial => f,

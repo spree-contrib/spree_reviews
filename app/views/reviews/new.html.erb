@@ -5,43 +5,6 @@
 
 <h2> <%= I18n.t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
 
-<%= form_for @review, :url => {:action => 'create'} do |f| %>
-<%= render "shared/error_messages", :target => @review %>
-<%= f.hidden_field :product_id, :value => @product.id %>
-
-<table cellspacing="0" cellpadding="2">
-  <tbody>
-    <tr valign="top">
-      <td style="padding-top: 5px; padding-bottom: 5px;" class="fieldtitle right nowrap">
-    	<strong><%= I18n.t('rating') %></strong>
-      </td>
-      <td style="padding-top: 5px; padding-bottom: 5px;">
-        <%= render :partial => "reviews/stars", :locals => {:stars => @review.rating, :edit_enabled => true} %>
-      </td>
-    </tr>
-    <tr valign="top">
-      <td class="fieldtitle right nowrap">
-    	<%= f.label :title, raw("<strong>#{ I18n.t('review_title')}</strong>") %>
-      </td>
-      <td>
-        <%= f.text_field :title, :maxlength => "255", :size => "50" %>
-      </td>
-    </tr>
-    <tr valign="top">
-      <td class="fieldtitle right nowrap">
-    	<%= f.label :review, raw("<strong>#{ I18n.t('review_content')}</strong>") %>
-      </td>
-      <td>
-    	<%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
-      </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td style="padding-top: 5px;">
-    	<%= f.submit I18n.t('submit_your_review'), :class => "button bg_darkfirst".html_safe %>
-      </td>
-    </tr>
-  </tbody></table>
-<% end %>
+<%= render 'form', { :review => @review, :product => @product } %>
 
 <%= render :partial => "fine_print" %>
