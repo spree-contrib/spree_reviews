@@ -1,10 +1,7 @@
 class Admin::ReviewsController < Admin::BaseController
-   
-  layout 'admin'
-
   resource_controller
 
-  index.before do 
+  def index
     @unapproved_reviews = Review.not_approved.find(:all, :order => "created_at DESC")
     @approved_reviews   = Review.approved.find(:all, :order => "created_at DESC")
   end
@@ -20,13 +17,8 @@ class Admin::ReviewsController < Admin::BaseController
   def approve
     r = Review.find(params[:id])
 
-    r.approved = true
-    if r.product.rating.nil? 
-      r.product.rating = Rating.create :value => 0, :count => 0
-    end
-    r.product.rating.add_rating(r.rating)
-
-    if r.save
+    if r.update_attribute(:approved, true)
+       r.product.recalculate_rating
        flash[:notice] = t("info_approve_review")
     else
        flash[:error] = t("error_approve_review")

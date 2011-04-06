@@ -1,14 +1,17 @@
 # Add access to reviews/ratings to the product model
 Product.class_eval do
-  has_one :rating
   has_many :reviews
 
   def get_stars
-    if rating.nil?
-      [0,0]
+    [avg_rating.round, reviews_count]
+  end
+  
+  def recalculate_rating
+    reviews_count = reviews.approved.count    
+    if reviews_count > 0
+      self.update_attribute :avg_rating, self.reviews.approved.sum(:rating).to_f / reviews_count
     else
-      [rating.get_stars, rating.count]
+      self.update_attribute :avg_rating, 0
     end
   end
-
 end
