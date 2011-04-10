@@ -1,8 +1,3 @@
-<% content_for :head do %>
-  <%= javascript_include_tag("jquery.rating.js") %>
-  <%= javascript_tag("$(document).ready(function(){$('.stars').rating({required:true});});") %>
-<% end %>
-
 <% if defined? edit_enabled 
     state = "" 
     name  = "review[rating]" 
@@ -16,6 +11,3 @@
          value="<%= pluralize(i, 'stars') %>" <%= state %> 
          <%= "checked=\"checked\"" if i==stars  %> />
 <% end %>
-
-
-

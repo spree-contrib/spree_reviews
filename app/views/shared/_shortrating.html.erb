@@ -1,6 +1,3 @@
-<% content_for :head do %>
-  <%= stylesheet_link_tag 'reviews.css' %>
-<% end %>
 <% stars = product.get_stars %>
 <span style="float:left;" title="<%= txt_stars(stars[0]) %>">
   <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
