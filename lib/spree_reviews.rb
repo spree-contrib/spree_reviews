@@ -11,6 +11,7 @@ module SpreeReviews
         Rails.env.production? ? require(c) : load(c)
       end
       ProductsHelper.send(:include, ReviewsHelper)
+      Admin::ReviewsController.cache_sweeper :review_sweeper
     end
 
     config.to_prepare &method(:activate).to_proc
