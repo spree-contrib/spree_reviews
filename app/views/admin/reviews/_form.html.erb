@@ -1,4 +1,4 @@
-<%= error_messages_for :review %>
+<%= render "shared/error_messages", :target => @review %>
 <br />
 <p>
   <%= form.text_area :review, :cols => 60, :rows => 10 %>
