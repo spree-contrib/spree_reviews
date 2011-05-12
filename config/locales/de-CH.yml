@@ -1,0 +1,40 @@
+de-CH:
+  write_your_own_review: Schreibe uns deine Meinung
+  review_management: Meinungsverwaltung
+  review_management_description: Verwalte Kundenmeinungen
+  back_reviews: Zurück zu den Kundenmeinungen
+  are_you_sure_review: Bist du sicher, dass du deine Meinung löschen willst?
+  info_approve_review: Meinung veröffentlicht
+  error_approve_review: Fehler bei der Meinungsveröffentlichung
+  approve: Veröffentlichen
+  leave_us_a_review_for: Deine Meinung über
+  review_successfully_submitted: Meinung erfolgreich übertragen
+  rating: Bewertung
+  submit_your_review: Meinung übertragen
+  review_content: Inhalt
+  review_title: Titel
+  reviews:
+    review_settings: Meinungseinstellungen
+    manage_review_settings: Meinungsdarstellungesoptionen
+    preview_size: Größe der Meinungen
+    include_unapproved: Unveröffentlichte Meinungen anzeigen
+    your_name: Dein Anzeigename
+    your_location: Dein Ort
+  average_customer_rating: Durchschnittliche Bewertung
+  the_fine_print: Kleingedrucktes
+  terms_text: Alle Meinungen werden müssen unseren Bedingen einhalten
+  approved_text: Freigeschalte Kommentare werden in 1-2 Werktagen veröffentlicht.
+  guideline_text: Meinungen die unseren den verlinkten Richtlinen nicht genügen werden nicht veröffentlicht
+  "terms and conditions": Bedingungen
+  "review guidelines": Richtlinien
+  date_: Datum
+  for: über
+  Unapproved_reviews: Nicht freigeschaltete Meinungen
+  Approved_reviews: Freigeschaltete Meinungen
+  from: aus
+  by: Von
+  submitted_on: Eingeschickt am
+  based_upon: basiert auf
+  review:
+    one: einer Bewertung
+    other: %{count} Bewertungen
