@@ -11,7 +11,7 @@
 
 <% form_for([:admin, @review]) do |f| %>
   <%= render :partial => f,
-             :locals  => { :button_name => "Update" } %>
+             :locals  => { :button_name => t(:update) } %>
 <% end %>
 
 <%= link_to t('back_reviews'), admin_reviews_path %>

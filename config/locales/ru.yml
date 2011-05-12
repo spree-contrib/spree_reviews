@@ -7,7 +7,7 @@ ru:
         rating: Рейтинг
   write_your_own_review: Оставьте свой отзыв
   review_management: Управление отзывами
-  review_management_description: Управляйте отзывами покупателей
+  review_management_description: Управление отзывами покупателей
   back_reviews: Назад к отзывам
   are_you_sure_review: Вы уверены, что хотите удалить отзыв?
   info_approve_review: Отзыв одобрен
@@ -65,4 +65,4 @@ ru:
 
   original_version: 'Исходная версия'
   edited_version: 'Отредактированная версия'
-  editing_review_for: 'Редактируем отзыв для'
+  editing_review_for: 'Редактирование отзыва для'
