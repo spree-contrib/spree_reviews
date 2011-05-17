@@ -1,3 +1,4 @@
+<% render 'admin/shared/product_sub_menu' %>
 <h1><%= t('review_management_description') %></h1>
 
 <% for reviews in [["Unapproved", @unapproved_reviews], ["Approved", @approved_reviews]] %>
@@ -15,7 +16,7 @@
     <% for review in reviews[1] %>
     <tr>
       <td>
-        <%= l review.created_at %>
+        <%= l review.created_at, :format => :long %>
       </td>
       <td>
         <%= review.name %><%= t('from') %> <%= review.location %>
@@ -25,18 +26,17 @@
         <br/>
         <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
       </td>
-      <td style="border: 1px dashed green" width="60%">
+      <td width="60%">
         <br/>
         <%= h review.review %>
       </td>
       <td>
         <% unless review.approved %>
-          <%= link_to t('approve'), {:action => 'approve', :id => review.id} %> <br />
+          <%= link_to_with_icon 'approve', t('approve'), {:action => 'approve', :id => review.id} %> <br />
         <% end %>
         <%= link_to t('feedback'), admin_review_feedback_reviews_path(review) %>(<%= review.feedback_stars %>/<%= review.feedback_reviews.count %>) <br/>
-        <%= link_to t('edit'), [:edit, :admin, review] %> <br/>
-        <%= link_to t('destroy'), [:admin, review], :method => :delete, :confirm => t('are_you_sure_review') %>
-
+        <%= link_to_edit review %><br/>
+        <%= link_to_delete review %>
       </td>
     </tr>
   <% end %>
