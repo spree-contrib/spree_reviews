@@ -6,6 +6,38 @@ Straightforward review/rating facility
 Please see TODO file
 
 
+Installation
+------------
+
+To use the last stable release of spree_reviews, add the following to your Gemfile:
+
+    gem 'spree_reviews', '0.50.1'
+    
+If you'd rather install from git:
+
+    gem 'spree_reviews', :git => 'git://github.com/citrus/spree_reviews.git'
+
+Now bundle up with:
+
+    bundle
+    
+Next, run the rake task that copies the necessary migrations and assets to your project:
+
+    rake spree_reviews:install
+    
+And finish with a migrate:
+
+    rake db:migrate
+    
+Now you should be able to boot up your server with:
+
+    rails s  
+    
+    
+That's all!
+
+
+
 Usage
 -----
 
