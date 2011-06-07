@@ -19,7 +19,7 @@
         <%= l review.created_at, :format => :long %>
       </td>
       <td>
-        <%= review.name %><%= t('from') %> <%= review.location %>
+        <%= review.name %><%= " (#{review.user})" if review.user %> <%= t('from') %> <%= review.location %>
       </td>
       <td>
         <%= h review.title %>

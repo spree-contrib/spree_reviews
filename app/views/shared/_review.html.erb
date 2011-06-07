@@ -2,6 +2,9 @@
   <span title="<%= txt_stars(review.rating) %>">
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
   </span>
+  <% if review.user %>
+  <span><%= review.user.email %></span>
+  <% end %>
   <span class="title">&nbsp; <%= review.title %> </span>
   <br/>
   <span class="attribution"><%= t('submitted_on') %> <strong><%= l review.created_at.to_date %></strong></span>

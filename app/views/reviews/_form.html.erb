@@ -1,14 +1,20 @@
 <%= form_for review, :url => product_reviews_path(product), :html => {:method => :post} do |f| %>
   <%= render "shared/error_messages", :target => review %>
   <%= f.hidden_field :product_id, :value => product.id %>
-
+  <%= f.hidden_field :user_id, :value => current_user.id if user_signed_in? %>
+  
   <p class="review_rating_field">
     <%= f.label :rating, t("rating") %> <span class="required">*</span><br />
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating, :edit_enabled => true} %>
   </p>
 
+  <p class="review_name_field">
+    <%= f.label :name, t("review_name") %> <span class="required">*</span><br />
+    <%= f.text_field :name, :maxlength => "255", :size => "50" %>
+  </p>
+
   <p class="review_title_field">
-    <%= f.label :title, t("review_title") %> <span class="required">*</span><br />
+    <%= f.label :title, t("review_title") %><br />
     <%= f.text_field :title, :maxlength => "255", :size => "50" %>
   </p>
   

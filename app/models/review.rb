@@ -1,8 +1,9 @@
 class Review < ActiveRecord::Base
   belongs_to :product, :counter_cache => true
+  belongs_to :user
   has_many   :feedback_reviews
 
-  validates_presence_of :title, :review
+  validates_presence_of :name, :review
   validates_numericality_of :rating, :only_integer => true
   default_scope order("reviews.created_at DESC")
   scope :approved,  where("approved = ?", true)
