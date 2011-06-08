@@ -13,6 +13,7 @@ class Review < ActiveRecord::Base
 
   scope :oldest_first, :order => "created_at asc"
   scope :preview,      :limit => Spree::Reviews::Config[:preview_size], :order=>"created_at desc"
+  attr_protected :user_id, :product_id
 
   def feedback_stars
     return 0 if feedback_reviews.count <= 0
