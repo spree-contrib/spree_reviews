@@ -16,8 +16,9 @@ class ReviewsController < Spree::BaseController
     @product = Product.find_by_permalink params[:product_id]
     params[:review][:rating].sub!(/\s*stars/,'') unless params[:review][:rating].blank?
 
-    @review = Review.new({ :product_id => @product.id })
-    @review.user_id = current_user.id if user_signed_in?
+    @review = Review.new
+    @review.product = @product
+    @review.user = current_user if user_signed_in?
     if @review.update_attributes(params[:review])
       flash[:notice] = t('review_successfully_submitted')
       redirect_to (product_path(@product))
