@@ -1,17 +1,9 @@
-class Admin::ReviewsController < Admin::BaseController
-  resource_controller
+class Admin::ReviewsController < Admin::ResourceController
+  helper :reviews
 
   def index
     @unapproved_reviews = Review.not_approved.find(:all, :order => "created_at DESC")
     @approved_reviews   = Review.approved.find(:all, :order => "created_at DESC")
-  end
-
-  create.response do |wants|
-    wants.html { redirect_to admin_reviews_path }
-  end
-
-  update.response do |wants|
-    wants.html { redirect_to admin_reviews_path }
   end
 
   def approve
