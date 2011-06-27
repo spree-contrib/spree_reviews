@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  belongs_to :product, :counter_cache => true
+  belongs_to :product
   belongs_to :user
   has_many   :feedback_reviews
 

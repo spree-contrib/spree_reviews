@@ -7,9 +7,9 @@ Product.class_eval do
   end
   
   def recalculate_rating
-    reviews_count = reviews.approved.count    
+    reviews_count = reviews.reload.approved.count    
     if reviews_count > 0
-      self.update_attribute :avg_rating, self.reviews.approved.sum(:rating).to_f / reviews_count
+      self.update_attributes(:avg_rating => self.reviews.approved.sum(:rating).to_f / reviews_count, :reviews_count => reviews_count)
     else
       self.update_attribute :avg_rating, 0
     end
