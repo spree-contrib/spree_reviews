@@ -8,31 +8,33 @@
     <tr>
       <th><%= t('date_') %></th>
       <th><%= t('user') %></th>
+      <th><%= Review.human_attribute_name(:rating) %></th>
       <th><%= t('review_title') %> / <%= t('product') %></th>
       <th><%= t('review_content') %></th>
       <th></th>
     </tr>
 
     <% for review in reviews[1] %>
-    <tr>
+    <tr id="<%= dom_id review %>">
       <td>
         <%= l review.created_at, :format => :long %>
       </td>
       <td>
-        <%= review.name %><%= " (#{review.user})" if review.user %> <%= t('from') %> <%= review.location %>
+        <%= review.name %> / <%= review.user.try(:email) %>
+      </td>
+      <td>
+        <%= txt_stars(review.rating) %>
       </td>
       <td>
         <%= h review.title %>
-        <br/>
         <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
       </td>
-      <td width="60%">
-        <br/>
+      <td width="50%">
         <%= h review.review %>
       </td>
       <td>
         <% unless review.approved %>
-          <%= link_to_with_icon 'approve', t('approve'), {:action => 'approve', :id => review.id} %> <br />
+          <%= link_to_with_icon 'tick', t('approve'), {:action => 'approve', :id => review.id} %> <br />
         <% end %>
         <%= link_to t('feedback'), admin_review_feedback_reviews_path(review) %>(<%= review.feedback_stars %>/<%= review.feedback_reviews.count %>) <br/>
         <%= link_to_edit review %><br/>

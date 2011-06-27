@@ -1,4 +1,11 @@
 en:
+  activerecord:
+    attributes:
+      review:
+        name: Your Name
+        title: Title
+        review: Content
+        rating: Rating
   approve: Approve
   Approved_reviews: Approved
   approved_text: Unlocked comments will be published within 1-2 business days.
