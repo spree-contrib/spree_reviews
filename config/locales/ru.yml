@@ -5,6 +5,7 @@ ru:
         title: Заголовок
         review: Содержание
         rating: Рейтинг
+        name: Ваше имя
   write_your_own_review: Оставьте свой отзыв
   review_management: Управление отзывами
   review_management_description: Управление отзывами покупателей
