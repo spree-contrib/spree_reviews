@@ -1,19 +1,17 @@
 class ReviewsController < Spree::BaseController
   helper Spree::BaseHelper
+  before_filter :load_product
 
   def index
-    @product = Product.find_by_permalink params[:product_id]
     @approved_reviews = Review.approved.find_all_by_product_id(@product.id) 
   end
 
   def new
-    @product = Product.find_by_permalink params[:product_id] 
     @review = Review.new :product => @product
   end
 
   # save if all ok
   def create
-    @product = Product.find_by_permalink params[:product_id]
     params[:review][:rating].sub!(/\s*stars/,'') unless params[:review][:rating].blank?
 
     @review = Review.new
@@ -30,4 +28,11 @@ class ReviewsController < Spree::BaseController
   
   def terms
   end
+  
+  private
+    
+    def load_product
+      @product = Product.find_by_permalink params[:product_id]
+      render_404(ActiveRecord::RecordNotFound, 'Product not found') unless @product
+    end
 end
