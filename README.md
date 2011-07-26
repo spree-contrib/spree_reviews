@@ -15,7 +15,7 @@ To use the last stable release of spree_reviews, add the following to your Gemfi
     
 If you'd rather install from git:
 
-    gem 'spree_reviews', :git => 'git://github.com/citrus/spree_reviews.git'
+    gem 'spree_reviews', :git => 'git://github.com/romul/spree_reviews.git'
 
 Now bundle up with:
 
