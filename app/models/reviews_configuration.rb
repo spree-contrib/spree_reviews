@@ -9,5 +9,8 @@ class ReviewsConfiguration < Configuration
   preference :show_email, :boolean, :default => false
   
   # show helpfullness rating form elements
-  preference :rate_helpfulness, :boolean, :default => false
+  preference :feedback_rating, :boolean, :default => false
+  
+  # require login to post reviews
+  preference :require_login, :boolean, :default => true
 end

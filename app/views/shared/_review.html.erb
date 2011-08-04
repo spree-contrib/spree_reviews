@@ -12,8 +12,9 @@
   <span class="attribution"><%= t('submitted_on') %> <strong><%= l review.created_at.to_date %></strong></span>
   
   <%= simple_format(review.review) %>
-  
+  <% if Spree::Reviews::Config[:feedback_rating] && ((Spree::Reviews::Config[:require_login] && current_user) || !Spree::Reviews::Config[:require_login]) %>
   <div class="feedback_review" id="feedback_review_<%= review.id %>">
     <%= render :partial => "feedback_reviews/form", :locals => {:review => review} %>
   </div>
+  <% end %>
 </div>

@@ -42,6 +42,7 @@ en:
   review_management_description: Manage the user-submitted reviews
   review_name: Your Name
   review_successfully_submitted: Review was successfully submitted
+  review_not_submitted: Review was not submitted
   review_title: Title
   spree_reviews:
     review_settings: Review Settings
@@ -49,7 +50,8 @@ en:
     preview_size: Size of the review snippets
     include_unapproved: Include unapproved reviews in listings
     show_email: Show email addresses
-    rate_helpfulness: Rate helpfullness
+    feedback_rating: Rate feedback
+    require_login: Require user to be logged in
     your_name: Your name
     your_location: Your location
   star:
