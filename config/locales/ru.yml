@@ -30,7 +30,7 @@ ru:
   submit_your_review: Оставить отзыв
   review_content: Содержание
   review_title: Заголовок
-  reviews:
+  spree_reviews:
     review_settings: Настройки отзывов покупателей
     manage_review_settings: Управление отображением отзывов
     preview_size: Количество отзывов на странице товара

@@ -2,8 +2,10 @@
   <span title="<%= txt_stars(review.rating) %>">
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
   </span>
-  <% if review.user %>
+  <% if Spree::Reviews::Config[:show_email] && review.user %>
   <span><%= review.user.email %></span>
+  <% else %>
+  <span><%= review.name %></span>
   <% end %>
   <span class="title">&nbsp; <%= review.title %> </span>
   <br/>

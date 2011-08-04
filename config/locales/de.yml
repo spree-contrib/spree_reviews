@@ -25,7 +25,7 @@ de:
   submit_your_review: Meinung übertragen
   review_content: Inhalt
   review_title: Titel
-  reviews:
+  spree_reviews:
     review_settings: Meinungseinstellungen
     manage_review_settings: Meinungsdarstellungesoptionen
     preview_size: Größe der Meinungen

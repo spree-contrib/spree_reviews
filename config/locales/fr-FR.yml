@@ -23,7 +23,7 @@ fr-FR:
   review_successfully_sumbitted: "Avis soumis à modération"
   rating: "Note"
   submit_your_review: "Valider votre commentaire"
-  reviews:
+  spree_reviews:
     review_settings: Review Settings
     manage_review_settings: Control the display of reviews
     preview_size: Size of the review snippets
