@@ -6,6 +6,11 @@ en:
         title: Title
         review: Content
         rating: Rating
+    models:
+      review:
+        one: one review
+        other: %{count} reviews
+  
   approve: Approve
   Approved_reviews: Approved
   approved_text: Unlocked comments will be published within 1-2 business days.
@@ -28,9 +33,6 @@ en:
   original_version: 'Original version'
   out_of_5: "out of 5"
   rating: rating
-  review:
-    one: one review
-    other: %{count} reviews
   review_content: Content
   review_guidelines: Review Guidelines
   review_management: Review Management

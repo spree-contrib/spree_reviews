@@ -1,4 +1,16 @@
 de-CH:
+  activerecord:
+    attributes:
+      review:
+        name: Your Name
+        title: Title
+        review: Content
+        rating: Rating
+    models:
+      review:
+        one: einer Bewertung
+        other: %{count} Bewertungen
+  
   write_your_own_review: Schreibe uns deine Meinung
   review_management: Meinungsverwaltung
   review_management_description: Verwalte Kundenmeinungen
@@ -35,6 +47,3 @@ de-CH:
   by: Von
   submitted_on: Eingeschickt am
   based_upon: basiert auf
-  review:
-    one: einer Bewertung
-    other: %{count} Bewertungen

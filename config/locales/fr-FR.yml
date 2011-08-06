@@ -1,4 +1,16 @@
 fr-FR:
+  activerecord:
+    attributes:
+      review:
+        name: Your Name
+        title: Title
+        review: Content
+        rating: Rating
+    models:
+      review:
+        one: one review
+        other: %{count} reviews
+  
   write_your_own_review: "Ecrivez un commentaire"
   review_management: "Gestion des commentaires"
   review_management_description: "Gestion des commentaires envoyés par les utilisateurs"

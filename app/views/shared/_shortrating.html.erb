@@ -3,6 +3,6 @@
   <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
 </span>
 <span style="float:right;">
-  <%= t('review', :count => stars[1]) %>
+  <%= Review.human_name(:count => stars[1]) %>
 </span>
 <br/>
