@@ -6,6 +6,9 @@ ru:
         review: Содержание
         rating: Рейтинг
         name: Ваше имя
+        created_at: Дата отзыва
+        ip_address: IP
+        user: Пользователь
     models:
       review:
         zero: "0 отзывов"

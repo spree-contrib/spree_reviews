@@ -6,11 +6,11 @@
 
   <table cellspacing=6 class="index">
     <tr>
-      <th><%= t('date_') %></th>
-      <th><%= t('user') %></th>
+      <th><%= Review.human_attribute_name(:created_at) %></th>
+      <th><%= Review.human_attribute_name(:user) %></th>
       <th><%= Review.human_attribute_name(:rating) %></th>
-      <th><%= t('review_title') %> / <%= t('product') %></th>
-      <th><%= t('review_content') %></th>
+      <th><%= Review.human_attribute_name(:title) %> / <%= t('product') %></th>
+      <th><%= Review.human_attribute_name(:review) %></th>
       <th></th>
     </tr>
 
@@ -20,13 +20,14 @@
         <%= l review.created_at, :format => :long %>
       </td>
       <td>
-        <%= review.name %> / <%= review.user.try(:email) %>
+        <p><%= review.name %> / <%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : t(:guest) %></p>
+        <p><%= Review.human_attribute_name(:ip_address) %>: <%= review.ip_address ? link_to(review.ip_address, "http://whois.domaintools.com/#{review.ip_address}") : '-' %></p>
       </td>
       <td>
         <%= txt_stars(review.rating) %>
       </td>
       <td>
-        <%= h review.title %>
+        <%= review.title %>
         <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
       </td>
       <td width="50%">

@@ -6,6 +6,9 @@ en:
         title: Title
         review: Content
         rating: Rating
+        created_at: Date
+        ip_address: IP
+        user: User
     models:
       review:
         one: one review

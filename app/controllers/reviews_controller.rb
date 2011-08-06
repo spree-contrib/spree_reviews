@@ -18,6 +18,7 @@ class ReviewsController < Spree::BaseController
     @review = Review.new
     @review.product = @product
     @review.user = current_user if user_signed_in?
+    @review.ip_address = request.remote_ip
     if @review.update_attributes(params[:review])
       flash[:notice] = t('review_successfully_submitted')
       redirect_to (product_path(@product))
