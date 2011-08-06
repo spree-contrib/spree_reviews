@@ -1,13 +1,14 @@
 class ReviewsController < Spree::BaseController
   helper Spree::BaseHelper
-  before_filter :load_product
-
+  before_filter :load_product, :only => [:index, :new, :create]
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  
   def index
     @approved_reviews = Review.approved.find_all_by_product_id(@product.id) 
   end
 
   def new
-    @review = Review.new :product => @product
+    @review = Review.new(:product => @product)
   end
 
   # save if all ok
@@ -32,7 +33,6 @@ class ReviewsController < Spree::BaseController
   private
     
     def load_product
-      @product = Product.find_by_permalink params[:product_id]
-      render_404(ActiveRecord::RecordNotFound, 'Product not found') unless @product
+      @product = Product.find_by_permalink!(params[:product_id])
     end
 end
