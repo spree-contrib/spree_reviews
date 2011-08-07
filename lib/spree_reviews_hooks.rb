@@ -18,7 +18,7 @@ class SpreeReviewsHooks < Spree::ThemeSupport::HookListener
   end
 
   insert_after :admin_configurations_menu do
-    %(<%= configurations_menu_item(t('reviews.review_settings'), admin_review_settings_path, t('reviews.manage_review_settings')) %>)
+    %(<%= configurations_menu_item(t('spree_reviews.review_settings'), admin_review_settings_path, t('spree_reviews.manage_review_settings')) %>)
   end
 
 end
