@@ -28,7 +28,9 @@
       </td>
       <td>
         <%= review.title %>
-        <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
+        <% if review.product %>
+          <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
+        <% end %>
       </td>
       <td width="50%">
         <%= h review.review %>
