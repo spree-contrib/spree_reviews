@@ -1,17 +1,19 @@
-<div class="review">
+<div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
   <span title="<%= txt_stars(review.rating) %>">
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
   </span>
+  <meta itemprop="reviewRating" content="<%= review.rating %>" />
   <% if Spree::Reviews::Config[:show_email] && review.user %>
-  <span><%= review.user.email %></span>
+    <span itemprop="author"><%= review.user.email %></span>
   <% else %>
-  <span><%= review.name %></span>
+    <span itemprop="author"><%= review.name %></span>
   <% end %>
-  <span class="title">&nbsp; <%= review.title %> </span>
+  <span class="title" itemprop="name">&nbsp; <%= review.title %> </span>
   <br/>
-  <span class="attribution"><%= t('submitted_on') %> <strong><%= l review.created_at.to_date %></strong></span>
-  
-  <%= simple_format(review.review) %>
+  <span class="attribution"><%= t('submitted_on') %> <strong itemprop="datePublished"><%= l review.created_at.to_date %></strong></span>
+  <div itemprop="reviewBody">
+    <%= simple_format(review.review) %>
+  </div>
   <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || current_user) %>
   <div class="feedback_review" id="feedback_review_<%= review.id %>">
     <%= render :partial => "feedback_reviews/form", :locals => {:review => review} %>
