@@ -1,37 +1,18 @@
-unless defined? SPREE_ROOT
-  ENV["RAILS_ENV"] = "test"
-  case
-  when ENV["SPREE_ENV_FILE"]
-    require ENV["SPREE_ENV_FILE"]
-  when File.dirname(__FILE__) =~ %r{vendor/SPREE/vendor/extensions}
-    require "#{File.expand_path(File.dirname(__FILE__) + "/../../../../../../")}/config/environment"
-  else
-    require "#{File.expand_path(File.dirname(__FILE__) + "/../../../../")}/config/environment"
-  end
-end
-require "#{SPREE_ROOT}/spec/spec_helper"
+# Configure Rails Environment
+ENV["RAILS_ENV"] = "test"
+require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+require 'rspec/rails'
 
-if File.directory?(File.dirname(__FILE__) + "/scenarios")
-  Scenario.load_paths.unshift File.dirname(__FILE__) + "/scenarios"
-end
-if File.directory?(File.dirname(__FILE__) + "/matchers")
-  Dir[File.dirname(__FILE__) + "/matchers/*.rb"].each {|file| require file }
-end
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-Spec::Runner.configure do |config|
-  # config.use_transactional_fixtures = true
-  # config.use_instantiated_fixtures  = false
-  # config.fixture_path = RAILS_ROOT + '/spec/fixtures'
+# Requires factories defined in spree_core
+require 'spree/core/testing_support/factories'
 
-  # You can declare fixtures for each behaviour like this:
-  #   describe "...." do
-  #     fixtures :table_a, :table_b
-  #
-  # Alternatively, if you prefer to declare them only once, you can
-  # do so here, like so ...
-  #
-  #   config.global_fixtures = :table_a, :table_b
-  #
-  # If you declare global fixtures, be aware that they will be declared
-  # for all of your examples, even those that don't use them.
+RSpec.configure do |config|
+  # If you're not using ActiveRecord, or you'd prefer not to run each of your
+  # examples within a transaction, remove the following line or assign false
+  # instead of true.
+  config.use_transactional_fixtures = true
 end

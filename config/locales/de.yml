@@ -9,8 +9,8 @@ de:
     models:
       review:
         one: einer Bewertung
-        other: %{count} Bewertungen
-  
+        other: "%{count} Bewertungen"
+
   write_your_own_review: Schreibe uns deine Meinung
   review_management: Meinungsverwaltung
   review_management_description: Verwalte Kundenmeinungen

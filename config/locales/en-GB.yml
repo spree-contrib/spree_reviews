@@ -9,8 +9,8 @@ en-GB:
     models:
       review:
         one: one review
-        other: %{count} reviews
-  
+        other: "%{count} reviews"
+
   write_your_own_review: Write your own review
   review_management: Review Management
   review_management_description: Manage the user-submitted reviews

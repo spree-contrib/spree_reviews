@@ -1,8 +1,0 @@
-<% stars = product.get_stars %>
-<span style="float:left;" title="<%= txt_stars(stars[0]) %>">
-  <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
-</span>
-<span style="float:right;">
-  <%= Review.human_name(:count => stars[1]) %>
-</span>
-<br/>

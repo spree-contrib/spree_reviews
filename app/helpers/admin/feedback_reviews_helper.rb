@@ -1,2 +1,0 @@
-module Admin::FeedbackReviewsHelper
-end

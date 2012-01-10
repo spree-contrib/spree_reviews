@@ -1,6 +1,0 @@
-<p>
-  <%= t('voice', :count => review.feedback_reviews.count) %>.
-  <span title="<%=pluralize(review.feedback_stars, 'star')%> out of 5">
-  <%= render :partial => "reviews/stars", :locals => {:stars => review.feedback_stars} %>
-  </span> &nbsp;
-</p>
