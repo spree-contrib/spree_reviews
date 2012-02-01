@@ -3,7 +3,7 @@ module SpreeReviews
     class InstallGenerator < Rails::Generators::Base
 
       def add_javascripts
-        append_file "app/assets/javascripts/store/all.js", "//= require store/jquery.rating\n"
+        append_file "app/assets/javascripts/store/all.js", "//= require jquery.rating\n"
       end
 
       def add_stylesheets
