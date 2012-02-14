@@ -42,9 +42,9 @@ class Spree::Review < ActiveRecord::Base
   def recalculate_product_rating
     reviews_count = product.reviews.reload.approved.count
     if reviews_count > 0
-      self.update_attributes(:avg_rating => product.reviews.approved.sum(:rating).to_f / reviews_count, :reviews_count => reviews_count)
+      product.update_attributes(:avg_rating => product.reviews.approved.sum(:rating).to_f / reviews_count, :reviews_count => reviews_count)
     else
-      self.update_attribute(:avg_rating, 0)
+      product.update_attribute(:avg_rating, 0)
     end
   end
 end

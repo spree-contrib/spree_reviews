@@ -41,6 +41,12 @@ describe Spree::Review do
       @review.should_not_receive(:recalculate_product_rating)
       @review.save!
     end
+
+    it "updates the product average rating" do
+      @review.approved = true
+      @review.save!
+      @review.product.reload.avg_rating.should == 2
+    end
   end
 
   context "#feedback_stars" do
