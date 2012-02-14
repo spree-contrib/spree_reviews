@@ -3,6 +3,8 @@ class Spree::Review < ActiveRecord::Base
   belongs_to :user
   has_many   :feedback_reviews
 
+  after_save :recalculate_product_rating, :if => :approved?
+
   validates_presence_of     :name, :review
   validates_numericality_of :rating, :only_integer => true
 
@@ -35,5 +37,14 @@ class Spree::Review < ActiveRecord::Base
   def feedback_stars
     return 0 if feedback_reviews.count <= 0
     ((feedback_reviews.sum(:rating) / feedback_reviews.count) + 0.5).floor
+  end
+
+  def recalculate_product_rating
+    reviews_count = product.reviews.reload.approved.count
+    if reviews_count > 0
+      self.update_attributes(:avg_rating => product.reviews.approved.sum(:rating).to_f / reviews_count, :reviews_count => reviews_count)
+    else
+      self.update_attribute(:avg_rating, 0)
+    end
   end
 end

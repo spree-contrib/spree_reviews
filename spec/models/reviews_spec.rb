@@ -27,6 +27,22 @@ describe Spree::Review do
     end
   end
 
+  context "#recalculate_product_rating" do
+    let(:product) { Factory(:product) }
+    before { product.reviews << @review }
+
+    it "if approved" do
+      @review.should_receive(:recalculate_product_rating)
+      @review.approved = true
+      @review.save!
+    end
+
+    it "if not approved" do
+      @review.should_not_receive(:recalculate_product_rating)
+      @review.save!
+    end
+  end
+
   context "#feedback_stars" do
     before(:each) do
       @review.save

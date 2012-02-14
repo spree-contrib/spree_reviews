@@ -10,7 +10,6 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
     r = Spree::Review.find(params[:id])
 
     if r.update_attribute(:approved, true)
-       r.product.recalculate_rating
        flash[:notice] = t("info_approve_review")
     else
        flash[:error] = t("error_approve_review")
