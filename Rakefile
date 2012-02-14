@@ -1,4 +1,5 @@
 # encoding: utf-8
+ENV['LIB_NAME'] = 'spree_reviews'
 
 require 'bundler'
 Bundler::GemHelper.install_tasks
@@ -11,9 +12,3 @@ require 'spree/core/testing_support/common_rake'
 
 desc "Default Task"
 task :default => [:spec]
-
-desc "Generates a dummy app for testing"
-task :test_app do
-  ENV['LIB_NAME'] = 'spree_reviews'
-  Rake::Task['common:test_app'].invoke
-end
