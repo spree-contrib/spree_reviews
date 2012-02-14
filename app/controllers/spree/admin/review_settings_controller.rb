@@ -8,9 +8,9 @@ class Spree::Admin::ReviewSettingsController < Spree::Admin::BaseController
     Spree::Reviews::Config.set(params[:preferences])
 
     respond_to do |format|
-      format.html {
+      format.html do
         redirect_to admin_review_settings_path
-      }
+      end
     end
   end
 end
