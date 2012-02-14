@@ -14,11 +14,11 @@ class Spree::Review < ActiveRecord::Base
 
   class << self
     def approved
-      where("approved = ?", true)
+      where(:approved => true)
     end
 
     def not_approved
-      where("approved = ?", false)
+      where(:approved => false)
     end
 
     def approval_filter
