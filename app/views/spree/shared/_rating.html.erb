@@ -1,14 +1,15 @@
-<% stars = product.get_stars %>
+<% stars = product.stars %>
+<% reviews_count = product.reviews_count %>
 <div class="ratings">
   <p><%= t('average_customer_rating') %>: </p>
   <p>
-    <span title="<%= txt_stars(stars[0]) %>">
-      <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars[0]} %>
+    <span title="<%= txt_stars(stars) %>">
+      <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
     </span>
   </p>
-  <p>(<%= t('based_upon') %> <%= pluralize stars[1], "review" %>)</p>
+  <p>(<%= t('based_upon') %> <%= pluralize reviews_count, "review" %>)</p>
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <meta itemprop="ratingValue" content="<%= stars[0] %>" />
-    <meta itemprop="reviewCount" content="<%= stars[1] %>" />
+    <meta itemprop="ratingValue" content="<%= stars %>" />
+    <meta itemprop="reviewCount" content="<%= reviews_count %>" />
   </div>
 </div>
