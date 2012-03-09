@@ -15,7 +15,7 @@ To use the last stable release of spree_reviews, add the following to your Gemfi
     
 If you'd rather install from git:
 
-    gem 'spree_reviews', :git => 'git://github.com/romul/spree_reviews.git'
+    gem 'spree_reviews', :git => 'git://github.com/spree/spree_reviews.git'
 
 Now bundle up with:
 
@@ -23,7 +23,7 @@ Now bundle up with:
     
 Next, run the rake task that copies the necessary migrations and assets to your project:
 
-    rake spree_reviews:install
+    rails g spree_reviews:install
     
 And finish with a migrate:
 
