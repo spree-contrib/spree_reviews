@@ -1,10 +1,14 @@
 <div id="reviews">
   <h6 class="product-section-title"><%= t(:reviews) %></h6>
-  <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
-  <% for review in @product.reviews.approval_filter %>
-    <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
+  <% if @product.reviews.approved.count == 0%>
+  <p class="reviews-none"><%=t('no_reviews_available')%></p>
+  <% else %>
+	  <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
+	  <% for review in @product.reviews.approval_filter %>
+	    <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
+	  <% end %>
   <% end %>
-  <% if !Spree::Reviews::Config[:require_login] || current_user %>
+  <% if !Spree::Reviews::Config[:require_login] || current_user || Spree::Reviews::Config[:always_show_create] %>
     <%= link_to t('write_your_own_review'), new_product_review_path(@product), :class => "button",
                 :rel => "nofollow,noindex" %>
   <% end %>
