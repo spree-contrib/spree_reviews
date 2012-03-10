@@ -1,16 +1,17 @@
 <div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
-  <span title="<%= txt_stars(review.rating) %>">
+  <span class="reviews-rating" title="<%= txt_stars(review.rating) %>">
     <%= render :partial => "spree/reviews/stars", :locals => {:stars => review.rating} %>
   </span>
+  <span itemprop="name"><%= review.title %></span>
+  <br/>
+  <span class="attribution"><%= t('submitted_on') %> <strong itemprop="datePublished"><%= l review.created_at.to_date %></strong></span>
+  
   <meta itemprop="reviewRating" content="<%= review.rating %>" />
   <% if Spree::Reviews::Config[:show_email] && review.user %>
     <span itemprop="author"><%= review.user.email %></span>
   <% else %>
     <span itemprop="author"><%= review.name %></span>
   <% end %>
-  <span class="title" itemprop="name">&nbsp; <%= review.title %> </span>
-  <br/>
-  <span class="attribution"><%= t('submitted_on') %> <strong itemprop="datePublished"><%= l review.created_at.to_date %></strong></span>
   <div itemprop="reviewBody">
     <%= simple_format(review.review) %>
   </div>
