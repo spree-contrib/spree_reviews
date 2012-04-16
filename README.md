@@ -9,13 +9,13 @@ Please see TODO file
 Installation
 ------------
 
-To use the last stable release of spree_reviews, add the following to your Gemfile:
+To use the last stable gem release of spree_reviews, add the following to your Gemfile:
 
-    gem 'spree_reviews', '0.50.1'
+    gem 'spree_reviews'
     
-If you'd rather install from git:
+If you'd rather install the latest version with fixes and improvements that have not yet been published to RubyGems, install from git:
 
-    gem 'spree_reviews', :git => 'git://github.com/romul/spree_reviews.git'
+    gem 'spree_reviews', :git => 'git://github.com/spree/spree_reviews.git'
 
 Now bundle up with:
 
@@ -23,7 +23,7 @@ Now bundle up with:
     
 Next, run the rake task that copies the necessary migrations and assets to your project:
 
-    rake spree_reviews:install
+    rails g spree_reviews:install
     
 And finish with a migrate:
 
