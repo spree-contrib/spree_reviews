@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Spree::Review do
   before(:each) do
-    user = Factory(:user)
+    user = FactoryGirl.create(:user)
     @review = Spree::Review.new(:name => "blah", :rating => "2", :review => "great", :user => user)
   end
 
@@ -28,7 +28,7 @@ describe Spree::Review do
   end
 
   context "#recalculate_product_rating" do
-    let(:product) { Factory(:product) }
+    let(:product) { FactoryGirl.create(:product) }
     before { product.reviews << @review }
 
     it "if approved" do

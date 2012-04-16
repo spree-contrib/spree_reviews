@@ -8,5 +8,5 @@ gem 'sqlite3'
 group :test do
   gem 'faker'
   gem 'rspec-rails', '~> 2.8.1'
-  gem 'factory_girl'
+  gem 'factory_girl_rails', '~> 1.7.0'
 end
