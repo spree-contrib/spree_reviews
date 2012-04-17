@@ -3,7 +3,7 @@ class RecalculateRatings < ActiveRecord::Migration
     Spree::Product.reset_column_information
     Spree::Product.all.each do |p|
       Spree::Product.update_counters p.id, :reviews_count => p.reviews.approved.length
-      p.recalculate_rating
+      p.recalculate_product_rating
     end
   end
 
