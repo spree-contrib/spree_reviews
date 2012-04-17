@@ -31,7 +31,7 @@ And finish with a migrate:
     
 Now you should be able to boot up your server with:
 
-    rails s  
+    rails s
     
     
 That's all!
