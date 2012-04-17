@@ -1,7 +1,7 @@
 module Spree::ReviewsHelper
 
   def star(the_class)
-    "<span class=\"#{the_class}\"> &#10030; </span>"
+    content_tag(:span, " &#10030; ".html_safe, :class => the_class)
   end
 
   def mk_stars(m)
@@ -10,7 +10,7 @@ module Spree::ReviewsHelper
 
   def txt_stars(n, show_out_of = true)
     res = I18n.t('star', :count => n)
-    res += ' ' + t('out_of_5') if show_out_of
+    res += " #{t('out_of_5')}" if show_out_of
     res
   end
 
