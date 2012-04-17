@@ -3,7 +3,7 @@
 <div class="ratings">
   <p><%= t('average_customer_rating') %>: </p>
   <p>
-    <span title="<%= txt_stars(stars) %>">
+    <span class="stars" title="<%= txt_stars(stars) %>">
       <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
     </span>
   </p>

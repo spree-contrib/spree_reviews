@@ -1,6 +1,6 @@
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
-<span style="float:left;" title="<%= txt_stars(stars) %>">
+<span class="stars" style="float:left;" title="<%= txt_stars(stars) %>">
   <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
 </span>
 <span style="float:right;">

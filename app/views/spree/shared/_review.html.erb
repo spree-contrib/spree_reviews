@@ -1,5 +1,5 @@
 <div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
-  <span title="<%= txt_stars(review.rating) %>">
+  <span class="stars" title="<%= txt_stars(review.rating) %>">
     <%= render :partial => "spree/reviews/stars", :locals => {:stars => review.rating} %>
   </span>
   <meta itemprop="reviewRating" content="<%= review.rating %>" />
