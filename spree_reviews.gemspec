@@ -3,6 +3,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_reviews'
   s.version     = '1.0.0'
   s.summary     = 'Basic review and ratings facility for Spree'
+  s.authors 	= ['Paul Callaghan']
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
 
