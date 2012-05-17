@@ -32,7 +32,7 @@ en:
   from: from
   guideline_text: We reserve the right not to post opinions unrelated to your product
   info_approve_review: Review approved
-  leave_us_a_review_for: Please leave us a review and a rating for our
+  leave_us_a_review_for: Please leave us a review and a rating for our "%{name}"
   original_version: 'Original version'
   out_of_5: "out of 5"
   rating: rating
