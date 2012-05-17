@@ -46,13 +46,21 @@ describe Spree::Review do
       @review.approved = true
       @review.save!
       @review.product.reload.avg_rating.should == 2
+
+      @review.destroy
+      product.reload.avg_rating.should == 0
     end
   end
 
   context "#feedback_stars" do
     before(:each) do
       @review.save
-      3.times { |i| Spree::FeedbackReview.create(:review => @review, :rating => (i+1)) }
+      3.times do |i|
+        f = Spree::FeedbackReview.new
+        f.review = @review
+        f.rating = (i+1)
+        f.save
+      end
     end
 
     it "should return the average rating from feedback reviews" do
