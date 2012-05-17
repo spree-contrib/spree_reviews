@@ -1,6 +1,3 @@
-# encoding: utf-8
-ENV['LIB_NAME'] = 'spree_reviews'
-
 require 'rake'
 require 'rake/testtask'
 require 'rake/packagetask'
@@ -25,7 +22,7 @@ task :release => :package do
   Rake::Task['gem:push'].invoke
 end
 
-desc "Generates a dummy app for testing"
+desc "Regenerates a rails 3 app for testing"
 task :test_app do
   ENV['LIB_NAME'] = 'spree_reviews'
   Rake::Task['common:test_app'].invoke
