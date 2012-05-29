@@ -13,4 +13,7 @@ class Spree::ReviewsConfiguration < Spree::Preferences::Configuration
 
   # require login to post reviews
   preference :require_login, :boolean, :default => true
+  
+  # if the user is not logged in, show the 'write your own review' link anyway
+  preference :always_show_create, :boolean, :default => true
 end
