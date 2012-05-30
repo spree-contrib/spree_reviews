@@ -1,9 +1,11 @@
 Spree::Core::Engine.routes.append do
   namespace :admin do
-    resources :reviews
+    resources :reviews, only: [:index, :destroy] do
+      put :toggle_published
+    end
   end
 
   resources :products do
-    resources :reviews
+    resources :reviews, only: :create
   end
 end

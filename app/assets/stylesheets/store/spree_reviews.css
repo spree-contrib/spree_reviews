@@ -62,7 +62,7 @@ div.rating-cancel, div.star-rating {
 }
 
 div.rating-cancel, div.rating-cancel a {
-  background: transparent url('/assets/store/reviews/delete.gif') no-repeat scroll 0 -16px;
+  background: url('/assets/store/reviews/delete.gif') no-repeat 0 0px;
 }
 
 div.star-rating, div.star-rating a {
@@ -85,6 +85,10 @@ div.star-rating-hover, div.star-rating-hover a {
   background-position: 0 -30px !important;
 }
 
+div.rating-cancel.star-rating-hover {
+  background-position: 0 -16px !important;
+}
+
 /* Read Only CSS */
 div.star-rating-readonly a {
   cursor: default !important
@@ -92,7 +96,7 @@ div.star-rating-readonly a {
 
 /* Partial Star CSS */
 div.star-rating {
-/* 
+/*
 This caused the review stars not to show up
 background-color: transparent !important;
 overflow: hidden !important

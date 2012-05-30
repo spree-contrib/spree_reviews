@@ -1,19 +1,26 @@
-class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
-  helper Spree::ReviewsHelper
+class Spree::Admin::ReviewsController < Spree::Admin::BaseController
+  helper Spree::Admin::NavigationHelper
 
   def index
-    @unapproved_reviews = Spree::Review.not_approved.find(:all, :order => "created_at DESC")
-    @approved_reviews   = Spree::Review.approved.find(:all, :order => "created_at DESC")
+    @reviews = Review.all
   end
 
-  def approve
-    r = Spree::Review.find(params[:id])
+  def show
+    @review = Review.find(params[:id])
+  end
 
-    if r.update_attribute(:approved, true)
-       flash[:notice] = t("info_approve_review")
-    else
-       flash[:error] = t("error_approve_review")
-    end
-    redirect_to admin_reviews_path
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+
+    redirect_to spree.admin_reviews_url, notice: 'Review was successfully deleted.'
+  end
+
+  ## Toggle a review's state between published and unpublished
+  def toggle_published
+    @review = Review.find(params[:review_id])
+    @review.toggle_published
+
+    redirect_to :back
   end
 end
