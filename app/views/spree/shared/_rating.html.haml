@@ -1,0 +1,14 @@
+.ratings
+  %p= t('average_customer_rating')
+  %p.ratings-stars
+    %span{ :title => "#{ txt_stars(product.stars) }" }
+      = render :partial => "spree/reviews/stars", :locals => {:stars => product.stars}
+  %p.ratings-basedupon
+    (Based upon
+    = (pluralize product.reviews_count, "review") + ")"
+  %div{ :itemprop => "aggregateRating", :itemscope => "itemscope", :itemtype => "http://schema.org/AggregateRating" }
+    %meta{ :itemprop => "ratingValue", :content => "#{ product.stars }" }
+    %meta{ :itemprop => "reviewCount", :content => "#{ product.reviews_count }" }
+
+  = javascript_include_tag("jquery.rating.js")
+  = javascript_tag("$(document).ready(function(){$('.stars').rating({required:true});});")

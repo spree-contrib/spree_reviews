@@ -1,0 +1,28 @@
+%h1= t('review_management_description')
+
+%table{ :cellspacing => 6, :class => "index", :id => "listing_products" }
+  %tbody
+    %tr
+      %th= Review.human_attribute_name(:created_at)
+      %th= Review.human_attribute_name(:commenter_name)
+      %th= Review.human_attribute_name(:commenter_email)
+      %th= Review.human_attribute_name(:product)
+      %th= Review.human_attribute_name(:rating)
+      %th= Review.human_attribute_name(:body)
+      %th
+
+    - for review in @reviews
+      %tr{ :id => "#{ dom_id review }" }
+        %td= l review.created_at, :format => :long
+        %td= review.commenter.name
+        %td= review.commenter.email
+        %td= link_to review.product.name, product_path(review.product)
+        %td= review.rating
+        %td{ :width => "50%" }
+          = h review.body
+
+        %td.actions
+          = link_to 'Destroy', admin_review_path(review), :confirm => 'Are you sure?', :method => :delete, :class => "delete icon_link"
+          = link_to review.published? ? "Unpublish" : "Publish", admin_review_toggle_published_path(review), :method => :put, :class => "edit icon_link"
+
+%br

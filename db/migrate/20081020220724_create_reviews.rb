@@ -1,18 +1,16 @@
 class CreateReviews < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :reviews do |t|
-      t.integer :product_id
-      t.string  :name
-      t.string  :location
+      t.string :body
       t.integer :rating
-      t.text    :title
-      t.text    :review
-      t.boolean :approved, :default => false
+      t.string :state, default: 'published'
+      t.references :commenter
+      t.references :product
+
       t.timestamps
     end
-  end
 
-  def self.down
-    drop_table :reviews
+    add_index :reviews, :commenter_id
+    add_index :reviews, :product_id
   end
 end

@@ -1,0 +1,25 @@
+#reviews
+  %h6.product-section-title= t(:reviews)
+  - if @product.reviews.count == 0
+    %p.reviews-none=t('no_reviews_available')
+  - else
+    = render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0}
+    - for review in @product.reviews.published.verified
+      = render :partial => 'spree/shared/review', :locals => {:review => review}
+
+  %h6.product-section-title= t(:write_your_own_review)
+  = simple_form_for [@product, @product.reviews.build] do |f|
+    = f.error_notification
+
+    %fieldset.form-inputs.control-group
+      = simple_fields_for 'commenter' do |c|
+        = c.input :name
+        = c.input :email
+      .control-group.rating.required.review_rating_field
+        = f.label :rating
+        %br
+        = render :partial => "spree/reviews/stars", :locals => {:stars => 0, :edit_enabled => true}
+      = f.input :body
+
+    .form-actions
+      = f.button :submit, 'Submit review'
