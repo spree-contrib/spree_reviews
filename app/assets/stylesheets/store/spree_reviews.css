@@ -36,7 +36,7 @@
 
 .star-rating-control {
   display: inline-block;
-  height: 15px;
+  height: 19px;
 }
 
 .review_hr {
@@ -52,8 +52,8 @@
 
 div.rating-cancel, div.star-rating {
   float: left;
-  width: 17px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   text-indent: -999em;
   cursor: pointer;
   display: block;
@@ -62,31 +62,31 @@ div.rating-cancel, div.star-rating {
 }
 
 div.rating-cancel, div.rating-cancel a {
-  background: url('/assets/store/reviews/delete.gif') no-repeat 0 0px;
+  background: url('/assets/store/reviews/delete.png') no-repeat 0 0px;
 }
 
 div.star-rating, div.star-rating a {
-  background: url('/assets/store/reviews/star.gif') no-repeat 0 0px;
+  background: url('/assets/store/reviews/star.png') no-repeat 0 0px;
 }
 
 div.rating-cancel a, div.star-rating a {
   display: block;
-  width: 16px;
+  width: 19px;
   height: 100%;
   background-position: 0 0px;
   border: 0
 }
 
 div.star-rating-on, div.star-rating-on a {
-  background-position: 0 -30px !important
+  background-position: 0 -19px !important
 }
 
 div.star-rating-hover, div.star-rating-hover a {
-  background-position: 0 -30px !important;
+  background-position: 0 -19px !important;
 }
 
 div.rating-cancel.star-rating-hover {
-  background-position: 0 -16px !important;
+  background-position: 0 -19px !important;
 }
 
 /* Read Only CSS */
