@@ -100,7 +100,7 @@ div.star-rating-on, div.star-rating-on a {
   background-position: 0 -19px !important
 }
 
-div.star-rating-on.small, div.star-rating-on.small a {
+.small div.star-rating-on, .small div.star-rating-on a {
   background-position: 0 -12px !important
 }
 
