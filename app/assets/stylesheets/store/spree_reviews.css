@@ -39,6 +39,10 @@
   height: 19px;
 }
 
+.small .star-rating-control {
+  height: 12px;
+}
+
 .review_hr {
   size: 1px;
   background: silver;
@@ -62,12 +66,22 @@ div.rating-cancel, div.star-rating {
   overflow: hidden
 }
 
+.small div.rating-cancel, .small div.star-rating {
+  width: 13px;
+  height: 12px;
+  padding-right: 1px;
+}
+
 div.rating-cancel, div.rating-cancel a {
   background: url('/assets/store/reviews/delete.png') no-repeat 0 0px;
 }
 
 div.star-rating, div.star-rating a {
   background: url('/assets/store/reviews/star.png') no-repeat 0 0px;
+}
+
+.small div.star-rating, .small div.star-rating a {
+  background: url('/assets/store/reviews/star-small.png') no-repeat 0 0px;
 }
 
 div.rating-cancel a, div.star-rating a {
@@ -78,8 +92,16 @@ div.rating-cancel a, div.star-rating a {
   border: 0
 }
 
+.small div.rating-cancel a, .small div.star-rating a {
+  width: 13px;
+}
+
 div.star-rating-on, div.star-rating-on a {
   background-position: 0 -19px !important
+}
+
+div.star-rating-on.small, div.star-rating-on.small a {
+  background-position: 0 -12px !important
 }
 
 div.star-rating-hover, div.star-rating-hover a {
