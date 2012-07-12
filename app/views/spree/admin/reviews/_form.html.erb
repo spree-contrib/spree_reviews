@@ -13,6 +13,14 @@
   <%= f.label :review %><br />
   <%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "60" %>
 <% end %>
+
+<% if Spree::Reviews::Config[:track_locale] %>
+<%= f.field_container :locale do %>
+  <%= f.label :locale %><br />
+  <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, :default => lc.to_s), lc.to_s] } %>
+<% end %>
+<% end %>
+
 <p class="form-buttons">
   <%= button t(:update) %> <%= t(:or) %> <%= link_to t(:back_reviews), admin_reviews_path %>
 </p>

@@ -20,6 +20,10 @@
     <td><%= Spree::Reviews::Config[:require_login] ? t('yes') : t('no') %></td>
   </tr>
   <tr>
+    <th scope="row"><%= t("spree_reviews.track_locale") %>:</th>
+    <td><%= Spree::Reviews::Config[:track_locale] ? t('yes') : t('no') %></td>
+  </tr>
+  <tr>
     <th scope="row"><%= t("spree_reviews.preview_size") %>:</th>
     <td><%= Spree::Reviews::Config[:preview_size] %></td>
   </tr>

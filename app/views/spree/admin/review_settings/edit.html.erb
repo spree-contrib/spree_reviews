@@ -20,6 +20,10 @@
     <%= check_box_tag('preferences[require_login]', "1", Spree::Reviews::Config[:require_login]) %>
   </p>
   <p>
+    <label><%= t("spree_reviews.track_locale") %>:</label>
+    <%= check_box_tag('preferences[track_locale]', "1", Spree::Reviews::Config[:track_locale]) %>
+  </p>
+  <p>
     <label><%= t('spree_reviews.preview_size') %>:</label>
     <%= text_field_tag('preferences[preview_size]', Spree::Reviews::Config[:preview_size], :size => 3) %>
   </p>

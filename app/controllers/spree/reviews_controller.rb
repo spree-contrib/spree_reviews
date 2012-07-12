@@ -20,6 +20,7 @@ class Spree::ReviewsController < Spree::BaseController
     @review.product = @product
     @review.user = current_user if user_signed_in?
     @review.ip_address = request.remote_ip
+    @review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
 
     authorize! :create, @review
 
