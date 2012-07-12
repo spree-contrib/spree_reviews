@@ -1,10 +1,18 @@
 <%= render "spree/shared/error_messages", :target => @review %>
-<br />
-<p>
-  <%= form.text_area :review, :cols => 60, :rows => 10 %>
-</p>
-<br/>
-<p>
-  <%= form.submit button_name %>
-</p>
+<%= f.field_container :name do %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, :maxlength => "255", :size => "50" %>
+<% end %>
 
+<%= f.field_container :title do %>
+  <%= f.label :title %><br />
+  <%= f.text_field :title, :maxlength => "255", :size => "50" %>
+<% end %>
+
+<%= f.field_container :review do %>
+  <%= f.label :review %><br />
+  <%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "60" %>
+<% end %>
+<p class="form-buttons">
+  <%= button t(:update) %> <%= t(:or) %> <%= link_to t(:back_reviews), admin_reviews_path %>
+</p>
