@@ -7,4 +7,6 @@ class Spree::FeedbackReview < ActiveRecord::Base
 
   default_scope order("spree_feedback_reviews.created_at DESC")
 
+  scope :localized, lambda { |lc| where('spree_reviews.locale = ?', lc) }
+
 end

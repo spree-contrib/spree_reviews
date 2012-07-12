@@ -22,6 +22,7 @@
       <td>
         <p><%= review.name %> / <%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : t(:guest) %></p>
         <p><%= Spree::Review.human_attribute_name(:ip_address) %>: <%= review.ip_address ? link_to(review.ip_address, "http://whois.domaintools.com/#{review.ip_address}") : '-' %></p>
+        <% if Spree::Reviews::Config[:track_locale] %><p><%= t(:locale) %>: <%= t(review.locale) %></p><% end %>
       </td>
       <td>
         <%= txt_stars(review.rating) %>

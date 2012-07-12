@@ -4,7 +4,7 @@
   <p class="reviews-none"><%=t('no_reviews_available')%></p>
   <% else %>
 	  <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
-	  <% for review in @product.reviews.approval_filter %>
+	  <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).approval_filter %>
 	    <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
 	  <% end %>
   <% end %>

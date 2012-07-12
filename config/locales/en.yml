@@ -55,6 +55,7 @@ en:
     require_login: Require user to be logged in
     your_name: Your name
     your_location: Your location
+    track_locale: Track user's locale
   star:
     one: "1"
     other: "%{count}"
