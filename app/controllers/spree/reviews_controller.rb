@@ -9,7 +9,7 @@ class Spree::ReviewsController < Spree::BaseController
 
   def new
     @review = Spree::Review.new(:product => @product)
-    authorize! :new, @review
+    authorize! :create, @review
   end
 
   # save if all ok
@@ -37,8 +37,8 @@ class Spree::ReviewsController < Spree::BaseController
 
   private
 
-    def load_product
-      @product = Spree::Product.find_by_permalink!(params[:product_id])
-    end
+  def load_product
+    @product = Spree::Product.find_by_permalink!(params[:product_id])
+  end
 
 end

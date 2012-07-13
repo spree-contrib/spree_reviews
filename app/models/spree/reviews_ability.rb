@@ -3,10 +3,11 @@ class Spree::ReviewsAbility
 
   def initialize(user)
     can :create, Spree::Review do |review|
-      user.has_role?(:user) || !Spree::Reviews::Config[:require_login]
+      !user.anonymous? || !Spree::Reviews::Config[:require_login]
     end
     can :create, Spree::FeedbackReview do |review|
-      user.has_role?(:user) || !Spree::Reviews::Config[:require_login]
+      !user.anonymous? || !Spree::Reviews::Config[:require_login]
     end
   end
+  Spree::Ability.register_ability(Spree::ReviewsAbility)
 end
