@@ -34,7 +34,7 @@ class Spree::Review < ActiveRecord::Base
 
     def preview
       limit(Spree::Reviews::Config[:preview_size]).oldest_first
-    end    
+    end
   end
 
   def feedback_stars
