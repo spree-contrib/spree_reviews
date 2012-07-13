@@ -12,8 +12,7 @@ en-GB:
         other: "%{count} reviews"
 
   write_your_own_review: Write your own review
-  review_management: Review Management
-  review_management_description: Manage the user-submitted reviews
+  review_management: Reviews
   back_reviews: Back to the reviews
   are_you_sure_review: Are you sure to delete review ?
   info_approve_review: Review approved

@@ -1,6 +1,5 @@
 <% render 'spree/admin/shared/product_sub_menu' %>
-<h1><%= t('review_management_description') %></h1>
-
+<h1><%= t('review_management') %></h1>
 <% for reviews in [["Unapproved", @unapproved_reviews], ["Approved", @approved_reviews]] %>
   <h2><%= t(reviews[0]+"_reviews") %></h2>
 
