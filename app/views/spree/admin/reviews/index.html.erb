@@ -50,20 +50,20 @@
   <div class="box" data-hook="admin_reviews_index_search">
     <h3><%= t(:search) %></h3>
 
-    <%= form_for [:admin, @search] do |f| %>
+    <%= search_form_for [:admin, @search] do |f| %>
       <p>
         <%= label_tag nil, t(:user) %><br />
-        <%= f.text_field :name_like, :size => 25 %>
+        <%= f.text_field :name_cont, :size => 25 %>
       </p> 
 
       <p>
         <%= label_tag nil, t(:title) -%><br/>
-        <%= f.text_field :title_like, :size => 25  -%>
+        <%= f.text_field :title_cont, :size => 25  -%>
       </p>
 
       <p>
         <%= label_tag nil, t(:review) -%><br/>
-        <%= f.text_field :review_like, :size => 25  -%>
+        <%= f.text_field :review_cont, :size => 25  -%>
       </p>
 
       <p>
