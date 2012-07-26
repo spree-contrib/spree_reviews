@@ -2,8 +2,7 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
   helper Spree::ReviewsHelper
 
   def index
-    @unapproved_reviews = Spree::Review.not_approved.find(:all, :order => "created_at DESC")
-    @approved_reviews   = Spree::Review.approved.find(:all, :order => "created_at DESC")
+    @reviews = collection
   end
 
   def approve
@@ -15,5 +14,15 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
        flash[:error] = t("error_approve_review")
     end
     redirect_to admin_reviews_path
+  end
+
+private
+
+  def collection
+    params[:search] ||= {}
+    params[:search][:approved_eq] = false if params[:search][:approved_eq].nil?
+
+    @search = Spree::Review.metasearch(params[:search])
+    @collection = @search.includes([:product, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
   end
 end
