@@ -6,7 +6,7 @@
 <% end %>
 <%= t(:was_this_review_helpful) %>
 <% for i in 1..NB_STARS %>
-<%= radio_button_tag "feedback_review[rating]", pluralize(i, 'stars'), false, :class => "star" %>
+<%= radio_button_tag "feedback_review[rating]", t('star', :count => i), false, :class => "star" %>
 <% end %>
 <%= hidden_field_tag "feedback_review[user_id]", current_user.try(:id) %>
 <button class="feedback-review"><span><%= t("yes") %></span></button>
