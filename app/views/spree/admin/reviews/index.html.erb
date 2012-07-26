@@ -44,6 +44,8 @@
 <% end %>
 </table>
 
+<%= paginate @reviews -%>
+
 <% content_for :sidebar do %>
   <div class="box" data-hook="admin_reviews_index_search">
     <h3><%= t(:search) %></h3>
