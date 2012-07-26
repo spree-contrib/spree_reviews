@@ -14,7 +14,7 @@ class Spree::ReviewsController < Spree::BaseController
 
   # save if all ok
   def create
-    params[:review][:rating].sub!(/\s*stars/,'') unless params[:review][:rating].blank?
+    params[:review][:rating].sub!(/\s*[^0-9]*$/,'') unless params[:review][:rating].blank?
 
     @review = Spree::Review.new(params[:review])
     @review.product = @product
