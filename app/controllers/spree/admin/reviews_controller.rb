@@ -19,10 +19,10 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 private
 
   def collection
-    params[:search] ||= {}
-    params[:search][:approved_eq] = false if params[:search][:approved_eq].nil?
+    params[:q] ||= {}
+    params[:q][:approved_eq] = false if params[:q][:approved_eq].nil?
 
-    @search = Spree::Review.metasearch(params[:search])
-    @collection = @search.includes([:product, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
+    @search = Spree::Review.ransack(params[:q])
+    @collection = @search.result.includes([:product, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
   end
 end
