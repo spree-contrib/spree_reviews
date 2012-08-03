@@ -1,7 +1,7 @@
 en:
   activerecord:
     attributes:
-      review:
+      spree/review:
         name: YYYYYour Name
         title: TTTTTitle
         review: CCCCContent
@@ -32,13 +32,6 @@ en:
   for: for
   from: from
   guideline_text: We reserve the right not to post opinions unrelated to your product
-  helpers:
-    label:
-      review:
-        name: Your Name
-        title: Title
-        review: Content
-        rating: Rating
   info_approve_review: Review approved
   leave_us_a_review_for: Please leave us a review and a rating for our "%{name}"
   no_reviews_available: "No reviews have yet been written for this product."
@@ -46,13 +39,10 @@ en:
   out_of_5: "out of 5"
   rating: rating
   reviews: Reviews
-  review_content: Content
   review_guidelines: Review Guidelines
   review_management: Reviews
-  review_name: Your Name
   review_successfully_submitted: Review was successfully submitted
   review_not_submitted: Review was not submitted
-  review_title: Title
   spree_reviews:
     feedback_rating: Rate feedback
     include_unapproved: Include unapproved reviews in listings
@@ -62,8 +52,6 @@ en:
     review_settings: Review Settings
     show_email: Show email addresses
     track_locale: Track user's locale
-    your_location: Your location
-    your_name: Your name
   star:
     one: "1"
     other: "%{count}"

@@ -1,7 +1,7 @@
 de:
   activerecord:
     attributes:
-      review:
+      spree/review:
         name: Name
         title: Überschrift
         review: Inhalt
@@ -9,6 +9,7 @@ de:
         created_at: Erstellt am
         ip_address: IP
         user: Benutzer
+        locale: Sprache
     models:
       review:
         one: eine Rezension
@@ -32,13 +33,6 @@ de:
   for: über
   from: aus
   guideline_text: "Rezensionen, die den folgenden Richtlinen nicht genügen, werden nicht veröffentlicht"
-  helpers:
-    label:
-      review:
-        name: Ihr Name
-        title: Überschrift
-        review: Rezension
-        rating: Bewertung
   info_approve_review: Die Rezension wurde freigeschaltet.
   leave_us_a_review_for: "Ihre Rezension über %{name}"
   no_reviews_available: "Es sind noch keine Rezensionen vorhanden."
@@ -46,13 +40,10 @@ de:
   out_of_5: "von 5"
   rating: Bewertung
   reviews: Rezensionen
-  review_content: Inhalt
   review_guidelines: Richtlinien für Rezensionen
   review_management: Rezensionen
-  review_name: Ihr Name
   review_successfully_submitted: Ihre Rezension wurde erfolgreich übertragen. Vielen Dank!
   review_not_submitted: Die Rezension wurde nicht übertragen.
-  review_title: Überschrift
   spree_reviews:
     feedback_rating: Feedback für Rezensionen erlauben
     include_unapproved: Unveröffentlichte Rezensionen anzeigen
@@ -61,9 +52,7 @@ de:
     require_login: Login erforderlich
     review_settings: Rezensionseinstellungen
     show_email: E-Mail Adressen anzeigen
-    track_locale: Locale des Benutzers tracken
-    your_location: Ihr Standort
-    your_name: Ihr Name
+    track_locale: Sprache des Benutzers tracken
   star:
     one: "ein Sternchen"
     other: "%{count} Sternchen"
@@ -79,5 +68,5 @@ de:
     other: "%{count} Stimmen"
   was_this_review_helpful: War diese Rezension für Sie hilfreich?
   write_your_own_review: Rezension schreiben
-  yes: Ja
+  'yes': Ja
   you_must_enter_value_for_rating: "Bitte geben Sie eine Bewertung an."
