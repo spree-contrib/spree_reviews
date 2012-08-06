@@ -2,13 +2,13 @@ en:
   activerecord:
     attributes:
       spree/review:
-        name: YYYYYour Name
-        title: TTTTTitle
-        review: CCCCContent
-        rating: RRRRRating
-        created_at: DDDDDate
-        ip_address: IIIIIP
-        user: UUUUUser
+        name: Your Name
+        title: Title
+        review: Content
+        rating: Rating
+        created_at: Date
+        ip_address: IP
+        user: User
     models:
       review:
         one: one review
