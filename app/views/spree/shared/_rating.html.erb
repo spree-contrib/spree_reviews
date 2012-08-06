@@ -7,7 +7,7 @@
       <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
     </span>
   </p>
-  <p class="ratings-basedupon">(<%= t('based_upon') %> <%= pluralize reviews_count, "review" %>)</p>
+  <p class="ratings-basedupon">(<%= t('based_upon_review_count', :count => reviews_count) %>)</p>
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
     <meta itemprop="ratingValue" content="<%= stars %>" />
     <meta itemprop="reviewCount" content="<%= reviews_count %>" />
