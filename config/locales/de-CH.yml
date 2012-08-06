@@ -1,48 +1,72 @@
 de-CH:
   activerecord:
     attributes:
-      review:
-        name: Your Name
-        title: Title
-        review: Content
-        rating: Rating
+      spree/review:
+        name: Name
+        title: Überschrift
+        review: Inhalt
+        rating: Bewertung
+        created_at: Erstellt am
+        ip_address: IP
+        user: Benutzer
+        locale: Sprache
     models:
       review:
-        one: einer Bewertung
-        other: "%{count} Bewertungen"
-
-  write_your_own_review: Schreibe uns deine Meinung
-  review_management: Meinungsverwaltung
-  back_reviews: Zurück zu den Kundenmeinungen
-  are_you_sure_review: Bist du sicher, dass du deine Meinung löschen willst?
-  info_approve_review: Meinung veröffentlicht
-  error_approve_review: Fehler bei der Meinungsveröffentlichung
-  approve: Veröffentlichen
-  leave_us_a_review_for: Deine Meinung über
-  review_successfully_submitted: Meinung erfolgreich übertragen
-  rating: Bewertung
-  submit_your_review: Meinung übertragen
-  review_content: Inhalt
-  review_title: Titel
-  spree_reviews:
-    review_settings: Meinungseinstellungen
-    manage_review_settings: Meinungsdarstellungesoptionen
-    preview_size: Größe der Meinungen
-    include_unapproved: Unveröffentlichte Meinungen anzeigen
-    your_name: Dein Anzeigename
-    your_location: Dein Ort
+        one: eine Rezension
+        other: "%{count} Rezensionen"
+  approve: Freischalten
+  Approved_reviews: Freigeschaltete Rezensionen
+  approved_text: Freigeschalte Kommentare werden innerhalb von 1-2 Werktagen veröffentlicht.
+  are_you_sure_review: "Sind Sie sicher, dass Sie die Rezension löschen möchten?"
   average_customer_rating: Durchschnittliche Bewertung
-  the_fine_print: Kleingedrucktes
-  terms_text: Alle Meinungen werden müssen unseren Bedingen einhalten
-  approved_text: Freigeschalte Kommentare werden in 1-2 Werktagen veröffentlicht.
-  guideline_text: Meinungen die unseren den verlinkten Richtlinen nicht genügen werden nicht veröffentlicht
-  "terms and conditions": Bedingungen
-  "review guidelines": Richtlinien
-  date_: Datum
-  for: über
-  Unapproved_reviews: Nicht freigeschaltete Meinungen
-  Approved_reviews: Freigeschaltete Meinungen
-  from: aus
+  back_reviews: Zurück zu den Rezensionen
+  based_upon_review_count:
+    one: eine Rezension
+    other: "%{count} Rezensionen"
   by: Von
+  date_: Datum
+  edited_version: 'Bearbeitete Version'
+  editing_review_for_html: 'Rezension über %{link} bearbeiten'
+  error_approve_review: Fehler bei der Freischaltung
+  feedback: Feedback
+  feedback_review_for: "Rezension: '%{review}'"
+  for: über
+  from: aus
+  guideline_text: "Rezensionen, die den folgenden Richtlinen nicht genügen, werden nicht veröffentlicht"
+  info_approve_review: Die Rezension wurde freigeschaltet.
+  leave_us_a_review_for: "Ihre Rezension über %{name}"
+  no_reviews_available: "Es sind noch keine Rezensionen vorhanden."
+  original_version: 'Originalversion'
+  out_of_5: "von 5"
+  rating: Bewertung
+  reviews: Rezensionen
+  review_guidelines: Richtlinien für Rezensionen
+  review_management: Rezensionen
+  review_successfully_submitted: Ihre Rezension wurde erfolgreich übertragen. Vielen Dank!
+  review_not_submitted: Die Rezension wurde nicht übertragen.
+  spree_reviews:
+    feedback_rating: Feedback für Rezensionen erlauben
+    include_unapproved: Unveröffentlichte Rezensionen anzeigen
+    manage_review_settings: Einstellungen für die Darstellung von Rezensionen
+    preview_size: Größe der Vorschau
+    require_login: Login erforderlich
+    review_settings: Rezensionseinstellungen
+    show_email: E-Mail Adressen anzeigen
+    track_locale: Locale des Benutzers tracken
+  star:
+    one: "ein Sternchen"
+    other: "%{count} Sternchen"
+  stars: Sternchen
+  submit_your_review: Rezension abschicken
   submitted_on: Eingeschickt am
-  based_upon: basiert auf
+  terms_and_conditions: Bedingungen für Rezensionen
+  terms_text: Rezensionen unterliegen den folgenden Bedingungen
+  the_fine_print: Kleingedrucktes
+  Unapproved_reviews: Nicht freigeschaltete Rezensionen
+  voice:
+    one: "Eine Stimme"
+    other: "%{count} Stimmen"
+  was_this_review_helpful: War diese Rezension für Sie hilfreich?
+  write_your_own_review: Rezension schreiben
+  'yes': Ja
+  you_must_enter_value_for_rating: "Bitte geben Sie eine Bewertung an."

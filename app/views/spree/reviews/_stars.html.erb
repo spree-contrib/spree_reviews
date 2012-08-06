@@ -8,6 +8,6 @@
 <% for i in 1..NB_STARS %>
   <input name="<%= name %>" 
          type="radio" class="star" 
-         value="<%= pluralize(i, 'stars') %>" <%= state %> 
-         <%= "checked=\"checked\"" if i==stars  %> />
+         value="<%= t('star', :count => i) %>" <%= state %> 
+         <% if i==stars  %> checked="checked" <% end %> />
 <% end %>
