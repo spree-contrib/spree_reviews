@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class Spree::ReviewsController < ApplicationController
   def create
     @product = Spree::Product.find_by_permalink(params[:product_id])
     @review = @product.reviews.build(params[:review])
