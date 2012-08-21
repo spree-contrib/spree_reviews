@@ -1,5 +1,5 @@
 #reviews
-  %h6.product-section-title= t(:reviews)
+  %h2.product-section-title= t(:reviews)
   - if @product.reviews.count == 0
     %p.reviews-none=t('no_reviews_available')
   - else
@@ -7,7 +7,7 @@
     - for review in @product.reviews.published.verified
       = render :partial => 'spree/shared/review', :locals => {:review => review}
 
-  %h6.product-section-title= t(:write_your_own_review)
+  %h2.product-section-title= t(:write_your_own_review)
   = simple_form_for [@product, @product.reviews.build] do |f|
     = f.error_notification
 
