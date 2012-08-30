@@ -28,6 +28,7 @@ de-CH:
   edited_version: 'Bearbeitete Version'
   editing_review_for_html: 'Rezension über %{link} bearbeiten'
   error_approve_review: Fehler bei der Freischaltung
+  error_no_product: Das rezensierte Produkt existiert nicht mehr.
   feedback: Feedback
   feedback_review_for: "Rezension: '%{review}'"
   for: über
