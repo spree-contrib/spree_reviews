@@ -19,7 +19,7 @@
         = f.label :rating
         %br
         = render :partial => "spree/reviews/stars", :locals => {:stars => 0, :edit_enabled => true}
-      = f.input :body
+      = f.input :body, label: "Comments"
 
     .form-actions
       = f.button :submit, 'Submit review'
