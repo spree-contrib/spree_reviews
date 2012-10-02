@@ -1,6 +1,6 @@
 class Spree::Review < ActiveRecord::Base
   belongs_to :product
-  belongs_to :user
+  belongs_to :user, :class_name => Spree.user_class.to_s
   has_many   :feedback_reviews
 
   after_save :recalculate_product_rating, :if => :approved?

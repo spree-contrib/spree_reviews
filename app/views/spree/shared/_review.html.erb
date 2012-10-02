@@ -15,7 +15,7 @@
   <div itemprop="reviewBody">
     <%= simple_format(review.review) %>
   </div>
-  <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || current_user) %>
+  <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
   <div class="feedback_review" id="feedback_review_<%= review.id %>">
     <%= render :partial => "spree/feedback_reviews/form", :locals => {:review => review} %>
   </div>
