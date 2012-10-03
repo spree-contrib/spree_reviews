@@ -14,9 +14,5 @@ module SpreeReviews
     end
     config.to_prepare &method(:activate).to_proc
 
-    initializer "spree_reviews.environment", :before => :load_config_initializers do |app|
-      SpreeReviews::Config = Spree::ReviewsConfiguration.new
-    end
-
   end
 end
