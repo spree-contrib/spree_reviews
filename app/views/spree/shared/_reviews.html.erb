@@ -1,6 +1,6 @@
 <div id="reviews">
   <h6 class="product-section-title"><%= t(:reviews) %></h6>
-  <% if @product.reviews.approved.count == 0%>
+  <% if @product.reviews.approved.count == 0 %>
   <p class="reviews-none"><%=t('no_reviews_available')%></p>
   <% else %>
 	  <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
