@@ -1,13 +1,13 @@
 <% if defined? edit_enabled 
     state = "" 
-    name  = "review[rating]" 
+    name  = "review[rating]"
   else  
-    state = 'disabled="disabled"' 
+    state = 'disabled="disabled"'.html_safe 
     name  = defined?(review).nil? ? Time.now.tv_usec.to_s : "review_#{review}" 
   end %>
 <% for i in 1..NB_STARS %>
   <input name="<%= name %>" 
          type="radio" class="star" 
-         value="<%= t('star', :count => i) %>" <%= state %> 
-         <% if i==stars  %> checked="checked" <% end %> />
+         value="<%= pluralize(i, 'stars') %>" <%= state %> 
+         <%= "checked=\"checked\"".html_safe if i == stars  %> />
 <% end %>
