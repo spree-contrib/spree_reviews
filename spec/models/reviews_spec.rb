@@ -6,7 +6,7 @@ describe Spree::Review do
     @review = Spree::Review.new(:name => "blah", :rating => "2", :review => "great", :user => user)
   end
 
-  context "creating a new wishlist" do
+  context "creating a new review" do
     it "is valid with valid attributes" do
       @review.should be_valid
     end
