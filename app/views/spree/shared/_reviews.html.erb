@@ -1,7 +1,7 @@
 <div id="reviews">
   <h6 class="product-section-title"><%= t(:reviews) %></h6>
-  <% if @product.reviews.approved.count == 0 %>
-  <p class="reviews-none"><%=t('no_reviews_available')%></p>
+  <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+    <p class="reviews-none"><%=t('no_reviews_available')%></p>
   <% else %>
     <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
     <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).approval_filter %>
