@@ -68,7 +68,7 @@
 
       <p>
         <%= label_tag nil, t(:approval_status)-%><br/>
-        <%= f.select :approved_eq, [['Approved', true], ['Not yet approved', false]]  -%>
+        <%= f.select :approved_eq, [[t('Approved_reviews'), true], [t('Unapproved_reviews'), false]]  -%>
       </p>
 
       <div data-hook="admin_reviews_index_search_buttons">

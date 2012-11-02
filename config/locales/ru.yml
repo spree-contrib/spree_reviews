@@ -1,7 +1,7 @@
 ru:
   activerecord:
     attributes:
-      review:
+      spree/review:
         title: Заголовок
         review: Содержание
         rating: Рейтинг
@@ -10,12 +10,13 @@ ru:
         ip_address: IP
         user: Пользователь
     models:
-      review:
+      spree/review:
         zero: "0 отзывов"
         one: "%{count} отзыв"
         few: "%{count} отзыва"
         other: "%{count} отзывов"
-  
+  reviews: Отзывы
+  title: Заголовок
   write_your_own_review: Оставьте свой отзыв
   review_management: Управление отзывами
   back_reviews: Назад к отзывам
@@ -47,10 +48,11 @@ ru:
   review_header: Отзывы
   date_: Дата
   for: для
+  approval_status: Статус отзывов
   Unapproved_reviews: Неутверждённые отзывы
   Approved_reviews: Утверждённые отзывы
-  from: from
-  by: by
+  from: от
+  by: ""
   submitted_on: Добавлено
   based_upon: "на основе"
   voice:
@@ -58,9 +60,7 @@ ru:
     one: "%{count} голос"
     few: "%{count} голоса"
     other: "%{count} голосов"
-  star:
-    one: "1"
-    other: "%{count}"
+  star: "%{count}"
 
   feedback: Обратная связь
   stars: Звёзды
@@ -71,4 +71,6 @@ ru:
 
   original_version: 'Исходная версия'
   edited_version: 'Отредактированная версия'
-  editing_review_for: 'Редактирование отзыва для'
+  editing_review_for_html: 'Редактирование отзыва для HTML'
+  no_reviews_available: "Отзывов нет"
+  based_upon_review_count: "На основании всех отзывов"
