@@ -1,4 +1,4 @@
-class Spree::ReviewsController < Spree::BaseController
+class Spree::ReviewsController < Spree::StoreController
   helper Spree::BaseHelper
   before_filter :load_product, :only => [:index, :new, :create]
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
