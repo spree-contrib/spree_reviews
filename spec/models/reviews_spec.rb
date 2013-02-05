@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe Spree::Review do
   before(:each) do
-    user = FactoryGirl.create(:user)
-    @review = Spree::Review.new(:name => "blah", :rating => "2", :review => "great", :user => user)
+    @review = FactoryGirl.create :review
   end
 
   context "creating a new review" do
@@ -45,7 +44,7 @@ describe Spree::Review do
     it "updates the product average rating" do
       @review.approved = true
       @review.save!
-      @review.product.reload.avg_rating.should == 2
+      @review.product.reload.avg_rating.should == @review.rating
 
       @review.destroy
       product.reload.avg_rating.should == 0
