@@ -8,3 +8,6 @@ group :test do
     gem 'growl'
   end
 end
+
+gem 'spree', '~> 1.2.4'
+gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise', :branch => '1-2-stable'
