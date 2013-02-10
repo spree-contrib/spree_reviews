@@ -37,6 +37,10 @@ ru:
     include_unapproved: Показывать неодобренные отзывы на странице товара
     your_name: Ваше имя
     your_location: Город
+    feedback_rating: Рейтинг отзыва
+    show_email: Показывать электронную почту
+    require_login: Требовать вход
+    track_locale: Отслеживать язык
   average_customer_rating: Средняя оценка
   the_fine_print: Мелкий текст
   terms_text: Все отзывы должны быть написаны в соответствии с условиями и соглашениями
@@ -74,3 +78,6 @@ ru:
   editing_review_for_html: 'Редактирование отзыва для HTML'
   no_reviews_available: "Отзывов нет"
   based_upon_review_count: "На основании всех отзывов"
+
+  yes: Да
+  no: Нет
