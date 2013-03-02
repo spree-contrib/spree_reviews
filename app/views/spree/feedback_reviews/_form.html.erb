@@ -9,7 +9,7 @@
 <%= radio_button_tag "feedback_review[rating]", t('star', :count => i), false, :class => "star" %>
 <% end %>
 <%= hidden_field_tag "feedback_review[user_id]", spree_current_user.try(:id) %>
-<button class="feedback-review"><span><%= t("yes") %></span></button>
+<button class="feedback-review"><span><%= t('yes_') %></span></button>
 <% end %>
 
 
