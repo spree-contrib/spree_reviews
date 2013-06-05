@@ -21,6 +21,6 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::ControllerRequests
   config.include FactoryGirl::Syntax::Methods
   config.include Spree::TestingSupport::UrlHelpers
-  config.extend AuthorizationHelpers::Request, :type => :feature
+  config.extend Spree::TestingSupport::AuthorizationHelpers::Request, :type => :feature
   config.use_transactional_fixtures = false
 end
