@@ -13,59 +13,60 @@ fr:
       spree/review:
         one: un commentaire
         other: "%{count} commentaires"
-  approve: Approuver
-  Approved_reviews: Approuvé
-  approved_text: Les commentaires authorisés seront affichés dans un délai de un à deux jours ouvrables.
-  are_you_sure_review: Êtes-vous sûr(e) de vouloir effacer le commentaire ?
-  average_customer_rating: Note moyenne
-  back_reviews: Retour aux commentaires
-  based_upon_review_count:
-    one: basé sur un commentaire
-    other: "basé sur %{count} commentaires"
-  by: par
-  date_: Date
-  edited_version: 'Version modifiée'
-  editing_review_for_html: 'Modification du commentaire pour %{link}'
-  error_approve_review: Erreur en approuvant le commentaire
-  error_no_product: Le produit commenté n'existe plus
-  feedback: Réaction
-  feedback_review_for: "Commentaire: '%{review}'"
-  for: pour
-  from: de la part de
-  guideline_text: Nous nous réservons le droit de ne pas publier de commentaires qui ne sont pas en lien avec le produit
-  info_approve_review: Commentaire approuvé
-  leave_us_a_review_for: "Veuillez laisser un commentaire et une note pour le produit : %{name}"
-  no_reviews_available: "Il n'y pas encore de commentaire pour ce produit."
-  original_version: 'Version originale'
-  out_of_5: "sur 5"
-  rating: note
-  reviews: Commentaires
-  review_guidelines: Normes pour les commentaires
-  review_management: Commentaires
-  review_successfully_submitted: Votre commentaire a été envoyé avec succès
-  review_not_submitted: Votre commentaire n'a pas été envoyé
-  spree_reviews:
-    feedback_rating: Note de réaction
-    include_unapproved: Afficher les commentaires non modérés
-    manage_review_settings: Contrôler l'affichage des commentaires
-    preview_size: Taille des extraits de commentaires
-    require_login: Demander à l'utilisateur d'être connecté
-    review_settings: Paramètres des commentaires
-    show_email: Montrer l'adresse de courriel
-    track_locale: Détécter la langue de l'utilisateur
-  star:
-    one: "1"
-    other: "%{count}"
-  stars: Étoiles
-  submit_your_review: Envoyer votre commentaire
-  submitted_on: Envoyé le
-  terms_and_conditions: Conditions générales
-  terms_text: Toutes les opinions doivent se conformer aux Conditions d'utilisation
-  the_fine_print: Conditions d'utilisation
-  Unapproved_reviews: Non approuvé
-  voice:
-    one: "1 voix"
-    other: "%{count} voix"
-  was_this_review_helpful: "Est-ce que ce commentaire vous a été utile ?"
-  write_your_own_review: Écrire un commentaire
-  you_must_enter_value_for_rating: "Vous devez entrer une valeur pour noter."
+  spree:
+    approve: Approuver
+    approved_reviews: Approuvé
+    approved_text: Les commentaires authorisés seront affichés dans un délai de un à deux jours ouvrables.
+    are_you_sure_review: Êtes-vous sûr(e) de vouloir effacer le commentaire ?
+    average_customer_rating: Note moyenne
+    back_reviews: Retour aux commentaires
+    based_upon_review_count:
+      one: basé sur un commentaire
+      other: "basé sur %{count} commentaires"
+    by: par
+    date_: Date
+    edited_version: 'Version modifiée'
+    editing_review_for_html: 'Modification du commentaire pour %{link}'
+    error_approve_review: Erreur en approuvant le commentaire
+    error_no_product: Le produit commenté n'existe plus
+    feedback: Réaction
+    feedback_review_for: "Commentaire: '%{review}'"
+    for: pour
+    from: de la part de
+    guideline_text: Nous nous réservons le droit de ne pas publier de commentaires qui ne sont pas en lien avec le produit
+    info_approve_review: Commentaire approuvé
+    leave_us_a_review_for: "Veuillez laisser un commentaire et une note pour le produit : %{name}"
+    no_reviews_available: "Il n'y pas encore de commentaire pour ce produit."
+    original_version: 'Version originale'
+    out_of_5: "sur 5"
+    rating: note
+    reviews: Commentaires
+    review_guidelines: Normes pour les commentaires
+    review_management: Commentaires
+    review_successfully_submitted: Votre commentaire a été envoyé avec succès
+    review_not_submitted: Votre commentaire n'a pas été envoyé
+    spree_reviews:
+      feedback_rating: Note de réaction
+      include_unapproved: Afficher les commentaires non modérés
+      manage_review_settings: Contrôler l'affichage des commentaires
+      preview_size: Taille des extraits de commentaires
+      require_login: Demander à l'utilisateur d'être connecté
+      review_settings: Paramètres des commentaires
+      show_email: Montrer l'adresse de courriel
+      track_locale: Détécter la langue de l'utilisateur
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Étoiles
+    submit_your_review: Envoyer votre commentaire
+    submitted_on: Envoyé le
+    terms_and_conditions: Conditions générales
+    terms_text: Toutes les opinions doivent se conformer aux Conditions d'utilisation
+    the_fine_print: Conditions d'utilisation
+    unapproved_reviews: Non approuvé
+    voice:
+      one: "1 voix"
+      other: "%{count} voix"
+    was_this_review_helpful: "Est-ce que ce commentaire vous a été utile ?"
+    write_your_own_review: Écrire un commentaire
+    you_must_enter_value_for_rating: "Vous devez entrer une valeur pour noter."

@@ -1,9 +1,9 @@
 <div class="review_fine_print">
-  <h2><%= t('the_fine_print') %></h2>
+  <h2><%= Spree.t('the_fine_print') %></h2>
   <ul>
-    <li><%= t('terms_text') %>: <%= link_to t(:terms_and_conditions), url_for(:action => 'terms') %></li>
-    <li><%= t('approved_text') %></li>
-    <li><%= t('guideline_text') %>
-      : <%= link_to t(:review_guidelines), url_for(:action => 'submissionguidelines') %></li>
+    <li><%= Spree.t('terms_text') %>: <%= link_to Spree.t(:terms_and_conditions), url_for(:action => 'terms') %></li>
+    <li><%= Spree.t('approved_text') %></li>
+    <li><%= Spree.t('guideline_text') %>
+      : <%= link_to Spree.t(:review_guidelines), url_for(:action => 'submissionguidelines') %></li>
   </ul>
 </div>

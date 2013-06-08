@@ -10,62 +10,63 @@ es:
         ip_address: IP
         user: Usuario
     models:
-      review:
+      spree/review:
         one: una valoración
         other: "%{count} valoraciones"
-  approve: Aprobar
-  Approved_reviews: Aprobado
-  approved_text: "Los comentarios desbloqueados serán publicados en 1-2 días laborales."
-  are_you_sure_review: "¿Estás seguro de querer borrar esta valoración?"
-  average_customer_rating: "Puntuación media"
-  back_reviews: "Volver a las valoraciones"
-  based_upon_review_count:
-    one: "basado en una valoración"
-    other: "basado en %{count} valoraciones"
-  by: por
-  date_: Fecha
-  edited_version: 'Version editada'
-  editing_review_for_html: 'Editando la valoración para %{link}'
-  error_approve_review: "Error aprobando la valoración"
-  error_no_product: "El producto valorado ya no existe"
-  feedback: Feedback
-  feedback_review_for: "Review: '%{review}'"
-  for: para
-  from: desde
-  guideline_text: "Nos reservamos el derecho de no mostrar valoraciones no relacionadas con tu producto"
-  info_approve_review: "Valoración aprobada"
-  leave_us_a_review_for: "Por favor, déjanos una valoración para %{name}"
-  no_reviews_available: "No hay ninguna valoración para este producto."
-  original_version: 'Versión original'
-  out_of_5: "de 5"
-  rating: puntuación
-  reviews: Valoraciones
-  review_guidelines: "Pautas para las valoraciones"
-  review_management: "Valoraciones"
-  review_successfully_submitted: "La valoración se ha enviado correctamente"
-  review_not_submitted: "La valoración no se ha enviado."
-  spree_reviews:
-    feedback_rating: "Puntuación en el feedback"
-    include_unapproved: "Incluir en los listados las valoraciones sin aprobar"
-    manage_review_settings: "Gestionar la publicación de valoraciones"
-    preview_size: "Tamaño de la versión resumida de la valoración"
-    require_login: "Requerir que el usuario esté logado"
-    review_settings: "Configuración de las Valoraciones"
-    show_email: "Mostrar las direcciones de correo"
-    track_locale: "Rastrear el locale del usuario"
-  star:
-    one: "1"
-    other: "%{count}"
-  stars: Estrellas
-  submit_your_review: "Envía tu valoración"
-  submitted_on: "Enviada el"
-  terms_and_conditions: "Términos y Condiciones"
-  terms_text: "Todas las valoraciones deben cumplir nuestros términos y condiciones"
-  the_fine_print: "La letra pequeña"
-  Unapproved_reviews: "Sin aprobar"
-  voice:
-    one: "1 voz"
-    other: "%{count} voces"
-  was_this_review_helpful: "¿Te ha sido útil esta valoración?"
-  write_your_own_review: "Escribe tu propia valoración"
-  you_must_enter_value_for_rating: "Debes incluir una puntuación."
+  spree:
+    approve: Aprobar
+    approved_reviews: Aprobado
+    approved_text: "Los comentarios desbloqueados serán publicados en 1-2 días laborales."
+    are_you_sure_review: "¿Estás seguro de querer borrar esta valoración?"
+    average_customer_rating: "Puntuación media"
+    back_reviews: "Volver a las valoraciones"
+    based_upon_review_count:
+      one: "basado en una valoración"
+      other: "basado en %{count} valoraciones"
+    by: por
+    date_: Fecha
+    edited_version: 'Version editada'
+    editing_review_for_html: 'Editando la valoración para %{link}'
+    error_approve_review: "Error aprobando la valoración"
+    error_no_product: "El producto valorado ya no existe"
+    feedback: Feedback
+    feedback_review_for: "Review: '%{review}'"
+    for: para
+    from: desde
+    guideline_text: "Nos reservamos el derecho de no mostrar valoraciones no relacionadas con tu producto"
+    info_approve_review: "Valoración aprobada"
+    leave_us_a_review_for: "Por favor, déjanos una valoración para %{name}"
+    no_reviews_available: "No hay ninguna valoración para este producto."
+    original_version: 'Versión original'
+    out_of_5: "de 5"
+    rating: puntuación
+    reviews: Valoraciones
+    review_guidelines: "Pautas para las valoraciones"
+    review_management: "Valoraciones"
+    review_successfully_submitted: "La valoración se ha enviado correctamente"
+    review_not_submitted: "La valoración no se ha enviado."
+    spree_reviews:
+      feedback_rating: "Puntuación en el feedback"
+      include_unapproved: "Incluir en los listados las valoraciones sin aprobar"
+      manage_review_settings: "Gestionar la publicación de valoraciones"
+      preview_size: "Tamaño de la versión resumida de la valoración"
+      require_login: "Requerir que el usuario esté logado"
+      review_settings: "Configuración de las Valoraciones"
+      show_email: "Mostrar las direcciones de correo"
+      track_locale: "Rastrear el locale del usuario"
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Estrellas
+    submit_your_review: "Envía tu valoración"
+    submitted_on: "Enviada el"
+    terms_and_conditions: "Términos y Condiciones"
+    terms_text: "Todas las valoraciones deben cumplir nuestros términos y condiciones"
+    the_fine_print: "La letra pequeña"
+    unapproved_reviews: "Sin aprobar"
+    voice:
+      one: "1 voz"
+      other: "%{count} voces"
+    was_this_review_helpful: "¿Te ha sido útil esta valoración?"
+    write_your_own_review: "Escribe tu propia valoración"
+    you_must_enter_value_for_rating: "Debes incluir una puntuación."

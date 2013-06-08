@@ -25,7 +25,7 @@ class Spree::ReviewsController < Spree::StoreController
     authorize! :create, @review
 
     if @review.save
-      flash[:notice] = t('review_successfully_submitted')
+      flash[:notice] = Spree.t('review_successfully_submitted')
       redirect_to (product_path(@product))
     else
       render :action => "new"
