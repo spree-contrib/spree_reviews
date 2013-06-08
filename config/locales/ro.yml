@@ -12,7 +12,8 @@ ro:
     models:
       spree/review:
         one: o recenzie
-        other: "%{count} recenzii"
+        few: "%{count} recenzii"
+        many: "%{count} de recenzii"
   spree:
     approve: Aprobă
     approved_reviews: Aprobate
@@ -22,7 +23,8 @@ ro:
     back_reviews: Înapoi la recenzii
     based_upon_review_count:
       one: bazată pe o recenzie
-      other: "bazată pe %{count} recenzii"
+      few: "bazată pe %{count} recenzii"
+      many: "bazată pe %{count} de recenzii"
     by: de
     date_: Data
     edited_version: 'Versiune editată'
@@ -55,8 +57,9 @@ ro:
       show_email: Afișează adresa de email
       track_locale: Urmărește setarea de limbă a utilizatorului
     star:
-      one: "1"
-      other: "%{count}"
+      one: "o stea"
+      few: "%{count} stele"
+      many: "%{count} de stele"
     stars: Stele
     submit_your_review: Trimite recenzia
     submitted_on: Trimisă la
@@ -65,8 +68,9 @@ ro:
     the_fine_print: Text neclar
     unapproved_reviews: Neaprobat
     voice:
-      one: "1 opinie"
-      other: "%{count} opinii"
+      one: "o opinie"
+      few: "%{count} opinii"
+      many: "%{count} de opinii"
     was_this_review_helpful: "A fost de ajutor această recenzie?"
     write_your_own_review: Scrie propria ta recenzie
     you_must_enter_value_for_rating: "Trebuie să introduci o valoare pentru evaluare."
