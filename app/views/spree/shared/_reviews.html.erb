@@ -1,7 +1,7 @@
 <div id="reviews">
-  <h6 class="product-section-title"><%= t(:reviews) %></h6>
+  <h6 class="product-section-title"><%= Spree.t(:reviews) %></h6>
   <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
-    <p class="reviews-none"><%=t('no_reviews_available')%></p>
+    <p class="reviews-none"><%= Spree.t('no_reviews_available')%></p>
   <% else %>
     <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
     <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).approval_filter %>
@@ -9,7 +9,7 @@
     <% end %>
   <% end %>
   <% if !Spree::Reviews::Config[:require_login] || spree_current_user || Spree::Reviews::Config[:always_show_create] %>
-    <%= link_to t('write_your_own_review'), new_product_review_path(@product), :class => "button",
+    <%= link_to Spree.t('write_your_own_review'), new_product_review_path(@product), :class => "button",
                 :rel => "nofollow,noindex" %>
   <% end %>
 </div>

@@ -10,62 +10,63 @@ pl:
         ip_address: IP
         user: Użytkownik
     models:
-      review:
+      spree/review:
         one: jedna opinia
         other: "%{count} opinii"
-  approve: Zatwierdź
-  Approved_reviews: Zatwierdzone opinie
-  approved_text: Zatwierdzone opinie zostaną opublikowane w ciągu 1-2 dni roboczych.
-  are_you_sure_review: Czy jesteś pewien, że chcesz usunąć opinię?
-  average_customer_rating: Średnia ocena
-  back_reviews: Wróc do opinii
-  based_upon_review_count:
-    one: na podstawie jednej opinii
-    other: "na podstawie %{count} opinii"
-  by: "przez"
-  date_: "Data"
-  edited_version: "Edytowana wersja"
-  editing_review_for_html: 'Edycja opinii dla %{link}'
-  error_approve_review: Błąd przy zatwierdzaniu opinii
-  error_no_product: Oceniamy produkt nie istnieje
-  feedback: Komentarz
-  feedback_review_for: "Komentarz: '%{review}'"
-  for: dla
-  from: od
-  guideline_text: Zastrzegamy, że nie będziemy publikować opinii, niezwiązanych z produktem
-  info_approve_review: Opinia zatwierdzona
-  leave_us_a_review_for: "Dodaj opinię o %{name}"
-  no_reviews_available: "Ten produkt nie posiada opinii."
-  original_version: "Oryginalna wersja"
-  out_of_5: "z 5"
-  rating: Ocena
-  reviews: Opinie
-  review_guidelines: Zasady zamieszczania opinii
-  review_management: Opinie
-  review_successfully_submitted: Opinia została dodana
-  review_not_submitted: Opinia nie została dodana
-  spree_reviews:
-    feedback_rating: Oceń komentarz
-    include_unapproved: Załącz niezaakceptowane do listy
-    manage_review_settings: Zarządzaj wyśiwetlaniem opinii
-    preview_size: Liczba opinii na stronie produktu
-    require_login: Wymagaj, aby użytkownik był zalogowany
-    review_settings: Ustawienia opinii
-    show_email: Pokaż adresy email
-    track_locale: Śledź język użytkownika
-  star:
-    one: "1"
-    other: "%{count}"
-  stars: Gwiazdki
-  submit_your_review: Dodaj opinię
-  submitted_on: Dodano
-  terms_and_conditions: Zasady i warunki
-  terms_text: Wszystkie opinie muszą byc zgodne z zasadami strony
-  the_fine_print: Informacja
-  Unapproved_reviews: Niezaakceptowane
-  voice:
-    one: "1 głos"
-    other: "%{count} głosów"
-  was_this_review_helpful: "Czy ta opinia była pomocna dla Ciebie?"
-  write_your_own_review: Napisz swoją opinię
-  you_must_enter_value_for_rating: "Musisz wystawić jakąś ocenę."
+  spree:
+    approve: Zatwierdź
+    approved_reviews: Zatwierdzone opinie
+    approved_text: Zatwierdzone opinie zostaną opublikowane w ciągu 1-2 dni roboczych.
+    are_you_sure_review: Czy jesteś pewien, że chcesz usunąć opinię?
+    average_customer_rating: Średnia ocena
+    back_reviews: Wróc do opinii
+    based_upon_review_count:
+      one: na podstawie jednej opinii
+      other: "na podstawie %{count} opinii"
+    by: "przez"
+    date_: "Data"
+    edited_version: "Edytowana wersja"
+    editing_review_for_html: 'Edycja opinii dla %{link}'
+    error_approve_review: Błąd przy zatwierdzaniu opinii
+    error_no_product: Oceniamy produkt nie istnieje
+    feedback: Komentarz
+    feedback_review_for: "Komentarz: '%{review}'"
+    for: dla
+    from: od
+    guideline_text: Zastrzegamy, że nie będziemy publikować opinii, niezwiązanych z produktem
+    info_approve_review: Opinia zatwierdzona
+    leave_us_a_review_for: "Dodaj opinię o %{name}"
+    no_reviews_available: "Ten produkt nie posiada opinii."
+    original_version: "Oryginalna wersja"
+    out_of_5: "z 5"
+    rating: Ocena
+    reviews: Opinie
+    review_guidelines: Zasady zamieszczania opinii
+    review_management: Opinie
+    review_successfully_submitted: Opinia została dodana
+    review_not_submitted: Opinia nie została dodana
+    spree_reviews:
+      feedback_rating: Oceń komentarz
+      include_unapproved: Załącz niezaakceptowane do listy
+      manage_review_settings: Zarządzaj wyśiwetlaniem opinii
+      preview_size: Liczba opinii na stronie produktu
+      require_login: Wymagaj, aby użytkownik był zalogowany
+      review_settings: Ustawienia opinii
+      show_email: Pokaż adresy email
+      track_locale: Śledź język użytkownika
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Gwiazdki
+    submit_your_review: Dodaj opinię
+    submitted_on: Dodano
+    terms_and_conditions: Zasady i warunki
+    terms_text: Wszystkie opinie muszą byc zgodne z zasadami strony
+    the_fine_print: Informacja
+    unapproved_reviews: Niezaakceptowane
+    voice:
+      one: "1 głos"
+      other: "%{count} głosów"
+    was_this_review_helpful: "Czy ta opinia była pomocna dla Ciebie?"
+    write_your_own_review: Napisz swoją opinię
+    you_must_enter_value_for_rating: "Musisz wystawić jakąś ocenę."

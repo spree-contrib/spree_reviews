@@ -10,62 +10,63 @@ en-GB:
         ip_address: IP
         user: User
     models:
-      review:
+      spree/review:
         one: one review
         other: "%{count} reviews"
-  approve: Approve
-  Approved_reviews: Approved
-  approved_text: Unlocked comments will be published within 1-2 business days.
-  are_you_sure_review: Are you sure to delete review ?
-  average_customer_rating: Average rating
-  back_reviews: Back to the reviews
-  based_upon_review_count:
-    one: based upon one review
-    other: "based upon %{count} reviews"
-  by: by
-  date_: Date
-  edited_version: 'Edited version'
-  editing_review_for_html: 'Editing review for %{link}'
-  error_approve_review: Error approving review
-  error_no_product: The reviewed product doesn't exist anymore
-  feedback: Feedback
-  feedback_review_for: "Review: '%{review}'"
-  for: for
-  from: from
-  guideline_text: We reserve the right not to post opinions unrelated to your product
-  info_approve_review: Review approved
-  leave_us_a_review_for: Please leave us a review and a rating for our "%{name}"
-  no_reviews_available: "No reviews have yet been written for this product."
-  original_version: 'Original version'
-  out_of_5: "out of 5"
-  rating: rating
-  reviews: Reviews
-  review_guidelines: Review Guidelines
-  review_management: Reviews
-  review_successfully_submitted: Review was successfully submitted
-  review_not_submitted: Review was not submitted
-  spree_reviews:
-    feedback_rating: Rate feedback
-    include_unapproved: Include unapproved reviews in listings
-    manage_review_settings: Control the display of reviews
-    preview_size: Size of the review snippets
-    require_login: Require user to be logged in
-    review_settings: Review Settings
-    show_email: Show email addresses
-    track_locale: Track user's locale
-  star:
-    one: "1"
-    other: "%{count}"
-  stars: Stars
-  submit_your_review: Submit your review
-  submitted_on: Submitted on
-  terms_and_conditions: Terms & Conditions
-  terms_text: All opinions must comply with our terms and conditions
-  the_fine_print: The fine print
-  Unapproved_reviews: Unapproved
-  voice:
-    one: "1 voice"
-    other: "%{count} voices"
-  was_this_review_helpful: "Was this review helpful to you?"
-  write_your_own_review: Write your own review
-  you_must_enter_value_for_rating: "You must enter a value for rating."
+  spree:
+    approve: Approve
+    approved_reviews: Approved
+    approved_text: Unlocked comments will be published within 1-2 business days.
+    are_you_sure_review: Are you sure to delete review ?
+    average_customer_rating: Average rating
+    back_reviews: Back to the reviews
+    based_upon_review_count:
+      one: based upon one review
+      other: "based upon %{count} reviews"
+    by: by
+    date_: Date
+    edited_version: 'Edited version'
+    editing_review_for_html: 'Editing review for %{link}'
+    error_approve_review: Error approving review
+    error_no_product: The reviewed product doesn't exist anymore
+    feedback: Feedback
+    feedback_review_for: "Review: '%{review}'"
+    for: for
+    from: from
+    guideline_text: We reserve the right not to post opinions unrelated to your product
+    info_approve_review: Review approved
+    leave_us_a_review_for: Please leave us a review and a rating for our "%{name}"
+    no_reviews_available: "No reviews have yet been written for this product."
+    original_version: 'Original version'
+    out_of_5: "out of 5"
+    rating: rating
+    reviews: Reviews
+    review_guidelines: Review Guidelines
+    review_management: Reviews
+    review_successfully_submitted: Review was successfully submitted
+    review_not_submitted: Review was not submitted
+    spree_reviews:
+      feedback_rating: Rate feedback
+      include_unapproved: Include unapproved reviews in listings
+      manage_review_settings: Control the display of reviews
+      preview_size: Size of the review snippets
+      require_login: Require user to be logged in
+      review_settings: Review Settings
+      show_email: Show email addresses
+      track_locale: Track user's locale
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Stars
+    submit_your_review: Submit your review
+    submitted_on: Submitted on
+    terms_and_conditions: Terms & Conditions
+    terms_text: All opinions must comply with our terms and conditions
+    the_fine_print: The fine print
+    unapproved_reviews: Unapproved
+    voice:
+      one: "1 voice"
+      other: "%{count} voices"
+    was_this_review_helpful: "Was this review helpful to you?"
+    write_your_own_review: Write your own review
+    you_must_enter_value_for_rating: "You must enter a value for rating."
