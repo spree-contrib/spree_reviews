@@ -1,11 +1,11 @@
-<h1><%= link_to t('feedback_review_for', :review => @review.title ), admin_reviews_path %></h1>
+<h1><%= link_to Spree.t('feedback_review_for', :review => @review.title ), admin_reviews_path %></h1>
 
 
 <table class="index">
   <tr>
-    <th><%= t('date_') %></th>
-    <th><%= t('user') %></th>
-    <th><%= t('stars') %></th>
+    <th><%= Spree.t('date_') %></th>
+    <th><%= Spree.t('user') %></th>
+    <th><%= Spree.t('stars') %></th>
     <th></th>
   </tr>
   <% @collection.each do |feedback| %>

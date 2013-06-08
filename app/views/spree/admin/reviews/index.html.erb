@@ -1,13 +1,13 @@
 <% render 'spree/admin/shared/product_sub_menu' %>
 
-<h1><%= t('reviews') %></h1>
+<h1><%= Spree.t('reviews') %></h1>
 
 <table cellspacing=6 class="index">
   <tr>
     <th><%= Spree::Review.human_attribute_name(:created_at) %></th>
     <th><%= Spree::Review.human_attribute_name(:user) %></th>
     <th><%= Spree::Review.human_attribute_name(:rating) %></th>
-    <th><%= Spree::Review.human_attribute_name(:title) %> / <%= t('product') %></th>
+    <th><%= Spree::Review.human_attribute_name(:title) %> / <%= Spree.t('product') %></th>
     <th><%= Spree::Review.human_attribute_name(:review) %></th>
     <th></th>
   </tr>
@@ -17,7 +17,7 @@
       <%= l review.created_at, :format => :long %>
     </td>
     <td>
-      <p><%= review.name %> / <%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : t(:guest) %></p>
+      <p><%= review.name %> / <%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : Spree.t(:guest) %></p>
       <p><%= Spree::Review.human_attribute_name(:ip_address) %>: <%= review.ip_address ? link_to(review.ip_address, "http://whois.domaintools.com/#{review.ip_address}") : '-' %></p>
     </td>
     <td>
@@ -26,7 +26,7 @@
     <td>
       <%= review.title %>
       <% if review.product %>
-        <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
+        <%= Spree.t('for') %> <%= link_to review.product.name, product_path(review.product) %>
       <% end %>
     </td>
     <td width="50%">
@@ -34,9 +34,9 @@
     </td>
     <td>
       <% unless review.approved %>
-        <%= link_to_with_icon 'tick', t('approve'), {:action => 'approve', :id => review.id} %> <br />
+        <%= link_to_with_icon 'tick', Spree.t('approve'), {:action => 'approve', :id => review.id} %> <br />
       <% end %>
-      <%= link_to t('feedback'), admin_review_feedback_reviews_path(review) %>(<%= review.feedback_stars %>/<%= review.feedback_reviews.size %>) <br/>
+      <%= link_to Spree.t('feedback'), admin_review_feedback_reviews_path(review) %>(<%= review.feedback_stars %>/<%= review.feedback_reviews.size %>) <br/>
       <%= link_to_edit review %><br/>
       <%= link_to_delete review %>
     </td>
@@ -48,31 +48,31 @@
 
 <% content_for :sidebar do %>
   <div class="box" data-hook="admin_reviews_index_search">
-    <h3><%= t(:search) %></h3>
+    <h3><%= Spree.t(:search) %></h3>
 
     <%= search_form_for [:admin, @search] do |f| %>
       <p>
-        <%= label_tag nil, t(:user) %><br />
+        <%= label_tag nil, Spree.t(:user) %><br />
         <%= f.text_field :name_cont, :size => 25 %>
-      </p> 
+      </p>
 
       <p>
-        <%= label_tag nil, t(:title) -%><br/>
+        <%= label_tag nil, Spree.t(:title) -%><br/>
         <%= f.text_field :title_cont, :size => 25  -%>
       </p>
 
       <p>
-        <%= label_tag nil, t(:review) -%><br/>
+        <%= label_tag nil, Spree.t(:review) -%><br/>
         <%= f.text_field :review_cont, :size => 25  -%>
       </p>
 
       <p>
-        <%= label_tag nil, t(:approval_status)-%><br/>
-        <%= f.select :approved_eq, [[t('Approved_reviews'), true], [t('Unapproved_reviews'), false]]  -%>
+        <%= label_tag nil, Spree.t(:approval_status)-%><br/>
+        <%= f.select :approved_eq, [[Spree.t('approved_reviews'), true], [Spree.t('unapproved_reviews'), false]]  -%>
       </p>
 
       <div data-hook="admin_reviews_index_search_buttons">
-        <p><%= button t(:search) %></p>
+        <p><%= button Spree.t(:search) %></p>
       </div>
     <%- end -%>
   </div>

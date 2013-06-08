@@ -1,13 +1,13 @@
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
 <div class="ratings">
-  <p><%= t('average_customer_rating') %>: </p>
+  <p><%= Spree.t('average_customer_rating') %>: </p>
   <p class="ratings-stars">
     <span title="<%= txt_stars(stars) %>">
       <%= render :partial => "spree/reviews/stars", :locals => {:stars => stars} %>
     </span>
   </p>
-  <p class="ratings-basedupon">(<%= t('based_upon_review_count', :count => reviews_count) %>)</p>
+  <p class="ratings-basedupon">(<%= Spree.t('based_upon_review_count', :count => reviews_count) %>)</p>
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
     <meta itemprop="ratingValue" content="<%= stars %>" />
     <meta itemprop="reviewCount" content="<%= reviews_count %>" />

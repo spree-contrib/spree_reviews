@@ -1,34 +1,34 @@
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
-<h1><%= t("spree_reviews.review_settings") %></h1>
+<h1><%= Spree.t("spree_reviews.review_settings") %></h1>
 
 <table>
   <tr>
-    <th scope="row"><%= t("spree_reviews.include_unapproved") %>:</th>
-    <td><%= Spree::Reviews::Config[:include_unapproved_reviews] ? t('yes') : t('no') %></td>
+    <th scope="row"><%= Spree.t("spree_reviews.include_unapproved") %>:</th>
+    <td><%= Spree::Reviews::Config[:include_unapproved_reviews] ? Spree.t('yes') : Spree.t('no') %></td>
   </tr>
   <tr>
-    <th scope="row"><%= t("spree_reviews.feedback_rating") %>:</th>
-    <td><%= Spree::Reviews::Config[:feedback_rating] ? t('yes') : t('no') %></td>
+    <th scope="row"><%= Spree.t("spree_reviews.feedback_rating") %>:</th>
+    <td><%= Spree::Reviews::Config[:feedback_rating] ? Spree.t('yes') : Spree.t('no') %></td>
   </tr>
   <tr>
-    <th scope="row"><%= t("spree_reviews.show_email") %>:</th>
-    <td><%= Spree::Reviews::Config[:show_email] ? t('yes') : t('no') %></td>
+    <th scope="row"><%= Spree.t("spree_reviews.show_email") %>:</th>
+    <td><%= Spree::Reviews::Config[:show_email] ? Spree.t('yes') : Spree.t('no') %></td>
   </tr>
   <tr>
-    <th scope="row"><%= t("spree_reviews.require_login") %>:</th>
-    <td><%= Spree::Reviews::Config[:require_login] ? t('yes') : t('no') %></td>
+    <th scope="row"><%= Spree.t("spree_reviews.require_login") %>:</th>
+    <td><%= Spree::Reviews::Config[:require_login] ? Spree.t('yes') : Spree.t('no') %></td>
   </tr>
   <tr>
-    <th scope="row"><%= t("spree_reviews.track_locale") %>:</th>
-    <td><%= Spree::Reviews::Config[:track_locale] ? t('yes') : t('no') %></td>
+    <th scope="row"><%= Spree.t("spree_reviews.track_locale") %>:</th>
+    <td><%= Spree::Reviews::Config[:track_locale] ? Spree.t('yes') : Spree.t('no') %></td>
   </tr>
   <tr>
-    <th scope="row"><%= t("spree_reviews.preview_size") %>:</th>
+    <th scope="row"><%= Spree.t("spree_reviews.preview_size") %>:</th>
     <td><%= Spree::Reviews::Config[:preview_size] %></td>
   </tr>
 </table>
 
 <p>
-  <%= link_to_with_icon('edit', t("edit"), edit_admin_review_settings_path) %>
+  <%= link_to_with_icon('edit', Spree.t("edit"), edit_admin_review_settings_path) %>
 </p>

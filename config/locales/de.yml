@@ -11,63 +11,64 @@ de:
         user: Benutzer
         locale: Sprache
     models:
-      review:
+      spree/review:
         one: eine Rezension
         other: "%{count} Rezensionen"
-  approve: Freischalten
-  Approved_reviews: Freigeschaltete Rezensionen
-  approved_text: Freigeschalte Kommentare werden innerhalb von 1-2 Werktagen veröffentlicht.
-  are_you_sure_review: "Sind Sie sicher, dass Sie die Rezension löschen möchten?"
-  average_customer_rating: Durchschnittliche Bewertung
-  back_reviews: Zurück zu den Rezensionen
-  based_upon_review_count:
-    one: basiert auf einer Rezension
-    other: "basiert auf %{count} Rezensionen"
-  by: Von
-  date_: Datum
-  edited_version: 'Bearbeitete Version'
-  editing_review_for_html: 'Rezension über %{link} bearbeiten'
-  error_approve_review: Fehler bei der Freischaltung
-  error_no_product: Das rezensierte Produkt existiert nicht mehr.
-  feedback: Feedback
-  feedback_review_for: "Rezension: '%{review}'"
-  for: über
-  from: aus
-  guideline_text: "Rezensionen, die den folgenden Richtlinen nicht genügen, werden nicht veröffentlicht"
-  info_approve_review: Die Rezension wurde freigeschaltet.
-  leave_us_a_review_for: "Ihre Rezension über %{name}"
-  no_reviews_available: "Es sind noch keine Rezensionen für dieses Produkt vorhanden."
-  original_version: 'Originalversion'
-  out_of_5: "von 5"
-  rating: Bewertung
-  reviews: Rezensionen
-  review_guidelines: Richtlinien für Rezensionen
-  review_management: Rezensionen
-  review_successfully_submitted: Ihre Rezension wurde erfolgreich übertragen. Vielen Dank!
-  review_not_submitted: Die Rezension wurde nicht übertragen.
-  spree_reviews:
-    feedback_rating: Feedback für Rezensionen erlauben
-    include_unapproved: Unveröffentlichte Rezensionen anzeigen
-    manage_review_settings: Einstellungen für die Darstellung von Rezensionen
-    preview_size: Größe der Vorschau
-    require_login: Login erforderlich
-    review_settings: Rezensionseinstellungen
-    show_email: E-Mail Adressen anzeigen
-    track_locale: Sprache des Benutzers tracken
-  star:
-    one: "ein Sternchen"
-    other: "%{count} Sternchen"
-  stars: Sternchen
-  submit_your_review: Rezension abschicken
-  submitted_on: Eingeschickt am
-  terms_and_conditions: Bedingungen für Rezensionen
-  terms_text: Rezensionen unterliegen den folgenden Bedingungen
-  the_fine_print: Kleingedrucktes
-  Unapproved_reviews: Nicht freigeschaltete Rezensionen
-  voice:
-    one: "Eine Stimme"
-    other: "%{count} Stimmen"
-  was_this_review_helpful: War diese Rezension für Sie hilfreich?
-  write_your_own_review: Rezension schreiben
-  'yes': Ja
-  you_must_enter_value_for_rating: "Bitte geben Sie eine Bewertung an."
+  spree:
+    approve: Freischalten
+    approved_reviews: Freigeschaltete Rezensionen
+    approved_text: Freigeschalte Kommentare werden innerhalb von 1-2 Werktagen veröffentlicht.
+    are_you_sure_review: "Sind Sie sicher, dass Sie die Rezension löschen möchten?"
+    average_customer_rating: Durchschnittliche Bewertung
+    back_reviews: Zurück zu den Rezensionen
+    based_upon_review_count:
+      one: basiert auf einer Rezension
+      other: "basiert auf %{count} Rezensionen"
+    by: Von
+    date_: Datum
+    edited_version: 'Bearbeitete Version'
+    editing_review_for_html: 'Rezension über %{link} bearbeiten'
+    error_approve_review: Fehler bei der Freischaltung
+    error_no_product: Das rezensierte Produkt existiert nicht mehr.
+    feedback: Feedback
+    feedback_review_for: "Rezension: '%{review}'"
+    for: über
+    from: aus
+    guideline_text: "Rezensionen, die den folgenden Richtlinen nicht genügen, werden nicht veröffentlicht"
+    info_approve_review: Die Rezension wurde freigeschaltet.
+    leave_us_a_review_for: "Ihre Rezension über %{name}"
+    no_reviews_available: "Es sind noch keine Rezensionen für dieses Produkt vorhanden."
+    original_version: 'Originalversion'
+    out_of_5: "von 5"
+    rating: Bewertung
+    reviews: Rezensionen
+    review_guidelines: Richtlinien für Rezensionen
+    review_management: Rezensionen
+    review_successfully_submitted: Ihre Rezension wurde erfolgreich übertragen. Vielen Dank!
+    review_not_submitted: Die Rezension wurde nicht übertragen.
+    spree_reviews:
+      feedback_rating: Feedback für Rezensionen erlauben
+      include_unapproved: Unveröffentlichte Rezensionen anzeigen
+      manage_review_settings: Einstellungen für die Darstellung von Rezensionen
+      preview_size: Größe der Vorschau
+      require_login: Login erforderlich
+      review_settings: Rezensionseinstellungen
+      show_email: E-Mail Adressen anzeigen
+      track_locale: Sprache des Benutzers tracken
+    star:
+      one: "ein Sternchen"
+      other: "%{count} Sternchen"
+    stars: Sternchen
+    submit_your_review: Rezension abschicken
+    submitted_on: Eingeschickt am
+    terms_and_conditions: Bedingungen für Rezensionen
+    terms_text: Rezensionen unterliegen den folgenden Bedingungen
+    the_fine_print: Kleingedrucktes
+    unapproved_reviews: Nicht freigeschaltete Rezensionen
+    voice:
+      one: "Eine Stimme"
+      other: "%{count} Stimmen"
+    was_this_review_helpful: War diese Rezension für Sie hilfreich?
+    write_your_own_review: Rezension schreiben
+    'yes': Ja
+    you_must_enter_value_for_rating: "Bitte geben Sie eine Bewertung an."

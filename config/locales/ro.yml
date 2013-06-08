@@ -10,62 +10,63 @@ ro:
         ip_address: IP
         user: Utilizator
     models:
-      review:
+      spree/review:
         one: o recenzie
         other: "%{count} recenzii"
-  approve: Aprobă
-  Approved_reviews: Aprobate
-  approved_text: Comentariile deblocate vor fi publicate în 1-2 zile lucrătoare.
-  are_you_sure_review: Sigur dorești ștergerea recenziei?
-  average_customer_rating: Evaluare media
-  back_reviews: Înapoi la recenzii
-  based_upon_review_count:
-    one: bazată pe o recenzie
-    other: "bazată pe %{count} recenzii"
-  by: de
-  date_: Data
-  edited_version: 'Versiune editată'
-  editing_review_for_html: 'Editare recenzie pentru %{link}'
-  error_approve_review: Eroare la aprobarea recenziei
-  error_no_product: Produsul recenziat nu mai există
-  feedback: Feedback
-  feedback_review_for: "Recenzie: '%{review}'"
-  for: pentru
-  from: de la
-  guideline_text: Ne rezervăm dreptul de a nu publica opinii nerelevante pentru produsul dumneavoastră
-  info_approve_review: Recenzie aprobată
-  leave_us_a_review_for: Vă rugăm să publicați o recenzie și să evaluați "%{name}"
-  no_reviews_available: "Încă nu au fost scrise recenzii pentru acest produs."
-  original_version: 'Versiunea originală'
-  out_of_5: "din 5"
-  rating: evaluare
-  reviews: Recenzii
-  review_guidelines: Îndrumări recenzii
-  review_management: Recenzii
-  review_successfully_submitted: Recenzia a fost trimisă cu succes
-  review_not_submitted: Recenzia nu a fost trimisă
-  spree_reviews:
-    feedback_rating: Evaluează feedback
-    include_unapproved: Include recenzii neaprobate în listări
-    manage_review_settings: Controlează afișarea recenziilor
-    preview_size: Mărimea fragmentului recenziei
-    require_login: Solicită ca utilizatorul să fie autentificat
-    review_settings: Setări recenzii
-    show_email: Afișează adresa de email
-    track_locale: Urmărește setarea de limbă a utilizatorului
-  star:
-    one: "1"
-    other: "%{count}"
-  stars: Stele
-  submit_your_review: Trimite recenzia
-  submitted_on: Trimisă la
-  terms_and_conditions: Termene și condiții
-  terms_text: Toate opiniile trebuie să respecte termenele și condițiile noastre
-  the_fine_print: Textul neclar
-  Unapproved_reviews: Neaprobat
-  voice:
-    one: "1 opinie"
-    other: "%{count} opinii"
-  was_this_review_helpful: "A fost de ajutor această recenzie?"
-  write_your_own_review: Scrie propria ta recenzie
-  you_must_enter_value_for_rating: "Trebuie să introduci o valoare pentru evaluare."
+  spree:
+    approve: Aprobă
+    approved_reviews: Aprobate
+    approved_text: Comentariile deblocate vor fi publicate în 1-2 zile lucrătoare.
+    are_you_sure_review: Sigur dorești ștergerea recenziei?
+    average_customer_rating: Evaluare media
+    back_reviews: Înapoi la recenzii
+    based_upon_review_count:
+      one: bazată pe o recenzie
+      other: "bazată pe %{count} recenzii"
+    by: de
+    date_: Data
+    edited_version: 'Versiune editată'
+    editing_review_for_html: 'Editare recenzie pentru %{link}'
+    error_approve_review: Eroare la aprobarea recenziei
+    error_no_product: Produsul recenziat nu mai există
+    feedback: Feedback
+    feedback_review_for: "Recenzie: '%{review}'"
+    for: pentru
+    from: de la
+    guideline_text: Ne rezervăm dreptul de a nu publica opinii nerelevante pentru produsul dumneavoastră
+    info_approve_review: Recenzie aprobată
+    leave_us_a_review_for: Vă rugăm să publicați o recenzie și să evaluați "%{name}"
+    no_reviews_available: "Încă nu au fost scrise recenzii pentru acest produs."
+    original_version: 'Versiunea originală'
+    out_of_5: "din 5"
+    rating: evaluare
+    reviews: Recenzii
+    review_guidelines: Îndrumări recenzii
+    review_management: Recenzii
+    review_successfully_submitted: Recenzia a fost trimisă cu succes
+    review_not_submitted: Recenzia nu a fost trimisă
+    spree_reviews:
+      feedback_rating: Evaluează feedback
+      include_unapproved: Include recenzii neaprobate în listări
+      manage_review_settings: Controlează afișarea recenziilor
+      preview_size: Mărimea fragmentului recenziei
+      require_login: Solicită ca utilizatorul să fie autentificat
+      review_settings: Setări recenzii
+      show_email: Afișează adresa de email
+      track_locale: Urmărește setarea de limbă a utilizatorului
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Stele
+    submit_your_review: Trimite recenzia
+    submitted_on: Trimisă la
+    terms_and_conditions: Termene și condiții
+    terms_text: Toate opiniile trebuie să respecte termenele și condițiile noastre
+    the_fine_print: Text neclar
+    unapproved_reviews: Neaprobat
+    voice:
+      one: "1 opinie"
+      other: "%{count} opinii"
+    was_this_review_helpful: "A fost de ajutor această recenzie?"
+    write_your_own_review: Scrie propria ta recenzie
+    you_must_enter_value_for_rating: "Trebuie să introduci o valoare pentru evaluare."
