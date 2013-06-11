@@ -22,11 +22,11 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
       redirect_to admin_reviews_path and return
     end
   end
-private
+
+  private
 
   def collection
     params[:q] ||= {}
-    params[:q][:approved_eq] = false if params[:q][:approved_eq].nil?
 
     @search = Spree::Review.ransack(params[:q])
     @collection = @search.result.includes([:product, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])

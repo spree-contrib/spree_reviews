@@ -1,16 +1,17 @@
 class Spree::Admin::ReviewSettingsController < Spree::Admin::BaseController
   def update
     # workaround for unset checkbox behaviour
-    params[:preferences][:include_unapproved_reviews] = false if params[:preferences][:include_unapproved_reviews].blank?
-    params[:preferences][:feedback_rating] = false            if params[:preferences][:feedback_rating].blank?
-    params[:preferences][:show_email] = false                 if params[:preferences][:show_email].blank?
-    params[:preferences][:require_login] = false              if params[:preferences][:require_login].blank?
-    params[:preferences][:track_locale] = false               if params[:preferences][:track_locale].blank?
+    %i[include_unapproved_reviews feedback_rating show_email require_login
+       track_locale].each do |sym|
+
+      params[:preferences][sym] = false if params[:preferences][sym].blank?
+    end
+
     Spree::Reviews::Config.set(params[:preferences])
 
     respond_to do |format|
       format.html do
-        redirect_to admin_review_settings_path
+        redirect_to edit_admin_review_settings_path
       end
     end
   end

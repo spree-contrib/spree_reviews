@@ -1,21 +1,44 @@
-<h1><%= link_to Spree.t('feedback_review_for', :review => @review.title ), admin_reviews_path %></h1>
+<% content_for :page_title do %>
+	<%= Spree.t('feedback_review_for', :review => @review.title ) %>
+<% end %>
 
+<% content_for :page_actions do %>
+	<li><%= button_link_to Spree.t('back_to_reviews_list'), admin_reviews_path, { :icon => 'icon-arrow-left' } %></li>
+<% end %>
 
-<table class="index">
-  <tr>
-    <th><%= Spree.t('date_') %></th>
-    <th><%= Spree.t('user') %></th>
-    <th><%= Spree.t('stars') %></th>
-    <th></th>
-  </tr>
-  <% @collection.each do |feedback| %>
-    <tr id="<%= dom_id(feedback) %>">
-      <td><%= l feedback.created_at %></td>
-      <td><%= feedback.user.try(:login) || "anonimus" %></td>
-      <td><%= feedback.rating %></td>
-      <td class="actions">
-        <%= link_to_delete feedback  %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<% render 'spree/admin/shared/product_sub_menu' %>
+
+<% if @collection.any? %>
+	<table class="index">
+		<colgroup>
+			<col style="width: 30%;">
+			<col style="width: 20%;">
+			<col style="width: 20%;">
+			<col style="width: 17%;">
+		</colgroup>
+		<thead>
+			<tr>
+				<th><%= Spree.t('user') %></th>
+				<th><%= Spree.t('stars') %></th>
+				<th><%= Spree.t('date_') %></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		<%- @collection.each do |feedback| -%>
+			<tr id="<%= dom_id(feedback) %>">
+			  <td><%= l feedback.created_at %></td>
+			  <td><%= feedback.user.try(:login) || "anonimus" %></td>
+			  <td><%= feedback.rating %></td>
+			  <td class="actions">
+				  <%= link_to_delete feedback, :no_text => true  %>
+			  </td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<div class="no-objects-found">
+		<%= Spree.t(:no_results) %>
+	</div>
+<% end %>

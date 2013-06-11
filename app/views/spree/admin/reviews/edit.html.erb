@@ -1,19 +1,27 @@
-<% render 'spree/admin/shared/product_sub_menu' %>
-<h1><%= Spree.t(:editing_review_for_html, :link => link_to(@review.product.name, product_path(@review.product))) %></h1>
-
-<% unless @review.title.blank? %>
-<h2><%= @review.title %></h2>
+<% content_for :page_title do %>
+	<%= Spree.t(:editing_review_for_html, :link => link_to(@review.product.name, product_path(@review.product))) %>
 <% end %>
 
-<p>
-<%= simple_format(@review.review) %>
-</p>
+<% render 'spree/admin/shared/product_sub_menu' %>
 
-<h2><%= Spree.t(:edited_version) %></h2>
 
 <%= form_for([:admin, @review]) do |f| %>
-  <%= render :partial => 'form', :locals  => { :f => f } %>
-  <p class="form-buttons">
-    <%= button Spree.t(:update) %> <%= Spree.t(:or) %> <%= link_to Spree.t(:back_reviews), admin_reviews_path %>
-  </p>
+	<div class="alpha eight columns">
+		<% unless @review.title.blank? %>
+			<h2><%= @review.title %></h2>
+		<% end %>
+		<p>
+			<%= simple_format(@review.review) %>
+		</p>
+	</div>
+
+	<div class="omega eight columns">
+		<%= render :partial => 'form', :locals  => { :f => f } %>
+	</div>
+
+	<div class="clear"></div>
+
+	<fieldset class="no-border-top">
+		<%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+	</fieldset>
 <% end %>
