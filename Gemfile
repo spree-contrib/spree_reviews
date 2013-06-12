@@ -7,8 +7,6 @@ group :test do
     gem 'rb-fsevent'
     gem 'growl'
   end
-
-  gem "capybara-webkit"
 end
 
 gem 'spree', github: 'spree/spree'

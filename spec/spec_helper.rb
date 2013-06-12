@@ -7,6 +7,7 @@ require 'ffaker'
 require 'capybara'
 require 'capybara/rspec'
 require 'capybara/rails'
+require 'capybara/webkit'
 
 Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].each {|f| require f }
 
