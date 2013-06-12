@@ -23,4 +23,6 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::UrlHelpers
   config.extend Spree::TestingSupport::AuthorizationHelpers::Request, :type => :feature
   config.use_transactional_fixtures = false
+
+  Capybara.javascript_driver = :webkit
 end
