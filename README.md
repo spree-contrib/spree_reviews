@@ -8,13 +8,9 @@ Straightforward review/rating functionality.
 Installation
 ------------
 
-To use the last stable gem release of spree_reviews, add the following to your Gemfile:
+Add the following to your Gemfile to install from git:
 
-    gem 'spree_reviews'
-
-If you'd rather install the latest version with fixes and improvements that have not yet been published to RubyGems, install from git:
-
-    gem 'spree_reviews', :git => 'git://github.com/spree/spree_reviews.git'
+    gem 'spree_reviews', github: 'spree/spree_reviews'
 
 Now bundle up with:
 
