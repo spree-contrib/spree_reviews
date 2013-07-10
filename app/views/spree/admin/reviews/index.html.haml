@@ -14,8 +14,8 @@
     - for review in @reviews
       %tr{ :id => "#{ dom_id review }" }
         %td= l review.created_at, :format => :long
-        %td= review.commenter.name
-        %td= review.commenter.email
+        %td= review.commenter.try(:name)
+        %td= review.commenter.try(:email)
         %td= link_to review.product.name, product_path(review.product)
         %td= review.rating
         %td{ :width => "50%" }
