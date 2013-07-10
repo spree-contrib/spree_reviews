@@ -7,9 +7,8 @@ class Review < ActiveRecord::Base
   validates :rating, numericality: { only_integer: true}
   validates :body, length: { maximum: 140 }
 
-  scope :published, where(state: 'published')
+  scope :published, where(state: 'published').joins(:commenter).merge(BareNaked::Commenter.verified)
   scope :unpublished, where(state: 'unpublished')
-  scope :verified, joins(:commenter).merge(BareNaked::Commenter.verified)
   scope :in_state, lambda { |state| where(state: state) }
 
   def published?
