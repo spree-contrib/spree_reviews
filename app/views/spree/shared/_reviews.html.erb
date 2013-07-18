@@ -8,7 +8,7 @@
       <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
     <% end %>
   <% end %>
-  <% if !Spree::Reviews::Config[:require_login] || spree_current_user || Spree::Reviews::Config[:always_show_create] %>
+  <% if !Spree::Reviews::Config[:require_login] || spree_current_user %>
     <%= link_to Spree.t('write_your_own_review'), new_product_review_path(@product), :class => "button",
                 :rel => "nofollow,noindex" %>
   <% end %>
