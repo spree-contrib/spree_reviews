@@ -26,7 +26,7 @@ class Review < ActiveRecord::Base
     if reviews_count > 0
       product.update_attributes(:avg_rating => product.reviews.published.sum(:rating).to_f / reviews_count, :reviews_count => reviews_count)
     else
-      product.update_attribute(:avg_rating, 0)
+      product.update_attributes(:avg_rating => 0, :reviews_count => 0)
     end
   end
 end
