@@ -5,7 +5,7 @@ class Review < ActiveRecord::Base
 
   validates :commenter, :product, :rating, :body, presence: true
   validates :rating, numericality: { only_integer: true}
-  validates :body, length: { maximum: 140 }
+  validates :body, length: { maximum: 500 }
 
   scope :published, where(state: 'published').joins(:commenter).merge(BareNaked::Commenter.verified)
   scope :unpublished, where(state: 'unpublished')
