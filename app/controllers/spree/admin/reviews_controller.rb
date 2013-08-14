@@ -17,7 +17,7 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
   end
 
   def edit
-    if @review.product.nil?
+    if @review.reviewable.nil?
       flash[:error] = t("error_no_product")
       redirect_to admin_reviews_path and return
     end
@@ -29,6 +29,6 @@ private
     params[:q][:approved_eq] = false if params[:q][:approved_eq].nil?
 
     @search = Spree::Review.ransack(params[:q])
-    @collection = @search.result.includes([:product, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
+    @collection = @search.result.includes([:reviewable, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
   end
 end

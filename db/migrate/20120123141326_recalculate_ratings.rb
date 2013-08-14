@@ -1,5 +1,9 @@
 class RecalculateRatings < ActiveRecord::Migration
   def up
+    Spree::Product.class_eval do
+      has_many :reviews
+    end
+
     Spree::Product.reset_column_information
 
     Spree::Product.update_all :reviews_count => 0

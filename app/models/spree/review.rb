@@ -1,10 +1,10 @@
 class Spree::Review < ActiveRecord::Base
-  belongs_to :product
+  belongs_to :reviewable, :polymorphic => true
   belongs_to :user, :class_name => Spree.user_class.to_s
   has_many   :feedback_reviews
 
-  after_save :recalculate_product_rating, :if => :approved?
-  after_destroy :recalculate_product_rating
+  after_save :recalculate_reviewable_rating, :if => :approved?
+  after_destroy :recalculate_reviewable_rating
 
   validates_presence_of     :name, :review
   validates_numericality_of :rating, :only_integer => true
@@ -13,7 +13,7 @@ class Spree::Review < ActiveRecord::Base
   
   scope :localized, lambda { |lc| where('spree_reviews.locale = ?', lc) }
 
-  attr_protected :user_id, :product_id, :ip_address, :approved
+  attr_protected :user_id, :reviewable_id, :ip_address, :approved
 
   class << self
     def approved
@@ -42,15 +42,15 @@ class Spree::Review < ActiveRecord::Base
     ((feedback_reviews.sum(:rating) / feedback_reviews.size) + 0.5).floor
   end
 
-  def recalculate_product_rating
-    reviews_count = product.reviews.reload.approved.count
+  def recalculate_reviewable_rating
+    reviews_count = reviewable.reviews.reload.approved.count
 
     if reviews_count > 0
-      product.avg_rating = product.reviews.approved.sum(:rating).to_f / reviews_count
-      product.reviews_count = reviews_count
-      product.save
+      reviewable.avg_rating = reviewable.reviews.approved.sum(:rating).to_f / reviews_count
+      reviewable.reviews_count = reviews_count
+      reviewable.save
     else
-      product.update_attribute(:avg_rating, 0)
+      reviewable.update_attribute(:avg_rating, 0)
     end
   end
 end

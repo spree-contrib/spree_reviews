@@ -1,16 +1,28 @@
-<% render 'spree/admin/shared/product_sub_menu' %>
+<% if @reviewable.is_a?(Spree::Product) %>
+  <% render 'spree/admin/shared/product_sub_menu' %>
+<% end %>
 
 <h1><%= t('reviews') %></h1>
 
-<table cellspacing=6 class="index">
-  <tr>
-    <th><%= Spree::Review.human_attribute_name(:created_at) %></th>
-    <th><%= Spree::Review.human_attribute_name(:user) %></th>
-    <th><%= Spree::Review.human_attribute_name(:rating) %></th>
-    <th><%= Spree::Review.human_attribute_name(:title) %> / <%= t('product') %></th>
-    <th><%= Spree::Review.human_attribute_name(:review) %></th>
-    <th></th>
-  </tr>
+<table class="index responsive" width="100%">
+  <colgroup>
+    <col style="width: 16%;">
+    <col style="width: 17%;">
+    <col style="width: 16%;">
+    <col style="width: 17%;">
+    <col style="width: 16%;">
+    <col style="width: 17%;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th><%= Spree::Review.human_attribute_name(:created_at) %></th>
+      <th><%= Spree::Review.human_attribute_name(:user) %></th>
+      <th><%= Spree::Review.human_attribute_name(:rating) %></th>
+      <th><%= Spree::Review.human_attribute_name(:title) %><% if @reviewable.is_a?(Spree::Product) %> / <%= t('product') %><% end %></th>
+      <th><%= Spree::Review.human_attribute_name(:review) %></th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
 <%- @reviews.each do |review| -%>
   <tr id="<%= dom_id review %>">
     <td>
@@ -25,20 +37,20 @@
     </td>
     <td>
       <%= review.title %>
-      <% if review.product %>
-        <%= t('for') %> <%= link_to review.product.name, product_path(review.product) %>
+      <% if review.reviewable && review.reviewable.is_a?(Spree::Product) %>
+        <%= t('for') %> <%= link_to review.reviewable.name, product_path(review.reviewable) %>
       <% end %>
     </td>
     <td width="50%">
       <%= h review.review %>
     </td>
-    <td>
+    <td class="actions">
       <% unless review.approved %>
-        <%= link_to_with_icon 'tick', t('approve'), {:action => 'approve', :id => review.id} %> <br />
+        <%= link_to_with_icon 'icon-ok', t('approve'), {:action => 'approve', :id => review.id}, :no_text => true %> <br />
       <% end %>
-      <%= link_to t('feedback'), admin_review_feedback_reviews_path(review) %>(<%= review.feedback_stars %>/<%= review.feedback_reviews.size %>) <br/>
-      <%= link_to_edit review %><br/>
-      <%= link_to_delete review %>
+      <%= link_to_with_icon 'icon-comment', t('feedback'), admin_review_feedback_reviews_path(review), :no_text => true %> <br/>
+      <%= link_to_edit review, :no_text => true %><br/>
+      <%= link_to_delete review, :no_text => true %>
     </td>
   </tr>
 <% end %>
@@ -46,33 +58,45 @@
 
 <%= paginate @reviews -%>
 
-<% content_for :sidebar do %>
+<% content_for :table_filter_title do %>
+  <%= t(:search) %>
+<% end %>
+
+<% content_for :table_filter do %>
   <div class="box" data-hook="admin_reviews_index_search">
-    <h3><%= t(:search) %></h3>
-
     <%= search_form_for [:admin, @search] do |f| %>
-      <p>
-        <%= label_tag nil, t(:user) %><br />
-        <%= f.text_field :name_cont, :size => 25 %>
-      </p> 
+      <div class="alpha four columns">
+        <div class="field">
+          <%= label_tag nil, t(:user) %><br />
+          <%= f.text_field :name_cont, :size => 25 %>
+        </div> 
+      </div>
 
-      <p>
+      <div class="alpha four columns">
+        <div class="field">
         <%= label_tag nil, t(:title) -%><br/>
         <%= f.text_field :title_cont, :size => 25  -%>
-      </p>
+       </div> 
+      </div>
 
-      <p>
+      <div class="alpha four columns">
+        <div class="field">
         <%= label_tag nil, t(:review) -%><br/>
         <%= f.text_field :review_cont, :size => 25  -%>
-      </p>
+       </div> 
+      </div>
 
-      <p>
+      <div class="alpha four columns">
+        <div class="field">
         <%= label_tag nil, t(:approval_status)-%><br/>
-        <%= f.select :approved_eq, [[t('Approved_reviews'), true], [t('Unapproved_reviews'), false]]  -%>
-      </p>
+        <%= f.select :approved_eq, [[t('Approved_reviews'), true], [t('Unapproved_reviews'), false]], {}, :class => 'select2'  -%>
+       </div> 
+      </div>
 
-      <div data-hook="admin_reviews_index_search_buttons">
-        <p><%= button t(:search) %></p>
+      <div class="clear"></div>
+
+      <div class="form-buttons actions filter-actions" data-hook="admin_reviews_index_search_buttons">
+        <%= button t(:search), 'icon-search' %>
       </div>
     <%- end -%>
   </div>

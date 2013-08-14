@@ -4,6 +4,14 @@
 
 <%= form_tag(admin_review_settings_path, :method => :put) do %>
   <p>
+    <label><%= t("spree_reviews.product_reviews") %>:</label>
+    <%= check_box_tag('preferences[product_reviews]', "1", Spree::Reviews::Config[:product_reviews]) %>
+  </p>
+  <p>
+    <label><%= t("spree_reviews.site_reviews") %>:</label>
+    <%= check_box_tag('preferences[site_reviews]', "1", Spree::Reviews::Config[:site_reviews]) %>
+  </p>
+  <p>
     <label><%= t("spree_reviews.include_unapproved") %>:</label>
     <%= check_box_tag('preferences[include_unapproved_reviews]', "1", Spree::Reviews::Config[:include_unapproved_reviews]) %>
   </p>

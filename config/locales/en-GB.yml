@@ -53,6 +53,8 @@ en-GB:
     review_settings: Review Settings
     show_email: Show email addresses
     track_locale: Track user's locale
+    site_reviews: Allow reviews to be added for the site
+    product_reviews: Allow reviews to be added for products
   star:
     one: "1"
     other: "%{count}"
