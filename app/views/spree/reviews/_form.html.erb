@@ -1,4 +1,5 @@
-<%= form_for review, :url => product_reviews_path(product), :html => {:method => :post} do |f| %>
+<% url = @reviewable.is_a?(Spree::Product) ? product_reviews_path(reviewable) : reviews_path %>
+<%= form_for review, :url => url, :html => {:method => :post} do |f| %>
   <%= render "spree/shared/error_messages", :target => review %>
 
   <p class="review_rating_field">

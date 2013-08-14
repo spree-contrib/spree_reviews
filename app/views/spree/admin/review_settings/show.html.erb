@@ -4,6 +4,14 @@
 
 <table>
   <tr>
+    <th scope="row"><%= t("spree_reviews.product_reviews") %>:</th>
+    <td><%= Spree::Reviews::Config[:product_reviews] ? t('yes') : t('no') %></td>
+  </tr>
+  <tr>
+    <th scope="row"><%= t("spree_reviews.site_reviews") %>:</th>
+    <td><%= Spree::Reviews::Config[:site_reviews] ? t('yes') : t('no') %></td>
+  </tr>
+  <tr>
     <th scope="row"><%= t("spree_reviews.include_unapproved") %>:</th>
     <td><%= Spree::Reviews::Config[:include_unapproved_reviews] ? t('yes') : t('no') %></td>
   </tr>

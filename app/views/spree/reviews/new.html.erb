@@ -1,5 +1,5 @@
-<%= content_tag :h2, t(:leave_us_a_review_for, :name => @product.name), :class => 'new-review-title' %> 
+<%= content_tag :h2, t(:leave_us_a_review_for, :name => @reviewable.is_a?(Spree::Product) ? @reviewable.name : Spree::Config[:site_name]), :class => 'new-review-title' %> 
 
-<%= render 'form', { :review => @review, :product => @product } %>
+<%= render 'form', { :review => @review, :reviewable => @reviewable } %>
 
 <%= render :partial => "spree/reviews/fine_print" %>

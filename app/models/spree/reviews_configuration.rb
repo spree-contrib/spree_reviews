@@ -19,4 +19,10 @@ class Spree::ReviewsConfiguration < Spree::Preferences::Configuration
   
   # whether to keep track of the reviewer's locale
   preference :track_locale, :boolean, :default => false
+
+  # whether to allow product reviews
+  preference :product_reviews, :boolean, :default => true
+
+  # whether to allow site reviews
+  preference :site_reviews, :boolean, :default => true
 end

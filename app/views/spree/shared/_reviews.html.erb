@@ -1,15 +1,21 @@
-<div id="reviews">
-  <h6 class="product-section-title"><%= t(:reviews) %></h6>
-  <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
-    <p class="reviews-none"><%=t('no_reviews_available')%></p>
-  <% else %>
-    <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
-    <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).approval_filter %>
-      <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
+<% @reviewable ||= (@product || Spree::Site.instance) %> 
+<% if @reviewable.display_reviews %>
+  <div id="reviews">
+    <h6 class="product-section-title"><%= t(:reviews) %></h6>
+    <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @reviewable.reviews.approved.count == 0 %>
+      <p class="reviews-none"><%=t('no_reviews_available')%></p>
+    <% else %>
+      <%= render :partial => 'spree/shared/rating', :locals => {:reviewable => @reviewable, :review => 0} %>
+      <% for review in (Spree::Reviews::Config[:track_locale] ? @reviewable.reviews.localized(I18n.locale) : @reviewable.reviews).approval_filter %>
+        <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% if !Spree::Reviews::Config[:require_login] || spree_current_user || Spree::Reviews::Config[:always_show_create] %>
-    <%= link_to t('write_your_own_review'), new_product_review_path(@product), :class => "button",
-                :rel => "nofollow,noindex" %>
-  <% end %>
-</div>
+    <% if !Spree::Reviews::Config[:require_login] || spree_current_user || Spree::Reviews::Config[:always_show_create] %>
+      <% if @reviewable.is_a?(Spree::Product) %>
+        <%= link_to t('write_your_own_review'), new_product_review_path(@reviewable), :class => "button", :rel => "nofollow,noindex" %>
+      <% else %>
+        <%= link_to t('write_your_own_review'), new_review_path, :class => "button", :rel => "nofollow,noindex" %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
