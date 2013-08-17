@@ -16,7 +16,7 @@ class Spree::ReviewsController < Spree::StoreController
   def create
     params[:review][:rating].sub!(/\s*[^0-9]*$/,'') unless params[:review][:rating].blank?
 
-    @review = Spree::Review.new(params[:review])
+    @review = Spree::Review.new(review_params)
     @review.product = @product
     @review.user = spree_current_user if spree_user_signed_in?
     @review.ip_address = request.remote_ip
@@ -39,6 +39,14 @@ class Spree::ReviewsController < Spree::StoreController
 
   def load_product
     @product = Spree::Product.find_by_permalink!(params[:product_id])
+  end
+
+  def permitted_review_attributes
+    [:rating, :title, :review]
+  end
+
+  def review_params
+    params.require(:review).permit(permitted_review_attributes)
   end
 
 end
