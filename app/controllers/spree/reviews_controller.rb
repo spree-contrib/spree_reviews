@@ -21,6 +21,6 @@ class Spree::ReviewsController < ApplicationController
 
   def ensure_not_spam
     @product = Spree::Product.find_by_permalink(params[:product_id])
-    redirect_to spree.product_path(@product) if !params[:review].present? && !params[:commenter].present?
+    redirect_to spree.product_path(@product) if !params[:review].present? || !params[:commenter].present?
   end
 end
