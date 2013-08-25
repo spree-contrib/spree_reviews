@@ -1,4 +1,8 @@
 class Spree::ReviewsConfiguration < Spree::Preferences::Configuration
+  def self.boolean_preferences
+    %w(include_unapproved_reviews feedback_rating show_email require_login track_locale)
+  end
+
   # include non-approved reviews in (public) listings
   preference :include_unapproved_reviews, :boolean, :default => false
 

@@ -5,8 +5,7 @@ FactoryGirl.define do
     review { Faker::Lorem.paragraphs(3).join("\n") }
     rating { (rand * 4).to_i + 1 }
     approved false
-
-    association(:user, :factory => :user)
-    association(:product, :factory => :product)
+    user
+    product
   end
 end
