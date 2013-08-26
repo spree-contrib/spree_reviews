@@ -1,6 +1,6 @@
 class Spree::Admin::FeedbackReviewsController <  Spree::Admin::ResourceController
+  belongs_to 'spree/review'
   def index
-    @review = Spree::Review.find(params[:review_id])
-    @collection = @review.feedback_reviews
+    @collection = parent.feedback_reviews
   end
 end

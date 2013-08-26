@@ -1,17 +1,16 @@
 Spree::Core::Engine.routes.append do
   namespace :admin do
-    resources :feedback_reviews
-    resources :reviews do
+    resources :reviews, only: [:index, :destroy, :edit, :update] do
       member do
         get :approve
       end
-      resources :feedback_reviews
+      resources :feedback_reviews, only: [:index, :destroy]
     end
-    resource :review_settings
+    resource :review_settings, only: [:edit, :update]
   end
 
   resources :products do
-    resources :reviews do
+    resources :reviews, only: [:index, :new, :create] do
       collection do
         get :terms
         get "submissionguidelines"

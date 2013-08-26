@@ -1,39 +1,29 @@
 class Spree::Review < ActiveRecord::Base
-  belongs_to :product
+  belongs_to :product, touch: true, dependent: :destroy
   belongs_to :user, :class_name => Spree.user_class.to_s
   has_many   :feedback_reviews
 
   after_save :recalculate_product_rating, :if => :approved?
   after_destroy :recalculate_product_rating
 
-  validates_presence_of     :name, :review
-  validates_numericality_of :rating, :only_integer => true
+  validates :name, presence: true
+  validates :review, presence: true
+
+  validates :rating, numericality: { only_integer: true,
+                                     greater_than_or_equal_to: 1, 
+                                     less_than_or_equal_to: 5,
+                                     message: Spree.t('you_must_enter_value_for_rating') }
+
 
   default_scope { order("spree_reviews.created_at DESC") }
   
-  scope :localized, lambda { |lc| where('spree_reviews.locale = ?', lc) }
-
-  class << self
-    def approved
-      where(:approved => true)
-    end
-
-    def not_approved
-      where(:approved => false)
-    end
-
-    def approval_filter
-      where(["(? = ?) or (approved = ?)", Spree::Reviews::Config[:include_unapproved_reviews], true, true])
-    end
-
-    def oldest_first
-      order("created_at asc")
-    end
-
-    def preview
-      limit(Spree::Reviews::Config[:preview_size]).oldest_first
-    end
-  end
+  scope :localized, ->(lc) { where('spree_reviews.locale = ?', lc) }
+  scope :most_recent_first, -> { order('spree_reviews.created_at DESC') }
+  scope :oldest_first, -> { order('spree_reviews.created_at ASC') }
+  scope :preview, -> { limit(Spree::Reviews::Config[:preview_size]).oldest_first }
+  scope :approved, -> { where(approved: true) }
+  scope :not_approved, -> { where(approved: false) }
+  scope :default_approval_filter, -> { Spree::Reviews::Config[:include_unapproved_reviews] ? all : approved }
 
   def feedback_stars
     return 0 if feedback_reviews.size <= 0
@@ -41,14 +31,6 @@ class Spree::Review < ActiveRecord::Base
   end
 
   def recalculate_product_rating
-    reviews_count = product.reviews.reload.approved.count
-
-    if reviews_count > 0
-      product.avg_rating = product.reviews.approved.sum(:rating).to_f / reviews_count
-      product.reviews_count = reviews_count
-      product.save
-    else
-      product.update_attribute(:avg_rating, 0)
-    end
+    self.product.recalculate_rating if product.present?
   end
 end

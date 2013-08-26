@@ -4,7 +4,7 @@ class Spree::ReviewsController < Spree::StoreController
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
   def index
-    @approved_reviews = Spree::Review.approved.find_all_by_product_id(@product.id)
+    @approved_reviews = Spree::Review.approved.where(product_id: @product.id)
   end
 
   def new
@@ -23,10 +23,9 @@ class Spree::ReviewsController < Spree::StoreController
     @review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
 
     authorize! :create, @review
-
     if @review.save
       flash[:notice] = Spree.t('review_successfully_submitted')
-      redirect_to (product_path(@product))
+      redirect_to spree.product_path(@product)
     else
       render :action => "new"
     end
@@ -42,7 +41,7 @@ class Spree::ReviewsController < Spree::StoreController
   end
 
   def permitted_review_attributes
-    [:rating, :title, :review]
+    [:rating, :title, :review, :name]
   end
 
   def review_params
