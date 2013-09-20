@@ -1,6 +1,7 @@
 *.gem
 *.swp
 .bundle
+.idea
 .DS_Store
 Gemfile.lock
 pkg/*
