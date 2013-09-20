@@ -59,7 +59,7 @@ Some points which might need modification in future:
 
  - I don't track the actual user on a review (just their "screen name" at the 
    time), but we may want to use this information to avoid duplicate reviews
-   etc.
+   etc. See https://github.com/spree/spree_reviews/issues/18
  - Rating votes are tied to a review, to avoid spam. However: ratings are 
    accepted whether or not the review is accepted. Perhaps they should only 
    be counted when the review is approved.
