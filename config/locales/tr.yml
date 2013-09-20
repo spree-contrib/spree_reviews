@@ -1,0 +1,73 @@
+tr:
+  activerecord:
+    attributes:
+      spree/review:
+        name: İsminiz
+        title: Başlık
+        review: Konu
+        rating: Değerlendirme
+        created_at: Tarih
+        ip_address: IP
+        user: Kullanıcı
+    models:
+      spree/review:
+        one: bir yorum
+        other: "%{count} yorumlar"
+  spree:
+    approve: Onayla
+    approved_reviews: Onaylı
+    approved_text: Yorum 1-2 iş günü içinde yayımlanacaktır.
+    are_you_sure_review: Yorumu silmek istediğinize emin misiniz ?
+    average_customer_rating: Ortalama Oy
+    back_reviews: Geri değerlendirme
+    based_upon_review_count:
+      one: bir incelemeye göre
+      other: "%{count} incelemeye göre"
+    by: by
+    date_: Tarih
+    edited_version: 'Düzenli sürüm'
+    editing_review_for_html: 'Yorumu düzenle %{link}'
+    error_approve_review: Hata onaylama yorumu
+    error_no_product: Yorumlanan ürün artık yok
+    feedback: Geri bildirim
+    feedback_review_for: "Yorum: '%{review}'"
+    for: için
+    from: itibaren
+    guideline_text: Ürününüzle ilgili olmayan görüşleri yayınlamama hakkını saklı tutuyoruz
+    info_approve_review: Onaylanmış yorum
+    leave_us_a_review_for: "Lütfen yorum bırakın ve '%{name}' ürününü değerlendirin"
+    no_reviews_available: "Bu ürün hakkında henüz herhangi bir yorum bulunmuyor.."
+    original_version: 'Orjinal versiyon'
+    out_of_5: "5 üzerinden"
+    rating: değerlendirme
+    reviews: Yorumlar
+    review_guidelines: İnceleme Kuralları
+    review_management: Yorumlar
+    review_successfully_submitted: Yorumunuz başarıyla iletildi
+    review_not_submitted: Yorumunuz iletilmedi
+    spree_reviews:
+      feedback_rating: Geribildirimi değerlendir
+      include_unapproved: Listede ki onaylanmamış değerlendirmeleri dahil et
+      manage_review_settings: Yorum ekranını kontrol edin
+      preview_size: Yorum büyüklüğü
+      require_login: Kullanıcı girişi gereklidir
+      review_settings: Yorum Ayarları
+      show_email: email addresini göster
+      track_locale: Kullanıcı konumlarını göster
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Yıldızlar
+    submit_your_review: Yorumu gönder
+    submitted_on: Tarihinde Gönderildi
+    terms_and_conditions: Şartlar & Koşullar
+    terms_text: Tüm görüşler şart ve koşullara uygun olmalıdır
+    the_fine_print: İyi Değerlendirme
+    unapproved_reviews: Onaylanmamış
+    voice:
+      one: "1 değerlendirme"
+      other: "%{count} değerlendirme"
+    was_this_review_helpful: "Bu yorum size yardımcı oldu mu?"
+    write_your_own_review: Kendi yorumunuzu yazın
+    you_must_enter_value_for_rating: "Yorum yazmak için giriş yapmalısınız."
+    back_to_reviews_list: "Değerlendirme listesine geri dönüş"
