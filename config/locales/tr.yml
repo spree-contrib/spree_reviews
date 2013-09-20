@@ -23,7 +23,7 @@ tr:
     based_upon_review_count:
       one: bir incelemeye göre
       other: "%{count} incelemeye göre"
-    by: by
+    by: tarafından
     date_: Tarih
     edited_version: 'Düzenli sürüm'
     editing_review_for_html: 'Yorumu düzenle %{link}'
@@ -35,7 +35,7 @@ tr:
     from: itibaren
     guideline_text: Ürününüzle ilgili olmayan görüşleri yayınlamama hakkını saklı tutuyoruz
     info_approve_review: Onaylanmış yorum
-    leave_us_a_review_for: "Lütfen yorum bırakın ve '%{name}' ürününü değerlendirin"
+    leave_us_a_review_for: "%{name}"
     no_reviews_available: "Bu ürün hakkında henüz herhangi bir yorum bulunmuyor.."
     original_version: 'Orjinal versiyon'
     out_of_5: "5 üzerinden"
@@ -58,7 +58,7 @@ tr:
       one: "1"
       other: "%{count}"
     stars: Yıldızlar
-    submit_your_review: Yorumu gönder
+    submit_your_review: Gönder
     submitted_on: Tarihinde Gönderildi
     terms_and_conditions: Şartlar & Koşullar
     terms_text: Tüm görüşler şart ve koşullara uygun olmalıdır
@@ -68,6 +68,6 @@ tr:
       one: "1 değerlendirme"
       other: "%{count} değerlendirme"
     was_this_review_helpful: "Bu yorum size yardımcı oldu mu?"
-    write_your_own_review: Kendi yorumunuzu yazın
+    write_your_own_review: Yorum Yap
     you_must_enter_value_for_rating: "Yorum yazmak için giriş yapmalısınız."
     back_to_reviews_list: "Değerlendirme listesine geri dönüş"
