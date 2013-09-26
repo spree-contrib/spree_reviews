@@ -5,7 +5,6 @@
   <span itemprop="name"><%= review.title %></span>
   <br/>
   <span class="attribution"><%= Spree.t('submitted_on') %> <strong itemprop="datePublished"><%= l review.created_at.to_date %></strong></span>
-  
   <meta itemprop="reviewRating" content="<%= review.rating %>" />
   <% if Spree::Reviews::Config[:show_email] && review.user %>
     <span itemprop="author"><%= review.user.email %></span>
@@ -16,8 +15,8 @@
     <%= simple_format(review.review) %>
   </div>
   <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
-  <div class="feedback_review" id="feedback_review_<%= review.id %>">
-    <%= render :partial => "spree/feedback_reviews/form", :locals => {:review => review} %>
-  </div>
+    <div class="feedback_review" id="feedback_review_<%= review.id %>">
+      <%= render :partial => "spree/feedback_reviews/form", :locals => {:review => review} %>
+    </div>
   <% end %>
 </div>

@@ -31,9 +31,6 @@ class Spree::ReviewsController < Spree::StoreController
     end
   end
 
-  def terms
-  end
-
   private
 
   def load_product
