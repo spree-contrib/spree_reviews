@@ -16,7 +16,6 @@ en:
   spree:
     approve: Approve
     approved_reviews: Approved
-    approved_text: Unlocked comments will be published within 1-2 business days.
     are_you_sure_review: Are you sure to delete review ?
     average_customer_rating: Average rating
     back_reviews: Back to the reviews
@@ -33,7 +32,6 @@ en:
     feedback_review_for: "Review: '%{review}'"
     for: for
     from: from
-    guideline_text: We reserve the right not to post opinions unrelated to your product
     info_approve_review: Review approved
     leave_us_a_review_for: "Please leave us a review and a rating for our '%{name}'"
     no_reviews_available: "No reviews have been written for this product."
@@ -41,7 +39,6 @@ en:
     out_of_5: "out of 5"
     rating: rating
     reviews: Reviews
-    review_guidelines: Review Guidelines
     review_management: Reviews
     review_successfully_submitted: Review was successfully submitted
     review_not_submitted: Review was not submitted
@@ -62,7 +59,6 @@ en:
     submitted_on: Submitted on
     terms_and_conditions: Terms & Conditions
     terms_text: All opinions must comply with our terms and conditions
-    the_fine_print: The fine print
     unapproved_reviews: Unapproved
     voice:
       one: "1 voice"
