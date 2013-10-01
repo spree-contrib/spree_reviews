@@ -33,7 +33,7 @@ tr:
     feedback_review_for: "Yorum: '%{review}'"
     for: için
     from: itibaren
-    guideline_text: Ürününüzle ilgili olmayan görüşleri yayınlamama hakkını saklı tutuyoruz
+    guideline_text: Ürününüzle ilgili olmayan görüşleri yayınlama hakkını saklı tutuyoruz
     info_approve_review: Onaylanmış yorum
     leave_us_a_review_for: "%{name}"
     no_reviews_available: "Bu ürün hakkında henüz herhangi bir yorum bulunmuyor.."
@@ -50,7 +50,7 @@ tr:
       include_unapproved: Listede ki onaylanmamış değerlendirmeleri dahil et
       manage_review_settings: Yorum ekranını kontrol edin
       preview_size: Yorum büyüklüğü
-      require_login: Kullanıcı girişi gereklidir
+      require_login: Yorumları görebilmek için kullanıcı girişi
       review_settings: Yorum Ayarları
       show_email: email addresini göster
       track_locale: Kullanıcı konumlarını göster
@@ -59,10 +59,10 @@ tr:
       other: "%{count}"
     stars: Yıldızlar
     submit_your_review: Gönder
-    submitted_on: Tarihinde Gönderildi
+    submitted_on: "Gönderilme Tarihi:"
     terms_and_conditions: Şartlar & Koşullar
     terms_text: Tüm görüşler şart ve koşullara uygun olmalıdır
-    the_fine_print: İyi Değerlendirme
+    the_fine_print: Yorum Yayınlama Kriterlerimiz
     unapproved_reviews: Onaylanmamış
     voice:
       one: "1 değerlendirme"
