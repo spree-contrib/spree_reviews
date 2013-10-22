@@ -25,15 +25,15 @@ tr:
       other: "%{count} incelemeye göre"
     by: tarafından
     date_: Tarih
-    edited_version: 'Düzenli sürüm'
+    edited_version: 'Düzenlinmiş sürüm'
     editing_review_for_html: 'Yorumu düzenle %{link}'
-    error_approve_review: Hata onaylama yorumu
+    error_approve_review: Yorum onaylamada hata
     error_no_product: Yorumlanan ürün artık yok
     feedback: Geri bildirim
     feedback_review_for: "Yorum: '%{review}'"
     for: için
     from: itibaren
-    guideline_text: Ürününüzle ilgili olmayan görüşleri yayınlama hakkını saklı tutuyoruz
+    guideline_text: Ürününüzle ilgili olmayan görüşleri yayınlamama hakkını saklı tutuyoruz
     info_approve_review: Onaylanmış yorum
     leave_us_a_review_for: "%{name}"
     no_reviews_available: "Bu ürün hakkında henüz herhangi bir yorum bulunmuyor.."
@@ -52,8 +52,8 @@ tr:
       preview_size: Yorum büyüklüğü
       require_login: Yorumları görebilmek için kullanıcı girişi
       review_settings: Yorum Ayarları
-      show_email: email addresini göster
-      track_locale: Kullanıcı konumlarını göster
+      show_email: e-posta adresini göster
+      track_locale: Kullanıcının yerel bilgilerini kaydet/takip et
     star:
       one: "1"
       other: "%{count}"
