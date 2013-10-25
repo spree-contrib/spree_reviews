@@ -25,7 +25,7 @@ tr:
       other: "%{count} incelemeye göre"
     by: tarafından
     date_: Tarih
-    edited_version: 'Düzenlinmiş sürüm'
+    edited_version: 'Düzenlenmiş sürüm'
     editing_review_for_html: 'Yorumu düzenle %{link}'
     error_approve_review: Yorum onaylamada hata
     error_no_product: Yorumlanan ürün artık yok
