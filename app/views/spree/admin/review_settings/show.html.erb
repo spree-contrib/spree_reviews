@@ -1,34 +1,42 @@
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
-<h1><%= t("spree_reviews.review_settings") %></h1>
+<% content_for :page_title do %>
+  <%= t("spree_reviews.review_settings") %>
+<% end %>
 
-<table>
-  <tr>
-    <th scope="row"><%= t("spree_reviews.include_unapproved") %>:</th>
-    <td><%= Spree::Reviews::Config[:include_unapproved_reviews] ? t('yes') : t('no') %></td>
-  </tr>
-  <tr>
-    <th scope="row"><%= t("spree_reviews.feedback_rating") %>:</th>
-    <td><%= Spree::Reviews::Config[:feedback_rating] ? t('yes') : t('no') %></td>
-  </tr>
-  <tr>
-    <th scope="row"><%= t("spree_reviews.show_email") %>:</th>
-    <td><%= Spree::Reviews::Config[:show_email] ? t('yes') : t('no') %></td>
-  </tr>
-  <tr>
-    <th scope="row"><%= t("spree_reviews.require_login") %>:</th>
-    <td><%= Spree::Reviews::Config[:require_login] ? t('yes') : t('no') %></td>
-  </tr>
-  <tr>
-    <th scope="row"><%= t("spree_reviews.track_locale") %>:</th>
-    <td><%= Spree::Reviews::Config[:track_locale] ? t('yes') : t('no') %></td>
-  </tr>
-  <tr>
-    <th scope="row"><%= t("spree_reviews.preview_size") %>:</th>
-    <td><%= Spree::Reviews::Config[:preview_size] %></td>
-  </tr>
+<table class="index" id="review_settings_listing">
+  <thead data-hook="admin_review_settings_show_headers">
+    <th><%= t(:name) %></th>
+    <th><%= t(:value) %></th>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td><%= t("spree_reviews.include_unapproved") %>:</td>
+      <td><%= Spree::Reviews::Config[:include_unapproved_reviews] ? t('yes') : t('no') %></td>
+    </tr>
+    <tr class="even">
+      <td><%= t("spree_reviews.feedback_rating") %>:</td>
+      <td><%= Spree::Reviews::Config[:feedback_rating] ? t('yes') : t('no') %></td>
+    </tr>
+    <tr class="odd">
+      <td><%= t("spree_reviews.show_email") %>:</td>
+      <td><%= Spree::Reviews::Config[:show_email] ? t('yes') : t('no') %></td>
+    </tr>
+    <tr class="even">
+      <td><%= t("spree_reviews.require_login") %>:</td>
+      <td><%= Spree::Reviews::Config[:require_login] ? t('yes') : t('no') %></td>
+    </tr>
+    <tr class="odd">
+      <td><%= t("spree_reviews.track_locale") %>:</td>
+      <td><%= Spree::Reviews::Config[:track_locale] ? t('yes') : t('no') %></td>
+    </tr>
+    <tr class="even">
+      <td><%= t("spree_reviews.preview_size") %>:</td>
+      <td><%= Spree::Reviews::Config[:preview_size] %></td>
+    </tr>
+  </tbody>
 </table>
 
-<p>
-  <%= link_to_with_icon('edit', t("edit"), edit_admin_review_settings_path) %>
-</p>
+<div class="form-buttons filter-actions actions" data-hook="buttons">
+  <%= link_to_with_icon('icon-edit', t("edit"), edit_admin_review_settings_path, :class => 'button') %>
+</div>
