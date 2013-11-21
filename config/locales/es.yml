@@ -24,12 +24,12 @@ es:
     other: "basado en %{count} valoraciones"
   by: por
   date_: Fecha
-  edited_version: 'Version editada'
+  edited_version: 'Versión editada'
   editing_review_for_html: 'Editando la valoración para %{link}'
   error_approve_review: "Error aprobando la valoración"
   error_no_product: "El producto valorado ya no existe"
   feedback: Feedback
-  feedback_review_for: "Review: '%{review}'"
+  feedback_review_for: "Valoración: '%{review}'"
   for: para
   from: desde
   guideline_text: "Nos reservamos el derecho de no mostrar valoraciones no relacionadas con tu producto"
@@ -49,8 +49,8 @@ es:
     include_unapproved: "Incluir en los listados las valoraciones sin aprobar"
     manage_review_settings: "Gestionar la publicación de valoraciones"
     preview_size: "Tamaño de la versión resumida de la valoración"
-    require_login: "Requerir que el usuario esté logado"
-    review_settings: "Configuración de las Valoraciones"
+    require_login: "Requerir que el usuario haya iniciado sesión"
+    review_settings: "Configuración de las valoraciones"
     show_email: "Mostrar las direcciones de correo"
     track_locale: "Rastrear el locale del usuario"
   star:
