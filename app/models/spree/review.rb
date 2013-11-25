@@ -30,7 +30,7 @@ class Spree::Review < ActiveRecord::Base
     end
 
     def oldest_first
-      order("created_at asc")
+      reorder("created_at asc")
     end
 
     def preview
