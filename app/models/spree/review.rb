@@ -19,7 +19,7 @@ class Spree::Review < ActiveRecord::Base
   
   scope :localized, ->(lc) { where('spree_reviews.locale = ?', lc) }
   scope :most_recent_first, -> { order('spree_reviews.created_at DESC') }
-  scope :oldest_first, -> { order('spree_reviews.created_at ASC') }
+  scope :oldest_first, -> { reorder('spree_reviews.created_at ASC') }
   scope :preview, -> { limit(Spree::Reviews::Config[:preview_size]).oldest_first }
   scope :approved, -> { where(approved: true) }
   scope :not_approved, -> { where(approved: false) }
