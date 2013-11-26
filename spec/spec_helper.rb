@@ -9,7 +9,7 @@ require 'database_cleaner'
 require 'capybara'
 require 'capybara/rspec'
 require 'capybara/rails'
-require 'capybara/webkit'
+require 'capybara/poltergeist'
 
 Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].each {|f| require f }
 
@@ -39,5 +39,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  Capybara.javascript_driver = :webkit
+  Capybara.javascript_driver = :poltergeist
 end
