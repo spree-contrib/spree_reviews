@@ -1,5 +1,5 @@
 <%= render :partial => "spree/feedback_reviews/summary", :locals => {:review => review}%>
-<%= form_for((@feedback_review ||= review.feedback_reviews.build), :url => feedback_review_path(review), :method => :post, :remote => true) do |f| %>
+<%= form_for((@feedback_review ||= review.feedback_reviews.build), :url => product_review_feedback_reviews_path(@product, review), :method => :post, :remote => true) do |f| %>
 <% unless @feedback_review.errors.empty? %>
  <span class="error"><%= @feedback_review.errors[:rating] %></span>
  <br />
