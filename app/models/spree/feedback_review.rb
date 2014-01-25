@@ -9,4 +9,5 @@ class Spree::FeedbackReview < ActiveRecord::Base
 
   scope :localized, lambda { |lc| where('spree_reviews.locale = ?', lc) }
 
+  attr_accessible :user_id, :rating
 end
