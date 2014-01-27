@@ -13,9 +13,8 @@ describe Spree::ReviewsAbility do
   end
 
   context 'permissions' do
-    let(:anonymous_user) { double(:user, anonymous?: true, email: 'a@b.com') }
-    let(:user_without_email) { double(:user, anonymous?: false, email: nil) }
-    let(:user_with_email) { double(:user, anonymous?: false, email: 'a@b.com') }
+    let(:user_without_email) { double(:user, email: nil) }
+    let(:user_with_email) { double(:user, email: 'a@b.com') }
 
     context 'when anonymous reviews are allowed' do
       before do
@@ -23,7 +22,7 @@ describe Spree::ReviewsAbility do
       end
 
       it 'lets anyone create a review or feedback review' do
-        [anonymous_user, user_without_email, user_with_email].each do |u|
+        [user_without_email, user_with_email].each do |u|
           Spree::ReviewsAbility.new(u).should be_able_to(:create, Spree::Review.new)
           Spree::ReviewsAbility.new(u).should be_able_to(:create, Spree::FeedbackReview.new)
         end
@@ -35,11 +34,10 @@ describe Spree::ReviewsAbility do
         Spree::Reviews::Config[:require_login] = true
       end
 
-      it 'only allows non-anonymous users with an email to create a review or feedback review' do
-        [anonymous_user, user_without_email].each do |u|
-          Spree::ReviewsAbility.new(u).should_not be_able_to(:create, Spree::Review.new)
-          Spree::ReviewsAbility.new(u).should_not be_able_to(:create, Spree::FeedbackReview.new)
-        end
+      it 'only allows users with an email to create a review or feedback review' do
+        Spree::ReviewsAbility.new(user_without_email).should_not be_able_to(:create, Spree::Review.new)
+        Spree::ReviewsAbility.new(user_without_email).should_not be_able_to(:create, Spree::FeedbackReview.new)
+
         Spree::ReviewsAbility.new(user_with_email).should be_able_to(:create, Spree::Review.new)
         Spree::ReviewsAbility.new(user_with_email).should be_able_to(:create, Spree::FeedbackReview.new)
       end
