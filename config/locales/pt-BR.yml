@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+---
 pt-BR:
   activerecord:
     attributes:
@@ -18,15 +18,12 @@ pt-BR:
     approve: 'Aprovar'
     approved_reviews: 'Aprovado'
     approved_text: 'Comentários destravados serão publicados em 1-2 dias.'
-    are_you_sure_review: 'Você tem certeza que quer apagar essa avaliação?'
     average_customer_rating: 'Média de avaliação'
     back_reviews: 'Voltar para as avaliações'
     based_upon_review_count:
       one: 'baseado em uma avaliação'
       other: "baseado em %{count} avaliações"
     by: 'por'
-    date_: 'Data'
-    edited_version: 'Versão editada'
     editing_review_for_html: 'Editando avaliação para %{link}'
     error_approve_review: 'Erro aprovando avaliação'
     error_no_product: "O produto avaliado não existe mais"
@@ -34,18 +31,14 @@ pt-BR:
     feedback_review_for: "Avaliação: '%{review}'"
     for: 'para'
     from: 'de'
-    guideline_text: 'Nos reservamos ao direito de não postar opiniões não relacionadas ao seu produto'
     info_approve_review: 'Avaliação aprovada'
     leave_us_a_review_for: "Por favor, deixe uma avaliação para nosso %{name}"
     no_reviews_available: "Nenhuma avaliação feita ainda para esse produto."
-    original_version: 'Versão original'
     out_of_5: "fora de 5"
     rating: 'classificação'
     reviews: 'Avaliações'
-    review_guidelines: 'Guias de avaliações'
     review_management: 'Avaliações'
     review_successfully_submitted: 'Avaliação enviada com sucesso'
-    review_not_submitted: 'Avaliação não enviada'
     spree_reviews:
       feedback_rating: 'Classifique um parecer'
       include_unapproved: 'Incluir avaliações não aprovadas na listagem'
@@ -61,9 +54,6 @@ pt-BR:
     stars: 'Estrelas'
     submit_your_review: 'Enviar sua avaliação'
     submitted_on: 'Enviado em'
-    terms_and_conditions: 'Termos & Condições'
-    terms_text: 'Todas as opiniões devem estar de acordo com nossos termos e condições'
-    the_fine_print: 'A boa impressão'
     unapproved_reviews: 'Desaprovado'
     voice:
       one: "1 voz"
@@ -71,3 +61,5 @@ pt-BR:
     was_this_review_helpful: 'Essa avaliação foi útil?'
     write_your_own_review: 'Escreva sua avaliação'
     you_must_enter_value_for_rating: "Você tem que preencher um valor para avaliar."
+    anonymous: Anônimo
+

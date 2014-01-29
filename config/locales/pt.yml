@@ -1,5 +1,5 @@
+---
 pt:
-  yes_: Sim
   activerecord:
     attributes:
       spree/review:
@@ -18,15 +18,12 @@ pt:
     approve: Aprovar
     approved_reviews: Avaliações aprovadas
     approved_text: As avaliações podem demorar 1-2 dias úteis a ser publicadas.
-    are_you_sure_review: Tem a certeza que deseja remover esta avaliação ?
     average_customer_rating: Pontuação média dos utilizadores fruga
     back_reviews: Voltar para as avaliações
     based_upon_review_count:
       one: baseada numa avaliação
       other: "baseada em %{count} avaliações"
     by: por
-    date_: Data
-    edited_version: 'Versão editada'
     editing_review_for_html: 'Editando a avaliação para %{link}'
     error_approve_review: Erro aprovando a avaliação
     error_no_product: O produto avaliado já não existe
@@ -34,18 +31,14 @@ pt:
     feedback_review_for: "Avaliação: '%{review}'"
     for: para
     from: de
-    guideline_text: Reservamos o direito de não publicar opiniões não relacionadas com este produtos
     info_approve_review: Avaliação aprovada
     leave_us_a_review_for: "Por favor, deixe-nos uma avaliação para produto %{name}"
     no_reviews_available: "Não foram ainda feitas avaliações para este produto."
-    original_version: 'Versão original'
     out_of_5: "de 5"
     rating: pontuação
     reviews: Avaliações
-    review_guidelines: Diretrizes para avaliações
     review_management: Gestão Avaliações
     review_successfully_submitted: A avaliação foi enviada com sucesso
-    review_not_submitted: A avaliação não foi enviada
     submission_guidelines: Diretrizes para enviar boas avaliações
     spree_reviews:
       feedback_rating: Pontuação de feedback
@@ -62,9 +55,6 @@ pt:
     stars: Stars
     submit_your_review: Envia tua avaliação
     submitted_on: Enviada em
-    terms_and_conditions: Termos & Condições
-    terms_text: Todas as avaliações devem obedecer com o nossos termos
-    the_fine_print: Letre pequena
     unapproved_reviews: Não aprovadas
     voice:
       one: "uma opinião"
@@ -72,3 +62,5 @@ pt:
     was_this_review_helpful: "Esta avaliação foi util?"
     write_your_own_review: Escreve a tua própria avaliação
     you_must_enter_value_for_rating: "Tem de incluir uma pontuação."
+    anonymous: Anônimo
+
