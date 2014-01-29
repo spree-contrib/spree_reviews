@@ -1,4 +1,3 @@
-# Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 require 'simplecov' if ENV['COVERAGE']
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
@@ -26,7 +25,8 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::UrlHelpers
   config.extend Spree::TestingSupport::AuthorizationHelpers::Request, :type => :feature
   config.use_transactional_fixtures = false
-  config.before(:each) do
+
+  config.before do
     if example.metadata[:js]
       DatabaseCleaner.strategy = :truncation
     else
@@ -35,9 +35,12 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
+  config.after do
     DatabaseCleaner.clean
   end
 
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, {js_errors: false, debug: false})
+  end
   Capybara.javascript_driver = :poltergeist
 end
