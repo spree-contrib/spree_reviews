@@ -17,15 +17,15 @@ describe Spree::FeedbackReviewsController do
         it 'creates a new feedback review' do
           rating = 4
           comment = Faker::Lorem.paragraphs(3).join("\n")
-          lambda {
-            spree_post :create, { review_id: review.id, 
+          expect {
+            spree_post :create, { review_id: review.id,
                                   feedback_review: { comment: comment,
                                                      rating: rating },
-                                  format: :js }, 
+                                  format: :js },
                                 { access_token: token }
             response.status.should eq(200)
             response.should render_template(:create)
-          }.should change(Spree::Review, :count).by(1)
+          }.to change(Spree::Review, :count).by(1)
           feedback_review = Spree::FeedbackReview.last
           feedback_review.comment.should eq(comment)
           feedback_review.review.should eq(review)
