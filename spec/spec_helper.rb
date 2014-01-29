@@ -16,7 +16,7 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
 
-Dir[File.join(File.dirname(__FILE__), "factories/*.rb")].each {|f| require f }
+FactoryGirl.find_definitions
 
 RSpec.configure do |config|
   config.include Spree::TestingSupport::ControllerRequests
@@ -25,16 +25,12 @@ RSpec.configure do |config|
   config.extend Spree::TestingSupport::AuthorizationHelpers::Request, :type => :feature
   config.use_transactional_fixtures = false
 
-  config.before do
-    if example.metadata[:js]
-      DatabaseCleaner.strategy = :truncation
-    else
-      DatabaseCleaner.strategy = :transaction
-    end
-    DatabaseCleaner.start
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.after do
+  config.around do
     DatabaseCleaner.clean
   end
 
