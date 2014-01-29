@@ -1,8 +1,0 @@
-
-0. partial(s) for selecting _approved_ reviews to read
-
-1. REST routes needed in some places?
-
-2. only accept ratings for approved reviews?
-
-3. allow stand alone rating values?
