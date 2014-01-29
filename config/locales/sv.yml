@@ -1,0 +1,63 @@
+---
+sv:
+  activerecord:
+    attributes:
+      spree/review:
+        created_at: Datum
+        ip_address: IP
+        name: "Ditt namn"
+        rating: Betyg
+        review: Innehåll
+        title: Rubrik
+        user: Användare
+    models:
+      spree/review:
+        one: "en recension"
+        other: "%{count} recensioner"
+  spree:
+    anonymous: Anonym
+    approve: Godkänn
+    approved_reviews: Godkänd
+    average_customer_rating: "Genomsnittligt betyg"
+    back_reviews: "Tillbaka till recensionerna"
+    based_upon_review_count:
+      one: "baserad på en recension"
+      other: "baserad på %{count} recensioner"
+    by: av
+    editing_review_for_html: "Editerad recension för %{link}"
+    error_approve_review: "Problem med att godkänna recension"
+    error_no_product: "Den betygsatta produkten finns inte längre"
+    feedback: Återkoppling
+    feedback_review_for: "Recension: '%{review}'"
+    for: för
+    from: från
+    info_approve_review: "Recensionen godkänd"
+    leave_us_a_review_for: "Recension och betyg för %{name}"
+    no_reviews_available: "Inga recensioner har ännu skrivits för den här produkten."
+    out_of_5: "ut av 5"
+    rating: betyg
+    review_management: "Hantera recensioner"
+    review_successfully_submitted: "Recension har skapats"
+    reviews: Recensioner
+    spree_reviews:
+      feedback_rating: Betygsåterkoppling
+      include_unapproved: "Inkludera inte godkända recensioner i listan"
+      manage_review_settings: "Kontrollera visningen av recensionerna"
+      preview_size: "Storlek på recensions snippets"
+      require_login: "Kräv att användaren är inloggad"
+      review_settings: "Recensions inställningar"
+      show_email: "Visa epost adresser"
+      track_locale: "Spåra användarens språk"
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Stärnor
+    submit_your_review: "Skicka in din recension"
+    submitted_on: "Skapad den"
+    unapproved_reviews: "Icke godkänd"
+    voice:
+      one: "1 röst"
+      other: "%{count} röster"
+    was_this_review_helpful: "Var denna recension användbar för dig?"
+    write_your_own_review: "Skriv din egen recension"
+    you_must_enter_value_for_rating: "Du måste ange ett värde för betyg."
