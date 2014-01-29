@@ -4,7 +4,6 @@
 
 <% render 'spree/admin/shared/product_sub_menu' %>
 
-
 <%= form_for([:admin, @review]) do |f| %>
 	<div class="alpha eight columns">
 		<% unless @review.title.blank? %>
@@ -16,12 +15,12 @@
 	</div>
 
 	<div class="omega eight columns">
-		<%= render :partial => 'form', :locals  => { :f => f } %>
+		<%= render 'form', :f => f %>
 	</div>
 
 	<div class="clear"></div>
 
 	<fieldset class="no-border-top">
-		<%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+		<%= render 'spree/admin/shared/edit_resource_links' %>
 	</fieldset>
 <% end %>

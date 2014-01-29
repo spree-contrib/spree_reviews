@@ -1,3 +1,3 @@
-<%= content_tag :h2, Spree.t(:leave_us_a_review_for, :name => @product.name), :class => 'new-review-title' %> 
+<%= content_tag :h2, Spree.t(:leave_us_a_review_for, :name => @product.name), :class => 'new-review-title' %>
 
-<%= render 'form', { :review => @review, :product => @product } %>
+<%= render 'form', :review => @review, :product => @product %>
