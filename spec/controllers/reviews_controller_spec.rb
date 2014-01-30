@@ -29,7 +29,7 @@ describe Spree::ReviewsController do
         reviews = [
           create(:review, product: product, approved: true, created_at: 4.days.ago),
           create(:review, product: product, approved: true, created_at: 2.days.ago)
-        ]        
+        ]
         create(:review, product: product, approved: false, created_at: 1.days.ago)
         spree_get :index, product_id: product.permalink
         response.status.should eq(200)
@@ -64,7 +64,7 @@ describe Spree::ReviewsController do
         response.status.should eq(404)
       end
     end
- 
+
     context 'for a valid product permalink' do
       context 'with valid params' do
         it 'creates a new review' do
@@ -72,15 +72,15 @@ describe Spree::ReviewsController do
           title = Faker::Lorem.words(4).join(' ')
           review_body = Faker::Lorem.paragraphs(3).join("\n")
           name = Faker::Internet.email
-          lambda {
-            spree_post :create, { product_id: product.permalink, 
+          expect {
+            spree_post :create, { product_id: product.permalink,
                                   review: { review: review_body,
                                             rating: rating,
                                             name: name,
-                                            title: title }}, 
+                                            title: title }},
                                 { access_token: token }
             response.should redirect_to(spree.product_path(product))
-          }.should change(Spree::Review, :count).by(1)
+          }.to change(Spree::Review, :count).by(1)
           review = Spree::Review.last
           review.title.should eq(title)
           review.review.should eq(review_body)
@@ -95,15 +95,15 @@ describe Spree::ReviewsController do
           title = Faker::Lorem.words(4).join(' ')
           review_body = Faker::Lorem.paragraphs(3).join("\n")
           name = Faker::Internet.email
-          lambda {
-            spree_post :create, { product_id: product.permalink, 
+          expect {
+            spree_post :create, { product_id: product.permalink,
                                   review: { review: review_body,
                                             rating: rating,
                                             name: name,
-                                            title: title }}, 
+                                            title: title }},
                                 { access_token: token }
             response.should render_template(:new)
-          }.should_not change(Spree::Review, :count)
+          }.not_to change(Spree::Review, :count)
 
         end
       end
