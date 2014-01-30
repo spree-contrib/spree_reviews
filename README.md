@@ -10,7 +10,7 @@ Installation
 
 Add the following to your `Gemfile` to install from git:
 ```ruby
-gem 'spree_reviews', github: 'spree/spree_reviews', branch: '2-2-stable'
+gem 'spree_reviews', github: 'spree/spree_reviews', branch: 'master'
 ```
 Now bundle up with:
 
