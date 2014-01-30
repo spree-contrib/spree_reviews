@@ -1,7 +1,7 @@
 <div id="reviews">
-  <%= render :partial => 'spree/shared/rating', :locals => {:product => @product, :review => 0} %>
+  <%= render 'spree/shared/rating', :locals => @product, :review => 0 %>
   <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
-    <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
+    <%= render 'spree/shared/review', :review => review %>
   <% end %>
   <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
     <%= link_to Spree.t('write_your_own_review'), new_product_review_path(@product), :class => "button" %>

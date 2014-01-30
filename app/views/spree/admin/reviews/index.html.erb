@@ -54,47 +54,42 @@
 <% if @reviews.any? %>
 	<table class="index">
 		<colgroup>
+			<col style="width: 25%;">
+			<col style="width: 10%;">
+			<col style="width: 10%;">
 			<col style="width: 20%;">
-			<col style="width: 10%;">
-			<col style="width: 20%;">
-			<col style="width: 10%;">
-			<col style="width: 10%;">
-			<col style="width: 13%;">
+			<col style="width: 15%;">
 			<col style="width: 17%;">
 		</colgroup>
 		<thead>
 			<tr>
-				<th><%= Spree::Review.human_attribute_name(:title) %></th>
-				<th><%= Spree::Review.human_attribute_name(:rating) %></th>
 				<th><%= Spree.t('product') %></th>
+				<th><%= Spree::Review.human_attribute_name(:rating) %></th>
+				<th><%= Spree.t('feedback') %></th>
 				<th><%= Spree::Review.human_attribute_name(:user) %></th>
 				<th><%= Spree::Review.human_attribute_name(:created_at) %></th>
-				<th><%= Spree.t('feedback') %></th>
 			</tr>
 		</thead>
 		<tbody>
 		<%- @reviews.each do |review| -%>
 			<tr id="<%= dom_id review %>">
 				<td>
-					<%= review.title %>
-				</td>
-				<td>
-					<%= txt_stars(review.rating) %>
-				</td>
-				<td>
 					<% if review.product %>
 						<%= link_to review.product.name, product_path(review.product) %>
 					<% end %>
 				</td>
-				<td>
-					<%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : Spree.t(:guest) %></p>
+				<td class="align-center">
+					<%= txt_stars(review.rating) %>
+				</td>
+				<td class="align-center">
+					<%= link_to "(#{review.feedback_stars}/#{review.feedback_reviews.size})", admin_review_feedback_reviews_path(review) %>
+				</td>
+				<td class="align-center">
+					<%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : Spree.t(:anonymous) %></p>
 					<p><%= Spree::Review.human_attribute_name(:ip_address) %>: <%= review.ip_address ? link_to(review.ip_address, "http://whois.domaintools.com/#{review.ip_address}") : '-' %></p>
 				</td>
-				<td>
-					<%= l review.created_at, :format => :long %>
-				</td>
-				<td>
-					<%= link_to "(#{review.feedback_stars}/#{review.feedback_reviews.size})", admin_review_feedback_reviews_path(review) %>
+				<td class="align-center">
+					<%= l review.created_at, :format => :short %>
 				</td>
 				<td class="actions">
 					<%= link_to_with_icon 'icon-check', Spree.t('approve'), approve_admin_review_url(review), :no_text => true, class: 'approve' unless review.approved %>
