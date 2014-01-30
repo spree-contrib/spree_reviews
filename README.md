@@ -8,9 +8,9 @@ Straightforward review/rating functionality.
 Installation
 ------------
 
-Add the following to your `Gemfile to install from git:
+Add the following to your `Gemfile` to install from git:
 ```ruby
-gem 'spree_reviews', github: 'spree/spree_reviews'
+gem 'spree_reviews', github: 'spree/spree_reviews', branch: '2-2-stable'
 ```
 Now bundle up with:
 
@@ -38,9 +38,9 @@ Action "submit" in "reviews" controller - goes to review entry form
 Users must be logged in to submit a review
 
 Three partials:
- - `./app/views/products/_rating.html.erb` -- display number of stars
- - `./app/views/products/_shortrating.html.erb` -- shorter version of above
- - `./app/views/products/_review.html.erb` -- display a single review
+ - `app/views/spree/products/_rating.html.erb` -- display number of stars
+ - `app/views/spree/products/_shortrating.html.erb` -- shorter version of above
+ - `app/views/spree/products/_review.html.erb` -- display a single review
 
 Administrator can edit and/or approve and/or delete reviews.
 
@@ -91,10 +91,10 @@ Starting point:
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
-Copyright (c) 2014 [Paul Callaghan][6] and [contributors][7], released under the [New BSD License][3]
+Copyright (c) 2014 [Spree Commerce][6] and [contributors][7], released under the [New BSD License][3]
 
 [1]: http://www.fsf.org/licensing/essays/free-sw.html
 [2]: https://github.com/spree/spree_reviews/issues
 [3]: https://github.com/spree/spree_reviews/blob/master/LICENSE.md
-[6]: https://github.com/paulcc
+[6]: https://github.com/spree
 [7]: https://github.com/spree/spree_reviews/contributors
