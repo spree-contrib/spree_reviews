@@ -18,9 +18,9 @@ describe Spree::ReviewsController do
       end
     end
 
-    context 'for a valid product permalink' do
+    context 'for a valid product slug' do
       it 'should render the page' do
-        spree_get :index, product_id: product.permalink
+        spree_get :index, product_id: product.slug
         response.status.should eq(200)
         response.should render_template(:index)
       end
@@ -31,7 +31,7 @@ describe Spree::ReviewsController do
           create(:review, product: product, approved: true, created_at: 2.days.ago)
         ]        
         create(:review, product: product, approved: false, created_at: 1.days.ago)
-        spree_get :index, product_id: product.permalink
+        spree_get :index, product_id: product.slug
         response.status.should eq(200)
         response.should render_template(:index)
         assigns(:approved_reviews).should eq([reviews[1], reviews[0]])
@@ -48,9 +48,9 @@ describe Spree::ReviewsController do
       end
     end
 
-    context 'for a valid product permalink' do
+    context 'for a valid product slug' do
       it 'should render the page' do
-        spree_get :new, product_id: product.permalink
+        spree_get :new, product_id: product.slug
         response.status.should eq(200)
         response.should render_template(:new)
       end
@@ -65,7 +65,7 @@ describe Spree::ReviewsController do
       end
     end
  
-    context 'for a valid product permalink' do
+    context 'for a valid product slug' do
       context 'with valid params' do
         it 'creates a new review' do
           rating = 4
@@ -73,7 +73,7 @@ describe Spree::ReviewsController do
           review_body = Faker::Lorem.paragraphs(3).join("\n")
           name = Faker::Internet.email
           lambda {
-            spree_post :create, { product_id: product.permalink, 
+            spree_post :create, { product_id: product.slug, 
                                   review: { review: review_body,
                                             rating: rating,
                                             name: name,
@@ -96,7 +96,7 @@ describe Spree::ReviewsController do
           review_body = Faker::Lorem.paragraphs(3).join("\n")
           name = Faker::Internet.email
           lambda {
-            spree_post :create, { product_id: product.permalink, 
+            spree_post :create, { product_id: product.slug, 
                                   review: { review: review_body,
                                             rating: rating,
                                             name: name,

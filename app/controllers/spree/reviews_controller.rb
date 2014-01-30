@@ -34,7 +34,7 @@ class Spree::ReviewsController < Spree::StoreController
   private
 
   def load_product
-    @product = Spree::Product.find_by_permalink!(params[:product_id])
+    @product = Spree::Product.friendly.find(params[:product_id])
   end
 
   def permitted_review_attributes
