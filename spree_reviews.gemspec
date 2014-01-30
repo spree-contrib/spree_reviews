@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_reviews'
-  s.version     = '1.0.0'
+  s.version     = '2.2.0'
   s.summary     = 'Basic review and ratings facility for Spree'
   s.authors 	  = ['Paul Callaghan']
   #s.description = 'Add (optional) gem description here'
