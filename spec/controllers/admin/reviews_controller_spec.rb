@@ -17,7 +17,7 @@ describe Spree::Admin::ReviewsController do
         create(:review, product: product),
         create(:review, product: product)
       ]
-      spree_get :index, product_id: product.permalink
+      spree_get :index, product_id: product.slug
       assigns[:reviews].should =~ reviews
     end
   end
