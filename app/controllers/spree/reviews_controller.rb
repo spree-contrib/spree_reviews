@@ -4,7 +4,7 @@ class Spree::ReviewsController < Spree::StoreController
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
   def index
-    @approved_reviews = Spree::Review.approved.where(product_id: @product.id)
+    @approved_reviews = Spree::Review.approved.where(product: @product)
   end
 
   def new
@@ -14,7 +14,7 @@ class Spree::ReviewsController < Spree::StoreController
 
   # save if all ok
   def create
-    params[:review][:rating].sub!(/\s*[^0-9]*$/,'') unless params[:review][:rating].blank?
+    params[:review][:rating].sub!(/\s*[^0-9]*\z/,'') unless params[:review][:rating].blank?
 
     @review = Spree::Review.new(review_params)
     @review.product = @product
@@ -27,14 +27,14 @@ class Spree::ReviewsController < Spree::StoreController
       flash[:notice] = Spree.t('review_successfully_submitted')
       redirect_to spree.product_path(@product)
     else
-      render :action => "new"
+      render :new
     end
   end
 
   private
 
   def load_product
-    @product = Spree::Product.friendly.find(params[:product_id])
+    @product = Spree::Product.find_by_permalink!(params[:product_id])
   end
 
   def permitted_review_attributes
