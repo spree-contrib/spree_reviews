@@ -1,5 +1,5 @@
 <%= render 'spree/feedback_reviews/summary', :review => review %>
-<%= form_for((@feedback_review ||= review.feedback_reviews.build), :url => feedback_review_path(review), :method => :post, :remote => true) do |f| %>
+<%= form_for((@feedback_review ||= review.feedback_reviews.build), :url => feedback_reviews_path(review), :method => :post, :remote => true) do |f| %>
 <% unless @feedback_review.errors.empty? %>
  <span class="error"><%= @feedback_review.errors[:rating] %></span>
  <br />
@@ -12,5 +12,3 @@
 <%= hidden_field_tag "feedback_review[user_id]", spree_current_user.try(:id) %>
 <button class="feedback-review"><span><%= Spree.t(:say_yes) %></span></button>
 <% end %>
-
-

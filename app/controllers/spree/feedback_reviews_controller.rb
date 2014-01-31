@@ -20,7 +20,7 @@ class Spree::FeedbackReviewsController < Spree::StoreController
 
   end
 
-  protected 
+  protected
     def load_review
       @review ||= Spree::Review.find_by_id!(params[:review_id])
     end
@@ -34,7 +34,7 @@ class Spree::FeedbackReviewsController < Spree::StoreController
     end
 
     def sanitize_rating
-      params[:feedback_review][:rating].to_s.sub!(/\s*[^0-9]*$/,'') unless (params[:feedback_review] && params[:feedback_review][:rating].blank?)
+      params[:feedback_review][:rating].to_s.sub!(/\s*[^0-9]*\z/,'') unless (params[:feedback_review] && params[:feedback_review][:rating].blank?)
     end
 end
 
