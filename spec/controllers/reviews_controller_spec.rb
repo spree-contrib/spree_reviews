@@ -4,7 +4,7 @@ describe Spree::ReviewsController do
   let(:user) { create(:user) }
   let(:product) { create(:product) }
   let(:review_params) do
-    { product_id: product.permalink,
+    { product_id: product.slug,
       review: { rating: 3,
                 name: 'Ryan Bigg',
                 title: 'Great Product',
@@ -30,7 +30,7 @@ describe Spree::ReviewsController do
           create(:review, :approved, product: product),
           create(:review, :approved, product: product)
         ]
-        spree_get :index, product_id: product.permalink
+        spree_get :index, product_id: product.slug
         assigns[:approved_reviews].should =~ approved_reviews
       end
     end
@@ -47,13 +47,13 @@ describe Spree::ReviewsController do
     it 'fail if the user is not authorized to create a review' do
       controller.stub(:authorize!) { raise }
       expect {
-        spree_post :new, product_id: product.permalink
+        spree_post :new, product_id: product.slug
         assert_match 'ryanbig', response.body
       }.to raise_error
     end
 
     it 'render the new template' do
-      spree_get :new, product_id: product.permalink
+      spree_get :new, product_id: product.slug
       response.status.should eq(200)
       response.should render_template(:new)
     end
