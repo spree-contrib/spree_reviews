@@ -7,3 +7,4 @@ Gemfile.lock
 pkg/*
 spec/dummy
 coverage
+.rvmrc

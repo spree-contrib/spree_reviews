@@ -1,11 +1,15 @@
 FactoryGirl.define do
   factory :review, :class => Spree::Review do |f|
-    name { Faker::Internet.email }
-    title { Faker::Lorem.words(4).join(' ') }
-    review { Faker::Lorem.paragraphs(3).join("\n") }
-    rating { (rand * 4).to_i + 1 }
+    name   { generate(:random_email) }
+    title  { generate(:random_string) }
+    review { generate(:random_description) }
+    rating { rand(1..5) }
     approved false
     user
     product
+
+    trait :approved do
+      approved true
+    end
   end
 end
