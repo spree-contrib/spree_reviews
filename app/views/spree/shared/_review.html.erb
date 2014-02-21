@@ -4,7 +4,9 @@
   </span>
   <span itemprop="name"><%= review.title %></span>
   <br/>
-  <span class="attribution"><%= Spree.t('submitted_on') %> <strong itemprop="datePublished"><%= l review.created_at.to_date %></strong></span>
+  <span class="attribution"><%= t('submitted_on') %> <strong><%= l review.created_at.to_date %></strong></span>
+  <meta itemprop="datePublished" content="<%= review.created_at.to_date.to_s %>" />
+
   <meta itemprop="reviewRating" content="<%= review.rating %>" />
   <% if Spree::Reviews::Config[:show_email] && review.user %>
     <span itemprop="author"><%= review.user.email %></span>
