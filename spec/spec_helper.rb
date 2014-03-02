@@ -1,10 +1,12 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 ENV["RAILS_ENV"] = "test"
-require 'simplecov' if ENV['COVERAGE']
+
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
 require 'ffaker'
 require 'database_cleaner'
-
 require 'capybara'
 require 'capybara/rspec'
 require 'capybara/rails'
@@ -23,7 +25,6 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::ControllerRequests
   config.include FactoryGirl::Syntax::Methods
   config.include Spree::TestingSupport::UrlHelpers
-  config.extend Spree::TestingSupport::AuthorizationHelpers::Request, :type => :feature
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
