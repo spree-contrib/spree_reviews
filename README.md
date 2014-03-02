@@ -2,6 +2,7 @@ Reviews
 =======
 
 [![Build Status](https://secure.travis-ci.org/spree/spree_reviews.png)](http://travis-ci.org/spree/spree_reviews)
+[![Code Climate](https://codeclimate.com/github/spree/spree_reviews.png)](https://codeclimate.com/github/spree/spree_reviews)
 
 Straightforward review/rating functionality.
 
@@ -97,4 +98,4 @@ Copyright (c) 2014 [Spree Commerce][6] and [contributors][7], released under the
 [2]: https://github.com/spree/spree_reviews/issues
 [3]: https://github.com/spree/spree_reviews/blob/master/LICENSE.md
 [6]: https://github.com/spree
-[7]: https://github.com/spree/spree_reviews/contributors
+[7]: https://github.com/spree/spree_reviews/graphs/contributors
