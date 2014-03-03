@@ -11,9 +11,9 @@ module SpreeReviews
         }
       end
 
-      def add_javascripts 
-        append_file "vendor/assets/javascripts/spree/frontend/all.js", "//= require spree/frontend\n"
-        append_file "vendor/assets/javascripts/spree/backend/all.js", "//= require spree/backend\n"
+      def add_javascripts
+        append_file "vendor/assets/javascripts/spree/frontend/all.js", "//= require spree/frontend/spree_reviews\n"
+        append_file "vendor/assets/javascripts/spree/backend/all.js", "//= require spree/backend/spree_reviews\n"
       end
 
       def add_stylesheets
