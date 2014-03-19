@@ -37,7 +37,9 @@ pt:
     out_of_5: "de 5"
     rating: pontuação
     reviews: Avaliações
-    review_management: Gestão Avaliações
+    admin:
+      tab:
+        review_management: Gestão Avaliações
     review_successfully_submitted: A avaliação foi enviada com sucesso
     submission_guidelines: Diretrizes para enviar boas avaliações
     spree_reviews:
