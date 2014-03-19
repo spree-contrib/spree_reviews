@@ -37,7 +37,9 @@ tr:
     out_of_5: "5 üzerinden"
     rating: değerlendirme
     reviews: Yorumlar
-    review_management: Yorumlar
+    admin:
+      tab:
+        review_management: Yorumlar
     review_successfully_submitted: Yorumunuz başarıyla iletildi
     spree_reviews:
       feedback_rating: Geribildirimi değerlendir

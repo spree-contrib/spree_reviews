@@ -37,7 +37,9 @@ es:
     out_of_5: "de 5"
     rating: puntuación
     reviews: Valoraciones
-    review_management: "Valoraciones"
+    admin:
+      tab:
+        review_management: "Valoraciones"
     review_successfully_submitted: "La valoración se ha enviado correctamente"
     spree_reviews:
       feedback_rating: "Puntuación en el feedback"

@@ -20,7 +20,9 @@ ru:
   spree:
     reviews: Отзывы
     write_your_own_review: Оставьте свой отзыв
-    review_management: Управление отзывами
+    admin:
+      tab:
+        review_management: Управление отзывами
     back_reviews: Назад к отзывам
     info_approve_review: Отзыв одобрен
     error_approve_review: Ошибка при одобрении отзыва

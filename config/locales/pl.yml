@@ -39,7 +39,9 @@ pl:
     out_of_5: "z 5"
     rating: Ocena
     reviews: Opinie
-    review_management: Opinie
+    admin:
+      tab:
+        review_management: Opinie
     review_successfully_submitted: Opinia została dodana
     spree_reviews:
       feedback_rating: Oceń komentarz
