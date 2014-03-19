@@ -38,7 +38,9 @@ de:
     out_of_5: "von 5"
     rating: Bewertung
     reviews: Rezensionen
-    review_management: Rezensionen
+    admin:
+      tab:
+        review_management: Rezensionen
     review_successfully_submitted: Ihre Rezension wurde erfolgreich übertragen. Vielen Dank!
     spree_reviews:
       feedback_rating: Feedback für Rezensionen erlauben

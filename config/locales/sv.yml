@@ -36,7 +36,9 @@ sv:
     no_reviews_available: "Inga recensioner har ännu skrivits för den här produkten."
     out_of_5: "ut av 5"
     rating: betyg
-    review_management: "Hantera recensioner"
+    admin:
+      tab:
+        review_management: "Hantera recensioner"
     review_successfully_submitted: "Recension har skapats"
     reviews: Recensioner
     spree_reviews:

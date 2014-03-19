@@ -41,7 +41,9 @@ ro:
     out_of_5: "din 5"
     rating: evaluare
     reviews: Recenzii
-    review_management: Recenzii
+    admin:
+      tab:
+        review_management: Recenzii
     review_successfully_submitted: Recenzia a fost trimisă cu succes
     spree_reviews:
       feedback_rating: Evaluează feedback

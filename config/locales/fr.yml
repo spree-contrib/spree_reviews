@@ -37,7 +37,9 @@ fr:
     out_of_5: "sur 5"
     rating: note
     reviews: Commentaires
-    review_management: Commentaires
+    admin:
+      tab:
+        review_management: Commentaires
     review_successfully_submitted: Votre commentaire a été envoyé avec succès
     spree_reviews:
       feedback_rating: Note de réaction
