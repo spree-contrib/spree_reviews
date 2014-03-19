@@ -37,7 +37,9 @@ en-GB:
     out_of_5: "out of 5"
     rating: rating
     reviews: Reviews
-    review_management: Reviews
+    admin:
+      tab:
+        review_management: Reviews
     review_successfully_submitted: Review was successfully submitted
     spree_reviews:
       feedback_rating: Rate feedback

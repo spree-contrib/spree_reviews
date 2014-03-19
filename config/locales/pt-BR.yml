@@ -37,7 +37,9 @@ pt-BR:
     out_of_5: "fora de 5"
     rating: 'classificação'
     reviews: 'Avaliações'
-    review_management: 'Avaliações'
+    admin:
+      tab:
+        review_management: 'Avaliações'
     review_successfully_submitted: 'Avaliação enviada com sucesso'
     spree_reviews:
       feedback_rating: 'Classifique um parecer'
