@@ -8,11 +8,24 @@ feature 'Reviews', js: true do
     Spree::Reviews::Config.include_unapproved_reviews = false
   end
 
-  context 'product with now review' do
+  context 'product with no review' do
     given!(:product_no_reviews) { create(:product) }
     scenario 'informs that no reviews has been written yet' do
       visit spree.product_path(product_no_reviews)
       expect(page).to have_text Spree.t(:no_reviews_available)
+    end
+
+    # Regression test for #103
+    context "shows correct number of previews" do
+      background do
+        FactoryGirl.create_list :review, 3, product: product_no_reviews, approved: true
+        Spree::Reviews::Config[:preview_size] = 2
+      end
+
+      scenario "displayed reviews are limited by the set preview size" do
+        visit spree.product_path(product_no_reviews)
+        expect(page.all(".review").count).to eql(2)
+      end
     end
   end
 
