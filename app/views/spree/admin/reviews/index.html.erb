@@ -92,7 +92,7 @@
 					<%= l review.created_at, :format => :short %>
 				</td>
 				<td class="actions">
-					<%= link_to_with_icon 'icon-check', Spree.t('approve'), approve_admin_review_url(review), :no_text => true, class: 'approve' unless review.approved %>
+					<%= link_to_with_icon 'check', Spree.t('approve'), approve_admin_review_url(review), :no_text => true, class: 'approve' unless review.approved %>
 					&nbsp;
 					<%= link_to_edit review, :no_text => true, :class => 'edit' %>
 					&nbsp;
