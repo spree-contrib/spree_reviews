@@ -1,0 +1,65 @@
+---
+zh-TW:
+  activerecord:
+    attributes:
+      spree/review:
+        name: 您的姓名
+        title: 標題
+        review: 內文
+        rating: 評級
+        created_at: 日期
+        ip_address: IP
+        user: 用戶
+    models:
+      spree/review:
+        one: 一個評論
+        other: '%{count}個評論'
+  spree:
+    approve: 核準
+    approved_reviews: 核準
+    average_customer_rating: 平均評級
+    back_reviews: 返回評論
+    based_upon_review_count:
+      one: 以評論為基礎
+      other: '以 %{count} 個評論為基礎'
+    by: 由
+    editing_review_for_html: '正在修改 %{link} 的評論'
+    error_approve_review: 出錯了，不能核準評論
+    error_no_product: 被評論的產品不存在了。
+    feedback: 回饋
+    feedback_review_for: "評論： '%{review}'"
+    for: 給
+    from: 由
+    info_approve_review: 已核準評論
+    leave_us_a_review_for: "請給我們的 '%{name}' 評論和評級"
+    no_reviews_available: '此產品沒有評論。'
+    out_of_5: '頂級為 5'
+    rating: 評級
+    reviews: 評論
+    admin:
+      tab:
+        review_management: 評論
+    review_successfully_submitted: 已成功遞交評論。
+    spree_reviews:
+      feedback_rating: 評級回饋
+      include_unapproved: 包括未核準評論在列表中
+      manage_review_settings: 控制評論的顯示
+      preview_size: 評論片段的大小
+      require_login: 用者必需登入
+      review_settings: 評論設定
+      show_email: 顯示電郵地址
+      track_locale: 追蹤用戶地域
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: 星
+    submit_your_review: 遞交你的評論
+    submitted_on: 遞交日期
+    unapproved_reviews: 沒核準
+    voice:
+      one: "1 聲音"
+      other: "%{count} 聲音"
+    was_this_review_helpful: 此評論對你是否有幫助？
+    write_your_own_review: 寫下您的評論
+    you_must_enter_value_for_rating: 您必需輸入評級
+    anonymous: 匿名者
