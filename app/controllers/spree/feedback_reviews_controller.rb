@@ -8,6 +8,7 @@ class Spree::FeedbackReviewsController < Spree::StoreController
 
     if @review.present?
       @feedback_review = @review.feedback_reviews.new(feedback_review_params)
+      @feedback_review.user = spree_current_user
       @feedback_review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
       authorize! :create, @feedback_review
       @feedback_review.save
@@ -20,7 +21,7 @@ class Spree::FeedbackReviewsController < Spree::StoreController
 
   end
 
-  protected 
+  protected
     def load_review
       @review ||= Spree::Review.find_by_id!(params[:review_id])
     end
