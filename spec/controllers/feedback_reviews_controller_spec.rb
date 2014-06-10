@@ -30,6 +30,7 @@ describe Spree::FeedbackReviewsController do
           feedback_review.comment.should eq(comment)
           feedback_review.review.should eq(review)
           feedback_review.rating.should eq(rating)
+          feedback_review.user.should eq(user)
 
         end
       end
