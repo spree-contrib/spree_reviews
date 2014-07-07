@@ -28,22 +28,22 @@ describe Spree::Admin::ReviewSettingsController do
 
       it 'sets preferred_show_email to false' do
         spree_put :update, preferences: { show_email: false }
-        Spree::Reviews::Config.preferred_show_email.should be_false
+        Spree::Reviews::Config.preferred_show_email.should be false
       end
 
       it 'sets preferred_feedback_rating to false' do
         spree_put :update, preferences: { feedback_rating: false }
-        Spree::Reviews::Config.preferred_feedback_rating.should be_false
+        Spree::Reviews::Config.preferred_feedback_rating.should be false
       end
 
       it 'sets preferred_require_login to true' do
         spree_put :update, preferences: { require_login: true }
-        Spree::Reviews::Config.preferred_require_login.should be_true
+        Spree::Reviews::Config.preferred_require_login.should be true
       end
 
       it 'sets preferred_track_locale to true' do
         spree_put :update, preferences: { track_locale: true }
-        Spree::Reviews::Config.preferred_track_locale.should be_true
+        Spree::Reviews::Config.preferred_track_locale.should be true
       end
     end
   end

@@ -73,12 +73,16 @@ describe Spree::Review do
       let!(:review_3) { create(:review, created_at: 5.days.ago) }
       let!(:review_4) { create(:review, created_at: 1.days.ago) }
 
+      before do
+        reset_spree_preferences
+      end
+
       it 'properly runs oldest_first queries' do
         Spree::Review.oldest_first.to_a.should eq([review_1, review_3, review_2, review_4])
       end
 
       it 'uses oldest_first for preview' do
-        Spree::ReviewsConfiguration.new.reset
+        reset_spree_preferences
         Spree::Review.preview.to_a.should eq([review_1, review_3, review_2])
       end
     end
@@ -111,10 +115,10 @@ describe Spree::Review do
         Spree::Review.not_approved.to_a.should eq([unapproved_review_2, unapproved_review_1])
 
         Spree::Reviews::Config[:include_unapproved_reviews] = true
-        Spree::Review.default_approval_filter.to_a.should eq([unapproved_review_2, 
-                                                              approved_review_2, 
-                                                              approved_review_3, 
-                                                              unapproved_review_1, 
+        Spree::Review.default_approval_filter.to_a.should eq([unapproved_review_2,
+                                                              approved_review_2,
+                                                              approved_review_3,
+                                                              unapproved_review_1,
                                                               approved_review_1])
 
         Spree::Reviews::Config[:include_unapproved_reviews] = false
