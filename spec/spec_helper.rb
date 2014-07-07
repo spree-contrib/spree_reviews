@@ -17,14 +17,17 @@ Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].each {|f| require f }
 require 'spree/testing_support/factories'
 require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
+require 'spree/testing_support/preferences'
 require 'spree/testing_support/url_helpers'
 
 FactoryGirl.find_definitions
 
 RSpec.configure do |config|
   config.include Spree::TestingSupport::ControllerRequests
+  config.include Spree::TestingSupport::Preferences
   config.include FactoryGirl::Syntax::Methods
   config.include Spree::TestingSupport::UrlHelpers
+  config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
@@ -33,7 +36,7 @@ RSpec.configure do |config|
   end
 
   config.before do
-    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.strategy = RSpec.current_example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
 
