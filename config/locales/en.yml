@@ -10,6 +10,7 @@ en:
         created_at: Date
         ip_address: IP
         user: User
+        show_identifier: Show Identifier
     models:
       spree/review:
         one: one review
