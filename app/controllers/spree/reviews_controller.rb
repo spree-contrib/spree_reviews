@@ -38,7 +38,7 @@ class Spree::ReviewsController < Spree::StoreController
   end
 
   def permitted_review_attributes
-    [:rating, :title, :review, :name]
+    [:rating, :title, :review, :name, :show_identifier]
   end
 
   def review_params

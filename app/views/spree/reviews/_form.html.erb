@@ -21,6 +21,13 @@
     <%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
   </p>
 
+  <% if Spree::Reviews::Config[:render_show_identifier_checkbox] %>
+    <p class="review_show_identifier_field">
+      <%= f.label :show_identifier %><br />
+      <%= f.check_box :show_identifier, :wrap => "virtual", :rows => "10", :cols => "50", :checked => true %>
+    </p>
+  <% end %>
+
   <p class="review_submit">
     <%= f.submit Spree.t(:submit_your_review), :class => "button bg_darkfirst" %>
   </p>
