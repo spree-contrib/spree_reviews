@@ -20,4 +20,9 @@ class Spree::ReviewsConfiguration < Spree::Preferences::Configuration
 
   # whether to keep track of the reviewer's locale
   preference :track_locale, :boolean, :default => false
+
+  # render checkbox for a user to approve to show their identifier (name or email) on their review
+  preference :render_show_identifier_checkbox, :boolean, :default => false
+
+  preference :show_identifier_checkbox_label, :string, :default => Spree.t('show_identifier_label')
 end
