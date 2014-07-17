@@ -6,9 +6,9 @@ describe Spree::ReviewsAbility do
   context '.allow_anonymous_reviews?' do
     it 'should depend on Spree::Reviews::Config[:require_login]' do
       Spree::Reviews::Config[:require_login] = false
-      Spree::ReviewsAbility.allow_anonymous_reviews?.should be_true
+      Spree::ReviewsAbility.allow_anonymous_reviews?.should be true
       Spree::Reviews::Config[:require_login] = true
-      Spree::ReviewsAbility.allow_anonymous_reviews?.should be_false
+      Spree::ReviewsAbility.allow_anonymous_reviews?.should be false
     end
   end
 

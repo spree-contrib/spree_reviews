@@ -15,13 +15,11 @@ feature 'Review Admin', js: true do
     end
 
     scenario 'approve reviews' do
-      expect(review.approved).to be_false
+      expect(review.approved).to be false
       within("tr#review_#{review.id}") do
         find('.approve').click
       end
-      expect {
-        review.reload.approved
-      }.to be_true
+      expect(review.reload.approved).to be true
     end
 
     scenario 'edit reviews' do

@@ -20,10 +20,23 @@ describe Spree::FeedbackReviewsController do
   end
 
   describe '#create' do
-    it 'creates a feedback-review' do
+    it 'creates a new feedback review' do
+      rating = 4
+      comment = Faker::Lorem.paragraphs(3).join("\n")
       expect {
-        spree_post :create, valid_attributes
-      }.to change(Spree::FeedbackReview, :count).from(0).to(1)
+        spree_post :create, { review_id: review.id,
+                              feedback_review: { comment: comment,
+                                                 rating: rating },
+                              format: :js }
+        response.status.should eq(200)
+        response.should render_template(:create)
+      }.to change(Spree::Review, :count).by(1)
+      feedback_review = Spree::FeedbackReview.last
+      feedback_review.comment.should eq(comment)
+      feedback_review.review.should eq(review)
+      feedback_review.rating.should eq(rating)
+      feedback_review.user.should eq(user)
+
     end
 
     it 'redirects back to the calling page' do
