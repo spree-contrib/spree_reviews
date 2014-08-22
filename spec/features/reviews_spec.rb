@@ -83,6 +83,7 @@ feature 'Reviews', js: true do
           fill_in 'review_review', with: 'Some big review text..'
           click_on 'Submit your review'
         end
+
         expect(page.find('.flash.notice', text: Spree.t(:review_successfully_submitted))).to be_truthy
         expect(page).not_to have_text 'Some big review text..'
       end
