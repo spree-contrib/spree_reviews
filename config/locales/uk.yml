@@ -1,0 +1,75 @@
+---
+uk:
+  activerecord:
+    attributes:
+      spree/review:
+        name: Ваше ім’я
+        title: Заголовок
+        review: Відгук
+        rating: Оцінка
+        created_at: Дата
+        ip_address: IP
+        user: Користувач
+        show_identifier: Показувати автора
+    models:
+      spree/review:
+        one: один відгук
+        few: '%{count} відгуки'
+        many: '%{count} відгуків'
+        other: '%{count} відгуків'
+  spree:
+    approval_status: Підтвердження
+    approve: Схвалити
+    approved_reviews: Схвалено
+    average_customer_rating: Середня оцінка
+    back_reviews: Назад до відгуків
+    based_upon_review_count:
+      one: на основі одного відгуку
+      few: "на основі %{count} відгуків"
+      many: "на основі %{count} відгуків"
+      other: "на основі %{count} відгуків"
+    by: від
+    editing_review_for_html: 'Редагувати відгук на %{link}'
+    error_approve_review: Не вдалось схвалити відгук
+    error_no_product: Товару, на який писався відгук, більше не існує
+    feedback: Корисність
+    feedback_review_for: "Відгук: '%{review}'"
+    for: для
+    from: від
+    info_approve_review: Відгук схвалено
+    leave_us_a_review_for: "Будь ласка, залиште відгук та оцінку для '%{name}'"
+    no_reviews_available: 'Поки що немає відгуків на цей товар.'
+    out_of_5: 'з 5'
+    rating: оцінка
+    reviews: Відгуки
+    admin:
+      tab:
+        review_management: Відгуки
+    review_successfully_submitted: Відгук надіслано
+    spree_reviews:
+      feedback_rating: Оцінювати корисність
+      include_unapproved: Показувати незатверджені відгуки
+      manage_review_settings: Керувати відображенням відгуків
+      preview_size: Розмір скороченої версії
+      require_login: Тільки для зареєстрованих користувачів
+      review_settings: Налаштування відгуків
+      show_email: Показувати email
+      track_locale: Зберігати мову користувача
+    star:
+      one: '1'
+      few: '%{count}'
+      many: '%{count}'
+      other: '%{count}'
+    stars: Зірочок
+    submit_your_review: Надіслати відгук
+    submitted_on: Написано
+    unapproved_reviews: Непідтверджений
+    voice:
+      one: '1 голос'
+      few: '%{count} голоси'
+      many: '%{count} голосів'
+      other: '%{count} голосів'
+    was_this_review_helpful: 'Цей відгук корисний для вас?'
+    write_your_own_review: Напишіть свій відгук
+    you_must_enter_value_for_rating: 'Потрібно вибрати оцінку.'
+    anonymous: Анонім
