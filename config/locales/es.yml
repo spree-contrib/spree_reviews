@@ -15,7 +15,7 @@ es:
         one: una valoración
         other: "%{count} valoraciones"
   spree:
-    approval_status: Aprobación
+    approval_status: Estado de aprobación
     approve: Aprobar
     approved_reviews: Aprobado
     approved_text: "Los comentarios desbloqueados serán publicados en 1-2 días laborales."
