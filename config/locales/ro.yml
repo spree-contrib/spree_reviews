@@ -17,6 +17,7 @@ ro:
         other: "%{count} recenzii"
         many: "%{count} de recenzii"
   spree:
+    approval_status: Aprobare
     approve: Aprobă
     approved_reviews: Aprobate
     approved_text: Comentariile deblocate vor fi publicate în 1-2 zile lucrătoare.

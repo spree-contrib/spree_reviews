@@ -16,6 +16,7 @@ sv:
         other: "%{count} recensioner"
   spree:
     anonymous: Anonym
+    approval_status: Godkännandestatus
     approve: Godkänn
     approved_reviews: Godkänd
     average_customer_rating: "Genomsnittligt betyg"
