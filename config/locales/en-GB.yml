@@ -15,6 +15,7 @@ en-GB:
         one: one review
         other: "%{count} reviews"
   spree:
+    approval_status: Approval status
     approve: Approve
     approved_reviews: Approved
     approved_text: Unlocked comments will be published within 1-2 business days.

@@ -16,6 +16,7 @@ de:
         one: eine Rezension
         other: "%{count} Rezensionen"
   spree:
+    approval_status: Freischaltungsstatus
     approve: Freischalten
     approved_reviews: Freigeschaltete Rezensionen
     approved_text: Freigeschalte Kommentare werden innerhalb von 1-2 Werktagen veröffentlicht.
