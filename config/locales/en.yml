@@ -16,6 +16,7 @@ en:
         one: one review
         other: "%{count} reviews"
   spree:
+    approval_status: Approval status
     approve: Approve
     approved_reviews: Approved
     average_customer_rating: Average rating

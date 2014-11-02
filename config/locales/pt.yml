@@ -15,6 +15,7 @@ pt:
         one: uma avaliação
         other: "%{count} avaliações"
   spree:
+    approval_status: Status de aprovação
     approve: Aprovar
     approved_reviews: Avaliações aprovadas
     approved_text: As avaliações podem demorar 1-2 dias úteis a ser publicadas.
