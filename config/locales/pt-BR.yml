@@ -15,7 +15,7 @@ pt-BR:
         one: 'uma avaliação'
         other: "%{count} avaliações"
   spree:
-    approval_status: 'Status de aprovação'
+    approval_status: 'Estado de aprovação'
     approve: 'Aprovar'
     approved_reviews: 'Aprovado'
     approved_text: 'Comentários destravados serão publicados em 1-2 dias.'
