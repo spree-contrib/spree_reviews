@@ -15,7 +15,7 @@ fr:
         one: un commentaire
         other: "%{count} commentaires"
   spree:
-    approval_status: Approbation
+    approval_status: Statut de l'approbation
     approve: Approuver
     approved_reviews: Approuvé
     approved_text: Les commentaires authorisés seront affichés dans un délai de un à deux jours ouvrables.
