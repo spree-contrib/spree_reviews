@@ -1,6 +1,6 @@
 # Reviews
 
-[![Build Status](https://travis-ci.org/spree-contrib/spree_reviews.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_reviews)
+[![Build Status](https://travis-ci.org/spree-contrib/spree_reviews.svg?branch=2-2-stable)](https://travis-ci.org/spree-contrib/spree_reviews)
 [![Code Climate](https://codeclimate.com/github/spree-contrib/spree_reviews/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_reviews)
 
 Straightforward review/rating functionality.
@@ -11,7 +11,7 @@ Straightforward review/rating functionality.
 
 Add the following to your `Gemfile` to install from git:
 ```ruby
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '2-2-stable'
 ```
 Now bundle up with:
 
