@@ -16,6 +16,7 @@ pl:
         few: "%{count} opinii"
         other: "%{count} opinii"
   spree:
+    approval_status: Status zatwierdzenia
     approve: Zatwierdź
     approved_reviews: Zatwierdzone opinie
     approved_text: Zatwierdzone opinie zostaną opublikowane w ciągu 1-2 dni roboczych.

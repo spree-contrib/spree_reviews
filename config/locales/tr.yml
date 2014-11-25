@@ -15,6 +15,7 @@ tr:
         one: bir yorum
         other: "%{count} yorumlar"
   spree:
+    approval_status: Onay Durumu
     approve: Onayla
     approved_reviews: Onaylı
     approved_text: Yorum 1-2 iş günü içinde yayımlanacaktır.
