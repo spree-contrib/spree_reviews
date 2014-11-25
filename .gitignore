@@ -5,3 +5,7 @@
 Gemfile.lock
 pkg/*
 spec/dummy
+coverage
+.rvmrc
+.ruby-version
+.ruby-gemset
