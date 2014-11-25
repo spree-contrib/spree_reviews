@@ -1,17 +1,17 @@
-Reviews
-=======
+# Reviews
 
-[![Build Status](https://secure.travis-ci.org/spree/spree_reviews.png)](http://travis-ci.org/spree/spree_reviews)
-[![Code Climate](https://codeclimate.com/github/spree/spree_reviews.png)](https://codeclimate.com/github/spree/spree_reviews)
+[![Build Status](https://travis-ci.org/spree-contrib/spree_reviews.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_reviews)
+[![Code Climate](https://codeclimate.com/github/spree-contrib/spree_reviews/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_reviews)
 
 Straightforward review/rating functionality.
 
-Installation
-------------
+---
+
+## Installation
 
 Add the following to your `Gemfile` to install from git:
 ```ruby
-gem 'spree_reviews', github: 'spree/spree_reviews', branch: 'master'
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
 ```
 Now bundle up with:
 
@@ -31,8 +31,9 @@ Now you should be able to boot up your server with:
 
 That's all!
 
-Usage
------
+---
+
+## Usage
 
 Action "submit" in "reviews" controller - goes to review entry form
 
@@ -45,16 +46,16 @@ Three partials:
 
 Administrator can edit and/or approve and/or delete reviews.
 
-Implementation
---------------
+## Implementation
 
 Reviews table is quite obvious - and note the "approved" flag which is for the
 administrator to update.
 
 Ratings table holds current fractional value - avoids frequent recalc...
 
-Discussion
-----------
+---
+
+## Discussion
 
 Some points which might need modification in future:
 
@@ -65,37 +66,18 @@ Some points which might need modification in future:
    accepted whether or not the review is accepted. Perhaps they should only
    be counted when the review is approved.
 
-Contributing
-------------
+---
 
-In the spirit of [free software][1], **everyone** is encouraged to help improve this project.
+## Contributing
 
-Here are some ways *you* can contribute:
+See corresponding [contributing guidelines][1].
 
-* by using prerelease versions
-* by reporting [bugs][2]
-* by suggesting new features
-* by writing translations
-* by writing or editing documentation
-* by writing specifications
-* by writing code (*no patch is too small*: fix typos, add comments, clean up inconsistent whitespace)
-* by refactoring code
-* by resolving [issues][2]
-* by reviewing patches
+---
 
-Starting point:
+Copyright (c) 2009-2014 [Spree Commerce][6] and [contributors][7], released under the [New BSD License][3]
 
-* Fork the repo
-* Clone your repo
-* Run `bundle install`
-* Run `bundle exec rake test_app` to create the test application in `spec/test_app`
-* Ensure specs pass by running `bundle exec rspec spec`
-* Submit your pull request
-
-Copyright (c) 2014 [Spree Commerce][6] and [contributors][7], released under the [New BSD License][3]
-
-[1]: http://www.fsf.org/licensing/essays/free-sw.html
-[2]: https://github.com/spree/spree_reviews/issues
-[3]: https://github.com/spree/spree_reviews/blob/master/LICENSE.md
-[6]: https://github.com/spree
-[7]: https://github.com/spree/spree_reviews/graphs/contributors
+[1]: https://github.com/spree-contrib/spree_reviews/blob/master/CONTRIBUTING.md
+[2]: https://github.com/spree-contrib/spree_reviews/issues
+[3]: https://github.com/spree-contrib/spree_reviews/blob/master/LICENSE.md
+[4]: https://github.com/spree
+[5]: https://github.com/spree-contrib/spree_reviews/graphs/contributors
