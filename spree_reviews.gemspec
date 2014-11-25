@@ -4,13 +4,14 @@ Gem::Specification.new do |s|
   s.version     = '1.0.0'
   s.summary     = 'Basic review and ratings facility for Spree'
   s.authors 	  = ['Paul Callaghan']
-  #s.description = 'Add (optional) gem description here'
+  s.description = s.summary
   s.required_ruby_version = '>= 1.8.7'
 
-  s.homepage          = 'https://github.com/spree/spree-reviews/'
+  s.homepage     = 'https://github.com/spree-contrib/spree-reviews/'
+  s.license      = 'BSD-3'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files        = `git ls-files`.split("\n")
+  s.test_files   = `git ls-files -- spec/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
