@@ -13,11 +13,5 @@ module SpreeReviews
       Spree::Ability.register_ability(Spree::ReviewsAbility)
     end
     config.to_prepare &method(:activate).to_proc
-
-    # use rspec for tests
-    config.generators do |g|
-      g.test_framework :rspec
-    end
-
   end
 end
