@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Spree::FeedbackReviewsController do
+RSpec.describe Spree::FeedbackReviewsController, type: :controller do
   let(:user) { create(:user) }
   let(:product) { create(:product) }
   let(:review) { create(:review, user: user) }
@@ -14,8 +12,8 @@ describe Spree::FeedbackReviewsController do
   end
 
   before do
-    controller.stub spree_current_user: user
-    controller.stub spree_user_signed_in?: true
+    allow(controller).to receive(:spree_current_user).and_return(user)
+    allow(controller).to receive(:spree_user_signed_in?).and_return(true)
     request.env['HTTP_REFERER'] = '/'
   end
 
@@ -28,30 +26,30 @@ describe Spree::FeedbackReviewsController do
                               feedback_review: { comment: comment,
                                                  rating: rating },
                               format: :js }
-        response.status.should eq(200)
-        response.should render_template(:create)
+        expect(response.status).to be(200)
+        expect(response).to render_template(:create)
       }.to change(Spree::Review, :count).by(1)
       feedback_review = Spree::FeedbackReview.last
-      feedback_review.comment.should eq(comment)
-      feedback_review.review.should eq(review)
-      feedback_review.rating.should eq(rating)
-      feedback_review.user.should eq(user)
+      expect(feedback_review.comment).to eq(comment)
+      expect(feedback_review.review).to eq(review)
+      expect(feedback_review.rating).to eq(rating)
+      expect(feedback_review.user).to eq(user)
 
     end
 
     it 'redirects back to the calling page' do
       spree_post :create, valid_attributes
-      response.should redirect_to '/'
+      expect(response).to redirect_to('/')
     end
 
     it 'sets locale on feedback-review if required by config' do
       Spree::Reviews::Config.preferred_track_locale = true
       spree_post :create, valid_attributes
-      assigns[:review].locale.should eq I18n.locale.to_s
+      expect(assigns[:review].locale).to eq I18n.locale.to_s
     end
 
     it 'fails when user is not authorized' do
-      controller.stub(:authorize!) { raise }
+      allow(controller).to receive(:authorize!) { raise }
       expect {
         spree_post :create, valid_attributes
       }.to raise_error
@@ -59,12 +57,12 @@ describe Spree::FeedbackReviewsController do
 
     it 'removes all non-numbers from ratings parameter' do
       spree_post :create, valid_attributes
-      controller.params[:feedback_review][:rating].should eq '4'
+      expect(controller.params[:feedback_review][:rating]).to eq('4')
     end
 
-    it 'do not create feedback-review if review doesnt exist' do
+    it 'does not create feedback-review if review doesnt exist' do
       expect {
-        spree_post :create, valid_attributes.merge!({review_id: nil})
+        spree_post :create, valid_attributes.merge!(review_id: nil)
       }.to raise_error
     end
   end

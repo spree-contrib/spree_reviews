@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Spree::Admin::ReviewsController do
+RSpec.describe Spree::Admin::ReviewsController, type: :controller do
   stub_authorization!
 
   let(:product) { create(:product) }
@@ -8,39 +6,39 @@ describe Spree::Admin::ReviewsController do
 
   before do
     user = create(:admin_user)
-    controller.stub(try_spree_current_user: user)
+    allow(controller).to receive(:try_spree_current_user).and_return(user)
   end
 
   context '#index' do
-    it 'list reviews' do
+    it 'lists reviews' do
       reviews = [
         create(:review, product: product),
         create(:review, product: product)
       ]
       spree_get :index, product_id: product.slug
-      assigns[:reviews].should =~ reviews
+      expect(assigns[:reviews]).to match_array(reviews)
     end
   end
 
   context '#approve' do
-    it 'show notice message when approved' do
+    it 'shows notice message when approved' do
       review.update_attribute(:approved, true)
       spree_get :approve, id: review.id
-      response.should redirect_to spree.admin_reviews_path
-      flash[:notice].should eq Spree.t(:info_approve_review)
+      expect(response).to redirect_to spree.admin_reviews_path
+      expect(flash[:notice]).to eq Spree.t(:info_approve_review)
     end
 
-    it 'show error message when not approved' do
-      Spree::Review.any_instance.stub(:update_attribute).and_return(false)
+    it 'shows error message when not approved' do
+      allow_any_instance_of(Spree::Review).to receive(:update_attribute).and_return(false)
       spree_get :approve, id: review.id
-      flash[:error].should eq Spree.t(:error_approve_review)
+      expect(flash[:error]).to eq Spree.t(:error_approve_review)
     end
   end
 
   context '#edit' do
     specify do
       spree_get :edit, id: review.id
-      response.status.should eq(200)
+      expect(response.status).to be(200)
     end
 
     context 'when product is nil' do
@@ -49,14 +47,14 @@ describe Spree::Admin::ReviewsController do
         review.save!
       end
 
-      it 'flash error' do
+      it 'flashes error' do
         spree_get :edit, id: review.id
-        flash[:error].should eq Spree.t(:error_no_product)
+        expect(flash[:error]).to eq Spree.t(:error_no_product)
       end
 
-      it 'redirect to admin-reviews page' do
+      it 'redirects to admin-reviews page' do
         spree_get :edit, id: review.id
-        response.should redirect_to spree.admin_reviews_path
+        expect(response).to redirect_to spree.admin_reviews_path
       end
     end
   end

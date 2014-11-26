@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :feedback_review, :class => Spree::FeedbackReview do |f|
+  factory :feedback_review, class: Spree::FeedbackReview do |f|
     user
     review
     comment { generate(:random_description) }

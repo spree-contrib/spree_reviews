@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-feature 'Reviews', js: true do
+feature 'Reviews', :js do
   given!(:someone) { create(:user, email: 'ryan@spree.com') }
   given!(:review) { create(:review, :approved, user: someone) }
 
@@ -16,15 +14,15 @@ feature 'Reviews', js: true do
     end
 
     # Regression test for #103
-    context "shows correct number of previews" do
+    context 'shows correct number of previews' do
       background do
-        FactoryGirl.create_list :review, 3, product: product_no_reviews, approved: true
+        create_list :review, 3, product: product_no_reviews, approved: true
         Spree::Reviews::Config[:preview_size] = 2
       end
 
-      scenario "displayed reviews are limited by the set preview size" do
+      scenario 'displayed reviews are limited by the set preview size' do
         visit spree.product_path(product_no_reviews)
-        expect(page.all(".review").count).to eql(2)
+        expect(page.all('.review').count).to be(2)
       end
     end
   end
@@ -83,17 +81,17 @@ feature 'Reviews', js: true do
           fill_in 'review_review', with: 'Some big review text..'
           click_on 'Submit your review'
         end
-        
+
         expect(page.find('.flash.notice', text: Spree.t(:review_successfully_submitted))).to be_truthy
         expect(page).not_to have_text 'Some big review text..'
       end
     end
   end
 
-  context 'visit product with review where show_identifier is false' do
+  context 'visits product with review where show_identifier is false' do
     given!(:user) { create(:user) }
     given!(:review) { create(:review, :approved, :hide_identifier, review: 'review text', user: user) }
-    
+
     background do
       visit spree.product_path(review.product)
     end
@@ -102,7 +100,6 @@ feature 'Reviews', js: true do
       expect(page).to have_text Spree.t(:anonymous)
       expect(page).to have_text 'review text'
     end
-
   end
 
   private

@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Spree::ReviewsHelper do
+RSpec.describe Spree::ReviewsHelper, type: :helper do
   context 'star' do
     specify do
       expect(star('a_class')).to eq '<span class="a_class"> &#10030; </span>'
@@ -10,8 +8,7 @@ describe Spree::ReviewsHelper do
   context 'mk_stars' do
     specify do
       matches = mk_stars(2).scan(/unlit/)
-      expect(matches.length).to eq 3
-
+      expect(matches.length).to be(3)
     end
   end
 

@@ -1,11 +1,9 @@
-require 'spec_helper'
-
-describe Spree::Admin::FeedbackReviewsController do
+RSpec.describe Spree::Admin::FeedbackReviewsController, type: :controller do
   stub_authorization!
 
   before do
     user = create(:admin_user)
-    controller.stub(:try_spree_current_user => user)
+    allow(controller).to receive(:try_spree_current_user).and_return(user)
   end
 
   context '#index' do
@@ -21,9 +19,9 @@ describe Spree::Admin::FeedbackReviewsController do
 
     it 'looks up feedback reviews for the specified review and renders the template' do
       spree_get :index, review_id: review.id
-      response.status.should eq(200)
-      response.should render_template(:index)
-      assigns(:collection).should eq([feedback_review_2, feedback_review_3, feedback_review_1])
+      expect(response.status).to be(200)
+      expect(response).to render_template(:index)
+      expect(assigns(:collection)).to match_array [feedback_review_2, feedback_review_3, feedback_review_1]
     end
   end
 end
