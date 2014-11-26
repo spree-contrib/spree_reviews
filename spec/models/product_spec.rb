@@ -36,7 +36,7 @@ RSpec.describe Spree::Product, type: :model do
         product.save!
 
         product.recalculate_rating
-        expect(product.avg_rating.to_f).to be(4.5)
+        expect(product.avg_rating.to_f).to eq(4.5)
         expect(product.reviews_count).to be(2)
       end
     end
@@ -50,7 +50,7 @@ RSpec.describe Spree::Product, type: :model do
         product.save!
 
         product.recalculate_rating
-        expect(product.avg_rating.to_f).to be(0.0)
+        expect(product.avg_rating.to_f).to eq(0.0)
         expect(product.reviews_count).to be(0)
       end
     end
