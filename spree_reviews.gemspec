@@ -1,7 +1,12 @@
+lib = File.expand_path('../lib/', __FILE__)
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
+
+require 'spree_reviews/version'
+
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_reviews'
-  s.version     = '1.0.0'
+  s.version     = SpreeReviews.version
   s.summary     = 'Basic review and ratings facility for Spree'
   s.authors 	  = ['Paul Callaghan']
   s.description = s.summary
