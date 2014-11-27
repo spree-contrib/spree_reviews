@@ -74,10 +74,9 @@ See corresponding [contributing guidelines][1].
 
 ---
 
-Copyright (c) 2009-2014 [Spree Commerce][6] and [contributors][7], released under the [New BSD License][3]
+Copyright (c) 2009-2014 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
 
 [1]: https://github.com/spree-contrib/spree_reviews/blob/master/CONTRIBUTING.md
-[2]: https://github.com/spree-contrib/spree_reviews/issues
-[3]: https://github.com/spree-contrib/spree_reviews/blob/master/LICENSE.md
-[4]: https://github.com/spree
-[5]: https://github.com/spree-contrib/spree_reviews/graphs/contributors
+[2]: https://github.com/spree
+[3]: https://github.com/spree-contrib/spree_reviews/graphs/contributors
+[4]: https://github.com/spree-contrib/spree_reviews/blob/master/LICENSE.md
