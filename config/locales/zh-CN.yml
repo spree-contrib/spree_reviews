@@ -10,11 +10,13 @@ zh-CN:
         created_at: 日期
         ip_address: IP
         user: 用戶
+        show_identifier: ~
     models:
       spree/review:
         one: 一个评论
         other: "%{count}个评论"
   spree:
+    approval_status: ~
     approve: 核准
     approved_reviews: 核准
     average_customer_rating: 平均评级

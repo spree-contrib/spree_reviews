@@ -10,6 +10,7 @@ ro:
         created_at: Data
         ip_address: IP
         user: Utilizator
+        show_identifier: ~
     models:
       spree/review:
         one: o recenzie
@@ -20,7 +21,6 @@ ro:
     approval_status: Starea de aprobare
     approve: Aprobă
     approved_reviews: Aprobate
-    approved_text: Comentariile deblocate vor fi publicate în 1-2 zile lucrătoare.
     average_customer_rating: Evaluare media
     back_reviews: Înapoi la recenzii
     based_upon_review_count:
@@ -73,4 +73,3 @@ ro:
     write_your_own_review: Scrie propria ta recenzie
     you_must_enter_value_for_rating: "Trebuie să introduci o valoare pentru evaluare."
     anonymous: anonim
-

@@ -3,13 +3,14 @@ ru:
   activerecord:
     attributes:
       spree/review:
+        name: Ваше имя
         title: Заголовок
         review: Содержание
         rating: Рейтинг
-        name: Ваше имя
         created_at: Дата отзыва
         ip_address: IP
         user: Пользователь
+        show_identifier: ~
     models:
       spree/review:
         zero: "0 отзывов"
@@ -18,56 +19,58 @@ ru:
         other: "%{count} отзывов"
         many: "%{count} отзыва"
   spree:
+    approval_status: Статус отзывов
+    approve: Одобрить
+    approved_reviews: Утверждённые отзывы
+    average_customer_rating: Средняя оценка
+    back_reviews: Назад к отзывам
+    based_upon_review_count:
+      one: на основе
+      other: На основании всех отзывов
+    by: ''
+    editing_review_for_html: Редактирование отзыва для HTML
+    error_approve_review: ~
+    error_no_product: Отзывы продукт больше не существует
+    feedback: Обратная связь
+    feedback_review_for: "Отзывы: '%{review}'"
+    for: для
+    from: от
+    info_approve_review: ~
+    leave_us_a_review_for: 'Пожалуйста, оставьте отзыв и оценку для'
+    no_reviews_available: Отзывов нет
+    out_of_5: 'из 5'
+    rating: Оценка
     reviews: Отзывы
     write_your_own_review: Оставьте свой отзыв
     admin:
       tab:
         review_management: Управление отзывами
-    back_reviews: Назад к отзывам
-    info_approve_review: Отзыв одобрен
-    error_approve_review: Ошибка при одобрении отзыва
-    approve: Одобрить
-    leave_us_a_review_for: "Пожалуйста, оставьте отзыв и оценку для"
     review_successfully_submitted: Ваш отзыв был успешно отправлен
-    rating: Оценка
-    submit_your_review: Оставить отзыв
     spree_reviews:
       review_settings: Настройки отзывов покупателей
       manage_review_settings: Управление отображением отзывов
       preview_size: Количество отзывов на странице товара
       include_unapproved: Показывать неодобренные отзывы на странице товара
       your_name: Ваше имя
-      your_location: Город
-      feedback_rating: Рейтинг отзыва
       show_email: Показывать электронную почту
       require_login: Требовать вход
       track_locale: Отслеживать язык
-    average_customer_rating: Средняя оценка
-    approved_text: Разблокированные комментарии будут опубликованы в течение 1-2 рабочих дней.
-    for: для
-    approval_status: Статус отзывов
-    unapproved_reviews: Неутверждённые отзывы
-    approved_reviews: Утверждённые отзывы
-    from: от
-    by: ""
-    submitted_on: Добавлено
-    based_upon: "на основе"
-    voice:
-      zero: "0 голосов"
-      one: "%{count} голос"
-      few: "%{count} голоса"
-      other: "%{count} голосов"
-      many: "%{count} голоса"
-    star: "%{count}"
-    feedback: Обратная связь
+    star:
+      one: '1'
+      other: '%{count}'
     stars: Звёзды
-    feedback_review_for: "Отзывы: '%{review}'"
-    out_of_5: "из 5"
-    was_this_review_helpful: "Был ли Вам полезен этот отзыв?"
-    you_must_enter_value_for_rating: "Вы должны оценить отзыв."
-    editing_review_for_html: 'Редактирование отзыва для HTML'
-    no_reviews_available: "Отзывов нет"
-    based_upon_review_count: "На основании всех отзывов"
-    error_no_product: Отзывы продукт больше не существует
-    anonymous: анонимный
-
+    submit_your_review: Оставить отзыв
+    submitted_on: Добавлено
+    unapproved_reviews: Неутверждённые отзывы
+    voice:
+      zero: '0 голосов'
+      one: '%{count} голос'
+      few: '%{count} голоса'
+      other: '%{count} голосов'
+      many: '%{count} голоса'
+    was_this_review_helpful: Был ли Вам полезен этот отзыв?
+    write_your_own_review: ~
+    you_must_enter_value_for_rating: Вы должны оценить отзыв.
+    info_approve_review: 'Отзыв одобрен'
+    error_approve_review: 'Ошибка при одобрении отзыва'
+    anonymous: 'анонимный'

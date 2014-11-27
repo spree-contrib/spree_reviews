@@ -10,6 +10,7 @@ fr:
         created_at: Date
         ip_address: IP
         user: Utilisateur
+        show_identifier: Show
     models:
       spree/review:
         one: un commentaire
@@ -18,7 +19,6 @@ fr:
     approval_status: Statut de l'approbation
     approve: Approuver
     approved_reviews: Approuvé
-    approved_text: Les commentaires authorisés seront affichés dans un délai de un à deux jours ouvrables.
     average_customer_rating: Note moyenne
     back_reviews: Retour aux commentaires
     based_upon_review_count:
@@ -65,4 +65,3 @@ fr:
     write_your_own_review: Écrire un commentaire
     you_must_enter_value_for_rating: "Vous devez entrer une valeur pour noter."
     anonymous: Anonyme
-

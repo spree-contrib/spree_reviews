@@ -10,6 +10,7 @@ es:
         created_at: Fecha
         ip_address: IP
         user: Usuario
+        show_identifier: Mostrar
     models:
       spree/review:
         one: una valoración
@@ -18,7 +19,6 @@ es:
     approval_status: Estado de aprobación
     approve: Aprobar
     approved_reviews: Aprobado
-    approved_text: "Los comentarios desbloqueados serán publicados en 1-2 días laborales."
     average_customer_rating: "Puntuación media"
     back_reviews: "Volver a las valoraciones"
     based_upon_review_count:
@@ -28,8 +28,8 @@ es:
     editing_review_for_html: 'Editando la valoración para %{link}'
     error_approve_review: "Error aprobando la valoración"
     error_no_product: "El producto valorado ya no existe"
-    feedback: Feedback
-    feedback_review_for: "Review: '%{review}'"
+    feedback: Realimentación
+    feedback_review_for: "Valoración: '%{review}'"
     for: para
     from: desde
     info_approve_review: "Valoración aprobada"
@@ -65,4 +65,3 @@ es:
     write_your_own_review: "Escribe tu propia valoración"
     you_must_enter_value_for_rating: "Debes incluir una puntuación."
     anonymous: Anónimo
-

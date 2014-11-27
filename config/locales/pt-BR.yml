@@ -10,6 +10,7 @@ pt-BR:
         created_at: 'Data'
         ip_address: 'IP'
         user: 'Usuário'
+        show_identifier: ~
     models:
       spree/review:
         one: 'uma avaliação'
@@ -18,7 +19,6 @@ pt-BR:
     approval_status: 'Estado de aprovação'
     approve: 'Aprovar'
     approved_reviews: 'Aprovado'
-    approved_text: 'Comentários destravados serão publicados em 1-2 dias.'
     average_customer_rating: 'Média de avaliação'
     back_reviews: 'Voltar para as avaliações'
     based_upon_review_count:
@@ -65,4 +65,3 @@ pt-BR:
     write_your_own_review: 'Escreva sua avaliação'
     you_must_enter_value_for_rating: "Você tem que preencher um valor para avaliar."
     anonymous: Anônimo
-

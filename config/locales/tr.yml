@@ -10,6 +10,7 @@ tr:
         created_at: Tarih
         ip_address: IP
         user: Kullanıcı
+        show_identifier: ~
     models:
       spree/review:
         one: bir yorum
@@ -18,7 +19,6 @@ tr:
     approval_status: Onay Durumu
     approve: Onayla
     approved_reviews: Onaylı
-    approved_text: Yorum 1-2 iş günü içinde yayımlanacaktır.
     average_customer_rating: Ortalama Oy
     back_reviews: Geri değerlendirme
     based_upon_review_count:
@@ -65,4 +65,3 @@ tr:
     write_your_own_review: Yorum Yap
     you_must_enter_value_for_rating: "Yorum yazmak için giriş yapmalısınız."
     anonymous: anonim
-

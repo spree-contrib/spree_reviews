@@ -10,6 +10,7 @@ en-GB:
         created_at: Date
         ip_address: IP
         user: User
+        show_identifier: Show
     models:
       spree/review:
         one: one review
@@ -18,7 +19,6 @@ en-GB:
     approval_status: Approval status
     approve: Approve
     approved_reviews: Approved
-    approved_text: Unlocked comments will be published within 1-2 business days.
     average_customer_rating: Average rating
     back_reviews: Back to the reviews
     based_upon_review_count:
@@ -65,4 +65,3 @@ en-GB:
     write_your_own_review: Write your own review
     you_must_enter_value_for_rating: "You must enter a value for rating."
     anonymous: Anonymous
-

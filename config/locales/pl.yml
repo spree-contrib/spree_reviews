@@ -10,6 +10,7 @@ pl:
         created_at: Utworzone
         ip_address: IP
         user: Użytkownik
+        show_identifier: ~
     models:
       spree/review:
         one: jedna opinia
@@ -19,7 +20,6 @@ pl:
     approval_status: Status zatwierdzenia
     approve: Zatwierdź
     approved_reviews: Zatwierdzone opinie
-    approved_text: Zatwierdzone opinie zostaną opublikowane w ciągu 1-2 dni roboczych.
     average_customer_rating: Średnia ocena
     back_reviews: Wróc do opinii
     based_upon_review_count:
@@ -69,4 +69,3 @@ pl:
     write_your_own_review: Napisz swoją opinię
     you_must_enter_value_for_rating: "Musisz wystawić jakąś ocenę."
     anonymous: Anonimowy
-

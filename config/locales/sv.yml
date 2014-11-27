@@ -3,19 +3,19 @@ sv:
   activerecord:
     attributes:
       spree/review:
-        created_at: Datum
-        ip_address: IP
         name: "Ditt namn"
+        title: Rubrik
         rating: Betyg
         review: Innehåll
-        title: Rubrik
+        created_at: Datum
+        ip_address: IP
         user: Användare
+        show_identifier: Visa
     models:
       spree/review:
         one: "en recension"
         other: "%{count} recensioner"
   spree:
-    anonymous: Anonym
     approval_status: Status för godkännande
     approve: Godkänn
     approved_reviews: Godkänd
@@ -37,11 +37,11 @@ sv:
     no_reviews_available: "Inga recensioner har ännu skrivits för den här produkten."
     out_of_5: "ut av 5"
     rating: betyg
+    reviews: Recensioner
     admin:
       tab:
         review_management: "Hantera recensioner"
     review_successfully_submitted: "Recension har skapats"
-    reviews: Recensioner
     spree_reviews:
       feedback_rating: Betygsåterkoppling
       include_unapproved: "Inkludera inte godkända recensioner i listan"
@@ -64,3 +64,4 @@ sv:
     was_this_review_helpful: "Var denna recension användbar för dig?"
     write_your_own_review: "Skriv din egen recension"
     you_must_enter_value_for_rating: "Du måste ange ett värde för betyg."
+    anonymous: Anonym

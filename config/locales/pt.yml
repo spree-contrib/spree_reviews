@@ -10,6 +10,7 @@ pt:
         created_at: Data
         ip_address: IP
         user: Utilizador
+        show_identifier: ~
     models:
       spree/review:
         one: uma avaliação
@@ -18,7 +19,6 @@ pt:
     approval_status: Estado de aprovação
     approve: Aprovar
     approved_reviews: Avaliações aprovadas
-    approved_text: As avaliações podem demorar 1-2 dias úteis a ser publicadas.
     average_customer_rating: Pontuação média dos utilizadores fruga
     back_reviews: Voltar para as avaliações
     based_upon_review_count:
@@ -42,7 +42,6 @@ pt:
       tab:
         review_management: Gestão Avaliações
     review_successfully_submitted: A avaliação foi enviada com sucesso
-    submission_guidelines: Diretrizes para enviar boas avaliações
     spree_reviews:
       feedback_rating: Pontuação de feedback
       include_unapproved: Incluir avaliaçoes não-aprovadas nas lista
@@ -66,4 +65,3 @@ pt:
     write_your_own_review: Escreve a tua própria avaliação
     you_must_enter_value_for_rating: "Tem de incluir uma pontuação."
     anonymous: Anônimo
-

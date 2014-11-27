@@ -10,11 +10,13 @@ zh-TW:
         created_at: 日期
         ip_address: IP
         user: 用戶
+        show_identifier: ~
     models:
       spree/review:
         one: 一個評論
         other: '%{count}個評論'
   spree:
+    approval_status: ~
     approve: 核準
     approved_reviews: 核準
     average_customer_rating: 平均評級
