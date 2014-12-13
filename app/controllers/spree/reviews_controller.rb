@@ -9,7 +9,11 @@ class Spree::ReviewsController < Spree::StoreController
 
   def new
     @review = Spree::Review.new(:product => @product)
-    authorize! :create, @review
+
+    if !(can? :create, @review)
+      flash[:error] = 'You need to be signed in to contribute a review.'
+      redirect_to login_path
+    end
   end
 
   # save if all ok
