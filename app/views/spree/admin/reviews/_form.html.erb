@@ -1,22 +1,22 @@
-<%= render "spree/shared/error_messages", :target => @review %>
+<%= render "spree/shared/error_messages", target: @review %>
 <%= f.field_container :name do %>
   <%= f.label :name %><br />
-  <%= f.text_field :name, :maxlength => "255", :size => "60" %>
+  <%= f.text_field :name, maxlength: "255", size: "60" %>
 <% end %>
 
 <%= f.field_container :title do %>
   <%= f.label :title %><br />
-  <%= f.text_field :title, :maxlength => "255", :size => "60" %>
+  <%= f.text_field :title, maxlength: "255", size: "60" %>
 <% end %>
 
 <%= f.field_container :review do %>
   <%= f.label :review %><br />
-  <%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "60" %>
+  <%= f.text_area :review, wrap: "virtual", rows: "10", cols: "60" %>
 <% end %>
 
 <% if Spree::Reviews::Config[:track_locale] %>
 <%= f.field_container :locale do %>
   <%= f.label :locale %><br />
-  <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, :default => lc.to_s), lc.to_s] } %>
+  <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, default: lc.to_s), lc.to_s] } %>
 <% end %>
 <% end %>

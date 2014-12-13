@@ -1,9 +1,9 @@
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
 <span style="float:left;" title="<%= txt_stars(stars) %>">
-  <%= render 'spree/reviews/stars', :stars => stars %>
+  <%= render 'spree/reviews/stars', stars: stars %>
 </span>
 <span style="float:right;">
-  <%= Spree::Review.model_name.human(:count => reviews_count) %>
+  <%= Spree::Review.model_name.human(count: reviews_count) %>
 </span>
 <br/>

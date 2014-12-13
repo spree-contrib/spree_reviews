@@ -1,14 +1,14 @@
 class Spree::ReviewsController < Spree::StoreController
   helper Spree::BaseHelper
-  before_filter :load_product, :only => [:index, :new, :create]
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  before_filter :load_product, only: [:index, :new, :create]
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def index
     @approved_reviews = Spree::Review.approved.where(product: @product)
   end
 
   def new
-    @review = Spree::Review.new(:product => @product)
+    @review = Spree::Review.new(product: @product)
     authorize! :create, @review
   end
 
@@ -44,5 +44,4 @@ class Spree::ReviewsController < Spree::StoreController
   def review_params
     params.require(:review).permit(permitted_review_attributes)
   end
-
 end

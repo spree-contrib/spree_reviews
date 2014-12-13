@@ -1,6 +1,6 @@
 <p>
-  <%= Spree.t('voice', :count => review.feedback_reviews.count) %>.
+  <%= Spree.t('voice', count: review.feedback_reviews.count) %>.
   <span title="<%= pluralize(review.feedback_stars, 'star') %> <%= Spree.t('out_of_5') %>">
-  <%= render 'spree/reviews/stars', :stars => review.feedback_stars %>
+  <%= render 'spree/reviews/stars', stars: review.feedback_stars %>
   </span> &nbsp;
 </p>

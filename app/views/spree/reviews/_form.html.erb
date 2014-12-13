@@ -1,34 +1,34 @@
-<%= form_for review, :url => product_reviews_path(product), :html => {:method => :post} do |f| %>
-  <%= render "spree/shared/error_messages", :target => review %>
+<%= form_for review, url: product_reviews_path(product), html: {method: :post} do |f| %>
+  <%= render "spree/shared/error_messages", target: review %>
 
   <p class="review_rating_field">
     <%= f.label :rating %> <span class="required">*</span><br />
-    <%= render "spree/reviews/stars", :stars => review.rating, :edit_enabled => true %>
+    <%= render "spree/reviews/stars", stars: review.rating, edit_enabled: true %>
   </p>
 
   <p class="review_name_field">
     <%= f.label :name %> <span class="required">*</span><br />
-    <%= f.text_field :name, :maxlength => "255", :size => "50" %>
+    <%= f.text_field :name, maxlength: "255", size: "50" %>
   </p>
 
   <p class="review_title_field">
     <%= f.label :title %><br />
-    <%= f.text_field :title, :maxlength => "255", :size => "50" %>
+    <%= f.text_field :title, maxlength: "255", size: "50" %>
   </p>
 
   <p class="review_review_field">
     <%= f.label :review %> <span class="required">*</span><br />
-    <%= f.text_area :review, :wrap => "virtual", :rows => "10", :cols => "50" %>
+    <%= f.text_area :review, wrap: "virtual", rows: "10", cols: "50" %>
   </p>
 
   <% if Spree::Reviews::Config[:render_show_identifier_checkbox] %>
     <p class="review_show_identifier_field">
       <%= f.label :show_identifier %><br />
-      <%= f.check_box :show_identifier, :wrap => "virtual", :rows => "10", :cols => "50", :checked => true %>
+      <%= f.check_box :show_identifier, wrap: "virtual", rows: "10", cols: "50", checked: true %>
     </p>
   <% end %>
 
   <p class="review_submit">
-    <%= f.submit Spree.t(:submit_your_review), :class => "button bg_darkfirst" %>
+    <%= f.submit Spree.t(:submit_your_review), class: "button bg_darkfirst" %>
   </p>
 <% end %>

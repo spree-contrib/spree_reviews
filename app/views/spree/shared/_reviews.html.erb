@@ -3,13 +3,12 @@
   <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
     <p class="reviews-none"><%= Spree.t('no_reviews_available') %></p>
   <% else %>
-    <%= render 'spree/shared/rating', :product => @product, :review => 0 %>
+    <%= render 'spree/shared/rating', product: @product, review: 0 %>
     <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
-      <%= render 'spree/shared/review', :review => review %>
+      <%= render 'spree/shared/review', review: review %>
     <% end %>
   <% end %>
   <% if !Spree::Reviews::Config[:require_login] || spree_current_user %>
-    <%= link_to Spree.t('write_your_own_review'), new_product_review_path(@product), :class => "button",
-                :rel => 'nofollow' %>
+    <%= link_to Spree.t('write_your_own_review'), new_product_review_path(@product), class: "button", rel: 'nofollow' %>
   <% end %>
 </div>

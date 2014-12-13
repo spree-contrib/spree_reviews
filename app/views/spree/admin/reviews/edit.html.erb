@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-	<%= Spree.t(:editing_review_for_html, :link => link_to(@review.product.name, product_path(@review.product))) %>
+	<%= Spree.t(:editing_review_for_html, link: link_to(@review.product.name, product_path(@review.product))) %>
 <% end %>
 
 <% render 'spree/admin/shared/product_sub_menu' %>
@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="omega eight columns">
-		<%= render 'form', :f => f %>
+		<%= render 'form', f: f %>
 	</div>
 
 	<div class="clear"></div>

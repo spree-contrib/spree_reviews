@@ -7,7 +7,7 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :rating
       t.text    :title
       t.text    :review
-      t.boolean :approved, :default => false
+      t.boolean :approved, default: false
       t.timestamps
     end
   end

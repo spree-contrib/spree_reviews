@@ -1,7 +1,6 @@
 <% if @feedback_review.valid? %>
-$("div#feedback_review_<%= @review.id %>").html("<%= escape_javascript(render('spree/feedback_reviews/summary', :review => @review)) %>");
+$("div#feedback_review_<%= @review.id %>").html("<%= escape_javascript(render('spree/feedback_reviews/summary', review: @review)) %>");
 <% else %>
-$("div#feedback_review_<%= @review.id %>").html("<%= escape_javascript(render('spree/feedback_reviews/form', :review => @review)) %>");
-
+$("div#feedback_review_<%= @review.id %>").html("<%= escape_javascript(render('spree/feedback_reviews/form', review: @review)) %>");
 <% end %>
 $(document).ready(function(){$("div#feedback_review_<%= @review.id %>").find(".star").rating({required:true});});

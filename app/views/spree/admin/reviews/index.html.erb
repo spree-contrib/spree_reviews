@@ -15,21 +15,21 @@
 		<div class="alpha three columns">
 			<div class="field">
 				<%= label_tag nil, Spree.t(:user) %><br />
-				<%= f.text_field :name_cont, :size => 25 %>
+				<%= f.text_field :name_cont, size: 25 %>
 			</div>
 		</div>
 
 		<div class="seven columns">
 			<div class="field">
 				<%= label_tag nil, Spree.t(:title) -%><br/>
-				<%= f.text_field :title_cont, :size => 25  -%>
+				<%= f.text_field :title_cont, size: 25  -%>
 			</div>
 		</div>
 
 		<div class="four columns">
 			<div class="field">
 				<%= label_tag nil, Spree.t(:review) -%><br/>
-				<%= f.text_field :review_cont, :size => 25  -%>
+				<%= f.text_field :review_cont, size: 25  -%>
 			</div>
 		</div>
 
@@ -89,14 +89,14 @@
 					<p><%= Spree::Review.human_attribute_name(:ip_address) %>: <%= review.ip_address ? link_to(review.ip_address, "http://whois.domaintools.com/#{review.ip_address}") : '-' %></p>
 				</td>
 				<td class="align-center">
-					<%= l review.created_at, :format => :short %>
+					<%= l review.created_at, format: :short %>
 				</td>
 				<td class="actions">
-					<%= link_to_with_icon 'check', Spree.t('approve'), approve_admin_review_url(review), :no_text => true, class: 'approve' unless review.approved %>
+					<%= link_to_with_icon 'check', Spree.t('approve'), approve_admin_review_url(review), no_text: true, class: 'approve' unless review.approved %>
 					&nbsp;
-					<%= link_to_edit review, :no_text => true, :class => 'edit' %>
+					<%= link_to_edit review, no_text: true, class: 'edit' %>
 					&nbsp;
-					<%= link_to_delete review, :no_text => true %>
+					<%= link_to_delete review, no_text: true %>
 				</td>
 			</tr>
 		<% end %>

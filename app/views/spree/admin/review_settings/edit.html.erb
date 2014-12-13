@@ -4,7 +4,7 @@
 	<%= Spree.t("spree_reviews.review_settings") %>
 <% end %>
 
-<%= form_tag(admin_review_settings_path, :method => :put) do %>
+<%= form_tag(admin_review_settings_path, method: :put) do %>
 	<fieldset class="no-border-top">
 		<div class="field">
 			<%= check_box_tag('preferences[include_unapproved_reviews]', "1", Spree::Reviews::Config[:include_unapproved_reviews]) %>
@@ -28,13 +28,13 @@
 		</div>
 		<div class="field">
 			<label><%= Spree.t('spree_reviews.preview_size') %></label><br>
-			<%= text_field_tag('preferences[preview_size]', Spree::Reviews::Config[:preview_size], :size => 3) %>
+			<%= text_field_tag('preferences[preview_size]', Spree::Reviews::Config[:preview_size], size: 3) %>
 		</div>
 
 		<div class="form-buttons filter-actions actions" data-hook="buttons">
 			<%= button Spree.t('actions.update'), 'icon-refresh' %>
 			<span class="or"><%= Spree.t(:or) %></span>
-			<%= link_to_with_icon 'icon-remove', Spree.t('actions.cancel'), edit_admin_general_settings_url, :class => 'button' %>
+			<%= link_to_with_icon 'icon-remove', Spree.t('actions.cancel'), edit_admin_general_settings_url, class: 'button' %>
 		</div>
 	</fieldset>
 <% end %>

@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-	<%= Spree.t('feedback_review_for', :review => @review.title) %>
+	<%= Spree.t('feedback_review_for', review: @review.title) %>
 <% end %>
 
 <% content_for :page_actions do %>
-	<li><%= button_link_to Spree.t(:back_to_reviews), admin_reviews_path, { :icon => 'icon-arrow-left' } %></li>
+	<li><%= button_link_to Spree.t(:back_to_reviews), admin_reviews_path, { icon: 'icon-arrow-left' } %></li>
 <% end %>
 
 <% render 'spree/admin/shared/product_sub_menu' %>
@@ -31,7 +31,7 @@
 			  <td><%= feedback.rating %></td>
 			  <td><%= l feedback.created_at %></td>
 			  <td class="actions">
-				  <%= link_to_delete feedback, :no_text => true  %>
+				  <%= link_to_delete feedback, no_text: true  %>
 			  </td>
 			</tr>
 		<% end %>

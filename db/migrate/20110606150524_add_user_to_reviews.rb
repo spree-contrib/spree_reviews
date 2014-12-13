@@ -1,6 +1,6 @@
 class AddUserToReviews < ActiveRecord::Migration
   def self.up
-    add_column :reviews, :user_id, :integer, :null => true
+    add_column :reviews, :user_id, :integer, null: true
   end
 
   def self.down
