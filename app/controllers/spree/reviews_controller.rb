@@ -1,6 +1,6 @@
 class Spree::ReviewsController < Spree::StoreController
   helper Spree::BaseHelper
-  before_filter :load_product, only: [:index, :new, :create]
+  before_action :load_product, only: [:index, :new, :create]
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def index
@@ -14,7 +14,7 @@ class Spree::ReviewsController < Spree::StoreController
 
   # save if all ok
   def create
-    params[:review][:rating].sub!(/\s*[^0-9]*\z/,'') unless params[:review][:rating].blank?
+    params[:review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:review][:rating].blank?
 
     @review = Spree::Review.new(review_params)
     @review.product = @product
@@ -24,7 +24,7 @@ class Spree::ReviewsController < Spree::StoreController
 
     authorize! :create, @review
     if @review.save
-      flash[:notice] = Spree.t('review_successfully_submitted')
+      flash[:notice] = Spree.t(:review_successfully_submitted)
       redirect_to spree.product_path(@product)
     else
       render :new

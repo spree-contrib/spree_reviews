@@ -7,7 +7,7 @@ RSpec.describe Spree::Admin::FeedbackReviewsController, type: :controller do
   end
 
   context '#index' do
-    let!(:review) { create(:review)}
+    let!(:review) { create(:review) }
     let!(:other_review) { create(:review) }
 
     let!(:feedback_review_1) { create(:feedback_review, created_at: 10.days.ago, review: review) }

@@ -7,10 +7,10 @@ Spree::Product.class_eval do
   end
 
   def recalculate_rating
-    reviews_count = self.reviews.reload.approved.count
+    reviews_count = reviews.reload.approved.count
     self.reviews_count = reviews_count
     if reviews_count > 0
-      self.avg_rating = self.reviews.approved.sum(:rating).to_f / reviews_count
+      self.avg_rating = reviews.approved.sum(:rating).to_f / reviews_count
     else
       self.avg_rating = 0
     end

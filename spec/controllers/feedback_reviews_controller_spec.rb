@@ -3,12 +3,14 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
   let(:product) { create(:product) }
   let(:review) { create(:review, user: user) }
   let(:valid_attributes) do
-    { review_id: review.id,
+    {
+      review_id: review.id,
       user_id: user.id,
       feedback_review: {
         rating: '4 stars',
         comment: 'some comment'
-      }}
+      }
+    }
   end
 
   before do
@@ -22,19 +24,25 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
       rating = 4
       comment = Faker::Lorem.paragraphs(3).join("\n")
       expect {
-        spree_post :create, { review_id: review.id,
-                              feedback_review: { comment: comment,
-                                                 rating: rating },
-                              format: :js }
+        spree_post(
+          :create,
+          review_id: review.id,
+          format: :js,
+          feedback_review: {
+            comment: comment,
+            rating: rating
+          }
+        )
         expect(response.status).to be(200)
         expect(response).to render_template(:create)
       }.to change(Spree::Review, :count).by(1)
+
       feedback_review = Spree::FeedbackReview.last
+
       expect(feedback_review.comment).to eq(comment)
       expect(feedback_review.review).to eq(review)
       expect(feedback_review.rating).to eq(rating)
       expect(feedback_review.user).to eq(user)
-
     end
 
     it 'redirects back to the calling page' do

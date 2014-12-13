@@ -109,18 +109,36 @@ RSpec.describe Spree::Review, type: :model do
       let!(:unapproved_review_2) { create(:review, approved: false, created_at: 1.days.ago) }
 
       it 'properly runs approved and unapproved queries' do
-        expect(described_class.approved.to_a).to eq([approved_review_2, approved_review_3, approved_review_1])
-        expect(described_class.not_approved.to_a).to eq([unapproved_review_2, unapproved_review_1])
+        expected = [
+          approved_review_2,
+          approved_review_3,
+          approved_review_1
+        ]
+        expect(described_class.approved.to_a).to match_array expected
+
+        expected = [
+          unapproved_review_2,
+          unapproved_review_1
+        ]
+        expect(described_class.not_approved.to_a).to match_array expected
 
         Spree::Reviews::Config[:include_unapproved_reviews] = true
-        expect(described_class.default_approval_filter.to_a).to eq([unapproved_review_2,
-                                                              approved_review_2,
-                                                              approved_review_3,
-                                                              unapproved_review_1,
-                                                              approved_review_1])
+        expected = [
+          unapproved_review_2,
+          approved_review_2,
+          approved_review_3,
+          unapproved_review_1,
+          approved_review_1
+        ]
+        expect(described_class.default_approval_filter.to_a).to match_array expected
 
         Spree::Reviews::Config[:include_unapproved_reviews] = false
-        expect(Spree::Review.default_approval_filter.to_a).to eq([approved_review_2, approved_review_3, approved_review_1])
+        expected = [
+          approved_review_2,
+          approved_review_3,
+          approved_review_1
+        ]
+        expect(Spree::Review.default_approval_filter.to_a).to match_array expected
       end
     end
   end
@@ -155,13 +173,13 @@ RSpec.describe Spree::Review, type: :model do
       3.times do |i|
         f = Spree::FeedbackReview.new
         f.review = review
-        f.rating = (i+1)
+        f.rating = (i + 1)
         f.save
       end
     end
 
     it 'returns the average rating from feedback reviews' do
-      expect(review.feedback_stars).to eq(2)
+      expect(review.feedback_stars).to be(2)
     end
   end
 end

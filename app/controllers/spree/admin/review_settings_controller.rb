@@ -1,5 +1,5 @@
 class Spree::Admin::ReviewSettingsController < Spree::Admin::BaseController
-  before_filter :process_unset_checkboxes, only: [:update]
+  before_action :process_unset_checkboxes, only: :update
 
   def update
     Spree::Reviews::Config.set(params[:preferences])
