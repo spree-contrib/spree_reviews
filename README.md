@@ -19,15 +19,15 @@ Now bundle up with:
 
 Next, run the rake task that copies the necessary migrations and assets to your project:
 
-    rails g spree_reviews:install
+    bundle exec rails g spree_reviews:install
 
 And finish with a migrate:
 
-    rake db:migrate
+bundle exec rake db:migrate
 
 Now you should be able to boot up your server with:
 
-    rails s
+    bundle exec rails s
 
 That's all!
 
