@@ -10,3 +10,4 @@ coverage
 .rvmrc
 .ruby-version
 .ruby-gemset
+tmp
