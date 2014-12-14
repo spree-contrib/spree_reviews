@@ -10,7 +10,7 @@ sv:
         created_at: Datum
         ip_address: IP
         user: Användare
-        show_identifier: Visa
+        show_identifier: Visa identifierare
     models:
       spree/review:
         one: "en recension"
@@ -51,6 +51,7 @@ sv:
       review_settings: "Recensions inställningar"
       show_email: "Visa epost adresser"
       track_locale: "Spåra användarens språk"
+      show_identifier: Visa identifierare
     star:
       one: "1"
       other: "%{count}"

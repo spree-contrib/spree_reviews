@@ -10,7 +10,7 @@ fr:
         created_at: Date
         ip_address: IP
         user: Utilisateur
-        show_identifier: Show
+        show_identifier: Montrer identifiant
     models:
       spree/review:
         one: un commentaire
@@ -51,6 +51,7 @@ fr:
       review_settings: Paramètres des commentaires
       show_email: Montrer l'adresse de courriel
       track_locale: Détécter la langue de l'utilisateur
+      show_identifier: Montrer identifiant
     star:
       one: "1"
       other: "%{count}"

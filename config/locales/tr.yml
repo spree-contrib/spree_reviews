@@ -51,6 +51,7 @@ tr:
       review_settings: Yorum Ayarları
       show_email: e-posta adresini göster
       track_locale: Kullanıcının yerel bilgilerini kaydet/takip et
+      show_identifier: ~
     star:
       one: "1"
       other: "%{count}"

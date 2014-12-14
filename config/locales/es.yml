@@ -10,7 +10,7 @@ es:
         created_at: Fecha
         ip_address: IP
         user: Usuario
-        show_identifier: Mostrar
+        show_identifier: Mostrar identificador
     models:
       spree/review:
         one: una valoración
@@ -51,6 +51,7 @@ es:
       review_settings: "Configuración de las Valoraciones"
       show_email: "Mostrar las direcciones de correo"
       track_locale: "Rastrear el locale del usuario"
+      show_identifier: Mostrar identificador
     star:
       one: "1"
       other: "%{count}"

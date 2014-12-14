@@ -55,6 +55,7 @@ uk:
       review_settings: Налаштування відгуків
       show_email: Показувати email
       track_locale: Зберігати мову користувача
+      show_identifier: ~
     star:
       one: '1'
       few: '%{count}'

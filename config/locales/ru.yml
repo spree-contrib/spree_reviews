@@ -55,6 +55,7 @@ ru:
       show_email: Показывать электронную почту
       require_login: Требовать вход
       track_locale: Отслеживать язык
+      show_identifier: ~
     star:
       one: '1'
       other: '%{count}'

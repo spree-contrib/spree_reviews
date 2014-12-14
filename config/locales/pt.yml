@@ -51,6 +51,7 @@ pt:
       review_settings: Configurações de Avaliação
       show_email: Mostrar email
       track_locale: Seguir locale do utilizador
+      show_identifier: ~
     star:
       one: "1"
       other: "%{count}"

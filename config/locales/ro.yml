@@ -55,6 +55,7 @@ ro:
       review_settings: Setări recenzii
       show_email: Afișează adresa de email
       track_locale: Urmărește setarea de limbă a utilizatorului
+      show_identifier: ~
     star:
       one: "o stea"
       few: "%{count} stele"

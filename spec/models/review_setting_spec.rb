@@ -1,4 +1,4 @@
-RSpec.describe Spree::ReviewsConfiguration, type: :model do
+RSpec.describe Spree::ReviewSetting do
   subject { described_class.new }
 
   before do
@@ -14,7 +14,7 @@ RSpec.describe Spree::ReviewsConfiguration, type: :model do
   it 'have the preview_size preference' do
     expect(subject).to respond_to(:preferred_preview_size)
     expect(subject).to respond_to(:preferred_preview_size=)
-    expect(subject.preferred_preview_size).to eq(3)
+    expect(subject.preferred_preview_size).to be(3)
   end
 
   it 'have the show_email preference' do
@@ -39,5 +39,11 @@ RSpec.describe Spree::ReviewsConfiguration, type: :model do
     expect(subject).to respond_to(:preferred_track_locale)
     expect(subject).to respond_to(:preferred_track_locale=)
     expect(subject.preferred_track_locale).to be(false)
+  end
+
+  it 'have the show_identifier preference' do
+    expect(subject).to respond_to(:preferred_show_identifier)
+    expect(subject).to respond_to(:preferred_show_identifier=)
+    expect(subject.preferred_show_identifier).to be(false)
   end
 end

@@ -51,6 +51,7 @@ pt-BR:
       review_settings: 'Configurações de avaliação'
       show_email: 'Mostrar endereço de email'
       track_locale: 'Rastrear localização do usuário'
+      show_identifier: ~
     star:
       one: "1"
       other: "%{count}"

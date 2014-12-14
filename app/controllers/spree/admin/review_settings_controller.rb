@@ -1,21 +1,17 @@
-class Spree::Admin::ReviewSettingsController < Spree::Admin::BaseController
-  before_action :process_unset_checkboxes, only: :update
+module Spree
+  module Admin
+    class ReviewSettingsController < ResourceController
 
-  def update
-    Spree::Reviews::Config.set(params[:preferences])
-
-    respond_to do |format|
-      format.html do
+      def update
+        settings = Spree::ReviewSetting.new
+        preferences = params && params.key?(:preferences) ? params.delete(:preferences) : params
+        preferences.each do |name, value|
+          next unless settings.has_preference? name
+          settings[name] = value
+        end
+        flash[:success] = Spree.t(:successfully_updated, resource: Spree.t(:review_settings, scope: :spree_reviews))
         redirect_to edit_admin_review_settings_path
       end
-    end
-  end
-
-  def process_unset_checkboxes
-    # workaround for unset checkbox behaviour
-    params[:preferences] ||= {}
-    Spree::ReviewsConfiguration.boolean_preferences.each do |sym|
-      params[:preferences][sym] = false if params[:preferences][sym].blank?
     end
   end
 end

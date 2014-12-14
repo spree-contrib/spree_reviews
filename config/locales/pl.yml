@@ -53,6 +53,7 @@ pl:
       review_settings: Ustawienia opinii
       show_email: Pokaż adresy email
       track_locale: Śledź język użytkownika
+      show_identifier: ~
     star:
       one: "1"
       few: "%{count}"

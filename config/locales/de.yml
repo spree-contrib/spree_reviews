@@ -11,6 +11,7 @@ de:
         ip_address: IP
         user: Benutzer
         locale: Sprache
+        show_identifier: Kennung anzeigen
     models:
       spree/review:
         one: eine Rezension
@@ -51,6 +52,7 @@ de:
       review_settings: Rezensionseinstellungen
       show_email: E-Mail Adressen anzeigen
       track_locale: Sprache des Benutzers tracken
+      show_identifier: Kennung anzeigen
     star:
       one: "ein Sternchen"
       other: "%{count} Sternchen"

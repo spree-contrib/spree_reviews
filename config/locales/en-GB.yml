@@ -10,7 +10,7 @@ en-GB:
         created_at: Date
         ip_address: IP
         user: User
-        show_identifier: Show
+        show_identifier: Show Identifier
     models:
       spree/review:
         one: one review
@@ -51,6 +51,7 @@ en-GB:
       review_settings: Review Settings
       show_email: Show email addresses
       track_locale: Track user's locale
+      show_identifier: Show Identifier
     star:
       one: "1"
       other: "%{count}"

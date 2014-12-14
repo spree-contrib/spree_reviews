@@ -51,6 +51,7 @@ zh-TW:
       review_settings: 評論設定
       show_email: 顯示電郵地址
       track_locale: 追蹤用戶地域
+      show_identifier: ~
     star:
       one: "1"
       other: "%{count}"

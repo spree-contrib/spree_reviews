@@ -51,6 +51,7 @@ zh-CN:
       review_settings: 评论设定
       show_email: 显示电邮地址
       track_locale: 追踪用户地域
+      show_identifier: ~
     star:
       one: "1"
       other: "%{count}"
