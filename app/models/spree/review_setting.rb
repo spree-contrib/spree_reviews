@@ -21,5 +21,9 @@ module Spree
     # Render checkbox for a user to approve to show their identifier
     # (name or email) on their review.
     preference :show_identifier, :boolean, default: false
+
+    def stars
+      5
+    end
   end
 end

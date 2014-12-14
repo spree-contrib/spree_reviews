@@ -46,4 +46,11 @@ RSpec.describe Spree::ReviewSetting do
     expect(subject).to respond_to(:preferred_show_identifier=)
     expect(subject.preferred_show_identifier).to be(false)
   end
+
+  context '.stars' do
+    it 'returns Integer' do
+      expect(subject.stars).to be_a Integer
+      expect(subject.stars).to be(5)
+    end
+  end
 end
