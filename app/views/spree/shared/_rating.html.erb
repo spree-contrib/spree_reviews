@@ -9,7 +9,7 @@
   </p>
   <p class="ratings-basedupon">(<%= Spree.t(:based_upon_review_count, count: reviews_count) %>)</p>
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <meta itemprop="ratingValue" content="<%= stars %>" />
-    <meta itemprop="reviewCount" content="<%= reviews_count %>" />
+    <span itemprop="ratingValue" content="<%= stars %>"></span>
+    <span itemprop="reviewCount" content="<%= reviews_count %>"></span>
   </div>
 </div>

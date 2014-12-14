@@ -1,22 +1,23 @@
-<%= render "spree/shared/error_messages", target: @review %>
-<%= f.field_container :name do %>
-  <%= f.label :name %><br />
-  <%= f.text_field :name, maxlength: "255", size: "60" %>
-<% end %>
+<%= render 'spree/shared/error_messages', target: @review %>
 
-<%= f.field_container :title do %>
-  <%= f.label :title %><br />
-  <%= f.text_field :title, maxlength: "255", size: "60" %>
-<% end %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+</div>
 
-<%= f.field_container :review do %>
-  <%= f.label :review %><br />
-  <%= f.text_area :review, wrap: "virtual", rows: "10", cols: "60" %>
-<% end %>
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :review %>
+  <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 60, class: 'form-control' %>
+</div>
 
 <% if Spree::Reviews::Config[:track_locale] %>
-<%= f.field_container :locale do %>
-  <%= f.label :locale %><br />
-  <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, default: lc.to_s), lc.to_s] } %>
-<% end %>
+  <div class="form-group">
+    <%= f.label :locale %>
+    <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, default: lc.to_s), lc.to_s] }, {}, class: 'select2' %>
+  </div>
 <% end %>

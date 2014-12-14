@@ -2,25 +2,19 @@
 	<%= Spree.t(:editing_review_for_html, link: link_to(@review.product.name, product_path(@review.product))) %>
 <% end %>
 
-<% render 'spree/admin/shared/product_sub_menu' %>
-
-<%= form_for([:admin, @review]) do |f| %>
-	<div class="alpha eight columns">
-		<% unless @review.title.blank? %>
-			<h2><%= @review.title %></h2>
-		<% end %>
-		<p>
-			<%= simple_format(@review.review) %>
-		</p>
+<%= form_for [:admin, @review] do |f| %>
+	<div class="row">
+		<div class="col-md-6">
+			<%= render 'form', f: f %>
+		</div>
+		<div class="col-md-6">
+			<% unless @review.title.blank? %>
+				<h2><%= @review.title %></h2>
+			<% end %>
+			<blockquote>
+				<%= simple_format(@review.review) %>
+			</blockquote>
+		</div>
 	</div>
-
-	<div class="omega eight columns">
-		<%= render 'form', f: f %>
-	</div>
-
-	<div class="clear"></div>
-
-	<fieldset class="no-border-top">
-		<%= render 'spree/admin/shared/edit_resource_links' %>
-	</fieldset>
+	<%= render 'spree/admin/shared/edit_resource_links' %>
 <% end %>
