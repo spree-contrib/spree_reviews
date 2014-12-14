@@ -83,7 +83,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
     it 'fails if the user is not authorized to create a review' do
       allow(controller).to receive(:authorize!) { raise }
-      expect{
+      expect {
         spree_post :create, review_params
       }.to raise_error
     end

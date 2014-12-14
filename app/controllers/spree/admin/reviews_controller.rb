@@ -16,10 +16,9 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
   end
 
   def edit
-    if @review.product.nil?
-      flash[:error] = Spree.t(:error_no_product)
-      redirect_to admin_reviews_path && return
-    end
+    return if @review.product
+    flash[:error] = Spree.t(:error_no_product)
+    redirect_to admin_reviews_path
   end
 
   private

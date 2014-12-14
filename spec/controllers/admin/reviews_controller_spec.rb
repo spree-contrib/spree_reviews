@@ -36,7 +36,7 @@ RSpec.describe Spree::Admin::ReviewsController, type: :controller do
   end
 
   context '#edit' do
-    specify do
+    it 'returns http success' do
       spree_get :edit, id: review.id
       expect(response.status).to be(200)
     end

@@ -25,7 +25,7 @@
     <div class="checkbox">
       <%= f.label :show_identifier do %>
         <%= f.check_box :show_identifier, checked: true %>
-        <%= Spree.t(:show_identifier) %>
+        <%= Spree::Review.human_attribute_name(:show_identifier) %>
       <% end %>
     </div>
   <% end %>

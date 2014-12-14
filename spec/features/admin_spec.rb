@@ -23,7 +23,7 @@ feature 'Review Admin', :js do
     scenario 'edit reviews' do
       expect(page).to have_text review.product.name
       within("tr#review_#{review.id}") do
-        find('.edit').click
+        find('.action-edit').click
       end
 
       expect(page).to have_text 'Editing'

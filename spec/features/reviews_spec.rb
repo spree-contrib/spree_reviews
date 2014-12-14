@@ -37,7 +37,7 @@ feature 'Reviews', :js do
         visit spree.product_path(review.product)
       end
 
-      scenario 'should see review title' do
+      scenario 'can see review title' do
         expect(page).to have_text review.title
       end
 
@@ -56,6 +56,7 @@ feature 'Reviews', :js do
 
     context 'visit product with review' do
       background do
+        reset_spree_preferences
         visit spree.product_path(review.product)
       end
 
@@ -82,7 +83,7 @@ feature 'Reviews', :js do
           click_on 'Submit your review'
         end
 
-        expect(page.find('.flash.notice', text: Spree.t(:review_successfully_submitted))).to be_truthy
+        expect(page).to have_text Spree.t(:review_successfully_submitted)
         expect(page).not_to have_text 'Some big review text..'
       end
     end
