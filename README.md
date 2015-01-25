@@ -74,7 +74,7 @@ See corresponding [contributing guidelines][1].
 
 ---
 
-Copyright (c) 2009-2014 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
+Copyright (c) 2009-2015 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
 
 [1]: https://github.com/spree-contrib/spree_reviews/blob/master/CONTRIBUTING.md
 [2]: https://github.com/spree
