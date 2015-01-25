@@ -6,7 +6,7 @@ RSpec.feature 'Admin Settings for Reviews', :js do
   end
 
   scenario 'update' do
-    expect(page).to have_text 'Size of the review snippets'
+    expect(page).to have_text_like 'Size of the review snippets'
 
     check 'include_unapproved_reviews'
     check 'feedback_rating'
