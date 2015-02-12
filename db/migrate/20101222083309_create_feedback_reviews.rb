@@ -5,7 +5,7 @@ class CreateFeedbackReviews < ActiveRecord::Migration
       t.integer :review_id, null: false
       t.integer :rating,    default: 0
       t.text    :comment
-      t.timestamps
+      t.timestamps null: false
     end
     add_index :feedback_reviews, :review_id
     add_index :feedback_reviews, :user_id

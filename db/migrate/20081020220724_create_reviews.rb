@@ -8,7 +8,7 @@ class CreateReviews < ActiveRecord::Migration
       t.text    :title
       t.text    :review
       t.boolean :approved, default: false
-      t.timestamps
+      t.timestamps null: false
     end
   end
 
