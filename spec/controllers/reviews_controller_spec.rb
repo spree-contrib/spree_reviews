@@ -119,7 +119,8 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
       it 'does not create a review' do
         expect(Spree::Review.count).to be(0)
-        spree_post :create, review_params[:review].merge!(rating: 'not_a_number')
+        review_params[:review].merge!(rating: 'not_a_number')
+        spree_post :create, review_params
         expect(Spree::Review.count).to be(0)
       end
     end
