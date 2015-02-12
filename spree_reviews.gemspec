@@ -8,11 +8,13 @@ Gem::Specification.new do |s|
   s.name        = 'spree_reviews'
   s.version     = SpreeReviews.version
   s.summary     = 'Basic review and ratings facility for Spree'
-  s.authors 	  = ['Paul Callaghan']
   s.description = s.summary
   s.required_ruby_version = '>= 2.1.0'
 
+  s.authors 	   = ['Paul Callaghan']
+  s.email        = 'paulcc.two@gmail.com'
   s.homepage     = 'https://github.com/spree-contrib/spree-reviews/'
+  s.license      = 'BSD-3'
 
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- spec/*`.split("\n")
