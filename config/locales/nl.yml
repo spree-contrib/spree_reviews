@@ -1,0 +1,68 @@
+---
+nl:
+  activerecord:
+    attributes:
+      spree/review:
+        name: Uw naam
+        title: Titel
+        review: Recensie
+        rating: Rating
+        created_at: Gecreëerd op
+        ip_address: IP
+        user: Gebruiker
+        show_identifier: Toon Identificatie
+    models:
+      spree/review:
+        one: één recensie
+        other: "%{count} recensies"
+  spree:
+    approval_status: Goedkeurings status
+    approve: Goedkeuren
+    approved_reviews: Goedgekeurd
+    average_customer_rating: Gemiddelde rating
+    back_reviews: Terug naar recensies
+    based_upon_review_count:
+      one: gebaseerd op één recensie
+      other: "gebaseerd op %{count} recensies"
+    by: door
+    editing_review_for_html: 'Aanpassen recensie voor %{link}'
+    error_approve_review: Fout bij het goedkheuren van een recensie
+    error_no_product: Het gereviewde product bestaat niet meer
+    feedback: Feedback
+    feedback_review_for: "Recensie: '%{review}'"
+    for: voor
+    from: van
+    info_approve_review: Recensie goedgekeurd
+    leave_us_a_review_for: "Laat een recensie na op het product '%{name}'"
+    no_reviews_available: "Er zijn geen reviews beschikbaar voor dit product"
+    out_of_5: "van de 5"
+    rating: rating
+    reviews: Recensies
+    admin:
+      tab:
+        review_management: Recensies
+    review_successfully_submitted: Recensie werd succesvol doorgestuurd
+    spree_reviews:
+      feedback_rating: Rate feedback
+      include_unapproved: Voeg niet goedgekeurde recensies toe aan de lijst
+      manage_review_settings: Beheer het tonen van de recencies
+      preview_size: Grootte van de recensie omschrijving
+      require_login: Verplicht een gebruiker om in te loggen
+      review_settings: Recensie configuratie
+      show_email: Toon email adres
+      track_locale: Traceer locale van de gebruiker
+      show_identifier: Toon Identificatie
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Sterren
+    submit_your_review: Post uw recensie
+    submitted_on: Gepost op
+    unapproved_reviews: Niet goedgekeurd
+    voice:
+      one: "1 stem"
+      other: "%{count} stemmen"
+    was_this_review_helpful: "Was deze recensie nuttig voor u?"
+    write_your_own_review: Schrijf uw eigen recensie
+    you_must_enter_value_for_rating: "U moet een stem uitbrengen"
+    anonymous: Anoniem
