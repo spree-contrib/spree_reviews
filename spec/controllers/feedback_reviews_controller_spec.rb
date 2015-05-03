@@ -22,7 +22,7 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
   describe '#create' do
     it 'creates a new feedback review' do
       rating = 4
-      comment = Faker::Lorem.paragraphs(3).join("\n")
+      comment = generate(:random_description)
       expect {
         spree_post(
           :create,
