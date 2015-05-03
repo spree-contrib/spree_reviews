@@ -9,7 +9,7 @@ module SpreeReviews
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/spree_reviews\n", before: /\*\//, verbose: true
+        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/spree_reviews\n", before: %r{\*/}, verbose: true
       end
 
       def add_migrations
