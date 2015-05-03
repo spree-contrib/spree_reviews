@@ -50,11 +50,13 @@ RSpec.describe Spree::FeedbackReview, type: :model do
       let!(:feedback_review_3) { create(:feedback_review, created_at: 5.days.ago) }
 
       it 'properly runs most_recent_first queries' do
-        expect(described_class.most_recent_first.to_a).to match_array [feedback_review_2, feedback_review_3, feedback_review_1]
+        expected = [feedback_review_2, feedback_review_3, feedback_review_1]
+        expect(described_class.most_recent_first.to_a).to match_array expected
       end
 
       it 'defaults to most_recent_first queries' do
-        expect(described_class.all.to_a).to match_array [feedback_review_2, feedback_review_3, feedback_review_1]
+        expected = [feedback_review_2, feedback_review_3, feedback_review_1]
+        expect(described_class.all.to_a).to match_array expected
       end
     end
 
@@ -66,7 +68,8 @@ RSpec.describe Spree::FeedbackReview, type: :model do
       let!(:fr_feedback_review_1) { create(:feedback_review, locale: 'fr', created_at: 10.days.ago) }
 
       it 'properly runs localized queries' do
-        expect(described_class.localized('en').to_a).to match_array [en_feedback_review_2, en_feedback_review_3, en_feedback_review_1]
+        expected_en = [en_feedback_review_2, en_feedback_review_3, en_feedback_review_1]
+        expect(described_class.localized('en').to_a).to match_array expected_en
         expect(described_class.localized('es').to_a).to match_array [es_feedback_review_1]
         expect(described_class.localized('fr').to_a).to match_array [fr_feedback_review_1]
       end
