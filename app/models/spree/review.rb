@@ -25,6 +25,8 @@ class Spree::Review < ActiveRecord::Base
   scope :not_approved, -> { where(approved: false) }
   scope :default_approval_filter, -> { Spree::Reviews::Config[:include_unapproved_reviews] ? all : approved }
 
+  self.whitelisted_ransackable_attributes = ['name', 'title', 'review', 'approved']
+
   def feedback_stars
     return 0 if feedback_reviews.size <= 0
     ((feedback_reviews.sum(:rating) / feedback_reviews.size) + 0.5).floor
