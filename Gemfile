@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-spree_version = '2-4-stable'
-gem 'spree', github: 'spree/spree', branch: spree_version
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: spree_version
+# Solidus
+gem 'solidus', github: 'solidusio/solidus', branch: 'v1.0'
+gem 'solidus_auth_devise'
 
 gemspec
