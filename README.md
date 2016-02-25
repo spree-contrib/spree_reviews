@@ -23,7 +23,7 @@ Next, run the rake task that copies the necessary migrations and assets to your 
 
 And finish with a migrate:
 
-bundle exec rake db:migrate
+    bundle exec rake db:migrate
 
 Now you should be able to boot up your server with:
 
