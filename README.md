@@ -9,10 +9,13 @@ Straightforward review/rating functionality.
 
 ## Installation
 
-Add the following to your `Gemfile` to install from git:
 ```ruby
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
-```
+ gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'X-X-stable'
+ ```
+
+ The `branch` option is important: it must match the version of Spree you're using.
+ For example, use `3-0-stable` if you're using Spree `3-0-stable` or any `3.0.x` version.
+
 Now bundle up with:
 
     bundle
