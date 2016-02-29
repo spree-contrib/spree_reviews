@@ -41,8 +41,8 @@ feature 'Reviews', :js do
         expect(page).to have_text review.title
       end
 
-      scenario 'can not create review' do
-        expect(page).not_to have_text Spree.t(:write_your_own_review)
+      scenario 'can see a prompt to review' do
+        expect(page).to have_text Spree.t(:write_your_own_review)
       end
     end
   end
