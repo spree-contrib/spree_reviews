@@ -27,6 +27,8 @@ ru:
     based_upon_review_count:
       one: на основе
       other: На основании всех отзывов
+      few: На основании всех отзывов
+      many: На основании всех отзывов
     by: ''
     editing_review_for_html: Редактирование отзыва для HTML
     error_approve_review: ~
@@ -58,6 +60,8 @@ ru:
       show_identifier: ~
     star:
       one: '1'
+      few: '%{count}'
+      many: '%{count}'
       other: '%{count}'
     stars: Звёзды
     submit_your_review: Оставить отзыв
