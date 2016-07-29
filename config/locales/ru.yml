@@ -10,7 +10,7 @@ ru:
         created_at: Дата отзыва
         ip_address: IP
         user: Пользователь
-        show_identifier: ~
+        show_identifier: Отображать имя или email
     models:
       spree/review:
         zero: "0 отзывов"
@@ -27,37 +27,40 @@ ru:
     based_upon_review_count:
       one: на основе
       other: На основании всех отзывов
+      few: На основании всех отзывов
+      many: На основании всех отзывов
     by: ''
     editing_review_for_html: Редактирование отзыва для HTML
-    error_approve_review: ~
+    error_approve_review: Ошибка при одобрении отзыва
     error_no_product: Отзывы продукт больше не существует
     feedback: Обратная связь
     feedback_review_for: "Отзывы: '%{review}'"
     for: для
     from: от
-    info_approve_review: ~
+    info_approve_review: Отзыв одобрен
     leave_us_a_review_for: 'Пожалуйста, оставьте отзыв и оценку для'
     no_reviews_available: Отзывов нет
     out_of_5: 'из 5'
     rating: Оценка
     reviews: Отзывы
-    write_your_own_review: Оставьте свой отзыв
     admin:
       tab:
         review_management: Управление отзывами
     review_successfully_submitted: Ваш отзыв был успешно отправлен
     spree_reviews:
-      review_settings: Настройки отзывов покупателей
+      feedback_rating: Райтинг отзывов
+      include_unapproved: Показывать неодобренные отзывы на странице товара
       manage_review_settings: Управление отображением отзывов
       preview_size: Количество отзывов на странице товара
-      include_unapproved: Показывать неодобренные отзывы на странице товара
-      your_name: Ваше имя
-      show_email: Показывать электронную почту
       require_login: Требовать вход
+      review_settings: Настройки отзывов покупателей
+      show_email: Показывать электронную почту
       track_locale: Отслеживать язык
-      show_identifier: ~
+      show_identifier: Отображать имя или email автора под отзывом
     star:
       one: '1'
+      few: '%{count}'
+      many: '%{count}'
       other: '%{count}'
     stars: Звёзды
     submit_your_review: Оставить отзыв
@@ -70,8 +73,6 @@ ru:
       other: '%{count} голосов'
       many: '%{count} голоса'
     was_this_review_helpful: Был ли Вам полезен этот отзыв?
-    write_your_own_review: ~
+    write_your_own_review: Напишите свой отзыв
     you_must_enter_value_for_rating: Вы должны оценить отзыв.
-    info_approve_review: 'Отзыв одобрен'
-    error_approve_review: 'Ошибка при одобрении отзыва'
     anonymous: 'анонимный'
