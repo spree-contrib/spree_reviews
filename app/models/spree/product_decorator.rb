@@ -15,4 +15,8 @@ Spree::Product.class_eval do
     end
     save
   end
+
+  def not_reviewed_by?(user)
+    self.reviews.find_by(user_id: user.id).nil?
+  end
 end
