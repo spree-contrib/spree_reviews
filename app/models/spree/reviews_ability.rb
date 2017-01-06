@@ -9,6 +9,7 @@ class Spree::ReviewsAbility
     can :create, Spree::FeedbackReview do
       review_ability_class.allow_anonymous_reviews? || !user.email.blank?
     end
+    can [:edit, :update], Spree::Review, user_id: user.id
   end
 
   def self.allow_anonymous_reviews?

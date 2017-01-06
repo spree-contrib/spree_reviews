@@ -64,6 +64,7 @@ en:
       other: "%{count} voices"
     was_this_review_helpful: "Was this review helpful to you?"
     write_your_own_review: Write your own review
+    edit_your_review: Edit your review
     you_must_enter_value_for_rating: "You must enter a value for rating."
     already_reviewed: "User may only write one review per product."
     anonymous: Anonymous
