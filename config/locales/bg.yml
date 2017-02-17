@@ -1,3 +1,4 @@
+---
 bg:
   activerecord:
     attributes:
@@ -9,6 +10,7 @@ bg:
         created_at: Дата на създаване
         ip_address: IP
         user: потребител
+        locale: Български
         show_identifier: Покажи идентификатор
     models:
       spree/review:
@@ -65,4 +67,4 @@ bg:
     was_this_review_helpful: "Това ревю беше ли полезно?"
     write_your_own_review: Напиши свое ревю
     you_must_enter_value_for_rating: "Трябва да се въведе стойност за рейтинг"
-anonymous: Анонимно
+    anonymous: Анонимно
