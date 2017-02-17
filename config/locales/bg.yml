@@ -17,6 +17,7 @@ bg:
         one: едно ревю
         other: "%{count} ревюта"
   spree:
+    you_must_enter_value_for_rating: Трябва да се въведе стойност
     edit_your_review: Редактирай своето ревю
     approval_status: Статус на одобрение
     approve: Одобри
