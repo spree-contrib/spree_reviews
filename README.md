@@ -9,6 +9,14 @@ Straightforward review/rating functionality.
 
 ## Installation
 
+#### Spree >= 3.1
+
+```ruby
+gem 'spree_address_book', github: 'spree-contrib/spree_address_book'
+```
+
+#### Spree 3.0 and Spree 2.x
+
 ```ruby
  gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'X-X-stable'
  ```
