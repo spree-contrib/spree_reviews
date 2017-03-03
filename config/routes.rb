@@ -9,7 +9,7 @@ Spree::Core::Engine.add_routes do
     resource :review_settings, only: [:edit, :update]
   end
 
-  resources :products do
+  resources :products, :only => [] do
     resources :reviews, only: [:index, :new, :create] do
     end
   end
