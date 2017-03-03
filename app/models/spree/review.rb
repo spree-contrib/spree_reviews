@@ -13,6 +13,8 @@ class Spree::Review < ActiveRecord::Base
     less_than_or_equal_to: 5,
     message: Spree.t(:you_must_enter_value_for_rating)
   }
+  validates :user_id, uniqueness: { scope: :product_id,
+    message: Spree.t(:already_reviewed) }
 
   default_scope { order('spree_reviews.created_at DESC') }
 

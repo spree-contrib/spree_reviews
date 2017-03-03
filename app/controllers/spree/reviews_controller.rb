@@ -1,6 +1,7 @@
 class Spree::ReviewsController < Spree::StoreController
   helper Spree::BaseHelper
-  before_action :load_product, only: [:index, :new, :create]
+  before_action :load_product, only: [:index, :new, :create, :edit, :update]
+  before_action :find_review_for_user, only: [:edit, :update]
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def index
@@ -10,6 +11,22 @@ class Spree::ReviewsController < Spree::StoreController
   def new
     @review = Spree::Review.new(product: @product)
     authorize! :create, @review
+    redirect_to edit_product_review_path(@product, id: find_review_for_user) unless @product.not_reviewed_by? spree_current_user
+  end
+
+  def edit
+    authorize! :edit, @review
+  end
+
+  def update
+    authorize! :update, @review
+    params[:review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:review][:rating].blank?
+    if @review.update(review_params)
+      @review.update_attributes(approved: false)
+      redirect_to spree.product_path(@review.product)
+    else
+      render 'edit'
+    end
   end
 
   # save if all ok
@@ -32,6 +49,10 @@ class Spree::ReviewsController < Spree::StoreController
   end
 
   private
+
+  def find_review_for_user
+    @review = @product.review_for_current_user(spree_current_user)
+  end
 
   def load_product
     @product = Spree::Product.friendly.find(params[:product_id])

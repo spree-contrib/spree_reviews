@@ -1,0 +1,36 @@
+<%= form_for review, url: product_review_path(product, review), html: { method: :put } do |f| %>
+  <%= render 'spree/shared/error_messages', target: review %>
+
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= render 'spree/reviews/stars', stars: review.rating, edit_enabled: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, maxlength: 255, size: 50, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, maxlength: 255, size: 50, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :review %>
+    <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 50, class: 'form-control' %>
+  </div>
+
+  <% if Spree::Reviews::Config[:show_identifier] %>
+    <div class="checkbox">
+      <%= f.label :show_identifier do %>
+        <%= f.check_box :show_identifier, checked: true %>
+        <%= Spree::Review.human_attribute_name(:show_identifier) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit Spree.t(:submit_your_review), class: 'btn btn-default' %>
+  </div>
+<% end %>
