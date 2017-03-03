@@ -12,13 +12,13 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
     else
       flash[:error] = Spree.t(:error_approve_review)
     end
-    redirect_to admin_reviews_path
+    redirect_to !params[:page].blank? ? admin_reviews_path(page: params[:page]) : admin_reviews_path
   end
 
   def edit
     return if @review.product
     flash[:error] = Spree.t(:error_no_product)
-    redirect_to admin_reviews_path
+    redirect_to !params[:page].blank? ? admin_reviews_path(page: params[:page]) : admin_reviews_path
   end
 
   private
