@@ -1,0 +1,71 @@
+---
+bg:
+  activerecord:
+    attributes:
+      spree/review:
+        name: Име
+        title: Заглавие
+        review: Ревю
+        rating: Рейтинг
+        created_at: Дата на създаване
+        ip_address: IP
+        user: потребител
+        locale: Български
+        show_identifier: Покажи идентификатор
+    models:
+      spree/review:
+        one: едно ревю
+        other: "%{count} ревюта"
+  spree:
+    you_must_enter_value_for_rating: Трябва да се въведе стойност
+    edit_your_review: Редактирай своето ревю
+    approval_status: Статус на одобрение
+    approve: Одобри
+    approved_reviews: Одобрено
+    average_customer_rating: Средна оценка
+    back_reviews: Назад към ревютата
+    based_upon_review_count:
+      one: Базирано на едно ревю
+      other: "базирано от %{count} ревюта"
+    by: от
+    editing_review_for_html: 'Редактиране на ревю за %{link}'
+    error_approve_review: Грешка при одобрението на ревю
+    error_no_product: Продуктът вече не съществува
+    feedback: Feedback
+    feedback_review_for: "Review: '%{review}'"
+    for: За
+    from: От
+    info_approve_review: Ревюто е одобрено
+    leave_us_a_review_for: "Напиши ревю за '%{name}'"
+    no_reviews_available: "Няма ревюта за този продукт."
+    out_of_5: "от 5 възможно"
+    rating: рейтинг
+    reviews: Ревюта
+    admin:
+      tab:
+        review_management: Ревюта
+    review_successfully_submitted: Ревюто беше успешно изпратено
+    spree_reviews:
+      feedback_rating: Рейтинг
+      include_unapproved: Включи неодобрените ревюта
+      manage_review_settings: Настройки на дисплея от ревю
+      preview_size: Големина на откъси от ревюто
+      require_login: Изисква потребителя да е влязъл
+      review_settings: Настройки на Ревю
+      show_email: Покажи email
+      track_locale: Покажи станата на потребителя
+      show_identifier: Покажи идентификатор
+    star:
+      one: "1"
+      other: "%{count}"
+    stars: Звезди
+    submit_your_review: Публикувай ревю
+    submitted_on: Публикувано на
+    unapproved_reviews: Неодобрени
+    voice:
+      one: "1 глас"
+      other: "%{count} гласа"
+    was_this_review_helpful: "Това ревю беше ли полезно?"
+    write_your_own_review: Напиши свое ревю
+    you_must_enter_value_for_rating: "Трябва да се въведе стойност за рейтинг"
+    anonymous: Анонимно
