@@ -8,10 +8,14 @@
   <meta itemprop="datePublished" content="<%= review.created_at.to_date.to_s %>" />
 
   <meta itemprop="reviewRating" content="<%= review.rating %>" />
-  <% if Spree::Reviews::Config[:show_email] && review.user %>
-    <span itemprop="author"><%= review.user.email %></span>
+  <% if review.show_identifier %>
+    <% if Spree::Reviews::Config[:show_email] && review.user %>
+      <span itemprop="author"><%= review.user.email %></span>
+    <% else %>
+      <span itemprop="author"><%= review.name %></span>
+    <% end %>
   <% else %>
-    <span itemprop="author"><%= review.name %></span>
+      <span itemprop="author"><%= Spree.t(:anonymous) %></span>
   <% end %>
   <div itemprop="reviewBody">
     <%= simple_format(review.review) %>

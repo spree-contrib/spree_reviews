@@ -73,6 +73,7 @@ feature 'Reviews', js: true do
         click_on Spree.t(:write_your_own_review)
 
         expect(page).to have_text Spree.t(:leave_us_a_review_for, name: review.product.name)
+        expect(page).not_to have_text 'Show Identifier'
 
         within '#new_review' do
           click_star(3)
@@ -87,6 +88,21 @@ feature 'Reviews', js: true do
         expect(page).not_to have_text 'Some big review text..'
       end
     end
+  end
+
+  context 'visit product with review where show_identifier is false' do
+    given!(:user) { create(:user) }
+    given!(:review) { create(:review, :approved, :hide_identifier, review: 'review text', user: user) }
+    
+    background do
+      visit spree.product_path(review.product)
+    end
+
+    scenario 'show anonymous review' do
+      expect(page).to have_text Spree.t(:anonymous)
+      expect(page).to have_text 'review text'
+    end
+
   end
 
   private
