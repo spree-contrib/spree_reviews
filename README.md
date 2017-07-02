@@ -12,7 +12,7 @@ Straightforward review/rating functionality.
 #### Spree >= 3.1
 
 ```ruby
-gem 'spree_address_book', github: 'spree-contrib/spree_address_book'
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 ```
 
 #### Spree 3.0 and Spree 2.x
