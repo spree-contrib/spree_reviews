@@ -1,4 +1,4 @@
-class AddIpAddressToReviews < ActiveRecord::Migration
+class AddIpAddressToReviews < ActiveRecord::Migration[5.0]
   def self.up
     add_column :reviews, :ip_address, :string
   end

@@ -1,4 +1,4 @@
-class AddRatingToProducts < ActiveRecord::Migration
+class AddRatingToProducts < ActiveRecord::Migration[5.0]
   def self.up
     if table_exists?('products')
       add_column :products, :avg_rating, :decimal, default: 0.0, null: false, precision: 7, scale: 5

@@ -1,4 +1,4 @@
-class RecalculateRatings < ActiveRecord::Migration
+class RecalculateRatings < ActiveRecord::Migration[5.0]
   def up
     Spree::Product.reset_column_information
     Spree::Product.update_all reviews_count: 0
