@@ -1,4 +1,4 @@
-class AddUserToReviews < ActiveRecord::Migration
+class AddUserToReviews < SpreeExtension::Migration[4.2]
   def self.up
     add_column :reviews, :user_id, :integer, null: true
   end

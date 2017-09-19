@@ -14,7 +14,7 @@ class Spree::FeedbackReviewsController < Spree::StoreController
     end
 
     respond_to do |format|
-      format.html { redirect_to :back  }
+      format.html { redirect_back(fallback_location: root_path) }
       format.js   { render action: :create }
     end
   end
@@ -35,5 +35,13 @@ class Spree::FeedbackReviewsController < Spree::StoreController
 
   def sanitize_rating
     params[:feedback_review][:rating].to_s.sub!(/\s*[^0-9]*\z/, '') unless params[:feedback_review] && params[:feedback_review][:rating].blank?
+  end
+
+  def redirect_back(fallback_location:)
+    if Rails.gem_version >= Gem::Version.new('5.x')
+      super
+    else
+      redirect_to :back
+    end
   end
 end
