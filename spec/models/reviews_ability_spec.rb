@@ -40,4 +40,20 @@ RSpec.describe Spree::ReviewsAbility, type: :model do
       end
     end
   end
+
+  describe 'access review settings' do
+    subject { described_class.new(user) }
+
+    context 'when is ordinal user' do
+      let(:user) { build_stubbed(:user) }
+
+      it { is_expected.not_to be_able_to(:manage, Spree::ReviewSetting) }
+    end
+
+    context 'when is admin' do
+      let(:user) { build_stubbed(:admin_user) }
+
+      it { is_expected.to be_able_to(:manage, Spree::ReviewSetting) }
+    end
+  end
 end
