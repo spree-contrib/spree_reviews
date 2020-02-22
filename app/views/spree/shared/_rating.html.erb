@@ -1,3 +1,8 @@
+<% if product.last_star_percentage == 0.0 %>
+  <% percentage = 100 %>
+<% else %>
+  <% percentage == product.last_star_percentage%>
+<% end %>
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
 <div class="review-comment">
@@ -18,6 +23,6 @@
 </div>
 
 <style>
-  #final-rating input[type="radio"]:checked+label{ background: linear-gradient(90deg, rgba(60,187,145,1) 0%, rgba(60,187,145,1) <%= product.last_star_percentage %>%, rgba(255,255,255,1) 0%);
+  #final-rating input[type="radio"]:checked+label{ background: linear-gradient(90deg, rgba(60,187,145,1) 0%, rgba(60,187,145,1) <%= percentage %>%, rgba(255,255,255,1) 0%);
   }
 </style>
