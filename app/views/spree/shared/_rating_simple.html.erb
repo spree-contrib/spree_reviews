@@ -1,20 +1,17 @@
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
 <div class="row">
-  <div data-toggle="modal" data-target="#exampleModal">
+  <div data-toggle="modal" data-target="#reviewsModal">
     <div id="final-rating" class="display-rating col-12">
       <%= render 'spree/reviews/stars', stars: stars %>
-
     </div>
-
     <div class="col-12 mb-2 text-muted">
         <small><%= Spree.t(:click_to_read_reviews) %></small>
     </div>
   </div>
-
 </div>
 
 <style>
-  #final-rating input[type="radio"]:checked+label{ background: linear-gradient(90deg, rgba(60,187,145,1) 0%, rgba(60,187,145,1) <%= product.last_star_percentage %>%, rgba(255,255,255,1) 0%);
+  #final-rating input[type="radio"]:checked+label{ background: linear-gradient(90deg, rgba(60,187,145,1) <%= product.last_star_percentage %>%, rgba(255,255,255,1) 0%);
   }
 </style>
