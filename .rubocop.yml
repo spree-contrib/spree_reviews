@@ -1,8 +1,24 @@
----
-inherit_from: .hound.yml
-
 AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.3
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/Appraisals'
   Exclude:
-    - spec/dummy/**/*
-    - bin/*
-    - Guardfile
+    - 'spec/dummy/**/*'
+    - 'lib/generators/**/*'
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 150
+
+# DISABLED
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
