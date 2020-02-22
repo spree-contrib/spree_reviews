@@ -1,15 +1,23 @@
-require 'capybara'
 require 'capybara/rspec'
-require 'capybara/rails'
-require 'capybara/poltergeist'
+require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
+require 'capybara/rails'
 
 RSpec.configure do
-  Capybara.javascript_driver = :poltergeist
+  Capybara.register_driver :chrome do |app|
+    Selenium::WebDriver.logger.level = :error
 
-  Capybara.register_driver(:poltergeist) do |app|
-    Capybara::Poltergeist::Driver.new app, js_errors: true, timeout: 60
+    Capybara::Selenium::Driver.new app,
+      browser: :chrome,
+      options: Selenium::WebDriver::Chrome::Options.new(
+        args: %w[headless disable-gpu window-size=1920,1080 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=VizDisplayCompositor],
+        log_level: :error
+      )
+  end
+  Capybara.javascript_driver = :chrome
+
+  Capybara::Screenshot.register_driver(:chrome) do |driver, path|
+    driver.browser.save_screenshot(path)
   end
 
-  Capybara.save_and_open_page_path = ENV['CIRCLE_ARTIFACTS'] if ENV['CIRCLE_ARTIFACTS']
 end
