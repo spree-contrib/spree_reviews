@@ -1,36 +1,47 @@
 
-<div class="col-12" id="reviews">
-  <h3 class="product-section-title"><%= Spree.t(:reviews) %></h3>
-</div>
-
-<div class="card w-100">
-  <div class="card-header text-center pb-0 px-0">
-    <%= render 'spree/shared/rating', product: @product, review: 0 %>
-  </div>
-  <div class="card-body px-0">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div id="rev" class="carousel-inner">
-      <div class="rev">
-        <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
-          <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
-        <% else %>
-          <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
-            <%= render 'spree/shared/review', review: review %>
-          <% end %>
-        <% end %>
+<!-- Modal -->
+<div class="modal fade h-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog h-100" role="document">
+    <div class="modal-content h-100">
+      <div class="modal-body">
+        <button class="modal-close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">✕</span>
+        </button>
+        <div class="col-12" id="reviews">
+          <h3 class="product-section-title"><%= Spree.t(:reviews_of) %> <%= @product.name %></h3>
+        </div>
+        <div class="card w-100">
+          <div class="card-header text-center pb-0 px-0">
+            <%= render 'spree/shared/rating', product: @product, review: 0 %>
+          </div>
+          <div class="card-body px-0 h-100">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="rev" class="carousel-inner">
+              <div class="rev">
+                <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+                  <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+                <% else %>
+                  <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
+                    <%= render 'spree/shared/review', review: review %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            </div>
+          </div>
+          <div class="card-footer p-0">
+            <%= link_to Spree.t(:write_your_own_review), new_product_review_path(@product), class: 'btn btn-primary w-100', rel: 'nofollow' %>
+          </div>
+        </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    </div>
-  </div>
-  <div class="card-footer p-0">
-    <%= link_to Spree.t(:write_your_own_review), new_product_review_path(@product), class: 'btn btn-primary w-100', rel: 'nofollow' %>
   </div>
 </div>

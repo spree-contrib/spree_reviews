@@ -109,3 +109,9 @@
 .carousel-control-prev, .carousel-control-next {
   width: 5%;
 }
+
+.modal-dialog {
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}

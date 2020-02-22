@@ -1,28 +1,42 @@
 <div class="review carousel-item <% if review.id == 1 %> active <% end %> ">
-  <div class=" d-block w-100">
-    <div class="display-rating">
-      <%= render 'spree/reviews/stars', stars: review.rating %>
-    </div>
-    <br/>
-    <span class="attribution"><%= Spree.t(:submitted_on) %>
-      <strong><%= l review.created_at.to_date %></strong>
-    </span>
-    <% if review.show_identifier %>
-      <% if Spree::Reviews::Config[:show_email] && review.user %>
-        <span itemprop="author"><%= review.user.email %></span>
-      <% else %>
-        <span itemprop="author"><%= review.name %></span>
-      <% end %>
-    <% else %>
-      <span itemprop="author"><%= Spree.t(:anonymous) %></span>
-    <% end %>
-    <div itemprop="reviewBody">
-      <%= simple_format(review.review) %>
-    </div>
-    <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
-      <div class="feedback_review" id="feedback_review_<%= review.id %>">
-        <%= render 'spree/feedback_reviews/form', review: review %>
+
+    <div class="container" style="max-width: 750px !important;">
+      <div class="row">
+        <div class="col-12">
+          <h3><%= review.title %></h3>
+        </div>
+        <div class="col-12 py-3">
+            <%= simple_format(review.review) %>
+        </div>
+        <div class="col-12">
+          <div class="display-rating">
+            <%= render 'spree/reviews/stars', stars: review.rating %>
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <span class="attribution text-secondary"><%= Spree.t(:by) %></span>
+          <% if review.show_identifier %>
+            <% if Spree::Reviews::Config[:show_email] && review.user %>
+              <strong><span class="mr-2"><%= review.user.email %></span></strong>
+            <% else %>
+              <strong><span class="mr-2"><%= review.name %></span></strong>
+            <% end %>
+          <% else %>
+              <span class="mr-2"><%= Spree.t(:anonymous) %></span>
+          <% end %>
+
+          <span class="attribution text-secondary" style="text-transform: lowercase;"><%= Spree.t(:submitted_on) %></span>
+            <strong><%= l review.created_at.to_date %></strong>
+        </div>
       </div>
-    <% end %>
-  </div>
+      <div class="col-12 ">
+        <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
+          <div class="feedback_review" id="feedback_review_<%= review.id %>">
+            <%= render 'spree/feedback_reviews/form', review: review %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
 </div>

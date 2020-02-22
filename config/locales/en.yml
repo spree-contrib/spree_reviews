@@ -37,12 +37,13 @@ en:
     from: from
     good: good
     info_approve_review: Review approved
-    leave_us_a_review_for: "Please leave us a review and a rating for our '%{name}'"
+    leave_us_a_review_for: "Please leave a review for '%{name}'"
     no_reviews_available: "No reviews have been written for this product."
     out_of_5: "out of 5"
     poor: poor
     rating: rating
     reviews: Reviews
+    reviews_of: Reviews of
     admin:
       tab:
         review_management: Reviews
