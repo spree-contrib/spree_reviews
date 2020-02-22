@@ -1,29 +1,28 @@
-<div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
-  <span class="reviews-rating" title="<%= txt_stars(review.rating) %>">
-    <%= render 'spree/reviews/stars', stars: review.rating %>
-  </span>
-  <span itemprop="name"><%= review.title %></span>
-  <br/>
-  <span class="attribution"><%= Spree.t(:submitted_on) %>
-    <strong><%= l review.created_at.to_date %></strong>
-  </span>
-  <span itemprop="datePublished" content="<%= review.created_at.to_date.to_s %>"></span>
-  <span itemprop="reviewRating" content="<%= review.rating %>"></span>
-  <% if review.show_identifier %>
-    <% if Spree::Reviews::Config[:show_email] && review.user %>
-      <span itemprop="author"><%= review.user.email %></span>
-    <% else %>
-      <span itemprop="author"><%= review.name %></span>
-    <% end %>
-  <% else %>
-    <span itemprop="author"><%= Spree.t(:anonymous) %></span>
-  <% end %>
-  <div itemprop="reviewBody">
-    <%= simple_format(review.review) %>
-  </div>
-  <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
-    <div class="feedback_review" id="feedback_review_<%= review.id %>">
-      <%= render 'spree/feedback_reviews/form', review: review %>
+<div class="review carousel-item <% if review.id == 1 %> active <% end %> ">
+  <div class=" d-block w-100">
+    <div class="display-rating">
+      <%= render 'spree/reviews/stars', stars: review.rating %>
     </div>
-  <% end %>
+    <br/>
+    <span class="attribution"><%= Spree.t(:submitted_on) %>
+      <strong><%= l review.created_at.to_date %></strong>
+    </span>
+    <% if review.show_identifier %>
+      <% if Spree::Reviews::Config[:show_email] && review.user %>
+        <span itemprop="author"><%= review.user.email %></span>
+      <% else %>
+        <span itemprop="author"><%= review.name %></span>
+      <% end %>
+    <% else %>
+      <span itemprop="author"><%= Spree.t(:anonymous) %></span>
+    <% end %>
+    <div itemprop="reviewBody">
+      <%= simple_format(review.review) %>
+    </div>
+    <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
+      <div class="feedback_review" id="feedback_review_<%= review.id %>">
+        <%= render 'spree/feedback_reviews/form', review: review %>
+      </div>
+    <% end %>
+  </div>
 </div>

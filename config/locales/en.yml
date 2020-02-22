@@ -16,10 +16,12 @@ en:
         one: one review
         other: "%{count} reviews"
   spree:
+    average: average
     approval_status: Approval status
     approve: Approve
     approved_reviews: Approved
     average_customer_rating: Average rating
+    bad: bad
     back_reviews: Back to the reviews
     based_upon_review_count:
       one: based upon one review
@@ -28,14 +30,17 @@ en:
     editing_review_for_html: 'Editing review for %{link}'
     error_approve_review: Error approving review
     error_no_product: The reviewed product doesn't exist anymore
+    excellent: excellent
     feedback: Feedback
     feedback_review_for: "Review: '%{review}'"
     for: for
     from: from
+    good: good
     info_approve_review: Review approved
     leave_us_a_review_for: "Please leave us a review and a rating for our '%{name}'"
     no_reviews_available: "No reviews have been written for this product."
     out_of_5: "out of 5"
+    poor: poor
     rating: rating
     reviews: Reviews
     admin:

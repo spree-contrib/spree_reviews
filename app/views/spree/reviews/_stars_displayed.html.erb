@@ -8,11 +8,13 @@
 
   <div class="rate-area">
     <% for i in (1..Spree::Reviews::Config.stars).reverse_each %>
+    <div class="star-box">
       <input name="<%= name %>"
              type="radio"
              id="<%= i %>-star"
              value="<%= pluralize(i, 'stars') %>" <%= state %>
              <%= 'checked' if i == stars %> />
-             <label class="star-box" for="<%= i %>-star"></label>
+             <label for="<%= i %>-star"></label>
+      </div>
     <% end %>
   </div>

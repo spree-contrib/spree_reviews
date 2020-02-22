@@ -1,15 +1,23 @@
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
-<div class="ratings">
-  <p><%= Spree.t(:average_customer_rating) %>:</p>
-  <p class="ratings-stars">
-    <span title="<%= txt_stars(stars) %>">
-      <%= render 'spree/reviews/stars', stars: stars %>
-    </span>
-  </p>
-  <p class="ratings-basedupon">(<%= Spree.t(:based_upon_review_count, count: reviews_count) %>)</p>
-  <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue" content="<%= stars %>"></span>
-    <span itemprop="reviewCount" content="<%= reviews_count %>"></span>
+<div class="review-comment">
+  <% if stars == 1 %><%= Spree.t(:bad) %><% end %>
+  <% if stars == 2 %><%= Spree.t(:poor) %><% end %>
+  <% if stars == 3 %><%= Spree.t(:average) %><% end %>
+  <% if stars == 4 %><%= Spree.t(:good) %><% end %>
+  <% if stars == 5 %><%= Spree.t(:excellent) %><% end %>
+</div>
+<div id="final-rating" class="display-rating center-ratings col">
+  <%= render 'spree/reviews/stars', stars: stars %>
+</div>
+
+<div class="row">
+  <div class="based-on col mb-2">
+    <span style="padding-right: 10px;"><%= product.accurate_average %> <span class="text-secondary" style="text-transform: lowercase;"><%= Spree.t(:average) %></span></span>  <%= reviews_count %> <span class="text-secondary" style="text-transform: lowercase;"><%= Spree.t(:reviews) %></span>
   </div>
 </div>
+
+<style>
+  #final-rating input[type="radio"]:checked+label{ background: linear-gradient(90deg, rgba(60,187,145,1) 0%, rgba(60,187,145,1) <%= product.last_star_percentage %>%, rgba(255,255,255,1) 0%);
+  }
+</style>
