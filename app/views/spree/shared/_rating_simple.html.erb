@@ -1,7 +1,7 @@
 <% stars = product.stars %>
 <% reviews_count = product.reviews_count %>
 <div class="row">
-  <div data-toggle="modal" data-target="#reviewsModal">
+  <div id="price-display-stars" data-toggle="modal" data-target="#reviewsModal">
     <div id="final-rating" class="display-rating col-12">
       <%= render 'spree/reviews/stars', stars: stars %>
     </div>
