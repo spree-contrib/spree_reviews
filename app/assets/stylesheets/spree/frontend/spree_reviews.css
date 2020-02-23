@@ -117,3 +117,13 @@
   min-height: 100%;
   margin: 0;
 }
+#reviewsModal .modal-content {
+  border: none;
+}
+
+.modal-backdrop {
+  background: white;
+}
+.modal-backdrop.show {
+  opacity: 1;
+}

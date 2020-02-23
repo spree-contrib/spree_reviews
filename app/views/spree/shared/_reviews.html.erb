@@ -1,6 +1,6 @@
-<div class="modal fade h-100" id="reviewsModal" aria-hidden="true">
-  <div class="modal-dialog h-100" role="document">
-    <div class="modal-content h-100">
+<div class="modal fade" id="reviewsModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
       <div class="modal-body">
         <button class="modal-close" type="button" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">✕</span>
@@ -12,7 +12,7 @@
           <div class="card-header text-center pb-0 px-0">
             <%= render 'spree/shared/rating', product: @product, review: 0 %>
           </div>
-          <div class="card-body px-0 h-100">
+          <div class="card-body px-0">
           <div id="carouselReviews" class="carousel slide" data-interval="false">
             <div id="rev" class="carousel-inner">
               <div class="rev">
