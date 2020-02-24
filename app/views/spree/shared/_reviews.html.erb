@@ -1,26 +1,27 @@
 <div class="modal fade" id="reviewsModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header pb-0 px-4 pt-4 border-0">
-        <div class="col-9" id="reviews">
-          <h3 class="product-section-title"><%= Spree.t(:reviews_of) %> <%= @product.name %></h3>
-        </div>
-        <div class="col-3">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <%= icon(name: 'close',
-                       classes: 'd-block d-lg-none',
-                       width: 16,
-                       height: 16) %>
-              <%= icon(name: 'close',
-                       classes: 'd-none d-lg-block',
-                       width: 30,
-                       height: 30) %>
-            </span>
-          </button>
-        </div>
 
+      <div class="modal-header pb-0 px-4 pt-4 border-0 align-items-center">
+          <div class="col-9" id="reviews">
+            <h3 class="product-section-title mb-0"><%= Spree.t(:reviews_of) %> <%= @product.name %></h3>
+          </div>
+          <div class="col-3">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <%= icon(name: 'close',
+                         classes: 'd-block d-lg-none',
+                         width: 16,
+                         height: 16) %>
+                <%= icon(name: 'close',
+                         classes: 'd-none d-lg-block',
+                         width: 30,
+                         height: 30) %>
+              </span>
+            </button>
+          </div>
       </div>
+
       <div class="modal-body">
         <div class="card w-100">
           <div class="card-header text-center pb-0 px-0">
