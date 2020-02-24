@@ -100,11 +100,11 @@
   pointer-events: none !important;
 }
 
-#reviewsModal  .carousel-control-prev-icon {
+#reviewsModal .carousel-control-prev-icon {
  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
 
-#reviewsModal  .carousel-control-next-icon {
+#reviewsModal .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
@@ -112,28 +112,17 @@
   width: 5%;
 }
 
-#reviewsModal .modal-dialog {
-  max-width: 100%;
-  min-height: 100%;
-  margin: 0;
+#reviewsModal .modal-content{
+  padding: 0;
 }
-#reviewsModal .modal-content {
+
+#reviewsModal .card {
   border: none;
-  max-width: 920px;
-  margin: auto;
+}
+#reviewsModal .card-header {
+  border-radius: 10px;
 }
 
-#reviewsModal .carousel-inner {
-  height:45vh;
-  overflow-y: scroll;
- }
-
-.modal-backdrop {
-  background: white;
-}
-.modal-backdrop.show {
-  opacity: 1;
-}
 
 
 @media (max-width: 767.98px) {
