@@ -1,18 +1,25 @@
 # Add access to reviews/ratings to the product model
-Spree::Product.class_eval do
-  has_many :reviews
+module Spree
+  module ProductDecorator
 
-  def stars
-    avg_rating.try(:round) || 0
-  end
-
-  def recalculate_rating
-    self[:reviews_count] = reviews.reload.approved.count
-    if reviews_count > 0
-      self[:avg_rating] = reviews.approved.sum(:rating).to_f / reviews_count
-    else
-      self[:avg_rating] = 0
+    def self.prepended(base)
+      base.has_many :reviews
     end
-    save
+
+    def stars
+      avg_rating.try(:round) || 0
+    end
+
+    def recalculate_rating
+      self[:reviews_count] = reviews.reload.approved.count
+      if reviews_count > 0
+        self[:avg_rating] = reviews.approved.sum(:rating).to_f / reviews_count
+      else
+        self[:avg_rating] = 0
+      end
+      save
+    end
   end
 end
+
+Spree::Product.prepend Spree::ProductDecorator
