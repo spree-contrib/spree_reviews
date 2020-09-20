@@ -4,7 +4,7 @@ module Spree
       class ReviewSerializer < BaseSerializer
         set_type :review
 
-        attributes :title, :review, :approved
+        attributes :title, :review
 
         has_one :user
         has_one :product
