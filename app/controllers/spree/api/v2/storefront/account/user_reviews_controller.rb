@@ -14,7 +14,7 @@ module Spree
             private
 
             def resource
-              resource_finder.user_reviews(1).most_recent_first
+              resource_finder.user_reviews(spree_current_user.id).most_recent_first
             end
 
             def collection_serializer
