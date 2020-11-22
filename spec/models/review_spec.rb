@@ -141,6 +141,22 @@ RSpec.describe Spree::Review, type: :model do
         expect(Spree::Review.default_approval_filter.to_a).to match_array expected
       end
     end
+
+    context 'user_reviews' do
+      let!(:user_1) { create(:user, email: 'a@b.com') }
+      let!(:user_2) { create(:user, email: 'b@c.com') }
+
+      let!(:review_1) { create(:review, created_at: 10.days.ago, user: user_1) }
+      let!(:review_2) { create(:review, created_at: 2.days.ago, user: user_2) }
+
+      it 'properly runs user_reviews queries' do
+        expect(described_class.user_reviews(user_1).to_a).to eq([review_1])
+      end
+
+      it 'does not show other users reviews' do
+        expect(described_class.user_reviews(user_2).to_a).to eq([review_2])
+      end
+    end
   end
 
   context '.recalculate_product_rating' do
