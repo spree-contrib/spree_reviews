@@ -145,6 +145,7 @@ RSpec.describe Spree::Review, type: :model do
     context 'user_reviews' do
       let!(:user_1) { create(:user, email: 'a@b.com') }
       let!(:user_2) { create(:user, email: 'b@c.com') }
+
       let!(:review_1) { create(:review, created_at: 10.days.ago, user: user_1) }
       let!(:review_2) { create(:review, created_at: 2.days.ago, user: user_2) }
 
