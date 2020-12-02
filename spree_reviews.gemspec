@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = SpreeReviews.version
   s.summary     = 'Basic review and ratings facility for Spree'
   s.description = s.summary
-  s.required_ruby_version = '>= 2.1.0'
+  s.required_ruby_version = '>= 2.5.0'
 
   s.authors 	   = ['Paul Callaghan']
   s.email        = 'paulcc.two@gmail.com'
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'factory_girl'
+  s.add_development_dependency 'factory_bot'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'coffee-rails'
