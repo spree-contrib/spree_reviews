@@ -1,12 +1,14 @@
-RSpec.feature 'Admin Settings for Reviews', :js do
+require 'spec_helper'
+
+describe 'Admin Settings for Reviews', :js do
   stub_authorization!
 
-  background do
+  before do
     visit spree.edit_admin_review_settings_path
   end
 
-  scenario 'update' do
-    expect(page).to have_text_like 'Size of the review snippets'
+  it 'update' do
+    expect(page).to have_content('Size of the review snippets')
 
     check 'include_unapproved_reviews'
     check 'feedback_rating'
@@ -17,7 +19,7 @@ RSpec.feature 'Admin Settings for Reviews', :js do
     fill_in 'preview_size', with: '5'
     click_button 'Update'
 
-    expect(page).to have_text 'successfully updated!'
+    expect(page).to have_content('successfully updated!')
 
     setting = SpreeReviews::Configuration.new
 

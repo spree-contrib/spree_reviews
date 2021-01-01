@@ -2,25 +2,25 @@ feature 'Reviews', :js do
   let!(:someone) { create(:user, email: 'ryan@spree.com') }
   let!(:review) { create(:review, :approved, user: someone) }
 
-  background do
+  before do
     SpreeReviews::Config.include_unapproved_reviews = false
   end
 
   context 'product with no review' do
     let!(:product_no_reviews) { create(:product) }
-    scenario 'informs that no reviews has been written yet' do
+    it 'informs that no reviews has been written yet' do
       visit spree.product_path(product_no_reviews)
       expect(page).to have_text Spree.t(:no_reviews_available)
     end
 
     # Regression test for #103
     context 'shows correct number of previews' do
-      background do
+      before do
         create_list :review, 3, product: product_no_reviews, approved: true
         SpreeReviews::Config[:preview_size] = 2
       end
 
-      scenario 'displayed reviews are limited by the set preview size' do
+      it 'displayed reviews are limited by the set preview size' do
         visit spree.product_path(product_no_reviews)
         expect(page.all('.review').count).to be(2)
       end
@@ -28,20 +28,20 @@ feature 'Reviews', :js do
   end
 
   context 'when anonymous user' do
-    background do
+    before do
       SpreeReviews::Config.require_login = true
     end
 
     context 'visit product with review' do
-      background do
+      before do
         visit spree.product_path(review.product)
       end
 
-      scenario 'can see review title' do
+      it 'can see review title' do
         expect(page).to have_text review.title
       end
 
-      scenario 'can see a prompt to review' do
+      it 'can see a prompt to review' do
         expect(page).to have_text Spree.t(:write_your_own_review)
       end
     end
@@ -50,25 +50,25 @@ feature 'Reviews', :js do
   context 'when logged in user' do
     let!(:user) { create(:user) }
 
-    background do
+    before do
       sign_in_as! user
     end
 
     context 'visit product with review' do
-      background do
+      before do
         reset_spree_preferences
         visit spree.product_path(review.product)
       end
 
-      scenario 'can see review title' do
+      it 'can see review title' do
         expect(page).to have_text review.title
       end
 
-      scenario 'can see create new review button' do
+      it 'can see create new review button' do
         expect(page).to have_text Spree.t(:write_your_own_review)
       end
 
-      scenario 'can create new review' do
+      it 'can create new review' do
         click_on Spree.t(:write_your_own_review)
 
         expect(page).to have_text Spree.t(:leave_us_a_review_for, name: review.product.name)
@@ -93,11 +93,11 @@ feature 'Reviews', :js do
     let!(:user) { create(:user) }
     let!(:review) { create(:review, :approved, :hide_identifier, review: 'review text', user: user) }
 
-    background do
+    before do
       visit spree.product_path(review.product)
     end
 
-    scenario 'show anonymous review' do
+    it 'show anonymous review' do
       expect(page).to have_text Spree.t(:anonymous)
       expect(page).to have_text 'review text'
     end
