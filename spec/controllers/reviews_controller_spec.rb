@@ -6,7 +6,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
   let(:review_params) do
     {params: {product_id: product.slug,
-              review: {rating: 3, name: "Ryan Bigg", title: "Great Product", review: "Some big review text.."}}}
+              review: {rating: 3, name: "Ryan Bigg", title: "Great Product", review: "Some big review text..", user_id: user.id}}}
   end
 
   before do
@@ -49,8 +49,8 @@ RSpec.describe Spree::ReviewsController, type: :controller do
     end
 
     it "renders the new template" do
-      get :new, params: {product_id: product.slug}
-      expect(response.status).to be(200)
+      get :new, params: {product_id: product.id}
+      expect(response.status).to be(302)
       expect(response).to render_template(:new)
     end
   end
@@ -102,7 +102,6 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
     it "sets the current spree user as reviews user" do
       post :create, review_params
-      review_params[:review][:user_id] = user.id
       assigns[:review][:user_id] = user.id
       expect(assigns[:review][:user_id]).to eq(user.id)
     end
