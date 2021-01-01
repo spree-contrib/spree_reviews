@@ -1,4 +1,6 @@
 RSpec.describe Spree::FeedbackReviewsController, type: :controller do
+  stub_authorization!
+
   let(:user) { create(:user) }
   let(:product) { create(:product) }
   let(:review) { create(:review, user: user) }

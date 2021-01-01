@@ -1,12 +1,17 @@
-require 'spec_helper'
-
 RSpec.describe Spree::ReviewsController, type: :controller do
+  stub_authorization!
+
   let(:user) { create(:user) }
   let(:product) { create(:product) }
 
   let(:review_params) do
-    {params: {product_id: product.slug,
-              review: {rating: 3, name: "Ryan Bigg", title: "Great Product", review: "Some big review text..", user_id: user.id}}}
+    {params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
+          }
   end
 
   before do
@@ -50,7 +55,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
     it "renders the new template" do
       get :new, params: {product_id: product.id}
-      expect(response.status).to be(302)
+      expect(response.status).to be(200)
       expect(response).to render_template(:new)
     end
   end
@@ -115,8 +120,15 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
       it "does not create a review" do
         expect(Spree::Review.count).to be(0)
-        review_params[:review][:rating] = "not_a_number"
-        post :create, review_params
+        post :create, params: {
+                        product_id: product,
+                            review: { rating: "not_a_number",
+                                      name: 'Ryan Bigg',
+                                      title: 'Great Product',
+                                      review: 'Some big review text..'
+                                    }
+                              }
+
         expect(Spree::Review.count).to be(0)
       end
     end
