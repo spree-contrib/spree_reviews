@@ -2,7 +2,6 @@ module Spree
   class ReviewsController < Spree::StoreController
     helper Spree::BaseHelper
     before_action :load_product, only: [:index, :new, :create]
-    rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
     def index
       @approved_reviews = Spree::Review.approved.where(product: @product)

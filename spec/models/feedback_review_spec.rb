@@ -5,7 +5,7 @@ RSpec.describe Spree::FeedbackReview, type: :model do
     end
 
     it 'validates with a nil user' do
-      expect(build(:feedback_review, user: nil)).to be_valid
+      expect(build(:feedback_review, user: nil)).not_to be_valid
     end
 
     it 'does not validate with a nil review' do
