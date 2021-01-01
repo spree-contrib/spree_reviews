@@ -14,12 +14,14 @@ module Spree
         else
           flash[:error] = Spree.t(:error_approve_review)
         end
+
         redirect_to admin_reviews_path
       end
 
       def edit
         return if @review.product
         flash[:error] = Spree.t(:error_no_product)
+        
         redirect_to admin_reviews_path
       end
 
