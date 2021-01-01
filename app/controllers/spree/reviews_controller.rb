@@ -12,7 +12,6 @@ class Spree::ReviewsController < Spree::StoreController
     authorize! :create, @review
   end
 
-  # save if all ok
   def create
     params[:review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:review][:rating].blank?
 
@@ -20,7 +19,7 @@ class Spree::ReviewsController < Spree::StoreController
     @review.product = @product
     @review.user = spree_current_user if spree_user_signed_in?
     @review.ip_address = request.remote_ip
-    @review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
+    @review.locale = I18n.locale.to_s if SpreeReviews::Config[:track_locale]
 
     authorize! :create, @review
     if @review.save

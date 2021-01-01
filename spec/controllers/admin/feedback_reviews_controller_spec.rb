@@ -18,7 +18,7 @@ RSpec.describe Spree::Admin::FeedbackReviewsController, type: :controller do
     let!(:other_feedback_review_2) { create(:feedback_review, created_at: 2.days.ago, review: other_review) }
 
     it 'looks up feedback reviews for the specified review and renders the template' do
-      spree_get :index, review_id: review.id
+      get :index, review_id: review.id
       expect(response.status).to be(200)
       expect(response).to render_template(:index)
       expect(assigns(:collection)).to match_array [feedback_review_2, feedback_review_3, feedback_review_1]

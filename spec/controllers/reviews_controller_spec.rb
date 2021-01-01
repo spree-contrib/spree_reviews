@@ -17,7 +17,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
   context '#index' do
     context 'for a product that does not exist' do
       it 'responds with a 404' do
-        spree_get :index, product_id: 'not_real'
+        get :index, product_id: 'not_real'
         expect(response.status).to be(404)
       end
     end
@@ -28,7 +28,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
           create(:review, :approved, product: product),
           create(:review, :approved, product: product)
         ]
-        spree_get :index, product_id: product.slug
+        get :index, product_id: product.slug
         expect(assigns[:approved_reviews]).to match_array(approved_reviews)
       end
     end
@@ -37,7 +37,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
   context '#new' do
     context 'for a product that does not exist' do
       it 'responds with a 404' do
-        spree_get :new, product_id: 'not_real'
+        get :new, product_id: 'not_real'
         expect(response.status).to be(404)
       end
     end
@@ -51,7 +51,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
     end
 
     it 'renders the new template' do
-      spree_get :new, product_id: product.slug
+      get :new, product_id: product.slug
       expect(response.status).to be(200)
       expect(response).to render_template(:new)
     end
@@ -128,7 +128,7 @@ RSpec.describe Spree::ReviewsController, type: :controller do
     # It always sets the locale so preference pointless
     context 'when config requires locale tracking:' do
       it 'sets the locale' do
-        Spree::Reviews::Config.preferred_track_locale = true
+        SpreeReviews::Config.preferred_track_locale = true
         spree_post :create, review_params
         expect(assigns[:review].locale).to eq I18n.locale.to_s
       end

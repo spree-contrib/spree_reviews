@@ -15,7 +15,7 @@
   <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 60, class: 'form-control' %>
 </div>
 
-<% if Spree::Reviews::Config[:track_locale] %>
+<% if SpreeReviews::Config[:track_locale] %>
   <div class="form-group">
     <%= f.label :locale %>
     <%= f.select :locale, I18n.available_locales.map { |lc| [t(lc, default: lc.to_s), lc.to_s] }, {}, class: 'select2' %>

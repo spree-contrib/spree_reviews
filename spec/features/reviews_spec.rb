@@ -1,13 +1,13 @@
 feature 'Reviews', :js do
-  given!(:someone) { create(:user, email: 'ryan@spree.com') }
-  given!(:review) { create(:review, :approved, user: someone) }
+  let!(:someone) { create(:user, email: 'ryan@spree.com') }
+  let!(:review) { create(:review, :approved, user: someone) }
 
   background do
-    Spree::Reviews::Config.include_unapproved_reviews = false
+    SpreeReviews::Config.include_unapproved_reviews = false
   end
 
   context 'product with no review' do
-    given!(:product_no_reviews) { create(:product) }
+    let!(:product_no_reviews) { create(:product) }
     scenario 'informs that no reviews has been written yet' do
       visit spree.product_path(product_no_reviews)
       expect(page).to have_text Spree.t(:no_reviews_available)
@@ -17,7 +17,7 @@ feature 'Reviews', :js do
     context 'shows correct number of previews' do
       background do
         create_list :review, 3, product: product_no_reviews, approved: true
-        Spree::Reviews::Config[:preview_size] = 2
+        SpreeReviews::Config[:preview_size] = 2
       end
 
       scenario 'displayed reviews are limited by the set preview size' do
@@ -29,7 +29,7 @@ feature 'Reviews', :js do
 
   context 'when anonymous user' do
     background do
-      Spree::Reviews::Config.require_login = true
+      SpreeReviews::Config.require_login = true
     end
 
     context 'visit product with review' do
@@ -48,7 +48,7 @@ feature 'Reviews', :js do
   end
 
   context 'when logged in user' do
-    given!(:user) { create(:user) }
+    let!(:user) { create(:user) }
 
     background do
       sign_in_as! user
@@ -90,8 +90,8 @@ feature 'Reviews', :js do
   end
 
   context 'visits product with review where show_identifier is false' do
-    given!(:user) { create(:user) }
-    given!(:review) { create(:review, :approved, :hide_identifier, review: 'review text', user: user) }
+    let!(:user) { create(:user) }
+    let!(:review) { create(:review, :approved, :hide_identifier, review: 'review text', user: user) }
 
     background do
       visit spree.product_path(review.product)

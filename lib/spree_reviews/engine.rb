@@ -4,18 +4,19 @@ module SpreeReviews
     isolate_namespace Spree
     engine_name 'spree_reviews'
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    # use rspec for tests
+    config.generators do |g|
+      g.test_framework :rspec
+    end
 
-    initializer 'spree.reviews.environment', before: :load_config_initializers do
-      Spree::Reviews::Config = Spree::ReviewSetting.new
+    initializer 'spree_reviews.environment', before: :load_config_initializers do |_app|
+      SpreeReviews::Config = SpreeReviews::Configuration.new
     end
 
     def self.activate
-      cache_klasses = %W(#{config.root}/app/**/*_decorator*.rb #{config.root}/app/overrides/*.rb)
-      Dir.glob(cache_klasses) do |klass|
-        Rails.configuration.cache_classes ? require(klass) : load(klass)
+      Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
+        Rails.configuration.cache_classes ? require(c) : load(c)
       end
-      Spree::Ability.register_ability(Spree::ReviewsAbility)
     end
 
     config.to_prepare(&method(:activate).to_proc)

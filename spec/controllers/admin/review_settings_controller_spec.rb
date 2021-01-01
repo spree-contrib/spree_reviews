@@ -22,7 +22,7 @@ RSpec.describe Spree::Admin::ReviewSettingsController, type: :controller do
             track_locale: true
             show_identifier: true' do
 
-      subject { Spree::Reviews::Config }
+      subject { SpreeReviews::Configuration }
 
       it 'sets preferred_include_unapproved_reviews to false' do
         spree_put :update, preferences: { include_unapproved_reviews: true }
@@ -63,7 +63,7 @@ RSpec.describe Spree::Admin::ReviewSettingsController, type: :controller do
 
   context '#edit' do
     it 'renders the edit template' do
-      spree_get :edit
+      get :edit
       expect(response).to render_template(:edit)
     end
   end
