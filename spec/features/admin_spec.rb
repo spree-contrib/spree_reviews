@@ -5,7 +5,7 @@ describe 'Review Admin', :js do
 
   let!(:review) { create(:review) }
 
-  it 'index' do
+  context 'index' do
     before do
       visit spree.admin_reviews_path
     end
