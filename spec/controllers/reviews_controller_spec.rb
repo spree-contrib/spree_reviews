@@ -6,12 +6,11 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
   let(:review_params) do
     {params:
-          { product_id: product,
-            review: { rating: 3,
-                      name: 'Ryan Bigg',
-                      title: 'Great Product',
-                      review: 'Some big review text..' } }
-          }
+          {product_id: product,
+           review: {rating: 3,
+                    name: "Ryan Bigg",
+                    title: "Great Product",
+                    review: "Some big review text.."}}}
   end
 
   before do
@@ -121,13 +120,12 @@ RSpec.describe Spree::ReviewsController, type: :controller do
       it "does not create a review" do
         expect(Spree::Review.count).to be(0)
         post :create, params: {
-                        product_id: product,
-                            review: { rating: "not_a_number",
-                                      name: 'Ryan Bigg',
-                                      title: 'Great Product',
-                                      review: 'Some big review text..'
-                                    }
-                              }
+          product_id: product,
+          review: {rating: "not_a_number",
+                   name: "Ryan Bigg",
+                   title: "Great Product",
+                   review: "Some big review text.."}
+        }
 
         expect(Spree::Review.count).to be(0)
       end
