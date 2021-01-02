@@ -8,7 +8,13 @@ describe 'Admin Settings for Reviews', :js do
   end
 
   it 'update' do
-    expect(page).to have_content('Size of the review snippets')
+    the_key_string = 'Size of the review snippets'
+
+    if Spree.version.to_f < 4.0
+      expect(page).to have_content(the_key_string.upcase)
+    else
+      expect(page).to have_content(the_key_string)
+    end
 
     check 'include_unapproved_reviews'
     check 'feedback_rating'
