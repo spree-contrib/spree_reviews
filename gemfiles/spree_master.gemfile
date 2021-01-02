@@ -2,8 +2,8 @@
 
 source "https://rubygems.org"
 
-gem "spree", github: "spree/spree", branch: "master"
-gem "spree_auth_devise", github: "spree/spree_auth_devise", branch: "master"
+gem "spree", branch: "master", git: "https://github.com/spree/spree.git"
 gem "rails-controller-testing"
+gem "spree_auth_devise", branch: "master", git: "https://github.com/spree/spree_auth_devise.git"
 
 gemspec path: "../"
