@@ -1,11 +1,10 @@
 module Spree
   module Admin
     class ReviewSettingsController < ResourceController
-
       def update
         settings = SpreeReviews::Configuration.new
 
-        preferences = params && params.key?(:preferences) ? params.delete(:preferences) : params
+        preferences = params&.key?(:preferences) ? params.delete(:preferences) : params
         preferences.each do |name, value|
           next unless settings.has_preference? name
           settings[name] = value
