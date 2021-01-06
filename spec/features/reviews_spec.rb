@@ -63,7 +63,7 @@ feature "Reviews", :js do
       end
 
       it "can create new review" do
-        user = create(:admin_user, email: "admin4546@person.com", password: "password", password_confirmation: "password")
+        user = create(:user, email: "admin4546@person.com", password: "password", password_confirmation: "password")
 
         click_on Spree.t(:write_your_own_review)
         fill_in "Email", with: user.email
