@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :feedback_review, class: Spree::FeedbackReview do
     user
     review
