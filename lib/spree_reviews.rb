@@ -4,6 +4,7 @@ require 'spree_reviews/version'
 require 'spree_extension'
 require 'coffee_script'
 require 'sass/rails'
+require 'deface'
 
 module Spree
   module Reviews

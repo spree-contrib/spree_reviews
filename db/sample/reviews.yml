@@ -9,6 +9,7 @@ r1:
   title: "more uses for this item"
   review: <%= Faker::Lorem.paragraph %>
   approved: true
+  show_identifier: true
 r2: 
   product: ror_tote
   name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
@@ -17,6 +18,7 @@ r2:
   title: "further comments"
   review: <%= Faker::Lorem.paragraph %>
   approved: false
+  show_identifier: true
 r3: 
   product: ror_ringer
   name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
@@ -25,6 +27,7 @@ r3:
   title: "essential wear"
   review: <%= Faker::Lorem.paragraph %>
   approved: false
+  show_identifier: true
 r4: 
   product: apache_baseball_jersey
   name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
@@ -33,6 +36,7 @@ r4:
   title: "not impressed"
   review: <%= Faker::Lorem.paragraph %>
   approved: true
+  show_identifier: true
 r5: 
   product: ror_ringer
   name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
@@ -41,6 +45,7 @@ r5:
   title: "I have one for every day of the week"
   review: <%= Faker::Lorem.paragraph %>
   approved: true
+  show_identifier: true
 r6: 
   product: ror_ringer
   name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
@@ -49,6 +54,7 @@ r6:
   title: "cooler than my toga"
   review: <%= Faker::Lorem.paragraph %>
   approved: true
+  show_identifier: true
 r7: 
   product: ror_ringer
   name: <%= Faker::Name.first_name %>  <%= Faker::Name.last_name %>
@@ -57,3 +63,4 @@ r7:
   title: "my other half didn't like it"
   review: <%= Faker::Lorem.paragraph %>
   approved: false
+  show_identifier: true

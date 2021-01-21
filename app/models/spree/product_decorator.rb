@@ -16,3 +16,5 @@ Spree::Product.class_eval do
     save
   end
 end
+
+module Spree::ProductDecorator; end
