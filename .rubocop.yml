@@ -4,6 +4,7 @@ AllCops:
   TargetRubyVersion: 2.5
   Exclude:
     - '**/db/migrate/*'
+    - '**/gemfiles/*'
     - '**/Gemfile'
     - '**/Gemfile.lock'
     - '**/Rakefile'

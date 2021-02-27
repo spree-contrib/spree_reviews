@@ -3,7 +3,7 @@ RSpec.describe Spree::Product, type: :model do
   it { is_expected.to respond_to(:reviews) }
   it { is_expected.to respond_to(:stars) }
 
-  context '.stars' do
+  describe '.stars' do
     let(:product) { build(:product) }
 
     it 'rounds' do
@@ -22,7 +22,7 @@ RSpec.describe Spree::Product, type: :model do
     end
   end
 
-  context '.recalculate_rating' do
+  describe '.recalculate_rating' do
     let!(:product) { create(:product) }
 
     context 'when there are approved reviews' do

@@ -7,7 +7,7 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
       params: {
         review_id: review.id,
         user_id: user.id,
-        feedback_review: {rating: "4 stars", comment: "some comment"}
+        feedback_review: { rating: '4 stars', comment: 'some comment' }
       }
     }
   end
@@ -15,14 +15,14 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
   before do
     allow(controller).to receive(:spree_current_user).and_return(user)
     allow(controller).to receive(:spree_user_signed_in?).and_return(true)
-    request.env["HTTP_REFERER"] = "/"
+    request.env['HTTP_REFERER'] = '/'
   end
 
-  describe "#create" do
-    it "creates a new feedback review" do
+  describe '#create' do
+    it 'creates a new feedback review' do
       rating = 4
       comment = generate(:random_description)
-      expect {
+      expect do
         post(
           :create,
           params: {
@@ -36,7 +36,7 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
         )
         expect(response.status).to be(200)
         expect(response).to render_template(:create)
-      }.to change(Spree::Review, :count).by(1)
+      end.to change(Spree::Review, :count).by(1)
 
       feedback_review = Spree::FeedbackReview.last
 
@@ -46,33 +46,33 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
       expect(feedback_review.user).to eq(user)
     end
 
-    it "redirects back to the calling page" do
+    it 'redirects back to the calling page' do
       post :create, valid_attributes
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to('/')
     end
 
-    it "sets locale on feedback-review if required by config" do
+    it 'sets locale on feedback-review if required by config' do
       SpreeReviews::Config.preferred_track_locale = true
       post :create, valid_attributes
       expect(assigns[:review].locale).to eq I18n.locale.to_s
     end
 
-    it "fails when user is not authorized" do
+    it 'fails when user is not authorized' do
       allow(controller).to receive(:authorize!) { raise }
-      expect {
+      expect do
         post :create, valid_attributes
-      }.to raise_error
+      end.to raise_error
     end
 
-    it "removes all non-numbers from ratings parameter" do
+    it 'removes all non-numbers from ratings parameter' do
       post :create, valid_attributes
-      expect(controller.params[:feedback_review][:rating]).to eq("4")
+      expect(controller.params[:feedback_review][:rating]).to eq('4')
     end
 
-    it "does not create feedback-review if review doesnt exist" do
-      expect {
+    it 'does not create feedback-review if review doesnt exist' do
+      expect do
         post :create, valid_attributes.merge!(review_id: nil)
-      }.to raise_error
+      end.to raise_error
     end
   end
 end

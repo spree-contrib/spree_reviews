@@ -26,6 +26,7 @@ class Spree::Review < ActiveRecord::Base
 
   def feedback_stars
     return 0 if feedback_reviews.size <= 0
+
     ((feedback_reviews.sum(:rating) / feedback_reviews.size) + 0.5).floor
   end
 

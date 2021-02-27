@@ -1,7 +1,7 @@
 require 'cancan/matchers'
 
 RSpec.describe Spree::ReviewsAbility, type: :model do
-  context '.allow_anonymous_reviews?' do
+  describe '.allow_anonymous_reviews?' do
     it 'depends on SpreeReviews::Config[:require_login]' do
       SpreeReviews::Config[:require_login] = false
       expect(described_class.allow_anonymous_reviews?).to be(true)

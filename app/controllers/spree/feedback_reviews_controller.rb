@@ -35,11 +35,11 @@ module Spree
     end
 
     def sanitize_rating
-      params[:feedback_review][:rating].to_s.sub!(/\s*[^0-9]*\z/, "") unless params[:feedback_review] && params[:feedback_review][:rating].blank?
+      params[:feedback_review][:rating].to_s.sub!(/\s*[^0-9]*\z/, '') unless params[:feedback_review] && params[:feedback_review][:rating].blank?
     end
 
     def redirect_back(fallback_location:)
-      if Rails.gem_version >= Gem::Version.new("5.x")
+      if Rails.gem_version >= Gem::Version.new('5.x')
         super
       else
         redirect_to :back
