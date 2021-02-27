@@ -2,15 +2,6 @@ RSpec.describe Spree::ReviewsController, type: :controller do
   let(:user) { create(:user) }
   let(:product) { create(:product) }
 
-  let(:review_params) do
-    { params:
-          { product_id: product,
-            review: { rating: 3,
-                      name: 'Ryan Bigg',
-                      title: 'Great Product',
-                      review: 'Some big review text..' } } }
-  end
-
   before do
     allow(controller).to receive(:spree_current_user).and_return(user)
     allow(controller).to receive(:spree_user_signed_in?).and_return(true)
@@ -70,40 +61,75 @@ RSpec.describe Spree::ReviewsController, type: :controller do
 
     it 'creates a new review' do
       expect do
-        post :create, review_params
+        post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       end.to change(Spree::Review, :count).by(1)
     end
 
     it 'sets the ip-address of the remote' do
       allow_any_instance_of(ActionDispatch::Request).to receive(:remote_ip).and_return('127.0.0.1')
-      post :create, review_params
+      post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       expect(assigns[:review].ip_address).to eq '127.0.0.1'
     end
 
     it 'fails if the user is not authorized to create a review' do
       allow(controller).to receive(:authorize!) { raise }
       expect do
-        post :create, review_params
+        post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       end.to raise_error
     end
 
     it 'flashes the notice' do
-      post :create, review_params
+      post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       expect(flash[:notice]).to eq Spree.t(:review_successfully_submitted)
     end
 
     it 'redirects to product page' do
-      post :create, review_params
+      post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       expect(response).to redirect_to spree.product_path(product)
     end
 
     it 'removes all non-numbers from ratings param' do
-      post :create, review_params
+      post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       expect(controller.params[:review][:rating]).to eq('3')
     end
 
     it 'sets the current spree user as reviews user' do
-      post :create, review_params
+      post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
       assigns[:review][:user_id] = user.id
       expect(assigns[:review][:user_id]).to eq(user.id)
     end
@@ -111,7 +137,12 @@ RSpec.describe Spree::ReviewsController, type: :controller do
     context 'with invalid params' do
       it 'renders new when review.save fails' do
         allow_any_instance_of(Spree::Review).to receive(:save).and_return(false)
-        post :create, review_params
+        post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
         expect(response).to render_template :new
       end
 
@@ -133,7 +164,12 @@ RSpec.describe Spree::ReviewsController, type: :controller do
     context 'when config requires locale tracking:' do
       it 'sets the locale' do
         SpreeReviews::Config.preferred_track_locale = true
-        post :create, review_params
+        post :create, params:
+          { product_id: product,
+            review: { rating: 3,
+                      name: 'Ryan Bigg',
+                      title: 'Great Product',
+                      review: 'Some big review text..' } }
         expect(assigns[:review].locale).to eq I18n.locale.to_s
       end
     end

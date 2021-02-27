@@ -2,15 +2,6 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
   let(:user) { create(:user) }
   let(:product) { create(:product) }
   let(:review) { create(:review, user: user) }
-  let(:valid_attributes) do
-    {
-      params: {
-        review_id: review.id,
-        user_id: user.id,
-        feedback_review: { rating: '4 stars', comment: 'some comment' }
-      }
-    }
-  end
 
   before do
     allow(controller).to receive(:spree_current_user).and_return(user)
@@ -47,31 +38,51 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
     end
 
     it 'redirects back to the calling page' do
-      post :create, valid_attributes
+      post :create, params: {
+        review_id: review.id,
+        user_id: user.id,
+        feedback_review: { rating: '4 stars', comment: 'some comment' }
+      }
       expect(response).to redirect_to('/')
     end
 
     it 'sets locale on feedback-review if required by config' do
       SpreeReviews::Config.preferred_track_locale = true
-      post :create, valid_attributes
+      post :create, params: {
+        review_id: review.id,
+        user_id: user.id,
+        feedback_review: { rating: '4 stars', comment: 'some comment' }
+      }
       expect(assigns[:review].locale).to eq I18n.locale.to_s
     end
 
     it 'fails when user is not authorized' do
       allow(controller).to receive(:authorize!) { raise }
       expect do
-        post :create, valid_attributes
+        post :create, params: {
+        review_id: review.id,
+        user_id: user.id,
+        feedback_review: { rating: '4 stars', comment: 'some comment' }
+      }
       end.to raise_error
     end
 
     it 'removes all non-numbers from ratings parameter' do
-      post :create, valid_attributes
+      post :create, params: {
+        review_id: review.id,
+        user_id: user.id,
+        feedback_review: { rating: '4 stars', comment: 'some comment' }
+      }
       expect(controller.params[:feedback_review][:rating]).to eq('4')
     end
 
     it 'does not create feedback-review if review doesnt exist' do
       expect do
-        post :create, valid_attributes.merge!(review_id: nil)
+        post :create, params: {
+        review_id: nil,
+        user_id: user.id,
+        feedback_review: { rating: '4 stars', comment: 'some comment' }
+      }
       end.to raise_error
     end
   end
