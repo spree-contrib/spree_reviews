@@ -3,6 +3,7 @@ require: rubocop-rspec
 AllCops:
   TargetRubyVersion: 2.5
   Exclude:
+    - '**/bin/*'
     - '**/db/migrate/*'
     - '**/gemfiles/*'
     - '**/Gemfile'
