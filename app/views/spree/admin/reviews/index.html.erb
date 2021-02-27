@@ -2,6 +2,12 @@
 	<%= Spree.t(:reviews) %>
 <% end %>
 
+<% if Spree.version.to_f < 4.2 %>
+	<% svg_icon = '' %>
+<% else %>
+	<% svg_icon = '.svg' %>
+<% end %>
+
 <% content_for :table_filter do %>
   <div data-hook="admin_reviews_index_search">
     <%= search_form_for [:admin, @search] do |f| %>
@@ -69,7 +75,7 @@
 					<td><%= l review.created_at, format: :short %></td>
 					<td data-hook="admin_reviews_index_row_actions" class="actions">
 						<span class="d-flex justify-content-end">
-    					<%= link_to_with_icon 'save.svg', Spree.t(:approve), approve_admin_review_url(review), no_text: true, class: 'approve btn btn-sm btn-outline-secondary' unless review.approved %>
+    					<%= link_to_with_icon "save#{svg_icon}", Spree.t(:approve), approve_admin_review_url(review), no_text: true, class: 'approve btn btn-sm btn-outline-secondary' unless review.approved %>
               <%= link_to_edit review, no_text: true, class: 'edit' %>
               <%= link_to_delete review, no_text: true %>
 						</span>

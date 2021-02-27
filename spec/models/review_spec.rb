@@ -167,17 +167,16 @@ RSpec.describe Spree::Review, type: :model do
     let!(:review) { create(:review) }
 
     before do
-      12.times do |_i|
+      3.times do |i|
         f = Spree::FeedbackReview.new
         f.user = user
         f.review = review
-        f.rating = (2)
+        f.rating = (i + 1)
         f.save!
       end
     end
 
     it 'returns the average rating from feedback reviews' do
-      # No Feedback Stars
       expect(review.feedback_stars).to be(2)
     end
   end
