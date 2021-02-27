@@ -68,11 +68,8 @@ feature "Reviews", :js do
         click_on Spree.t(:write_your_own_review)
         fill_in "Email", with: user.email
         fill_in "Password", with: user.password
-        if Spree.version.to_f < 4.0
-          click_button "Login"
-        else
-          click_button "Log in"
-        end
+        click_button "Login"
+
         expect(page).to have_text Spree.t(:leave_us_a_review_for, name: review.product.name)
         expect(page).not_to have_text "Show Identifier"
 

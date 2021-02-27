@@ -1,11 +1,15 @@
 RSpec.describe Spree::FeedbackReviewsController, type: :controller do
-  stub_authorization!
-
   let(:user) { create(:user) }
   let(:product) { create(:product) }
   let(:review) { create(:review, user: user) }
   let(:valid_attributes) do
-    {params: {review_id: review.id, user_id: user.id, feedback_review: {rating: "4 stars", comment: "some comment"}}}
+    {
+      params: {
+        review_id: review.id,
+        user_id: user.id,
+        feedback_review: {rating: "4 stars", comment: "some comment"}
+      }
+    }
   end
 
   before do
