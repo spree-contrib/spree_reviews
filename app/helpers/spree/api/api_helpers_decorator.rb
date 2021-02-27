@@ -24,8 +24,10 @@ module Spree
 
           reviews_fields = [:avg_rating, :reviews_count]
 
-          reviews_fields.each { |attrib| ::Spree::PermittedAttributes.product_attributes << attrib }
-          reviews_fields.each { |attrib| class_variable_set(:@@product_attributes, class_variable_get(:@@product_attributes).push(attrib)) }
+          reviews_fields.each do |attrib|
+            ::Spree::PermittedAttributes.product_attributes << attrib
+            class_variable_set(:@@product_attributes, class_variable_get(:@@product_attributes).push(attrib))
+          end
         end
       end
 
