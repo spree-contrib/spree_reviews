@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <li><%= button_link_to Spree.t(:back_reviews), admin_reviews_path, icon: 'back' %></li>
+  <%= button_link_to Spree.t(:back_reviews), admin_reviews_path, icon: 'back' %>
 <% end %>
 
 <% if @collection.any? %>
@@ -23,7 +23,9 @@
           <td><%= feedback.rating %></td>
           <td><%= l(feedback.created_at, format: :short) %></td>
           <td data-hook="admin_feedback_row_header_actions" class="actions">
+            <span class="d-flex justify-content-end">
             <%= link_to_delete feedback, no_text: true %>
+          </span>
           </td>
         </tr>
       <% end %>
