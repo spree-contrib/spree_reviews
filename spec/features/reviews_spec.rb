@@ -3,7 +3,7 @@ describe 'Reviews', :js do
   let!(:review) { create(:review, :approved, user: someone) }
 
   before do
-    SpreeReviews::Config.include_unapproved_reviews = false
+    Spree::Reviews::Config.include_unapproved_reviews = false
   end
 
   context 'product with no review' do
@@ -18,7 +18,7 @@ describe 'Reviews', :js do
     context 'shows correct number of previews' do
       before do
         create_list :review, 3, product: product_no_reviews, approved: true
-        SpreeReviews::Config[:preview_size] = 2
+        Spree::Reviews::Config[:preview_size] = 2
       end
 
       it 'displayed reviews are limited by the set preview size' do
@@ -30,7 +30,7 @@ describe 'Reviews', :js do
 
   context 'when anonymous user' do
     before do
-      SpreeReviews::Config.require_login = true
+      Spree::Reviews::Config.require_login = true
     end
 
     context 'visit product with review' do
@@ -51,7 +51,7 @@ describe 'Reviews', :js do
   context 'when logged in user' do
     context 'visit product with review' do
       before do
-        SpreeReviews::Config.require_login = true
+        Spree::Reviews::Config.require_login = true
         visit spree.product_path(review.product)
       end
 

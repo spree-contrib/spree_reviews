@@ -117,7 +117,7 @@ RSpec.describe Spree::Review, type: :model do
         ]
         expect(described_class.not_approved.to_a).to match_array expected
 
-        SpreeReviews::Config[:include_unapproved_reviews] = true
+        Spree::Reviews::Config[:include_unapproved_reviews] = true
         expected = [
           unapproved_review_2,
           approved_review_2,
@@ -127,7 +127,7 @@ RSpec.describe Spree::Review, type: :model do
         ]
         expect(described_class.default_approval_filter.to_a).to match_array expected
 
-        SpreeReviews::Config[:include_unapproved_reviews] = false
+        Spree::Reviews::Config[:include_unapproved_reviews] = false
         expected = [
           approved_review_2,
           approved_review_3,

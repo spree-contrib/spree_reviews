@@ -2,11 +2,11 @@
   <div class="row my-4">
     <div class="col-12">
       <h3 class="product-section-title"><%= Spree.t(:reviews) %></h3>
-      <% if SpreeReviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+      <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
         <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
       <% else %>
         <%= render 'spree/shared/rating', product: @product, review: 0 %>
-        <% if SpreeReviews::Config[:track_locale] %>
+        <% if Spree::Reviews::Config[:track_locale] %>
           <% @approved_reviews.localized(I18n.locale).each do |review| %>
             <%= render 'spree/shared/review', review: review %>
           <% end %>

@@ -1,4 +1,4 @@
-RSpec.describe SpreeReviews::Configuration do
+RSpec.describe Spree::ReviewSetting do
   subject { described_class.new }
 
   before do

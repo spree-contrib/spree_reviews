@@ -4,7 +4,7 @@
     <div class="error"><%= @feedback_review.errors[:rating] %></div>
   <% end %>
   <%= Spree.t(:was_this_review_helpful) %>
-  <% for i in 1..SpreeReviews::Config.stars %>
+  <% for i in 1..Spree::Reviews::Config.stars %>
     <%= radio_button_tag 'feedback_review[rating]', Spree.t(:star, count: i), false, class: 'star' %>
   <% end %>
   <button class="feedback-review btn btn-default">

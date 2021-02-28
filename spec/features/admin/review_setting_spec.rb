@@ -27,7 +27,7 @@ describe 'Admin Settings for Reviews', :js do
 
     expect(page).to have_content('successfully updated!')
 
-    setting = SpreeReviews::Configuration.new
+    setting = Spree::ReviewSetting.new
 
     expect(setting.preferred_include_unapproved_reviews).to be(true)
     expect(setting.preferred_feedback_rating).to be(true)

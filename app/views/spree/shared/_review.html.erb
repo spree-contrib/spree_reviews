@@ -10,7 +10,7 @@
   <span itemprop="datePublished" content="<%= review.created_at.to_date.to_s %>"></span>
   <span itemprop="reviewRating" content="<%= review.rating %>"></span>
   <% if review.show_identifier %>
-    <% if SpreeReviews::Config[:show_email] && review.user %>
+    <% if Spree::Reviews::Config[:show_email] && review.user %>
       <span itemprop="author"><%= review.user.email %></span>
     <% else %>
       <span itemprop="author"><%= review.name %></span>
@@ -21,7 +21,7 @@
   <div itemprop="reviewBody">
     <%= simple_format(review.review) %>
   </div>
-  <% if SpreeReviews::Config[:feedback_rating] && (!SpreeReviews::Config[:require_login] || spree_current_user) %>
+  <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
     <div class="feedback_review" id="feedback_review_<%= review.id %>">
       <%= render 'spree/feedback_reviews/form', review: review %>
     </div>

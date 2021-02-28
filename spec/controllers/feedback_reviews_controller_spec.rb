@@ -47,7 +47,7 @@ RSpec.describe Spree::FeedbackReviewsController, type: :controller do
     end
 
     it 'sets locale on feedback-review if required by config' do
-      SpreeReviews::Config.preferred_track_locale = true
+      Spree::Reviews::Config.preferred_track_locale = true
       post :create, params: {
         review_id: review.id,
         user_id: user.id,

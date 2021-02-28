@@ -21,7 +21,7 @@ RSpec.describe Spree::Admin::ReviewSettingsController, type: :controller do
             require_login: false,
             track_locale: true
             show_identifier: true' do
-      subject { SpreeReviews::Config }
+      subject { Spree::Reviews::Config }
 
       it 'sets preferred_include_unapproved_reviews to false' do
         put :update, params: { preferences: { include_unapproved_reviews: true } }

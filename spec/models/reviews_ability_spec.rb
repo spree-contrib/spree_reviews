@@ -2,10 +2,10 @@ require 'cancan/matchers'
 
 RSpec.describe Spree::ReviewsAbility, type: :model do
   describe '.allow_anonymous_reviews?' do
-    it 'depends on SpreeReviews::Config[:require_login]' do
-      SpreeReviews::Config[:require_login] = false
+    it 'depends on Spree::Reviews::Config[:require_login]' do
+      Spree::Reviews::Config[:require_login] = false
       expect(described_class.allow_anonymous_reviews?).to be(true)
-      SpreeReviews::Config[:require_login] = true
+      Spree::Reviews::Config[:require_login] = true
       expect(described_class.allow_anonymous_reviews?).to be(false)
     end
   end
@@ -16,7 +16,7 @@ RSpec.describe Spree::ReviewsAbility, type: :model do
 
     context 'when anonymous reviews are allowed' do
       before do
-        SpreeReviews::Config[:require_login] = false
+        Spree::Reviews::Config[:require_login] = false
       end
 
       it 'lets anyone create a review or feedback review' do
@@ -29,7 +29,7 @@ RSpec.describe Spree::ReviewsAbility, type: :model do
 
     context 'when anonymous reviews are not allowed' do
       before do
-        SpreeReviews::Config[:require_login] = true
+        Spree::Reviews::Config[:require_login] = true
       end
 
       it 'only allows users with an email to create a review or feedback review' do

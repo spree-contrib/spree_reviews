@@ -21,7 +21,7 @@
     <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 50, class: 'form-control', required: true %>
   </div>
 
-  <% if SpreeReviews::Config[:show_identifier] %>
+  <% if Spree::Reviews::Config[:show_identifier] %>
     <div class="checkbox">
       <%= f.label :show_identifier do %>
         <%= f.check_box :show_identifier, checked: true %>

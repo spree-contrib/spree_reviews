@@ -14,8 +14,6 @@ Straightforward review/rating functionality.
 ```ruby
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '~> 4.0.0'
 ```
-If you are upgrading from the previous version, please see the changelog regarding
-the configs name change.
 
 #### Spree >= 3.1 < 4.1
 
