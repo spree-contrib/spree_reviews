@@ -8,7 +8,7 @@ describe 'Admin Settings for Reviews', :js do
   end
 
   it 'update' do
-    the_key_string = 'Size of the review snippets'
+    the_key_string = Spree.t(:preview_size, scope: :spree_reviews)
 
     if Spree.version.to_f < 4.0
       expect(page).to have_content(the_key_string.upcase)
@@ -23,6 +23,7 @@ describe 'Admin Settings for Reviews', :js do
     check 'track_locale'
     check 'show_identifier'
     fill_in 'preview_size', with: '5'
+    fill_in 'paginate_size', with: '6'
     click_button 'Update'
 
     expect(page).to have_content('successfully updated!')

@@ -46,7 +46,8 @@ en:
       feedback_rating: Rate feedback
       include_unapproved: Include unapproved reviews in listings
       manage_review_settings: Control the display of reviews
-      preview_size: Size of the review snippets
+      paginate_size: How many reviews per page in all reviews
+      preview_size: How many reviews are shown in preview
       require_login: Require user to be logged in
       review_settings: Review Settings
       show_email: Show email addresses

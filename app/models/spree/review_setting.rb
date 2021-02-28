@@ -22,6 +22,9 @@ module Spree
     # (name or email) on their review.
     preference :show_identifier, :boolean, default: false
 
+    # Control how many reviews are shown on the all reviews page.
+    preference :paginate_size, :integer, default: 10
+
     def stars
       5
     end

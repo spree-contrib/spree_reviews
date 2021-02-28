@@ -48,7 +48,7 @@ module Spree
 
     def init_pagination
       @pagination_page = params[:page].present? ? params[:page].to_i : 1
-      @pagination_per_page = params[:per_page].present? ? params[:per_page].to_i : 10
+      @pagination_per_page = params[:per_page].present? ? params[:per_page].to_i : Spree::Reviews::Config[:paginate_size]
     end
   end
 end
