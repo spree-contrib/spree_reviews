@@ -9,23 +9,17 @@ Straightforward review/rating functionality.
 
 ## Installation
 
-#### Spree >= 4.1
+#### Spree >= 3.1
 
 ```ruby
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '~> 4.0.0'
-```
-
-#### Spree >= 3.1 < 4.1
-
-```ruby
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '~> 3.0.0'
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 ```
 
 #### Spree 3.0 and Spree 2.x
 
 ```ruby
- gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'X-X-stable'
- ```
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'X-X-stable'
+```
 
  The `branch` option is important: it must match the version of Spree you're using.
  For example, use `3-0-stable` if you're using Spree `3-0-stable` or any `3.0.x` version.
