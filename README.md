@@ -9,10 +9,18 @@ Straightforward review/rating functionality.
 
 ## Installation
 
-#### Spree >= 3.1
+#### Spree >= 4.1
 
 ```ruby
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '~> 4.0.0'
+```
+If you are upgrading from the previous version, please see the changelog regarding
+the configs name change.
+
+#### Spree >= 3.1 < 4.1
+
+```ruby
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '~> 3.0.0'
 ```
 
 #### Spree 3.0 and Spree 2.x
@@ -85,7 +93,7 @@ See corresponding [contributing guidelines][1].
 
 ---
 
-Copyright (c) 2009-2015 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
+Copyright (c) 2009-2021 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
 
 [1]: https://github.com/spree-contrib/spree_reviews/blob/master/CONTRIBUTING.md
 [2]: https://github.com/spree

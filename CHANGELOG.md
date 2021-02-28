@@ -2,11 +2,12 @@
 
 ### v4.0.0
 
-* Rename / move `Spree::Reviews::Config.stars` to `SpreeReviews::Config.stars` in keeping with standard Spree extension configs, Please update your App as required.
+* Rename / move `Spree::Reviews::Config.stars` to `SpreeReviews::Config.stars` in keeping with standard Spree extension configs, Please update your app as required.
 * Add Zeitwerk compatablility by replacing `class_eval` with `Module.prepend` where appropriate.
-* Update test suite removing outdated `spree_get` and `spree_put` & replacing with `put` `get` where required.
-* Use Spree Dev Tools for Testing.
-
+* Update test suite + Use Spree Dev Tools for testing.
+* Configure view files for Spree 4.1 and up, using Bootstrap 4 layout.
+* Set javascript to use Turbolinks for the new storefront.
+* Add pagination to the reviews index page.
 
 
 ### v3.0.0.beta
