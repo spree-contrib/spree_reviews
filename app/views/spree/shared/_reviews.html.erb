@@ -8,5 +8,10 @@
       <%= render 'spree/shared/review', review: review %>
     <% end %>
   <% end %>
-  <%= link_to Spree.t(:write_your_own_review), new_product_review_path(@product), class: 'btn btn-default', rel: 'nofollow' %>
+  <%= link_to Spree.t(:write_your_own_review), new_product_review_path(@product), class: 'btn btn-primary', rel: 'nofollow' %>
+
+  <% unless Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+    <%= Spree.t(:or) %>
+    <%= link_to Spree.t(:read_all_reviews), product_reviews_path(@product), class: 'btn btn-primary', rel: 'nofollow' %>
+  <% end %>
 </div>

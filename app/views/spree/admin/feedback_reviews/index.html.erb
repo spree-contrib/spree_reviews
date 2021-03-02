@@ -1,36 +1,38 @@
 <% content_for :page_title do %>
-	<%= Spree.t(:feedback_review_for, review: @review.title) %>
+  <%= Spree.t(:feedback_review_for, review: @review.title) %>
 <% end %>
 
 <% content_for :page_actions do %>
-	<li><%= button_link_to Spree.t(:back_reviews), admin_reviews_path, icon: 'back' %></li>
+  <%= button_link_to Spree.t(:back_reviews), admin_reviews_path, icon: 'back' %>
 <% end %>
 
 <% if @collection.any? %>
-	<table class="table" id="listing_feedback">
-		<thead>
-			<tr>
-				<th><%= Spree.t(:user) %></th>
-				<th><%= Spree.t(:stars) %></th>
-				<th><%= Spree.t(:date) %></th>
-				<th data-hook="admin_feedback_index_header_actions" class="actions"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @collection.each do |feedback| %>
-				<tr id="<%= dom_id(feedback) %>" class="<%= cycle('odd', 'even') %>">
-				  <td><%= feedback.user.try(:login) || Spree.t(:anonymous) %></td>
-				  <td><%= feedback.rating %></td>
-				  <td><%= l(feedback.created_at, format: :short) %></td>
-				  <td data-hook="admin_feedback_row_header_actions" class="actions">
-					  <%= link_to_delete feedback, no_text: true %>
-				  </td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+  <table class="table" id="listing_feedback">
+    <thead>
+      <tr>
+        <th><%= Spree.t(:user) %></th>
+        <th><%= Spree.t(:stars) %></th>
+        <th><%= Spree.t(:date) %></th>
+        <th data-hook="admin_feedback_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collection.each do |feedback| %>
+        <tr id="<%= dom_id(feedback) %>" class="<%= cycle('odd', 'even') %>">
+          <td><%= feedback.user.try(:login) || Spree.t(:anonymous) %></td>
+          <td><%= feedback.rating %></td>
+          <td><%= l(feedback.created_at, format: :short) %></td>
+          <td data-hook="admin_feedback_row_header_actions" class="actions">
+            <span class="d-flex justify-content-end">
+            <%= link_to_delete feedback, no_text: true %>
+          </span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% else %>
-	<div class="alert alert-info no-objects-found">
-		<%= Spree.t(:no_results) %>
-	</div>
+  <div class="alert alert-info no-objects-found">
+    <%= Spree.t(:no_results) %>
+  </div>
 <% end %>

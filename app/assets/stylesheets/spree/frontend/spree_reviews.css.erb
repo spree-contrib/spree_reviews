@@ -1,22 +1,18 @@
-/*
- *= require spree/frontend
-*/
-
 #reviews div.header {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .lit {
-  background-color: #aaaaaa;
-  color: #0000bb;
+  background-color: #aaa;
+  color: #00b;
   margin-right: 1px;
   padding-left: 1px;
 }
 
 .unlit {
-  background-color: #aaaaaa;
-  color: #000000;
+  background-color: #aaa;
+  color: #000;
   margin-right: 1px;
   padding-left: 1px;
 }
@@ -34,7 +30,8 @@
 }
 
 /* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
-div.rating-cancel, div.star-rating {
+div.rating-cancel,
+div.star-rating {
   float: left;
   width: 17px;
   height: 16px;
@@ -42,42 +39,45 @@ div.rating-cancel, div.star-rating {
   cursor: pointer;
   display: block;
   background: transparent;
-  overflow: hidden
+  overflow: hidden;
 }
 
-div.rating-cancel, div.rating-cancel a {
+div.rating-cancel,
+div.rating-cancel a {
   background: transparent url(<%= asset_path('store/reviews/delete.gif') %>) no-repeat scroll 0 -1px;
 }
 
-div.star-rating, div.star-rating a {
-  background: url(<%= asset_path('store/reviews/star.gif') %>) no-repeat 0 0px
+div.star-rating,
+div.star-rating a {
+  background: url(<%= asset_path('store/reviews/star.gif') %>) no-repeat 0 0;
 }
 
-div.rating-cancel a, div.star-rating a {
+div.rating-cancel a,
+div.star-rating a {
   display: block;
   width: 16px;
   height: 100%;
-  background-position: 0 0px;
-  border: 0
+  background-position: 0 0;
+  border: 0;
 }
 
 div.star-rating-on a {
-  background-position: 0 -32px !important
+  background-position: 0 -32px !important;
 }
 
 div.star-rating-hover a {
-  background-position: 0 -32px
+  background-position: 0 -32px;
 }
 
 /* Read Only CSS */
 div.star-rating-readonly a {
-  cursor: default !important
+  cursor: default !important;
 }
 
 /* Partial Star CSS */
 div.star-rating {
   background: transparent !important;
-  overflow: hidden !important
+  overflow: hidden !important;
 }
 
 /* END jQuery.Rating Plugin CSS */

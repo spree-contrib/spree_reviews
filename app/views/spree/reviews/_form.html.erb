@@ -8,7 +8,7 @@
 
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, maxlength: 255, size: 50, class: 'form-control' %>
+    <%= f.text_field :name, maxlength: 255, size: 50, class: 'form-control', required: true %>
   </div>
 
   <div class="form-group">
@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= f.label :review %>
-    <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 50, class: 'form-control' %>
+    <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 50, class: 'form-control', required: true %>
   </div>
 
   <% if Spree::Reviews::Config[:show_identifier] %>
@@ -31,6 +31,8 @@
   <% end %>
 
   <div class="form-actions">
-    <%= f.submit Spree.t(:submit_your_review), class: 'btn btn-default' %>
+    <%= f.submit Spree.t(:submit_your_review), class: 'btn btn-primary' %>
+         <%= Spree.t(:or) %>
+    <%= link_to Spree.t(:cancel), product_path(@product), class: 'btn btn-outline-primary', rel: 'nofollow' %>
   </div>
 <% end %>

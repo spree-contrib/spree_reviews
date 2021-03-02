@@ -1,12 +1,7 @@
 RSpec.describe Spree::Review, type: :model do
-
   context 'validations' do
     it 'validates by default' do
       expect(build(:review)).to be_valid
-    end
-
-    it 'validates with a nil user' do
-      expect(build(:review, user: nil)).to be_valid
     end
 
     it 'does not validate with a nil review' do
@@ -143,7 +138,7 @@ RSpec.describe Spree::Review, type: :model do
     end
   end
 
-  context '.recalculate_product_rating' do
+  describe '.recalculate_product_rating' do
     let(:product) { create(:product) }
     let!(:review) { create(:review, product: product) }
 
@@ -167,14 +162,17 @@ RSpec.describe Spree::Review, type: :model do
     end
   end
 
-  context '.feedback_stars' do
+  describe '.feedback_stars' do
+    let!(:user) { create(:user) }
     let!(:review) { create(:review) }
+
     before do
       3.times do |i|
         f = Spree::FeedbackReview.new
+        f.user = user
         f.review = review
         f.rating = (i + 1)
-        f.save
+        f.save!
       end
     end
 

@@ -1,5 +1,16 @@
 # Changelog
 
+### v4.0.0
+
+* Add Zeitwerk compatablility by replacing `class_eval` with `Module.prepend` where appropriate.
+* Update test suite + Use Spree Dev Tools for testing.
+* Configure view files for Spree 4.1 and upwards (Bootstrap 4).
+* Set Javascript to use Turbolinks for the new storefront.
+* Add pagination to the reviews index page.
+* Add view all reviews button to the reviews summery.
+* Add reviews cancle button to the new review from.
+
+
 ### v3.0.0.beta
 
 * Updated layout and Deface hooks to work with new Spree Bootstrap layout.

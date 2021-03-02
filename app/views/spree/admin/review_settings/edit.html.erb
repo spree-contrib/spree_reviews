@@ -1,60 +1,67 @@
 <% content_for :page_title do %>
-<%= Spree.t(:review_settings, scope: :spree_reviews) %>
+  <%= Spree.t(:review_settings, scope: :spree_reviews) %>
 <% end %>
 
 <%= form_tag admin_review_settings_path, method: :put do %>
-	<div class="row">
-		<div class="col-md-12" data-hook="reviews">
-			<div class="checkbox">
-				<%= label_tag :include_unapproved_reviews do %>
-					<%= preference_field_tag :include_unapproved_reviews, Spree::Reviews::Config[:include_unapproved_reviews], type: :boolean %>
-					<%= Spree.t(:include_unapproved, scope: :spree_reviews) %>
-				<% end %>
-			</div>
+  <div class="row">
+    <div class="col-12 col-md-6" data-hook="reviews">
+      <div class="form-check">
+        <%= label_tag :include_unapproved_reviews do %>
+          <%= preference_field_tag :include_unapproved_reviews, Spree::Reviews::Config[:include_unapproved_reviews], type: :boolean %>
+          <%= Spree.t(:include_unapproved, scope: :spree_reviews) %>
+        <% end %>
+      </div>
 
-			<div class="checkbox">
-				<%= label_tag :feedback_rating do %>
-					<%= preference_field_tag :feedback_rating, Spree::Reviews::Config[:feedback_rating], type: :boolean %>
-					<%= Spree.t(:feedback_rating, scope: :spree_reviews) %>
-				<% end %>
-			</div>
+      <div class="form-check">
+        <%= label_tag :feedback_rating do %>
+          <%= preference_field_tag :feedback_rating, Spree::Reviews::Config[:feedback_rating], type: :boolean %>
+          <%= Spree.t(:feedback_rating, scope: :spree_reviews) %>
+        <% end %>
+      </div>
 
-			<div class="checkbox">
-				<%= label_tag :show_email do %>
-					<%= preference_field_tag :show_email, Spree::Reviews::Config[:show_email], type: :boolean %>
-					<%= Spree.t(:show_email, scope: :spree_reviews) %>
-				<% end %>
-			</div>
+      <div class="form-check">
+        <%= label_tag :show_email do %>
+          <%= preference_field_tag :show_email, Spree::Reviews::Config[:show_email], type: :boolean %>
+          <%= Spree.t(:show_email, scope: :spree_reviews) %>
+        <% end %>
+      </div>
 
-			<div class="checkbox">
-				<%= label_tag :require_login do %>
-					<%= preference_field_tag :require_login, Spree::Reviews::Config[:require_login], type: :boolean %>
-					<%= Spree.t(:require_login, scope: :spree_reviews) %>
-				<% end %>
-			</div>
+      <div class="form-check">
+        <%= label_tag :require_login do %>
+          <%= preference_field_tag :require_login, Spree::Reviews::Config[:require_login], type: :boolean %>
+          <%= Spree.t(:require_login, scope: :spree_reviews) %>
+        <% end %>
+      </div>
 
-			<div class="checkbox">
-				<%= label_tag :track_locale do %>
-					<%= preference_field_tag :track_locale, Spree::Reviews::Config[:track_locale], type: :boolean %>
-					<%= Spree.t(:track_locale, scope: :spree_reviews) %>
-				<% end %>
-			</div>
+      <div class="form-check">
+        <%= label_tag :track_locale do %>
+          <%= preference_field_tag :track_locale, Spree::Reviews::Config[:track_locale], type: :boolean %>
+          <%= Spree.t(:track_locale, scope: :spree_reviews) %>
+        <% end %>
+      </div>
 
-			<div class="checkbox">
-				<%= label_tag :show_identifier do %>
-					<%= preference_field_tag :show_identifier, Spree::Reviews::Config[:show_identifier], type: :boolean %>
-					<%= Spree.t(:show_identifier, scope: :spree_reviews) %>
-				<% end %>
-			</div>
+      <div class="form-check">
+        <%= label_tag :show_identifier do %>
+          <%= preference_field_tag :show_identifier, Spree::Reviews::Config[:show_identifier], type: :boolean %>
+          <%= Spree.t(:show_identifier, scope: :spree_reviews) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <%= label_tag Spree.t(:preview_size, scope: :spree_reviews) %>
+        <%= number_field_tag :preview_size, Spree::Reviews::Config[:preview_size], class: 'form-control w-auto' %>
+      </div>
 
-			<div class="form-group">
-				<%= label_tag Spree.t(:preview_size, scope: :spree_reviews) %>
-				<%= number_field_tag :preview_size, Spree::Reviews::Config[:preview_size], class: 'form-control' %>
-			</div>
-
-			<div class="form-actions" data-hook="buttons">
-				<%= button Spree.t('actions.update'), 'update' %>
-			</div>
-		</div>
-	</div>
+      <div class="form-group">
+        <%= label_tag Spree.t(:paginate_size, scope: :spree_reviews) %>
+        <%= number_field_tag :paginate_size, Spree::Reviews::Config[:paginate_size], class: 'form-control w-auto' %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-actions" data-hook="buttons">
+        <%= button Spree.t('actions.update'), 'update' %>
+      </div>
+    </div>
+  </div>
 <% end %>

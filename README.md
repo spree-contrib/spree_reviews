@@ -18,8 +18,8 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 #### Spree 3.0 and Spree 2.x
 
 ```ruby
- gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'X-X-stable'
- ```
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'X-X-stable'
+```
 
  The `branch` option is important: it must match the version of Spree you're using.
  For example, use `3-0-stable` if you're using Spree `3-0-stable` or any `3.0.x` version.
@@ -85,7 +85,7 @@ See corresponding [contributing guidelines][1].
 
 ---
 
-Copyright (c) 2009-2015 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
+Copyright (c) 2009-2021 [Spree Commerce][2] and [contributors][3], released under the [New BSD License][4]
 
 [1]: https://github.com/spree-contrib/spree_reviews/blob/master/CONTRIBUTING.md
 [2]: https://github.com/spree

@@ -1,1 +1,43 @@
-<%= render 'spree/shared/reviews' %>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12">
+      <h3 class="product-section-title"><%= Spree.t(:reviews) %></h3>
+      <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+        <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+      <% else %>
+        <%= render 'spree/shared/rating', product: @product, review: 0 %>
+        <% if Spree::Reviews::Config[:track_locale] %>
+          <% @approved_reviews.localized(I18n.locale).each do |review| %>
+            <%= render 'spree/shared/review', review: review %>
+          <% end %>
+        <% else %>
+          <% @approved_reviews.each do |review| %>
+            <%= render 'spree/shared/review', review: review %>
+          <% end %>
+        <% end %>
+
+        <%= link_to Spree.t(:write_your_own_review), new_product_review_path(@product), class: 'btn btn-primary', rel: 'nofollow' %>
+        <%= Spree.t(:or) %>
+        <%= link_to Spree.t(:back_to) + " " +@product.name, product_path(@product), class: 'btn btn-outline-primary', rel: 'nofollow' %>
+
+        <% if Spree.version.to_f < 4.0 %>
+            <% if @approved_reviews.respond_to?(:total_pages) %>
+              <div class="mt-4">
+              <%= paginate @approved_reviews, theme: 'twitter-bootstrap-3' %>
+              </div>
+            <% end %>
+          <% else %>
+            <% if @approved_reviews.respond_to?(:total_pages) %>
+              <div class="plp-pagination d-none d-lg-flex">
+                <%= paginate @approved_reviews, window: 2, theme: 'twitter-bootstrap-4' %>
+              </div>
+
+              <div class="plp-pagination d-lg-none">
+                <%= paginate @approved_reviews, window: 1, theme: 'twitter-bootstrap-4' %>
+              </div>
+            <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

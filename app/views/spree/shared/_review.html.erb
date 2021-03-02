@@ -3,7 +3,7 @@
     <%= render 'spree/reviews/stars', stars: review.rating %>
   </span>
   <span itemprop="name"><%= review.title %></span>
-  <br/>
+  <br>
   <span class="attribution"><%= Spree.t(:submitted_on) %>
     <strong><%= l review.created_at.to_date %></strong>
   </span>
@@ -22,7 +22,7 @@
     <%= simple_format(review.review) %>
   </div>
   <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
-    <div class="feedback_review" id="feedback_review_<%= review.id %>">
+    <div class="feedback_review my-3" id="feedback_review_<%= review.id %>">
       <%= render 'spree/feedback_reviews/form', review: review %>
     </div>
   <% end %>

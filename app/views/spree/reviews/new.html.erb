@@ -1,2 +1,8 @@
-<%= content_tag :h3, Spree.t(:leave_us_a_review_for, name: @product.name), class: 'new-review-title' %>
-<%= render 'form', review: @review, product: @product %>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12">
+      <%= content_tag :h3, Spree.t(:leave_us_a_review_for, name: @product.name), class: 'new-review-title' %>
+      <%= render 'form', review: @review, product: @product %>
+    </div>
+  </div>
+</div>
