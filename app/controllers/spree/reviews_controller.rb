@@ -39,7 +39,7 @@ module Spree
     end
 
     def permitted_review_attributes
-      [:rating, :title, :review, :name, :show_identifier]
+      [:rating, :title, :review, :name, :show_identifier, :product_worth, :product_recommend, :vendor_recommend]
     end
 
     def review_params
