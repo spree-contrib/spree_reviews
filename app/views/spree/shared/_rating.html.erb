@@ -1,4 +1,4 @@
-<% stars = @product.stars %>
+<% stars = product.stars %>
 
 <% reviews_count  = product.reviews.count %>
 <% raiting_five   = reviews_count != 0  ? product.reviews.raiting_five * 100 / reviews_count : 0 %>
@@ -14,7 +14,7 @@
   </p>
   <div class="d-flex">
     <p class="ratings-stars product-review-rating-stars">
-      <%= @product.stars %>
+      <%= product.stars %>
       <span title="<%= txt_stars(stars) %>">
         <%= render 'spree/reviews/stars', stars: stars %>
       </span>

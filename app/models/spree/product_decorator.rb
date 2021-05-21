@@ -14,7 +14,7 @@ module Spree
     def recalculate_rating
       self[:reviews_count] = reviews.count
       self[:avg_rating] = if reviews_count > 0
-                            reviews.sum(:rating).to_f / reviews_count
+                            reviews.sum(:rating).to_f / reviews.count
                           else
                             0
                           end
