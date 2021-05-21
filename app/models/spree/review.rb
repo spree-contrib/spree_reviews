@@ -22,11 +22,11 @@ class Spree::Review < ActiveRecord::Base
   scope :approved, -> { where(approved: true) }
   scope :not_approved, -> { where(approved: false) }
   scope :default_approval_filter, -> { Spree::Reviews::Config[:include_unapproved_reviews] ? all : approved }
-  scope :raiting_five, -> { where(rating: '5').count }
-  scope :raiting_four, -> { where(rating: '4').count }
-  scope :raiting_three, -> { where(rating: '3').count }
-  scope :raiting_two, -> { where(rating: '2').count }
-  scope :raiting_one, -> { where(rating: '1').count }
+  scope :rating_with_five, -> { where(rating: '5').count }
+  scope :rating_with_four, -> { where(rating: '4').count }
+  scope :rating_with_three, -> { where(rating: '3').count }
+  scope :rating_with_two, -> { where(rating: '2').count }
+  scope :rating_with_one, -> { where(rating: '1').count }
 
   enum product_worth: %i[yes no dont_know], _prefix: :product_worth
   enum product_recommend: %i[yes no dont_know], _prefix: :product_recommend

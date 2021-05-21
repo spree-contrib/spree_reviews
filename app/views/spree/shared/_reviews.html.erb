@@ -1,14 +1,17 @@
 <div id="reviews">
   <h3 class="product-section-title mt-3"><%= Spree.t(:reviews) %></h3>
-  <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.count == 0 %>
+  <% if @product.reviews.count == 0 %>
     <p class="reviews-none product-review-description"><%= Spree.t(:no_reviews_available) %></p>
+    <div class="d-flex align-items-center mt-4">
+      <p class = 'review_new_button btn btn-primary mb-0'> <%= Spree.t(:write_your_own_review) %></p>
+    </div>  
   <% else %>
     <%= render 'spree/shared/rating', product: @product, review: 0 %>
+    <div class="d-flex align-items-center mt-4">
+      <p class = 'review_new_button btn btn-primary mb-0'> <%= Spree.t(:write_your_own_review) %></p>
+    </div>
     <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
       <%= render 'spree/shared/review', review: review %>
     <% end %>
   <% end %>
-  <div class="d-flex align-items-center mt-4">
-    <p class = 'review_new_button btn btn-primary mb-0'> <%= Spree.t(:write_your_own_review) %></p>
-  </div>
 </div> 
