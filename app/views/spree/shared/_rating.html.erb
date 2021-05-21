@@ -1,10 +1,13 @@
 <% stars = @product.stars %>
+
 <% reviews_count  = product.reviews_count %>
-<% raiting_five   = product.reviews.raiting_five * 100 /reviews_count %>
-<% raiting_four   = product.reviews.raiting_four * 100 /reviews_count %>
-<% raiting_three  = product.reviews.raiting_three * 100 /reviews_count %>
-<% raiting_two    = product.reviews.raiting_two * 100 /reviews_count %>
-<% raiting_one    = product.reviews.raiting_one * 100 /reviews_count %>
+<% if reviews_count.present? %>
+  <% raiting_five   = product.reviews.raiting_five * 100 /reviews_count %>
+  <% raiting_four   = product.reviews.raiting_four * 100 /reviews_count %>
+  <% raiting_three  = product.reviews.raiting_three * 100 /reviews_count %>
+  <% raiting_two    = product.reviews.raiting_two * 100 /reviews_count %>
+  <% raiting_one    = product.reviews.raiting_one * 100 /reviews_count %>
+<% end %>  
 <div class="ratings">
   <p class="product-review-description">
     Let us know your thoughts on a product or view reviews from our members,
