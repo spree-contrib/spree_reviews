@@ -1,4 +1,4 @@
-<% stars = product.stars %>
+<% @average_rating = product.reviews.count > 0 ? product.reviews.sum(:rating).to_f / product.reviews.count : 0  %>
 
 <% reviews_count  = product.reviews.count %>
 <% raiting_five   = reviews_count != 0  ? product.reviews.raiting_five * 100 / reviews_count : 0 %>
@@ -14,9 +14,13 @@
   </p>
   <div class="d-flex">
     <p class="ratings-stars product-review-rating-stars">
-      <%= product.stars %>
-      <span title="<%= txt_stars(stars) %>">
-        <%= render 'spree/reviews/stars', stars: stars %>
+      <% if product.reviews.count > 0 %>
+        <%= @average_rating.try(:round) %>
+      <% else %>
+        0
+      <% end %>
+      <span title="<%= txt_stars(@average_rating) %>">
+        <%= render 'spree/reviews/stars', stars: @average_rating.try(:round) %>
       </span>
     </p>
   </div>
@@ -62,7 +66,7 @@
 
 
   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue" content="<%= stars %>"></span>
+    <span itemprop="ratingValue" content="<%= @average_rating %>"></span>
     <span itemprop="reviewCount" content="<%= reviews_count %>"></span>
   </div>
 </div> 
