@@ -1,11 +1,11 @@
 <% @average_rating = product.reviews.count > 0 ? product.reviews.sum(:rating).to_f / product.reviews.count : 0  %>
 
 <% reviews_count  = product.reviews.count %>
-<% rating_with_five   = reviews_count != 0  ? product.reviews.rating_five * 100 / reviews_count : 0 %>
-<% rating_with_four   = reviews_count != 0  ? product.reviews.rating_four * 100 / reviews_count : 0 %>
-<% rating_with_three  = reviews_count != 0  ? product.reviews.rating_three * 100 / reviews_count : 0 %>
-<% rating_with_two    = reviews_count != 0  ? product.reviews.rating_two * 100 / reviews_count  : 0%>
-<% rating_with_one    = reviews_count != 0  ? product.reviews.rating_one * 100 / reviews_count : 0 %>
+<% rating_with_five   = reviews_count != 0  ? product.reviews.rating_with_five * 100 / reviews_count : 0 %>
+<% rating_with_four   = reviews_count != 0  ? product.reviews.rating_with_four * 100 / reviews_count : 0 %>
+<% rating_with_three  = reviews_count != 0  ? product.reviews.rating_with_three * 100 / reviews_count : 0 %>
+<% rating_with_two    = reviews_count != 0  ? product.reviews.rating_with_two * 100 / reviews_count  : 0%>
+<% rating_with_one    = reviews_count != 0  ? product.reviews.rating_with_one * 100 / reviews_count : 0 %>
 
 <div class="ratings">
   <p class="product-review-description">
