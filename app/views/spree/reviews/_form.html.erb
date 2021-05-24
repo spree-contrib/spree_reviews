@@ -8,17 +8,18 @@
 
     <div class="form-group">
       <%= f.label :name %>
-      <%= f.text_field :name, maxlength: 255, size: 50, class: 'form-control', required: true %>
+      <%= f.text_field :name, maxlength: 20, size: 50, class: 'form-control', required: true %>
     </div>
 
     <div class="form-group">
       <%= f.label :title %>
-      <%= f.text_field :title, maxlength: 255, size: 50, class: 'form-control' %>
+      <%= f.text_field :title, maxlength: 20, size: 50, class: 'form-control' %>
     </div>
 
     <div class="form-group">
       <%= f.label :review %>
-      <%= f.text_area :review, wrap: 'virtual', rows: 4, cols: 50, class: 'form-control', required: true %>
+      <span class="review_modal"> Max limit 25 characters </span>
+      <%= f.text_area :review, maxlength: 25, wrap: 'virtual', rows: 4, cols: 50, class: 'form-control', required: true %>
     </div>
 
     <div class="radio mt-2">
