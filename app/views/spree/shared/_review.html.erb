@@ -23,7 +23,7 @@
     <% if Spree::Reviews::Config[:show_email] && review.user %>
       <span itemprop="author"><%= review.user.email %></span>
     <% else %>
-      <span itemprop="author" class="product-review-author">- <%= review.name %></span>
+      <span itemprop="author" class="product-review-author">- <%= spree_current_user&.first_name %></span>
     <% end %>
   <% else %>
     <span itemprop="author"><%= Spree.t(:anonymous) %></span>
