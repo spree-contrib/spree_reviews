@@ -1,9 +1,9 @@
 <div class="review mt-4" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
   <span class="reviews-rating" title="<%= txt_stars(review.rating) %>">
-    <%= render 'spree/reviews/stars', stars: review.rating %>
+    <%= render 'spree/reviews/stars', stars: review&.rating %>
   </span>
   <br>
-  <span itemprop="name"><strong><%= review.title %></strong></span>
+  <span itemprop="name"><strong><%= review&.title %></strong></span>
   <br>
   <div itemprop="reviewBody">
     <p class="mb-1 product-review-description"><%= review.review %></p>
