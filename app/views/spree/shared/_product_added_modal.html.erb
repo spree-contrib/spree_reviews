@@ -1,0 +1,25 @@
+<% @review = Spree::Review.new(product: @product) %>
+<div class="modal product-added-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header align-items-center pb-2 pt-2 border-0">
+        <h1 class="mb-0">Post a review</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <%= icon(name: 'close',
+                     classes: 'd-block d-lg-none',
+                     width: 16,
+                     height: 16) %>
+            <%= icon(name: 'close',
+                     classes: 'd-none d-lg-block',
+                     width: 30,
+                     height: 30) %>
+          </span>
+        </button>
+      </div>
+      <div class="modal-body p-4">
+        <%= render 'spree/reviews/form', review: @review, product: @product %>
+      </div>
+    </div>
+  </div>
+</div>

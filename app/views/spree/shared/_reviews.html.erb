@@ -1,17 +1,24 @@
 <div id="reviews">
-  <h3 class="product-section-title"><%= Spree.t(:reviews) %></h3>
-  <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
-    <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+  <h3 class="product-section-title mt-3"><%= Spree.t(:reviews) %></h3>
+  <% if @product.reviews.count == 0 %>
+    <p class="reviews-none product-review-description"><%= Spree.t(:no_reviews_available) %></p>
+    <div class="d-flex align-items-center mt-4">
+      <p class = "btn btn-primary mb-0 <%= spree_current_user.present? ? "review_new_button" : "review_btn_blur" %>"> <%= Spree.t(:write_your_own_review) %></p>
+    </div>
+    <% unless spree_current_user.present? %>
+      <p class="review_note">You need to login to Post a review</p>
+    <% end %>  
+
   <% else %>
     <%= render 'spree/shared/rating', product: @product, review: 0 %>
+    <div class="d-flex align-items-center mt-4">
+        <p class = "btn btn-primary mb-0 <%= spree_current_user.present? ? "review_new_button" : "review_btn_blur" %>"> <%= Spree.t(:write_your_own_review) %></p>
+    </div>
+    <% unless spree_current_user.present? %>
+      <p class="review_note">You need to login to Post a review</p>
+    <% end %> 
     <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
       <%= render 'spree/shared/review', review: review %>
     <% end %>
   <% end %>
-  <%= link_to Spree.t(:write_your_own_review), new_product_review_path(@product), class: 'btn btn-primary', rel: 'nofollow' %>
-
-  <% unless Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
-    <%= Spree.t(:or) %>
-    <%= link_to Spree.t(:read_all_reviews), product_reviews_path(@product), class: 'btn btn-primary', rel: 'nofollow' %>
-  <% end %>
-</div>
+</div> 

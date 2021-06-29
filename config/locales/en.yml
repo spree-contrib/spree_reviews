@@ -22,7 +22,7 @@ en:
     average_customer_rating: Average rating
     back_reviews: Back to the reviews
     based_upon_review_count:
-      one: based upon one review
+      one: based upon 1 review
       other: "based upon %{count} reviews"
     by: by
     editing_review_for_html: 'Editing review for %{link}'
@@ -34,7 +34,7 @@ en:
     from: from
     info_approve_review: Review approved
     leave_us_a_review_for: "Please leave us a review and a rating for our '%{name}'"
-    no_reviews_available: "No reviews have been written for this product."
+    no_reviews_available: "Be the first to review this product"
     out_of_5: "out of 5"
     rating: rating
     reviews: Reviews
@@ -64,6 +64,6 @@ en:
       one: "1 voice"
       other: "%{count} voices"
     was_this_review_helpful: "Was this review helpful to you?"
-    write_your_own_review: Write your own review
+    write_your_own_review: Post a review
     you_must_enter_value_for_rating: "You must enter a value for rating."
     anonymous: Anonymous
