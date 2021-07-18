@@ -11,6 +11,10 @@ en:
         ip_address: IP
         user: User
         show_identifier: Show Identifier
+    errors:
+      messages:
+        you_must_enter_value_for_rating: "You must enter a value for rating."
+
     models:
       spree/review:
         one: one review
@@ -65,5 +69,4 @@ en:
       other: "%{count} voices"
     was_this_review_helpful: "Was this review helpful to you?"
     write_your_own_review: Write your own review
-    you_must_enter_value_for_rating: "You must enter a value for rating."
     anonymous: Anonymous
