@@ -4,7 +4,13 @@ module Spree
       helper Spree::ReviewsHelper
 
       def index
-        @reviews = collection
+        @reviews = if params[:ids].present?
+                       scope.where(id: params[:ids].split(','))
+                     else
+                       scope.load.ransack(
+                         params[:q]
+                       ).result
+                     end
       end
 
       def approve
@@ -28,10 +34,21 @@ module Spree
       private
 
       def collection
-        params[:q] ||= {}
-        @search = Spree::Review.ransack(params[:q])
-        @collection = @search.result.includes([:product, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
+          params[:q] = {} if params[:q].blank?
+          reviews = super.order(priority: :asc)
+          @search = reviews.ransack(params[:q])
+
+          @collection = @search.result.
+              includes([:product, :user, :feedback_reviews]).
+              page(params[:page]).
+              per(params[:per_page])
+          @collection
       end
+
+      def scope
+          Spree::Review.accessible_by(current_ability)
+      end
+
     end
   end
 end
