@@ -14,13 +14,14 @@ module Spree
           end
 
         def create
-          # params[:video_review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:video_review][:rating].blank?
           review = Spree::Review.new(review_params)
-          review.product = Spree::Product.friendly.find(params[:review][:product])
+          review.product = Spree::Product.find_by(id: params[:review][:product])
+          if not review.product
+            review.product = Spree::Product.find_by(slug: params[:review][:product])
+          end
           review.user = spree_current_user 
           review.ip_address = request.remote_ip
           review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
-          authorize! :create, Spree::Review
           review.save
       
           if review.persisted?

@@ -78,7 +78,7 @@
     <tbody>
       <% @collection.each do |review| %>
         <tr data-hook="admin_reviews_index_rows" id="<%= dom_id review %>" class="<%= cycle('odd', 'even') %>">
-          <td><%= link_to_if review.product, review.product.name %></td>
+          <td><%= link_to_if review.product, review.product.name, edit_admin_product_path(review.product) %></td>
           <td><%= txt_stars(review.rating) %></td>
           <td><%= link_to "(#{review.feedback_stars}/#{review.feedback_reviews.size})", admin_review_feedback_reviews_path(review) %></td>
           <td><%= review.user_id ? link_to(review.user.try(:email), admin_user_path(review.user)) : Spree.t(:anonymous) %></td>
