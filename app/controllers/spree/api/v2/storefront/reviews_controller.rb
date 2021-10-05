@@ -16,6 +16,7 @@ module Spree
         def create
           # params[:video_review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:video_review][:rating].blank?
           review = Spree::Review.new(review_params)
+          review.product = Spree::Product.friendly.find(params[:review][:product])
           review.user = spree_current_user 
           review.ip_address = request.remote_ip
           review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
@@ -33,7 +34,7 @@ module Spree
         private
 
         def permitted_review_attributes
-          [:rating, :title, :review, :name, :product_id, :show_identifier]
+          [:rating, :title, :review, :name, :show_identifier]
         end
 
         def review_params

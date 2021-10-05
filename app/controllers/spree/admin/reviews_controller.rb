@@ -35,8 +35,7 @@ module Spree
 
       def collection
           params[:q] = {} if params[:q].blank?
-          reviews = super.order(priority: :asc)
-          @search = reviews.ransack(params[:q])
+          @search = Spree::Review.ransack(params[:q])
 
           @collection = @search.result.
               includes([:product, :user, :feedback_reviews]).
