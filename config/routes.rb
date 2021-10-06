@@ -13,5 +13,14 @@ Spree::Core::Engine.add_routes do
     resources :reviews, only: [:index, :new, :create] do
     end
   end
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v2 do
+      namespace :storefront do
+        resources :reviews, only: [:index, :create]
+      end
+    end
+  end
+
   post '/reviews/:review_id/feedback(.:format)' => 'feedback_reviews#create', as: :feedback_reviews
 end

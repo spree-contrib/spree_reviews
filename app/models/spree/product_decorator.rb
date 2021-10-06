@@ -2,7 +2,7 @@
 module Spree
   module ProductDecorator
     def self.prepended(base)
-      base.has_many :reviews
+      base.has_many :reviews, class_name: 'Spree::Review'
     end
 
     def stars
@@ -19,6 +19,6 @@ module Spree
       save
     end
 
-    ::Spree::Product.prepend self if ::Spree::Product.included_modules.exclude?(self)
+    Spree::Product.prepend Spree::ProductDecorator
   end
 end

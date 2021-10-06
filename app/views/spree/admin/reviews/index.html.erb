@@ -15,14 +15,14 @@
         <div class="col-md-6">
           <div class="form-group">
             <%= label_tag :q_name_cont, Spree::Review.human_attribute_name(:user) %>
-            <%= f.text_field :name_cont, size: 25, class: 'form-control' %>
+            <%= f.text_field :name_cont, size: 25, class: 'form-control js-quick-search-target' %>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <%= label_tag :q_title_cont, Spree::Review.human_attribute_name(:title) %>
-            <%= f.text_field :title_cont, size: 25, class: 'form-control' %>
+            <%= f.text_field :title_cont, size: 25, class: 'form-control js-quick-search-target' %>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <%= label_tag :q_review_cont, Spree::Review.human_attribute_name(:review) %>
-            <%= f.text_field :review_cont, size: 25, class: 'form-control' %>
+            <%= f.text_field :review_cont, size: 25, class: 'form-control js-quick-search-target' %>
           </div>
         </div>
 
@@ -42,6 +42,17 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag :q_product_name_cont, Spree::Review.human_attribute_name(:product) %>
+            <%= f.text_field :product_name_cont, size: 25, class: 'form-control js-quick-search-target' %>
+          </div>
+        </div>
+      </div>
+
+
       <div class="form-actions" data-hook="admin_reviews_index_search_buttons">
         <%= button Spree.t(:filter_results), 'search' %>
       </div>
@@ -49,9 +60,9 @@
   </div>
 <% end %>
 
-<%= render 'spree/admin/shared/index_table_options', collection: @reviews %>
+<%= render 'spree/admin/shared/index_table_options', collection: @collection %>
 
-<% if @reviews.any? %>
+<% if @collection.any? %>
   <table class="table" id="listing_reviews">
     <thead>
       <tr>
@@ -65,9 +76,9 @@
       </tr>
     </thead>
     <tbody>
-      <% @reviews.each do |review| %>
+      <% @collection.each do |review| %>
         <tr data-hook="admin_reviews_index_rows" id="<%= dom_id review %>" class="<%= cycle('odd', 'even') %>">
-          <td><%= link_to_if review.product, review.product.name, product_path(review.product) %></td>
+          <td><%= link_to_if review.product, review.product.name, edit_admin_product_path(review.product) %></td>
           <td><%= txt_stars(review.rating) %></td>
           <td><%= link_to "(#{review.feedback_stars}/#{review.feedback_reviews.size})", admin_review_feedback_reviews_path(review) %></td>
           <td><%= review.user_id ? link_to(review.user.try(:email), admin_user_path(review.user)) : Spree.t(:anonymous) %></td>
@@ -90,4 +101,4 @@
   </div>
 <% end %>
 
-<%= render 'spree/admin/shared/index_table_options', collection: @reviews %>
+<%= render 'spree/admin/shared/index_table_options', collection: @collection %>
