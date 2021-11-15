@@ -1,5 +1,5 @@
 <div id="reviews">
-  <h3 class="product-section-title"><%= Spree.t(:reviews) %></h3>
+  <h3 class="pt-4 font-weight-bold text-uppercase product-details-subtitle"><%= Spree.t(:reviews) %></h3>
   <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
     <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
   <% else %>
