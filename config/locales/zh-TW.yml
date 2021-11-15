@@ -64,5 +64,6 @@ zh-TW:
       other: "%{count} 聲音"
     was_this_review_helpful: 此評論對你是否有幫助？
     write_your_own_review: 寫下您的評論
+    read_all_reviews: 閱讀所有評論
     you_must_enter_value_for_rating: 您必需輸入評級
     anonymous: 匿名者

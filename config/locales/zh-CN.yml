@@ -64,5 +64,6 @@ zh-CN:
       other: "%{count} 聲音"
     was_this_review_helpful: "此评论对你是否有帮助？"
     write_your_own_review: 写下您的评论
+    read_all_reviews: 阅读所有评论
     you_must_enter_value_for_rating: "您必需输入评级"
     anonymous: 匿名者
