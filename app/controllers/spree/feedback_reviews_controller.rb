@@ -27,7 +27,7 @@ module Spree
     end
 
     def permitted_feedback_review_attributes
-      [:rating, :comment]
+      permitted_attributes.feedback_review_attributes
     end
 
     def feedback_review_params
