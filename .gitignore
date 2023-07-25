@@ -8,7 +8,9 @@ pkg/*
 spec/dummy
 coverage
 .rvmrc
+.nvmrc
 .ruby-version
 .ruby-gemset
+.tool-versions
 tmp
 gemfiles/*.gemfile.lock
