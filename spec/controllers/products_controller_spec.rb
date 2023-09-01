@@ -6,7 +6,7 @@ RSpec.describe Spree::ProductsController, type: :controller do
     end
 
     it "adds #{attrib} to the set of available attributes from Spree API" do
-      expect(Spree::Api::ApiHelpers.product_attributes).to include(attrib)
+      expect(Spree::PermittedAttributes.product_attributes).to include(attrib)
     end
   end
 end

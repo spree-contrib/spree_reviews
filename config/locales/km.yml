@@ -1,0 +1,68 @@
+---
+km:
+  activerecord:
+    attributes:
+      spree/review:
+        name: ឈ្មោះរបស់អ្នក
+        title: ចំណងជើង
+        review: មាតិកា
+        rating: ពិន្ទុ
+        created_at: ថ្ងៃទី
+        ip_address: IP
+        user: អ្នកប្រើប្រាស់
+        show_identifier: បង្ហាញអត្តសញ្ញាណ
+    models:
+      spree/review:
+        one: ការវាយតម្លៃចំនួន ១
+        other: "ការវាយតម្លៃចំនួន %{count}"
+  spree:
+    approval_status: ស្ថានភាព
+    approve: អនុញ្ញាត
+    approved_reviews: បានអនុញ្ញាត
+    average_customer_rating: ពិន្ទុមធ្យម
+    back_reviews: ត្រលប់ទៅការវាយតម្លៃ
+    based_upon_review_count:
+      one: ផ្អែកតាមការវាយតម្លៃចំនួន ១
+      other: "ផ្អែកតាមការវាយតម្លៃចំនួន %{count}"
+    by: តាមរយៈ
+    editing_review_for_html: 'កែប្រែការវាយតម្លៃសម្រាប់ %{link}'
+    error_approve_review: មានបញ្ហាក្នុងការអនុញ្ញាតការវាយតម្លៃ
+    error_no_product: ផលិតផលដែលវាយតម្លៃមិនមានលក់ទៀតទេ
+    feedback: វិចារ
+    feedback_review_for: "ការវាយតម្លៃ: '%{review}'"
+    for: សម្រាប់
+    from: ពី
+    info_approve_review: ការវាយតម្លៃត្រូវបានអនុញ្ញាត
+    leave_us_a_review_for: "សូមមេត្តាជួយដាក់ពិន្ទុ និងវាយតម្លៃសម្រាប់ '%{name}'"
+    no_reviews_available: "មិនទាន់មានការវាយតម្លៃណាមួយសម្រាប់ផលិតផលនេះទេ"
+    out_of_5: "ក្នុងពិន្ទុពេញ 5"
+    rating: ពិន្ទុ
+    reviews: ការវាយតម្លៃ
+    admin:
+      tab:
+        review_management: ការវាយតម្លៃ
+    review_successfully_submitted: ការវាយតម្លៃបានដាក់ស្នើរដោយជោគជ័យ
+    spree_reviews:
+      feedback_rating: ដាក់ពិន្ទុវិចារ
+      include_unapproved: បង្ហាញការវាយតម្លៃដែលមិនទាន់បានអនុញ្ញាត
+      manage_review_settings: កំណត់ការបង្ហាញការវាយតម្លៃ
+      preview_size: ប្រវែងបង្ហាញការវាយតម្លៃខ្លី
+      require_login: សូមចូលគណនីដើម្បីធ្វើការវាយតម្លៃ
+      review_settings: ការកំណត់ការវាយតម្លៃ
+      show_email: បង្ហាញអ៊ីម៉ែល
+      track_locale: តាមដានភាសារបស់អ្នកប្រើប្រាស់
+      show_identifier: បង្ហាញអត្តសញ្ញាណ
+    star:
+      one: "១"
+      other: "%{count}"
+    stars: ផ្កាយ
+    submit_your_review: ដាក់ស្នើរការវាយតម្លៃអ្នក
+    submitted_on: ដាក់ស្នើរនៅ
+    unapproved_reviews: មិនទាន់បានអនុញ្ញាត
+    voice:
+      one: "1 សម្លេង"
+      other: "%{count} សម្លេង"
+    was_this_review_helpful: "តើការវាយតម្លៃនេះមានប្រយោជន៍សម្រាប់អ្នកដែរឬទេ?"
+    write_your_own_review: ចូលរួមវាយតម្លៃ
+    you_must_enter_value_for_rating: "សូមមេត្តាដាក់ពិន្ទុ"
+    anonymous: អនាមិក
