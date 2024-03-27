@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:editing_review_for_html, link: link_to(@review.product.name, product_path(@review.product))) %>
+  <%= Spree.t(:editing_review_for_html, link: link_to(@review.product.name, edit_admin_product_path(@review.product))) %>
 <% end %>
 
 <%= form_for [:admin, @review] do |f| %>

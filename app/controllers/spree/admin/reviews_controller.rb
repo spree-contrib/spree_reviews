@@ -8,14 +8,20 @@ module Spree
       end
 
       def approve
+
         review = Spree::Review.find(params[:id])
-        if review.update_attribute(:approved, true)
-          flash[:notice] = Spree.t(:info_approve_review)
-        else
-          flash[:error] = Spree.t(:error_approve_review)
-        end
+
+        ActiveRecord::Base.connected_to(role: :writing) do 
+
+          if review.update_attribute(:approved, true)
+            flash[:notice] = Spree.t(:info_approve_review)
+          else
+            flash[:error] = Spree.t(:error_approve_review)
+          end
 
         redirect_to admin_reviews_path
+        
+        end
       end
 
       def edit
